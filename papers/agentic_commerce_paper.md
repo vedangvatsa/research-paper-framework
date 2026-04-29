@@ -123,11 +123,19 @@ In Q4 2025, Riskified found that 73% of consumers were already using AI in some 
 
 The primary concerns at this stage were payment security (cited by 32% of respondents), privacy (26%), potential mistakes (18%), and loss of control (17%).
 
-### 5.2 Early 2026: The Trust Reversal
+### 5.2 Sentiment Shift in Early 2026
 
 By Q1 2026, the numbers had moved in the opposite direction. The percentage of consumers who were not comfortable with AI agents making purchases rose to 55%, a near-complete inversion of the late 2025 figure (Riskified, 2026). Nearly half of respondents (46.5%) said they did not trust any company to manage purchases on their behalf. Over half (53.9%) believed AI could increase the risk of online fraud. And 73.9% said they expected strong safeguards, such as biometric verification or one-time passwords, for every AI-driven transaction.
 
 On the question of accountability for unauthorized AI purchases, 50.8% of consumers said the AI platform should be held responsible, 23.2% pointed to the retailer, and 18.7% accepted personal responsibility.
+
+
+
+
+
+### 5.3 Factors Driving Sentiment Shift
+
+What happened between late 2025 and early 2026? The survey data alone does not establish causation, but two factors likely contributed. First, several high-profile incidents involving AI agents making unintended purchases received media coverage in late 2025 and early 2026, including a legal dispute between Amazon and Perplexity AI over unauthorized automated access to Amazon's marketplace. Second, the general acceleration of AI deployment across consumer-facing applications may have triggered a broader backlash, consistent with patterns observed in prior technology adoption cycles where initial enthusiasm gives way to skepticism as real-world friction emerges.
 
 **Table 2. Consumer Trust Metrics (Riskified Surveys 2025-2026)**
 
@@ -141,12 +149,6 @@ On the question of accountability for unauthorized AI purchases, 50.8% of consum
 | Demand biometric safeguards | -- | 73.9% |
 | Trust AI for purchase decisions | 36% | -- |
 | Trust in-store sales associates | 38% | -- |
-
-
-
-### 5.3 Interpreting the Reversal
-
-What happened between late 2025 and early 2026? The survey data alone does not establish causation, but two factors likely contributed. First, several high-profile incidents involving AI agents making unintended purchases received media coverage in late 2025 and early 2026, including a legal dispute between Amazon and Perplexity AI over unauthorized automated access to Amazon's marketplace. Second, the general acceleration of AI deployment across consumer-facing applications may have triggered a broader backlash, consistent with patterns observed in prior technology adoption cycles where initial enthusiasm gives way to skepticism as real-world friction emerges.
 
 ![Figure 2: Consumer Comfort with Autonomous Purchases](consumer_trust.png)
 <em class="caption">Figure 2. The reversal in consumer trust between late 2025 and early 2026 (Source: Riskified).</em>
@@ -191,7 +193,7 @@ Different AI models prioritized different product attributes with varying intens
 
 The behavioral patterns documented in Section 6, combined with the infrastructure developments in Section 4 and the trust dynamics in Section 5, point toward several structural changes in how digital markets will function.
 
-### 7.1 From Brand Equity to Data Completeness
+### 7.1 Shift Toward Data Completeness
 
 In human-directed commerce, brand recognition, emotional advertising, and visual design drive purchasing decisions. In agent-mediated commerce, these factors are largely irrelevant. An AI agent does not respond to a clever tagline or an aspirational brand image. It responds to structured data, including specifications, ratings, review volume, price, availability, and return policies.
 
@@ -202,7 +204,7 @@ This transfers competitive advantage from marketing departments to data operatio
 
 The upshot is that product data management, historically treated as a back-office function, becomes a front-line competitive capability. Firms with strong Product Information Management (PIM) systems and clean, synchronized data across channels will outperform those without, even if the latter have stronger brand equity.
 
-### 7.2 From SEO to Generative Engine Optimization
+### 7.2 Optimization for AI Agents
 
 The move from human to agent-mediated discovery also disrupts search engine optimization as it has traditionally been practiced. AI agents do not click through ten blue links on a search results page. They query APIs, parse structured data feeds, and evaluate products based on machine-readable attributes. The emerging discipline being called "Generative Engine Optimization" (GEO) or "Business-to-Agent" (B2A) optimization reflects this change.
 

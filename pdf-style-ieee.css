@@ -28,7 +28,8 @@ h1 {
 h2 {
   font-size: 10pt;
   font-weight: normal;
-  font-variant: small-caps;
+  text-transform: uppercase;
+  font-variant: normal;
   text-align: center;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -97,7 +98,8 @@ p:has(> strong:only-child) {
 p > strong:only-child {
   display: block;
   text-align: center;
-  font-variant: small-caps;
+  text-transform: uppercase;
+  font-variant: normal;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   text-indent: 0;
