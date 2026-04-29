@@ -69,8 +69,7 @@ These projections should be read with appropriate caution. The definitions used 
 | Mordor Intelligence (2025) | $218.4B global by 2031 | Includes dynamic pricing, supply chain, and customer engagement |
 | Gartner (2024) | 15B machine customers | Connected products with potential to act as autonomous buyers |
 
-![Figure 1: U.S. Agentic Commerce Market Size by 2030](market_projections.png)
-<em class="caption">Figure 1. Market projections from major consulting firms. Note the variation in scope. (Sources: McKinsey, Bain, Morgan Stanley)</em>
+
 
 ---
 
@@ -81,6 +80,9 @@ For AI agents to conduct transactions at scale, they need infrastructure that do
 ### 4.1 Payment Protocols and Tokenization
 
 Mastercard launched Agent Pay in early 2026 as a dedicated payment infrastructure for AI-initiated transactions (Mastercard, 2026). The system builds on Mastercard's existing tokenization technology (MDES and Payment Passkeys) but introduces "Agentic Tokens," which are scope-limited credentials that do not expose primary account numbers. The design intention is to allow an AI agent to complete a purchase on behalf of a user without the agent ever having access to the user's raw card data. Mastercard has also introduced a "Know Your Agent" governance framework, under which AI agents must be registered and verified before they can participate in the payment network. This allows merchants to distinguish authorized AI assistants from bots or scrapers.
+
+![Figure 1: U.S. Agentic Commerce Market Size by 2030](market_projections.png)
+<em class="caption">Figure 1. Market projections from major consulting firms. Note the variation in scope. (Sources: McKinsey, Bain, Morgan Stanley)</em>
 
 Stripe and OpenAI jointly developed the Agentic Commerce Protocol (ACP), released as an open-source standard (Stripe/OpenAI, 2025). ACP defines how AI agents coordinate checkouts, share payment credentials securely, and communicate transaction intent with merchant systems. The protocol is designed to be platform-agnostic, meaning an agent built on one AI platform can, in principle, transact with any ACP-compatible merchant.
 
@@ -140,12 +142,14 @@ On the question of accountability for unauthorized AI purchases, 50.8% of consum
 | Trust AI for purchase decisions | 36% | -- |
 | Trust in-store sales associates | 38% | -- |
 
-![Figure 2: Consumer Comfort with Autonomous Purchases](consumer_trust.png)
-<em class="caption">Figure 2. The reversal in consumer trust between late 2025 and early 2026 (Source: Riskified).</em>
+
 
 ### 5.3 Interpreting the Reversal
 
 What happened between late 2025 and early 2026? The survey data alone does not establish causation, but two factors likely contributed. First, several high-profile incidents involving AI agents making unintended purchases received media coverage in late 2025 and early 2026, including a legal dispute between Amazon and Perplexity AI over unauthorized automated access to Amazon's marketplace. Second, the general acceleration of AI deployment across consumer-facing applications may have triggered a broader backlash, consistent with patterns observed in prior technology adoption cycles where initial enthusiasm gives way to skepticism as real-world friction emerges.
+
+![Figure 2: Consumer Comfort with Autonomous Purchases](consumer_trust.png)
+<em class="caption">Figure 2. The reversal in consumer trust between late 2025 and early 2026 (Source: Riskified).</em>
 
 Research from Aarhus University offers a partial explanation for the conditions under which consumers overcome this trust deficit. Frank, Folwarczny, and Otterbring (2026) found that high AI autonomy generally reduces consumer adoption intentions because it conflicts with the consumer's own need for personal control. However, this negative effect diminishes when consumers face scarcity, such as limited-edition products or fast-selling inventory during events like Black Friday. In scarcity conditions, consumers redirect their attention from the loss of control to the perceived benefit of the agent securing the item before it sells out. The study, published in Psychology and Marketing, suggests that the adoption of high-autonomy AI shopping agents will likely be uneven, concentrated first in product categories and purchasing situations where speed matters more than careful consideration.
 
@@ -175,8 +179,7 @@ Human shoppers read reviews qualitatively, scanning for specific complaints or p
 
 One of the most important findings from the ACES research concerns missing product attributes. When key product specifications were absent from a listing, the agent's probability of selecting that product dropped by 20% to 40% (Kantar, 2025; Columbia/Yale, 2025). Human shoppers can often infer missing information from images, context, or brand familiarity. AI agents, at least in their current form, cannot. This creates a clear competitive advantage for sellers with complete, machine-readable product data and a corresponding disadvantage for smaller sellers or those with less sophisticated catalog management.
 
-![Figure 3: AI Agent Selection Bias](selection_bias.png)
-<em class="caption">Figure 3. Selection probability shifts based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
+
 
 ### 6.6 Model-Specific Behavior
 
@@ -193,6 +196,9 @@ The behavioral patterns documented in Section 6, combined with the infrastructur
 In human-directed commerce, brand recognition, emotional advertising, and visual design drive purchasing decisions. In agent-mediated commerce, these factors are largely irrelevant. An AI agent does not respond to a clever tagline or an aspirational brand image. It responds to structured data, including specifications, ratings, review volume, price, availability, and return policies.
 
 This transfers competitive advantage from marketing departments to data operations teams. Retailers and brands that invest in complete, accurate, machine-readable product information will be more visible to AI agents than those that rely on traditional brand-building. Kantar's 2025 research on AI agent product selection confirms this. Products with what Kantar calls a "Golden Record" (high attribute completeness across all relevant fields) are selected at much higher rates than products with gaps in their metadata, regardless of brand recognition.
+
+![Figure 3: AI Agent Selection Bias](selection_bias.png)
+<em class="caption">Figure 3. Selection probability shifts based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
 
 The upshot is that product data management, historically treated as a back-office function, becomes a front-line competitive capability. Firms with strong Product Information Management (PIM) systems and clean, synchronized data across channels will outperform those without, even if the latter have stronger brand equity.
 
