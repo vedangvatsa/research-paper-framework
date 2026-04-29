@@ -117,7 +117,7 @@ The most detailed publicly available data on consumer attitudes toward agentic c
 
 ### 5.1 Initial Consumer Reception (Late 2025)
 
-In Q4 2025, Riskified found that 73% of consumers were already using AI in some part of their shopping journey, whether for product research, price comparison, or recommendation discovery (Riskified, 2025). Seventy percent of respondents said they were "at least somewhat comfortable" with AI agents making purchases on their behalf. Trust in AI to influence purchasing decisions (36%) had nearly reached parity with trust in in-store sales associates (38%).
+In Q4 2025, Riskified found that 73% of consumers were already using AI in some part of their shopping journey, whether for product research, price comparison, or recommendation discovery (Riskified, 2025). Seventy% of respondents said they were "at least somewhat comfortable" with AI agents making purchases on their behalf. Trust in AI to influence purchasing decisions (36%) had nearly reached parity with trust in in-store sales associates (38%).
 
 The primary concerns at this stage were payment security (cited by 32% of respondents), privacy (26%), potential mistakes (18%), and loss of control (17%).
 
