@@ -48,7 +48,7 @@ h3 {
 
 p {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
   text-indent: 0.15in;
   orphans: 2;
   widows: 2;
