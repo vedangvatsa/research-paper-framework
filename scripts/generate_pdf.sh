@@ -22,7 +22,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Step 2: Converting HTML to PDF using Headless Chrome..."
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless --disable-gpu --no-sandbox --print-to-pdf="$OUTPUT_FILE" --no-margins "$TEMP_HTML"
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --headless --disable-gpu --no-sandbox --print-to-pdf="$OUTPUT_FILE" --no-pdf-header-footer --no-margins "$TEMP_HTML"
 
 if [ $? -ne 0 ]; then
     echo "Error: Chrome PDF generation failed."
