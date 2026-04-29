@@ -12,6 +12,8 @@ Whenever you are asked to write or assist in writing an academic research paper 
 
 ## 2. Research and Data Integrity
 *   **NO HALLUCINATIONS:** Never invent data, citations, or survey results. All quantitative data, legal precedents, and source material must be factual and verifiable.
+*   **NO AI SLOP:** Avoid cliché, AI-generated phrasing like "cautious optimism", "a paradigm shift", "delving into", "a double-edged sword", or "transformative impact". Write with precise, academic, human tone.
+*   **NO END MARKERS:** Do not write "*End of paper.*" at the end of the document.
 *   **CHART GENERATION:** Do not use AI image generators to create charts, as they hallucinate text and numbers. You MUST write a Python script (using matplotlib or seaborn) to generate charts based on accurate data, save them as `.png` files, and embed them in the markdown.
 *   **USE TABLES:** When presenting numerical data, survey results, or comparisons, use Markdown tables to make the data scannable and clear.
 *   **VERIFIABILITY:** Prioritize industry-standard data, university-led research, and verified sources over generalities.
@@ -22,6 +24,7 @@ Whenever you are asked to write or assist in writing an academic research paper 
 *   **REFERENCES:** All URLs in the reference section must be properly formatted as clickable Markdown links (e.g., `[https://url.com](https://url.com)`). The references section must be left-aligned (not justified) to prevent ugly word-spacing gaps caused by long URLs.
 *   **MARKDOWN FIRST:** Write the paper in Markdown (`.md`), following the templates in the `templates/` directory.
 *   **PDF CONVERSION:** The final output must be a well-formatted PDF suitable for submission to platforms like SSRN/IEEE. Use the provided CSS and scripts (e.g., `scripts/generate_pdf.sh`) to convert the markdown to PDF. Ensure `--no-pdf-header-footer` is used to prevent browser URLs from appearing on the printout.
+*   **IMAGE SIZING:** Do not span images across columns using CSS `column-span`. Instead, ensure the `img` CSS rule has a strict `max-height` (e.g., `2.2in`) and `object-fit: contain` so images fit nicely inside a single column without forcing massive column breaks.
 
 ## 4. Paper Types
 Before starting a new paper, ask the user what type of paper they want to write. You can refer to the templates:

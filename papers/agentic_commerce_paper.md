@@ -117,7 +117,7 @@ Dispute resolution is another area without clear infrastructure. When a human ma
 
 The most detailed publicly available data on consumer attitudes toward agentic commerce comes from Riskified, a fraud prevention and payments company that conducted two surveys. The first ran in Q4 2025, and a follow-up "Agentic Commerce Pulse" followed in Q1 2026. The results reveal a sharp reversal in consumer sentiment over a short period.
 
-### 5.1 Late 2025: Cautious Optimism
+### 5.1 Initial Consumer Reception (Late 2025)
 
 In Q4 2025, Riskified found that 73% of consumers were already using AI in some part of their shopping journey, whether for product research, price comparison, or recommendation discovery (Riskified, 2025). Seventy percent of respondents said they were "at least somewhat comfortable" with AI agents making purchases on their behalf. Trust in AI to influence purchasing decisions (36%) had nearly reached parity with trust in in-store sales associates (38%).
 
@@ -334,4 +334,3 @@ Visa (2025). Trusted Agent Protocol. Secure Payment Authentication for AI-Initia
 
 ---
 
-*End of paper.*
