@@ -45,7 +45,7 @@ The distinction matters because different levels of agent autonomy carry differe
 
 Several major consulting and financial firms have published market projections for agentic commerce, and while their estimates vary in scope and methodology, they converge on a common conclusion. The market will be very large within five years.
 
-McKinsey estimates that agentic commerce could generate $3 trillion to $5 trillion in global orchestrated transaction volume by 2030 (McKinsey, 2025). Within the United States alone, McKinsey projects up to $1 trillion in orchestrated B2C retail revenue from agent-mediated purchases by the same date. The firm describes this as a move away from discrete, manual shopping steps toward a "continuous, intent-driven flow managed by autonomous systems."
+McKinsey estimates that agentic commerce could generate $3 trillion to $5 trillion in global orchestrated transaction volume by 2030 (McKinsey, 2025). Within the United States alone, McKinsey projects up to $1 trillion in orchestrated B2C retail revenue from agent-mediated purchases by the same date. The firm describes this as a move away from discrete, manual shopping steps toward a "continuous, intent-driven flow managed by autonomous systems." In a subsequent early 2026 analysis, McKinsey further conceptualized this transition through an "automation curve," detailing a six-level progression from basic rules-based assistance to fully autonomous, multi-agent coordination (McKinsey, 2026).
 
 Bain and Company offers a more conservative but still substantial estimate. Bain projects the U.S. agentic commerce market at $300 billion to $500 billion by 2030, representing approximately 15% to 25% of total U.S. online retail sales (Bain, 2025). Bain defines this market as purchases initiated, influenced, or completed by third-party or retailer-hosted AI agents, and explicitly excludes journeys that rely only on AI-assisted search or discovery without agent-driven transaction completion.
 
@@ -309,6 +309,8 @@ Kantar (2025). How AI Agents Evaluate Products. Metadata Quality, Attribute Comp
 Mastercard (2026). Agent Pay. Enabling Secure AI-Initiated Commerce. Mastercard Newsroom. [https://www.mastercard.com/news/press/2026/agent-pay](https://www.mastercard.com/news/press/2026/agent-pay)
 
 McKinsey and Company (2025). Agentic Commerce. The Next Frontier in Retail. McKinsey Digital. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce)
+
+McKinsey and Company (2026). The Automation Curve in Agentic Commerce. McKinsey Digital. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-automation-curve-in-agentic-commerce](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-automation-curve-in-agentic-commerce)
 
 Mordor Intelligence (2025). Agentic AI in Retail and E-Commerce Market. Size, Share, and Forecast 2025-2031. Mordor Intelligence Industry Report. [https://www.mordorintelligence.com/industry-reports/agentic-ai-retail](https://www.mordorintelligence.com/industry-reports/agentic-ai-retail)
 
