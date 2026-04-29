@@ -89,7 +89,11 @@ font-size: 8pt;
 margin-bottom: 1.5em;
 }
 
-p > strong {
+p:has(> strong:first-child) {
+page-break-after: avoid;
+break-after: avoid;
+}
+p > strong:first-child {
 display: block;
 text-align: center;
 font-variant: small-caps;
@@ -104,6 +108,7 @@ border-collapse: collapse;
 margin: 1em 0;
 font-size: 8pt;
 page-break-inside: avoid;
+break-inside: avoid;
 }
 th {
 border-top: 1px solid #000;
