@@ -220,7 +220,7 @@ This concentration effect is compounded by the metadata penalty described in Sec
 
 A related concern, already the subject of antitrust scrutiny in other contexts, is the potential for algorithmic collusion in agent-mediated markets. If seller-side AI agents learn to adjust pricing and product descriptions to exploit the known biases of buyer-side agents, the interaction between buying and selling algorithms could produce outcomes that resemble collusive pricing without any explicit agreement between sellers. This risk has been discussed in legal scholarship and antitrust enforcement guidance, though enforcement in the context of agentic commerce remains in early stages (Morgan Lewis, 2025; The Regulatory Review, 2025).
 
-### 7.5 The Regulatory Landscape in 2026
+### 7.5 Regulatory Environment in 2026
 
 Regulatory responses to agentic commerce are split across regions.
 
