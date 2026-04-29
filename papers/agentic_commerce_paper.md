@@ -19,7 +19,7 @@ For most of the internet's commercial history, human beings have been the ones d
 
 That assumption is now breaking down. A new generation of AI agents, built on large language models and equipped with tool-use capabilities, can perform many of these tasks autonomously. Amazon's Rufus assistant has been used by over 300 million customers and includes a "Buy for Me" feature that completes purchases without direct human intervention at the point of sale (Amazon, 2025). OpenAI's Operator, Perplexity's Buy with Pro, and Google's Shopping AI agents represent parallel efforts from the technology sector. On the infrastructure side, Mastercard launched Agent Pay in early 2026, Stripe and OpenAI co-developed the Agentic Commerce Protocol, and Google introduced the Universal Commerce Protocol, all within a span of months.
 
-The speed of this buildout stands in contrast to the relatively thin body of academic literature examining what happens when machines become market participants. Gartner has projected that by 2028, 15 billion connected products will have the potential to behave as autonomous customers (Gartner, 2024). McKinsey estimates the global transaction volume orchestrated by AI agents could reach $3 to $5 trillion by 2030 (McKinsey, 2025). These are not incremental changes to existing shopping patterns. They describe a reordering of who participates in markets, how purchasing decisions get made, and what it means for a product to be "visible" to a buyer.
+The speed of this buildout stands in contrast to the relatively thin body of academic literature examining what happens when machines become market participants. Gartner has projected that by 2028, 15 billion connected products are expected to have the potential to behave as autonomous customers (Gartner, 2024). McKinsey estimates the global transaction volume orchestrated by AI agents could reach $3 to $5 trillion by 2030 (McKinsey, 2025). These are not incremental changes to existing shopping patterns. They describe a reordering of who participates in markets, how purchasing decisions get made, and what it means for a product to be "visible" to a buyer.
 
 This paper examines that reordering across three dimensions. First, it maps the emerging payment and protocol infrastructure that enables agent-initiated transactions. Second, it analyzes consumer trust dynamics using recent survey data that reveals a large and growing gap between AI usage in shopping and consumer willingness to grant purchasing autonomy. Third, it investigates the competitive and regulatory consequences, drawing on experimental research showing how AI agents evaluate and select products in ways that differ markedly from human behavior.
 
@@ -43,7 +43,7 @@ The distinction matters because different levels of agent autonomy carry differe
 
 ## 3. Market Sizing and Growth Trajectory
 
-Several major consulting and financial firms have published market projections for agentic commerce, and while their estimates vary in scope and methodology, they converge on a common conclusion. The market will be very large within five years.
+Several major consulting and financial firms have published market projections for agentic commerce, and while their estimates vary in scope and methodology, they converge on a common conclusion. The market is expected to be very large within five years.
 
 McKinsey estimates that agentic commerce could generate $3 trillion to $5 trillion in global orchestrated transaction volume by 2030 (McKinsey, 2025). Within the United States alone, McKinsey projects up to $1 trillion in orchestrated B2C retail revenue from agent-mediated purchases by the same date. The firm describes this as a move away from discrete, manual shopping steps toward a "continuous, intent-driven flow managed by autonomous systems." In a subsequent early 2026 analysis, McKinsey further conceptualized this transition through an "automation curve," detailing a six-level progression from basic rules-based assistance to fully autonomous, multi-agent coordination (McKinsey, 2026).
 
@@ -51,9 +51,9 @@ Bain and Company offers a more conservative but still substantial estimate. Bain
 
 Morgan Stanley has estimated that "agentic shoppers" could drive $190 billion to $385 billion in U.S. e-commerce spending by 2030, capturing roughly 10% to 20% of the market (Morgan Stanley, 2025).
 
-On the broader technology side, Mordor Intelligence projects the agentic AI market in retail and e-commerce (including dynamic pricing, supply chain orchestration, and customer engagement) will grow from approximately $46.7 billion in 2025 to $218.4 billion by 2031 (Mordor Intelligence, 2025).
+On the broader technology side, Mordor Intelligence projects the agentic AI market in retail and e-commerce (including dynamic pricing, supply chain orchestration, and customer engagement) is projected to grow from approximately $46.7 billion in 2025 to $218.4 billion by 2031 (Mordor Intelligence, 2025).
 
-Gartner's estimates focus less on dollar volumes and more on market participants. The firm projects that by 2028, 15 billion connected products will have the potential to act as machine customers, and that AI agents will intermediate more than $15 trillion in B2B spending (Gartner, 2024). Gartner also predicts that machine customers will render 20% of human-readable digital storefronts obsolete, as transactions increasingly occur machine-to-machine without a human-facing interface.
+Gartner's estimates focus less on dollar volumes and more on market participants. The firm projects that by 2028, 15 billion connected products are expected to have the potential to act as machine customers, and that AI agents may intermediate more than $15 trillion in B2B spending (Gartner, 2024). Gartner also predicts that machine customers could render 20% of human-readable digital storefronts obsolete, as transactions increasingly occur machine-to-machine without a human-facing interface.
 
 These projections should be read with appropriate caution. The definitions used by each firm differ in important ways. McKinsey's "orchestrated transaction volume" includes transactions where agents influenced but did not execute the purchase. Bain's figures exclude AI-assisted search. Mordor Intelligence includes backend operations like supply chain optimization. Direct comparisons across these estimates are therefore imprecise. What the figures collectively demonstrate, however, is that every major forecasting institution expects agent-mediated commerce to move from experimental to mainstream within the current decade.
 
@@ -189,18 +189,18 @@ Different AI models prioritized different product attributes with varying intens
 
 ## 7. Competitive and Regulatory Consequences
 
-The behavioral patterns documented in Section 6, combined with the infrastructure developments in Section 4 and the trust dynamics in Section 5, point toward several structural changes in how digital markets will function.
+The behavioral patterns documented in Section 6, combined with the infrastructure developments in Section 4 and the trust dynamics in Section 5, point toward several structural changes in how digital markets may function.
 
 ### 7.1 The Increasing Importance of Data Completeness
 
 In human-directed commerce, brand recognition, emotional advertising, and visual design drive purchasing decisions. In agent-mediated commerce, these factors are largely irrelevant. An AI agent does not respond to a clever tagline or an aspirational brand image. It responds to structured data, including specifications, ratings, review volume, price, availability, and return policies.
 
-This transfers competitive advantage from marketing departments to data operations teams. Retailers and brands that invest in complete, accurate, machine-readable product information will be more visible to AI agents than those that rely on traditional brand-building. Kantar's 2025 research on AI agent product selection confirms this. Products with what Kantar calls a "Golden Record" (high attribute completeness across all relevant fields) are selected at much higher rates than products with gaps in their metadata, regardless of brand recognition.
+This transfers competitive advantage from marketing departments to data operations teams. Retailers and brands that invest in complete, accurate, machine-readable product information are likely to be more visible to AI agents than those that rely on traditional brand-building. Kantar's 2025 research on AI agent product selection confirms this. Products with what Kantar calls a "Golden Record" (high attribute completeness across all relevant fields) are selected at much higher rates than products with gaps in their metadata, regardless of brand recognition.
 
 ![Figure 3: AI Agent Selection Bias](selection_bias.png)
 <em class="caption">Figure 3. Selection probability changes based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
 
-The upshot is that product data management, historically treated as a back-office function, becomes a front-line competitive capability. Firms with strong Product Information Management (PIM) systems and clean, synchronized data across channels will outperform those without, even if the latter have stronger brand equity.
+The upshot is that product data management, historically treated as a back-office function, becomes a front-line competitive capability. Firms with strong Product Information Management (PIM) systems and clean, synchronized data across channels can outperform those without, even if the latter have stronger brand equity.
 
 ### 7.2 Optimization for AI Agents
 
@@ -226,7 +226,7 @@ In the European Union, the EU AI Act, which entered its enforcement phase for hi
 
 In the United States, no comprehensive federal AI statute exists as of April 2026. The Federal Trade Commission relies on Section 5 of the FTC Act, which prohibits "unfair or deceptive acts or practices," as its primary enforcement tool against AI-related harms. The FTC has required businesses to provide clear disclosures about data collection and AI use in decision-making. At the state level, Colorado has enacted AI governance legislation effective in 2026 that imposes risk management and impact assessment requirements on high-risk AI systems.
 
-The gap between these regulatory approaches and the speed of agentic commerce deployment is wide. Neither the EU AI Act nor FTC enforcement guidance specifically addresses the scenario where an AI agent, operating within the scope of its delegated authority, systematically concentrates purchasing decisions in ways that distort market competition. This is a governance gap that academic and regulatory attention will need to fill.
+The gap between these regulatory approaches and the speed of agentic commerce deployment is wide. Neither the EU AI Act nor FTC enforcement guidance specifically addresses the scenario where an AI agent, operating within the scope of its delegated authority, systematically concentrates purchasing decisions in ways that distort market competition. This is a governance gap that academic and regulatory attention may need to fill.
 
 ---
 
@@ -238,7 +238,7 @@ When an AI agent makes a purchase that a human did not intend or does not want, 
 
 Under traditional agency law, the human who deploys an AI agent (the "principal") is generally liable for transactions the agent conducts within the scope of its delegated authority (University of Chicago Law, 2025). If a user grants an AI agent permission to purchase household goods under $50 and the agent buys a $30 item the user did not specifically request, the user is bound by the transaction because it fell within the agent's authorized scope.
 
-The concept of "apparent authority" adds complexity. If a merchant reasonably believes, based on the principal's conduct, that the AI agent has authority to enter into a transaction, the principal may be held liable even if the agent acted outside its actual instructions. As AI agents become more autonomous and interact with more merchants, the gap between actual and apparent authority will widen.
+The concept of "apparent authority" adds complexity. If a merchant reasonably believes, based on the principal's conduct, that the AI agent has authority to enter into a transaction, the principal may be held liable even if the agent acted outside its actual instructions. As AI agents become more autonomous and interact with more merchants, the gap between actual and apparent authority is likely to widen.
 
 ### 8.2 Electronic Transaction Statutes
 
@@ -260,9 +260,9 @@ An emerging legal trend treats AI systems as "products" subject to strict liabil
 
 ## 9. Limitations and Future Research
 
-This paper has several limitations that should guide future work.
+This paper has several limitations that may guide future work.
 
-First, the market projections cited in Section 3 come from consulting firms and financial institutions with commercial interests in the growth of AI-related markets. These estimates use different definitions and scoping methodologies, and they should be treated as directional indicators rather than precise forecasts.
+First, the market projections cited in Section 3 come from consulting firms and financial institutions with commercial interests in the growth of AI-related markets. These estimates use different definitions and scoping methodologies, and they are best treated as directional indicators rather than precise forecasts.
 
 Second, the consumer trust data in Section 5 comes from a single source (Riskified) and covers a limited time window. Longitudinal studies with larger and more diverse samples are needed to understand whether the trust reversal observed between Q4 2025 and Q1 2026 represents a lasting change or a temporary reaction.
 
@@ -276,7 +276,7 @@ Several areas deserve further research. Studies of actual agent-mediated purchas
 
 ## 10. Conclusion
 
-The transition from human-directed to agent-mediated commerce is not a hypothetical scenario. The infrastructure is being built by the largest payment networks and technology platforms in the world. The AI models that power these agents are commercially available and already integrated into products used by hundreds of millions of consumers. The market projections, while imprecise in their specifics, converge on the conclusion that agent-mediated transactions will represent a meaningful share of digital commerce by the end of this decade.
+The transition from human-directed to agent-mediated commerce is not a hypothetical scenario. The infrastructure is being built by the largest payment networks and technology platforms in the world. The AI models that power these agents are commercially available and already integrated into products used by hundreds of millions of consumers. The market projections, while imprecise in their specifics, converge on the conclusion that agent-mediated transactions could represent a meaningful share of digital commerce by the end of this decade.
 
 What this paper has attempted to show is that this transition carries structural consequences that go beyond convenience or efficiency gains. When AI agents select products based on metadata completeness rather than brand recognition, competitive advantage moves. When agents concentrate demand on highly rated products with complete specifications, market diversity may decline. When payment protocols enable machine-to-machine transactions at scale, the infrastructure exists for a volume of autonomous purchases that current regulatory frameworks were not designed to govern. And when consumer trust data shows a large and rapid reversal in comfort with AI-initiated purchases, the pace of adoption becomes uncertain in ways that market projections do not fully capture.
 
