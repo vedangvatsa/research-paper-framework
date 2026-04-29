@@ -10,6 +10,7 @@ body {
   color: #000;
   column-count: 2;
   column-gap: 0.25in;
+  column-fill: auto;
   text-align: justify;
 }
 

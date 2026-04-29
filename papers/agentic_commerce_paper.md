@@ -13,8 +13,6 @@ A new class of AI-powered software agents is beginning to shop, compare, and pur
 
 _**Keywords**_: agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, digital commerce infrastructure, algorithmic competition, payment protocols
 
----
-
 ## 1. Introduction
 
 For most of the internet's commercial history, human beings have been the ones doing the shopping. They type search queries, scroll through product listings, read reviews, compare prices, and click "buy." The entire architecture of e-commerce, from search engine optimization to display advertising to checkout flow design, was built around the assumption that a person sits at the other end of the screen.
