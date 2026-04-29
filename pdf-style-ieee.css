@@ -76,12 +76,12 @@ em.caption {
 }
 
 /* Table Captions (bold text before a table) */
-p:has(> strong:first-child) {
+p:has(> strong:only-child) {
   page-break-after: avoid;
   break-after: avoid;
 }
 
-p > strong:first-child {
+p > strong:only-child {
   display: block;
   text-align: center;
   font-variant: small-caps;
