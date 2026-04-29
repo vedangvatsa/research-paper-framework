@@ -69,8 +69,11 @@ These projections should be read with appropriate caution. The definitions used 
 | Mordor Intelligence (2025) | $218.4B global by 2031 | Includes dynamic pricing, supply chain, and customer engagement |
 | Gartner (2024) | 15B machine customers | Connected products with potential to act as autonomous buyers |
 
+<div style="column-span: all; text-align: center; margin: 2em 0; break-inside: avoid;">
+
 ![Figure 1: U.S. Agentic Commerce Market Size by 2030](market_projections.png)
 <em class="caption">Figure 1. Market projections from major consulting firms. Note the variation in scope. (Sources: McKinsey, Bain, Morgan Stanley)</em>
+</div>
 
 ---
 
@@ -140,8 +143,11 @@ On the question of accountability for unauthorized AI purchases, 50.8% of consum
 | Trust AI for purchase decisions | 36% | -- |
 | Trust in-store sales associates | 38% | -- |
 
+<div style="column-span: all; text-align: center; margin: 2em 0; break-inside: avoid;">
+
 ![Figure 2: Consumer Comfort with Autonomous Purchases](consumer_trust.png)
 <em class="caption">Figure 2. The reversal in consumer trust between late 2025 and early 2026 (Source: Riskified).</em>
+</div>
 
 ### 5.3 Interpreting the Reversal
 
@@ -175,8 +181,11 @@ Human shoppers read reviews qualitatively, scanning for specific complaints or p
 
 One of the most important findings from the ACES research concerns missing product attributes. When key product specifications were absent from a listing, the agent's probability of selecting that product dropped by 20% to 40% (Kantar, 2025; Columbia/Yale, 2025). Human shoppers can often infer missing information from images, context, or brand familiarity. AI agents, at least in their current form, cannot. This creates a clear competitive advantage for sellers with complete, machine-readable product data and a corresponding disadvantage for smaller sellers or those with less sophisticated catalog management.
 
+<div style="column-span: all; text-align: center; margin: 2em 0; break-inside: avoid;">
+
 ![Figure 3: AI Agent Selection Bias](selection_bias.png)
 <em class="caption">Figure 3. Selection probability shifts based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
+</div>
 
 ### 6.6 Model-Specific Behavior
 
