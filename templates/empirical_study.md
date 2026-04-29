@@ -1,11 +1,14 @@
 # [Title of the Empirical Study]
 
-**Author:** [Your Name]
-**Date:** [Month Year]
-**Keywords:** [keyword1, keyword2, keyword3]
+<div class="author-info">
+**[Your Name]**<br>
+*[Your Email]*<br>
+</div>
 
 ## Abstract
 [A concise summary covering the research question, methodology, key results, and conclusion.]
+
+_**Index Terms**_: [keyword1, keyword2, keyword3]
 
 ---
 

@@ -12,14 +12,16 @@ Whenever you are asked to write or assist in writing an academic research paper 
 
 ## 2. Research and Data Integrity
 *   **NO HALLUCINATIONS:** Never invent data, citations, or survey results. All quantitative data, legal precedents, and source material must be factual and verifiable.
-*   **IMAGE DATA:** Do not generate images containing text or numbers that might hallucinate data. Rely on data tables for quantitative information instead.
+*   **CHART GENERATION:** Do not use AI image generators to create charts, as they hallucinate text and numbers. You MUST write a Python script (using matplotlib or seaborn) to generate charts based on accurate data, save them as `.png` files, and embed them in the markdown.
 *   **USE TABLES:** When presenting numerical data, survey results, or comparisons, use Markdown tables to make the data scannable and clear.
 *   **VERIFIABILITY:** Prioritize industry-standard data, university-led research, and verified sources over generalities.
 
-## 3. Formatting and Output
+## 3. Formatting and Output (IEEE Style)
+*   **AUTHOR BLOCK:** The author section should only contain the author's full name and email address. Do not include the date.
+*   **INDEX TERMS:** Do not use a separate "Keywords" block. Use the IEEE inline standard immediately below the Abstract: `_**Index Terms**_: keyword1, keyword2, etc.`
+*   **REFERENCES:** All URLs in the reference section must be properly formatted as clickable Markdown links (e.g., `[https://url.com](https://url.com)`).
 *   **MARKDOWN FIRST:** Write the paper in Markdown (`.md`), following the templates in the `templates/` directory.
-*   **PDF CONVERSION:** The final output must be a well-formatted PDF suitable for submission to platforms like SSRN. Use the provided CSS and scripts (e.g., `scripts/generate_pdf.sh`) to convert the markdown to PDF.
-*   **URL REFERENCES:** All references in the bibliography must include a URL where applicable.
+*   **PDF CONVERSION:** The final output must be a well-formatted PDF suitable for submission to platforms like SSRN/IEEE. Use the provided CSS and scripts (e.g., `scripts/generate_pdf.sh`) to convert the markdown to PDF. Ensure `--no-pdf-header-footer` is used to prevent browser URLs from appearing on the printout.
 
 ## 4. Paper Types
 Before starting a new paper, ask the user what type of paper they want to write. You can refer to the templates:

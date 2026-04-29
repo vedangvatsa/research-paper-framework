@@ -1,11 +1,14 @@
 # [Title of the Review Paper]
 
-**Author:** [Your Name]
-**Date:** [Month Year]
-**Keywords:** [keyword1, keyword2, keyword3]
+<div class="author-info">
+**[Your Name]**<br>
+*[Your Email]*<br>
+</div>
 
 ## Abstract
 [A concise summary of the paper, covering the background, main argument, and conclusion.]
+
+_**Index Terms**_: [keyword1, keyword2, keyword3]
 
 ---
 
