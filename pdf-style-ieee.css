@@ -75,6 +75,16 @@ em.caption {
   margin-bottom: 1.5em;
 }
 
+/* Table Captions (bold text before a table) */
+p > strong {
+  display: block;
+  text-align: center;
+  font-variant: small-caps;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-indent: 0;
+}
+
 /* Tables */
 table {
   width: 100%;

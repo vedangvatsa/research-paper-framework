@@ -1,8 +1,8 @@
 # Agentic Commerce and the Reorganization of Digital Markets
 
 <div class="author-info">
-**Author:** Vedang Vatsa<br>
-**Date:** April 2026<br>
+**Vedang Ratan Vatsa**<br>
+*vedangvats@gmail.com*<br>
 </div>
 
 ---
@@ -58,6 +58,7 @@ On the broader technology side, Mordor Intelligence projects the agentic AI mark
 Gartner's estimates focus less on dollar volumes and more on market participants. The firm projects that by 2028, 15 billion connected products will have the potential to act as machine customers, and that AI agents will intermediate more than $15 trillion in B2B spending (Gartner, 2024). Gartner also predicts that machine customers will render 20% of human-readable digital storefronts obsolete, as transactions increasingly occur machine-to-machine without a human-facing interface.
 
 These projections should be read with appropriate caution. The definitions used by each firm differ in important ways. McKinsey's "orchestrated transaction volume" includes transactions where agents influenced but did not execute the purchase. Bain's figures exclude AI-assisted search. Mordor Intelligence includes backend operations like supply chain optimization. Direct comparisons across these estimates are therefore imprecise. What the figures collectively demonstrate, however, is that every major forecasting institution expects agent-mediated commerce to move from experimental to mainstream within the current decade.
+
 **Table 1. Comparison of U.S. Agentic Commerce Market Projections by 2030**
 
 | Source | Projected U.S. Market Size | Scope |
@@ -86,7 +87,6 @@ Stripe and OpenAI jointly developed the Agentic Commerce Protocol (ACP), release
 Google introduced two complementary programs. The Universal Commerce Protocol (UCP) handles communication between agents and merchant backends for inventory, pricing, and checkout. The Agent Payments Protocol (AP2), developed with support from Mastercard and PayPal, manages the payment authorization layer using signed mandates (Google, 2025).
 
 Visa has launched a parallel initiative, the Trusted Agent Protocol, which focuses on authenticated, no-code transactions for AI agents, with objectives similar to Mastercard's approach (Visa, 2025).
-
 
 **Table 3. Comparison of Agent Commerce Payment Protocols (as of April 2026)**
 
