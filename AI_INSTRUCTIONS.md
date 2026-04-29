@@ -12,7 +12,7 @@ Whenever you are asked to write or assist in writing an academic research paper 
 
 ## 2. Research and Data Integrity
 *   **NO HALLUCINATIONS:** Never invent data, citations, or survey results. All quantitative data, legal precedents, and source material must be factual and verifiable.
-*   **NO AI SLOP:** Avoid cliché, AI-generated phrasing like "cautious optimism", "a paradigm shift", "delving into", "a double-edged sword", or "transformative impact". Write with precise, academic, human tone.
+*   **NO AI SLOP:** Avoid cliché, AI-generated phrasing like "cautious optimism", "a paradigm shift", "sentiment shift", "delving into", "a double-edged sword", or "transformative impact". Avoid using the word "shift" when describing changes in data or attitudes. Write with precise, objective, human tone.
 *   **NO END MARKERS:** Do not write "*End of paper.*" at the end of the document.
 *   **CHART GENERATION:** Do not use AI image generators to create charts, as they hallucinate text and numbers. You MUST write a Python script (using matplotlib or seaborn) to generate charts based on accurate data, save them as `.png` files, and embed them in the markdown.
 *   **USE TABLES:** When presenting numerical data, survey results, or comparisons, use Markdown tables to make the data scannable and clear.

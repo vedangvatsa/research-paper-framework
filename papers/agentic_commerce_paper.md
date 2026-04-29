@@ -123,7 +123,7 @@ In Q4 2025, Riskified found that 73% of consumers were already using AI in some 
 
 The primary concerns at this stage were payment security (cited by 32% of respondents), privacy (26%), potential mistakes (18%), and loss of control (17%).
 
-### 5.2 Sentiment Shift in Early 2026
+### 5.2 Consumer Attitude Changes in Early 2026
 
 By Q1 2026, the numbers had moved in the opposite direction. The percentage of consumers who were not comfortable with AI agents making purchases rose to 55%, a near-complete inversion of the late 2025 figure (Riskified, 2026). Nearly half of respondents (46.5%) said they did not trust any company to manage purchases on their behalf. Over half (53.9%) believed AI could increase the risk of online fraud. And 73.9% said they expected strong safeguards, such as biometric verification or one-time passwords, for every AI-driven transaction.
 
@@ -133,7 +133,7 @@ On the question of accountability for unauthorized AI purchases, 50.8% of consum
 
 
 
-### 5.3 Factors Driving Sentiment Shift
+### 5.3 Drivers of Changing Attitudes
 
 What happened between late 2025 and early 2026? The survey data alone does not establish causation, but two factors likely contributed. First, several high-profile incidents involving AI agents making unintended purchases received media coverage in late 2025 and early 2026, including a legal dispute between Amazon and Perplexity AI over unauthorized automated access to Amazon's marketplace. Second, the general acceleration of AI deployment across consumer-facing applications may have triggered a broader backlash, consistent with patterns observed in prior technology adoption cycles where initial enthusiasm gives way to skepticism as real-world friction emerges.
 
@@ -193,14 +193,14 @@ Different AI models prioritized different product attributes with varying intens
 
 The behavioral patterns documented in Section 6, combined with the infrastructure developments in Section 4 and the trust dynamics in Section 5, point toward several structural changes in how digital markets will function.
 
-### 7.1 Shift Toward Data Completeness
+### 7.1 The Increasing Importance of Data Completeness
 
 In human-directed commerce, brand recognition, emotional advertising, and visual design drive purchasing decisions. In agent-mediated commerce, these factors are largely irrelevant. An AI agent does not respond to a clever tagline or an aspirational brand image. It responds to structured data, including specifications, ratings, review volume, price, availability, and return policies.
 
 This transfers competitive advantage from marketing departments to data operations teams. Retailers and brands that invest in complete, accurate, machine-readable product information will be more visible to AI agents than those that rely on traditional brand-building. Kantar's 2025 research on AI agent product selection confirms this. Products with what Kantar calls a "Golden Record" (high attribute completeness across all relevant fields) are selected at much higher rates than products with gaps in their metadata, regardless of brand recognition.
 
 ![Figure 3: AI Agent Selection Bias](selection_bias.png)
-<em class="caption">Figure 3. Selection probability shifts based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
+<em class="caption">Figure 3. Selection probability changes based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
 
 The upshot is that product data management, historically treated as a back-office function, becomes a front-line competitive capability. Firms with strong Product Information Management (PIM) systems and clean, synchronized data across channels will outperform those without, even if the latter have stronger brand equity.
 
