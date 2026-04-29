@@ -54,6 +54,11 @@ p {
   widows: 2;
 }
 
+/* Left-align paragraphs after the References heading to avoid ugly gaps with long URLs */
+#references ~ p {
+  text-align: left;
+}
+
 p:first-of-type {
   text-indent: 0;
 }
