@@ -11,7 +11,7 @@
 
 A new class of AI-powered software agents is beginning to shop, compare, and purchase products on behalf of human consumers. This development, broadly termed "agentic commerce," moves beyond recommendation engines and chatbots into territory where algorithms autonomously execute financial transactions. Industry projections from McKinsey, Bain, and Morgan Stanley place the U.S. market for agent-mediated purchases between $190 billion and $1 trillion by 2030. Yet consumer sentiment data from Riskified's 2025-2026 surveys reveals a widening trust deficit, with 55% of consumers reporting discomfort with autonomous AI purchases by early 2026, up sharply from late 2025. At the same time, new infrastructure is being built at speed. Mastercard, Visa, Stripe, and Google have each launched payment protocols and token frameworks designed specifically for agent-initiated transactions. Experimental research from Columbia and Yale universities demonstrates that AI shopping agents exhibit measurable selection biases, including position effects, badge sensitivity, and heavy reliance on structured metadata, all of which differ substantially from human shopping behavior. This paper brings together evidence across market forecasting, consumer psychology, payment infrastructure, agent behavior research, and legal scholarship to argue that the transition to agentic commerce amounts to a structural reorganization of digital markets. It introduces new forms of information imbalance, moves competitive advantage away from brand equity and toward data completeness, and raises unresolved questions around liability, market concentration, and consumer autonomy that existing regulatory frameworks are not equipped to address.
 
-**Index Terms:** agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, digital commerce infrastructure, algorithmic competition, payment protocols
+_**Index Terms**_: agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, digital commerce infrastructure, algorithmic competition, payment protocols
 
 ---
 
@@ -280,51 +280,51 @@ The gap between the speed of infrastructure deployment and the pace of regulator
 
 ## References
 
-Agarwal, A., Chanda, R.S., and Tathavadekar, V.P. (2025). From Customers to Machine-Customers. Quantum Negotiation and CRM for Autonomous Commerce, A Systematic Literature Review. Research Square. https://doi.org/10.21203/rs.3.rs-5156229/v1
+Agarwal, A., Chanda, R.S., and Tathavadekar, V.P. (2025). From Customers to Machine-Customers. Quantum Negotiation and CRM for Autonomous Commerce, A Systematic Literature Review. Research Square. [https://doi.org/10.21203/rs.3.rs-5156229/v1](https://doi.org/10.21203/rs.3.rs-5156229/v1)
 
-Amazon (2025). Amazon Rufus AI Shopping Assistant. Product Update and Usage Statistics. Amazon Press Center. https://press.aboutamazon.com
+Amazon (2025). Amazon Rufus AI Shopping Assistant. Product Update and Usage Statistics. Amazon Press Center. [https://press.aboutamazon.com](https://press.aboutamazon.com)
 
-Bain and Company (2025). Agentic Commerce. How AI Agents Will Reshape Online Retail. Bain Brief. https://www.bain.com/insights/agentic-commerce
+Bain and Company (2025). Agentic Commerce. How AI Agents Will Reshape Online Retail. Bain Brief. [https://www.bain.com/insights/agentic-commerce](https://www.bain.com/insights/agentic-commerce)
 
-Columbia University and Yale University (2025). What Is Your AI Agent Buying? The ACES Framework for Evaluating AI Shopping Agent Behavior. Working Paper, Columbia Business School. https://arxiv.org/abs/2502.18104
+Columbia University and Yale University (2025). What Is Your AI Agent Buying? The ACES Framework for Evaluating AI Shopping Agent Behavior. Working Paper, Columbia Business School. [https://arxiv.org/abs/2502.18104](https://arxiv.org/abs/2502.18104)
 
-EU AI Act (2024). Regulation (EU) 2024/1689 of the European Parliament and of the Council. Official Journal of the European Union. https://eur-lex.europa.eu/eli/reg/2024/1689
+EU AI Act (2024). Regulation (EU) 2024/1689 of the European Parliament and of the Council. Official Journal of the European Union. [https://eur-lex.europa.eu/eli/reg/2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689)
 
-Frank, D.A., Folwarczny, M., and Otterbring, T. (2026). AI Autonomy and Consumer Adoption. The Moderating Role of Scarcity. Psychology and Marketing, 43(5). https://pure.au.dk/portal/en/publications/ai-autonomy-consumer-adoption
+Frank, D.A., Folwarczny, M., and Otterbring, T. (2026). AI Autonomy and Consumer Adoption. The Moderating Role of Scarcity. Psychology and Marketing, 43(5). [https://pure.au.dk/portal/en/publications/ai-autonomy-consumer-adoption](https://pure.au.dk/portal/en/publications/ai-autonomy-consumer-adoption)
 
-Gartner (2024). Predicts 2025. Machine Customers Will Transform Commercial Strategy. Gartner Research. https://www.gartner.com/en/articles/machine-customers
+Gartner (2024). Predicts 2025. Machine Customers Will Transform Commercial Strategy. Gartner Research. [https://www.gartner.com/en/articles/machine-customers](https://www.gartner.com/en/articles/machine-customers)
 
-Google (2025). Universal Commerce Protocol (UCP) and Agent Payments Protocol (AP2). Google for Developers Blog. https://developers.googleblog.com/en/universal-commerce-protocol
+Google (2025). Universal Commerce Protocol (UCP) and Agent Payments Protocol (AP2). Google for Developers Blog. [https://developers.googleblog.com/en/universal-commerce-protocol](https://developers.googleblog.com/en/universal-commerce-protocol)
 
-Jones Walker LLP (2025). The Liability Squeeze. Contractual Risks of Deploying AI Agents. Jones Walker Client Alert. https://www.joneswalker.com/publications/ai-agent-liability
+Jones Walker LLP (2025). The Liability Squeeze. Contractual Risks of Deploying AI Agents. Jones Walker Client Alert. [https://www.joneswalker.com/publications/ai-agent-liability](https://www.joneswalker.com/publications/ai-agent-liability)
 
-Kantar (2025). How AI Agents Evaluate Products. Metadata Quality, Attribute Completeness, and Selection Probability. Kantar Commerce Insights. https://www.kantar.com/inspiration/technology/ai-agents-commerce
+Kantar (2025). How AI Agents Evaluate Products. Metadata Quality, Attribute Completeness, and Selection Probability. Kantar Commerce Insights. [https://www.kantar.com/inspiration/technology/ai-agents-commerce](https://www.kantar.com/inspiration/technology/ai-agents-commerce)
 
-Mastercard (2026). Agent Pay. Enabling Secure AI-Initiated Commerce. Mastercard Newsroom. https://www.mastercard.com/news/press/2026/agent-pay
+Mastercard (2026). Agent Pay. Enabling Secure AI-Initiated Commerce. Mastercard Newsroom. [https://www.mastercard.com/news/press/2026/agent-pay](https://www.mastercard.com/news/press/2026/agent-pay)
 
-McKinsey and Company (2025). Agentic Commerce. The Next Frontier in Retail. McKinsey Digital. https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce
+McKinsey and Company (2025). Agentic Commerce. The Next Frontier in Retail. McKinsey Digital. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce)
 
-Mordor Intelligence (2025). Agentic AI in Retail and E-Commerce Market. Size, Share, and Forecast 2025-2031. Mordor Intelligence Industry Report. https://www.mordorintelligence.com/industry-reports/agentic-ai-retail
+Mordor Intelligence (2025). Agentic AI in Retail and E-Commerce Market. Size, Share, and Forecast 2025-2031. Mordor Intelligence Industry Report. [https://www.mordorintelligence.com/industry-reports/agentic-ai-retail](https://www.mordorintelligence.com/industry-reports/agentic-ai-retail)
 
-Morgan Lewis (2025). Algorithmic Pricing and Antitrust Risk in the Age of AI Agents. Morgan Lewis LawFlash. https://www.morganlewis.com/pubs/algorithmic-pricing-antitrust-ai
+Morgan Lewis (2025). Algorithmic Pricing and Antitrust Risk in the Age of AI Agents. Morgan Lewis LawFlash. [https://www.morganlewis.com/pubs/algorithmic-pricing-antitrust-ai](https://www.morganlewis.com/pubs/algorithmic-pricing-antitrust-ai)
 
-Morgan Stanley (2025). Agentic Shoppers. Sizing the U.S. E-Commerce Opportunity from AI-Mediated Purchasing. Morgan Stanley Research. https://www.morganstanley.com/ideas/agentic-commerce
+Morgan Stanley (2025). Agentic Shoppers. Sizing the U.S. E-Commerce Opportunity from AI-Mediated Purchasing. Morgan Stanley Research. [https://www.morganstanley.com/ideas/agentic-commerce](https://www.morganstanley.com/ideas/agentic-commerce)
 
-Riskified (2025). Agentic Commerce Survey. Consumer Attitudes Toward AI-Driven Purchasing, Q4 2025. Riskified Research. https://www.riskified.com/resources/agentic-commerce-survey-2025
+Riskified (2025). Agentic Commerce Survey. Consumer Attitudes Toward AI-Driven Purchasing, Q4 2025. Riskified Research. [https://www.riskified.com/resources/agentic-commerce-survey-2025](https://www.riskified.com/resources/agentic-commerce-survey-2025)
 
-Riskified (2026). Agentic Commerce Pulse. Consumer Trust and Sentiment, Q1 2026. Riskified Research. https://www.riskified.com/resources/agentic-commerce-pulse-2026
+Riskified (2026). Agentic Commerce Pulse. Consumer Trust and Sentiment, Q1 2026. Riskified Research. [https://www.riskified.com/resources/agentic-commerce-pulse-2026](https://www.riskified.com/resources/agentic-commerce-pulse-2026)
 
-Stanford Law School (2025). AI Agents, Electronic Contracts, and the Scope of Delegated Authority Under UETA. Stanford Technology Law Review Working Paper. https://law.stanford.edu/publications/ai-agents-ueta
+Stanford Law School (2025). AI Agents, Electronic Contracts, and the Scope of Delegated Authority Under UETA. Stanford Technology Law Review Working Paper. [https://law.stanford.edu/publications/ai-agents-ueta](https://law.stanford.edu/publications/ai-agents-ueta)
 
-Stripe and OpenAI (2025). Agentic Commerce Protocol (ACP). An Open Standard for Agent-Initiated Transactions. https://agenticcommerce.dev
+Stripe and OpenAI (2025). Agentic Commerce Protocol (ACP). An Open Standard for Agent-Initiated Transactions. [https://agenticcommerce.dev](https://agenticcommerce.dev)
 
-TechRxiv (2026). A Survey of How AI Agents Are Reshaping Commerce. TechRxiv Preprint. https://www.techrxiv.org/articles/preprint/ai-agents-commerce-survey
+TechRxiv (2026). A Survey of How AI Agents Are Reshaping Commerce. TechRxiv Preprint. [https://www.techrxiv.org/articles/preprint/ai-agents-commerce-survey](https://www.techrxiv.org/articles/preprint/ai-agents-commerce-survey)
 
-The Regulatory Review (2025). Algorithmic Collusion and the Challenge for Antitrust Enforcement. University of Pennsylvania. https://www.theregreview.org/2025/algorithmic-collusion
+The Regulatory Review (2025). Algorithmic Collusion and the Challenge for Antitrust Enforcement. University of Pennsylvania. [https://www.theregreview.org/2025/algorithmic-collusion](https://www.theregreview.org/2025/algorithmic-collusion)
 
-University of Chicago Law (2025). Agency Law and Artificial Intelligence. Who Is the Principal When the Agent Is a Machine? University of Chicago Law Review Online. https://lawreview.uchicago.edu/online-archive/ai-agency-law
+University of Chicago Law (2025). Agency Law and Artificial Intelligence. Who Is the Principal When the Agent Is a Machine? University of Chicago Law Review Online. [https://lawreview.uchicago.edu/online-archive/ai-agency-law](https://lawreview.uchicago.edu/online-archive/ai-agency-law)
 
-Visa (2025). Trusted Agent Protocol. Secure Payment Authentication for AI-Initiated Commerce. Visa Developer Center. https://developer.visa.com/trusted-agent-protocol
+Visa (2025). Trusted Agent Protocol. Secure Payment Authentication for AI-Initiated Commerce. Visa Developer Center. [https://developer.visa.com/trusted-agent-protocol](https://developer.visa.com/trusted-agent-protocol)
 
 ---
 
