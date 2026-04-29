@@ -1,10 +1,10 @@
 # Agentic Commerce and the Reorganization of Digital Markets
 
-**Author:** Vedang Vatsa
-
-**Date:** April 2026
-
+<div class="author-info">
+**Author:** Vedang Vatsa<br>
+**Date:** April 2026<br>
 **Keywords:** agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, digital commerce infrastructure, algorithmic competition, payment protocols
+</div>
 
 ---
 
@@ -66,6 +66,9 @@ These projections should be read with appropriate caution. The definitions used 
 | Morgan Stanley (2025) | $190B - $385B | E-commerce spending driven by "agentic shoppers" |
 | Mordor Intelligence (2025) | $218.4B global by 2031 | Includes dynamic pricing, supply chain, and customer engagement |
 | Gartner (2024) | 15B machine customers | Connected products with potential to act as autonomous buyers |
+
+![Figure 1: U.S. Agentic Commerce Market Size by 2030](market_projections.png)
+<em class="caption">Figure 1. Market projections from major consulting firms. Note the variation in scope.</em>
 
 ---
 
@@ -136,6 +139,9 @@ On the question of accountability for unauthorized AI purchases, 50.8% of consum
 | Trust AI for purchase decisions | 36% | -- |
 | Trust in-store sales associates | 38% | -- |
 
+![Figure 2: Consumer Comfort with Autonomous Purchases](consumer_trust.png)
+<em class="caption">Figure 2. The reversal in consumer trust between late 2025 and early 2026 (Source: Riskified).</em>
+
 ### 5.3 Interpreting the Reversal
 
 What happened between late 2025 and early 2026? The survey data alone does not establish causation, but two factors likely contributed. First, several high-profile incidents involving AI agents making unintended purchases received media coverage in late 2025 and early 2026, including a legal dispute between Amazon and Perplexity AI over unauthorized automated access to Amazon's marketplace. Second, the general acceleration of AI deployment across consumer-facing applications may have triggered a broader backlash, consistent with patterns observed in prior technology adoption cycles where initial enthusiasm gives way to skepticism as real-world friction emerges.
@@ -167,6 +173,9 @@ Human shoppers read reviews qualitatively, scanning for specific complaints or p
 ### 6.5 The Metadata Penalty
 
 One of the most important findings from the ACES research concerns missing product attributes. When key product specifications were absent from a listing, the agent's probability of selecting that product dropped by 20% to 40% (Kantar, 2025; Columbia/Yale, 2025). Human shoppers can often infer missing information from images, context, or brand familiarity. AI agents, at least in their current form, cannot. This creates a clear competitive advantage for sellers with complete, machine-readable product data and a corresponding disadvantage for smaller sellers or those with less sophisticated catalog management.
+
+![Figure 3: AI Agent Selection Bias](selection_bias.png)
+<em class="caption">Figure 3. Selection probability shifts based on product listing attributes.</em>
 
 ### 6.6 Model-Specific Behavior
 
