@@ -8,7 +8,7 @@
 ## Abstract
 [A concise summary of the paper, covering the background, main argument, and conclusion.]
 
-_**Index Terms**_: [keyword1, keyword2, keyword3]
+_**Keywords**_: [keyword1, keyword2, keyword3]
 
 ---
 

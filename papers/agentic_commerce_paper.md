@@ -11,7 +11,7 @@
 
 A new class of AI-powered software agents is beginning to shop, compare, and purchase products on behalf of human consumers. This development, broadly termed "agentic commerce," moves beyond recommendation engines and chatbots into territory where algorithms autonomously execute financial transactions. Industry projections from McKinsey, Bain, and Morgan Stanley place the U.S. market for agent-mediated purchases between $190 billion and $1 trillion by 2030. Yet consumer sentiment data from Riskified's 2025-2026 surveys reveals a widening trust deficit, with 55% of consumers reporting discomfort with autonomous AI purchases by early 2026, up sharply from late 2025. At the same time, new infrastructure is being built at speed. Mastercard, Visa, Stripe, and Google have each launched payment protocols and token frameworks designed specifically for agent-initiated transactions. Experimental research from Columbia and Yale universities demonstrates that AI shopping agents exhibit measurable selection biases, including position effects, badge sensitivity, and heavy reliance on structured metadata, all of which differ substantially from human shopping behavior. This paper brings together evidence across market forecasting, consumer psychology, payment infrastructure, agent behavior research, and legal scholarship to argue that the transition to agentic commerce amounts to a structural reorganization of digital markets. It introduces new forms of information imbalance, moves competitive advantage away from brand equity and toward data completeness, and raises unresolved questions around liability, market concentration, and consumer autonomy that existing regulatory frameworks are not equipped to address.
 
-_**Index Terms**_: agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, digital commerce infrastructure, algorithmic competition, payment protocols
+_**Keywords**_: agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, digital commerce infrastructure, algorithmic competition, payment protocols
 
 ---
 
@@ -70,7 +70,7 @@ These projections should be read with appropriate caution. The definitions used 
 | Gartner (2024) | 15B machine customers | Connected products with potential to act as autonomous buyers |
 
 ![Figure 1: U.S. Agentic Commerce Market Size by 2030](market_projections.png)
-<em class="caption">Figure 1. Market projections from major consulting firms. Note the variation in scope.</em>
+<em class="caption">Figure 1. Market projections from major consulting firms. Note the variation in scope. (Sources: McKinsey, Bain, Morgan Stanley)</em>
 
 ---
 
@@ -176,7 +176,7 @@ Human shoppers read reviews qualitatively, scanning for specific complaints or p
 One of the most important findings from the ACES research concerns missing product attributes. When key product specifications were absent from a listing, the agent's probability of selecting that product dropped by 20% to 40% (Kantar, 2025; Columbia/Yale, 2025). Human shoppers can often infer missing information from images, context, or brand familiarity. AI agents, at least in their current form, cannot. This creates a clear competitive advantage for sellers with complete, machine-readable product data and a corresponding disadvantage for smaller sellers or those with less sophisticated catalog management.
 
 ![Figure 3: AI Agent Selection Bias](selection_bias.png)
-<em class="caption">Figure 3. Selection probability shifts based on product listing attributes.</em>
+<em class="caption">Figure 3. Selection probability shifts based on product listing attributes. (Source: ACES Framework, Columbia/Yale)</em>
 
 ### 6.6 Model-Specific Behavior
 

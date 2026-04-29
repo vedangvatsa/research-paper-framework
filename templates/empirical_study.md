@@ -8,7 +8,7 @@
 ## Abstract
 [A concise summary covering the research question, methodology, key results, and conclusion.]
 
-_**Index Terms**_: [keyword1, keyword2, keyword3]
+_**Keywords**_: [keyword1, keyword2, keyword3]
 
 ---
 
