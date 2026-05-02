@@ -1,4 +1,4 @@
-# Agentic Commerce and the Structural Reorganization of Digital Markets: A Quantitative Analysis of Infrastructure, Consumer Trust, and Algorithmic Selection Dynamics
+# Agentic Commerce and the Structural Reorganization of Digital Markets
 
 <div class="author-info">
 **Vedang Ratan Vatsa**<br>
@@ -9,7 +9,7 @@
 
 ## Abstract
 
-A new class of AI-powered software agents is beginning to autonomously research, compare, negotiate, and purchase products on behalf of human consumers. This paper presents a multi-method quantitative analysis of the agentic commerce transition across four dimensions: market sizing, consumer trust dynamics, algorithmic selection behavior, and regulatory preparedness. Using Monte Carlo simulation (n = 10,000 trials) with triangular and normal input distributions, we estimate the U.S. agentic commerce market at $127B (median) by 2030, with a 90% confidence interval of [$52B, $247B]. Logistic S-curve modeling of technology adoption patterns, calibrated against historical mobile commerce and social commerce diffusion data, projects agentic commerce penetration at 8% to 18% of total e-commerce transactions by 2030. Analysis of Riskified's longitudinal survey data (Q4 2025, Q1 2026) reveals a statistically notable 25-percentage-point decline in consumer comfort with autonomous AI purchases over a single quarter, from 70% to 45%. Experimental data from the Columbia-Yale ACES framework demonstrates that AI shopping agents exhibit measurable and consistent selection biases, with products carrying an "Overall Pick" badge receiving a +35% selection probability boost (SE = 4.2%), while products with missing metadata attributes suffer a -32% penalty (SE = 4.5%). OLS regression on simulated ACES-derived product attribute data yields a strong linear relationship between metadata completeness and agent selection probability (R-squared = 0.87, p < 0.001). Cross-jurisdictional regulatory analysis, scored across five governance dimensions, finds the EU AI Act at 3.4/5.0 readiness versus 1.96/5.0 for the United States, exposing a governance gap at the precise moment when payment networks (Mastercard Agent Pay, Stripe/OpenAI ACP, Google UCP) are deploying agent-native transaction infrastructure. These findings collectively indicate that agentic commerce represents a structural market reorganization that redistributes competitive advantage from brand equity to data completeness, introduces new vectors for demand concentration, and outpaces existing legal and regulatory frameworks.
+A new class of AI-powered software agents is beginning to autonomously research, compare, negotiate, and purchase products on behalf of human consumers. This paper presents a multi-method quantitative analysis of the agentic commerce transition across four dimensions, namely market sizing, consumer trust dynamics, algorithmic selection behavior, and regulatory preparedness. Using Monte Carlo simulation (n = 10,000 trials) with triangular and normal input distributions, we estimate the U.S. agentic commerce market at $127B (median) by 2030, with a 90% confidence interval of [$52B, $247B]. Logistic S-curve modeling of technology adoption patterns, calibrated against historical mobile commerce and social commerce diffusion data, projects agentic commerce penetration at 8% to 18% of total e-commerce transactions by 2030. Analysis of Riskified's longitudinal survey data (Q4 2025, Q1 2026) reveals a statistically notable 25-percentage-point decline in consumer comfort with autonomous AI purchases over a single quarter, from 70% to 45%. Experimental data from the Columbia-Yale ACES framework demonstrates that AI shopping agents exhibit measurable and consistent selection biases, with products carrying an "Overall Pick" badge receiving a +35% selection probability boost (SE = 4.2%), while products with missing metadata attributes suffer a -32% penalty (SE = 4.5%). OLS regression on simulated ACES-derived product attribute data yields a strong linear relationship between metadata completeness and agent selection probability (R-squared = 0.87, p < 0.001). Cross-jurisdictional regulatory analysis, scored across five governance dimensions, finds the EU AI Act at 3.4/5.0 readiness versus 1.96/5.0 for the United States, while payment networks (Mastercard Agent Pay, Stripe/OpenAI ACP, Google UCP) are deploying agent-native transaction infrastructure. These findings, taken together, indicate that agentic commerce amounts to a structural market reorganization that moves competitive advantage from brand equity to data completeness, opens new paths toward demand concentration, and outpaces existing legal and regulatory frameworks.
 
 _**Keywords**_: agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, algorithmic selection bias, Monte Carlo simulation, technology adoption curves, payment protocols, regulatory analysis
 
@@ -31,7 +31,7 @@ The paper proceeds as follows. Section 2 defines agentic commerce and introduces
 
 The term "agentic commerce" has been used loosely in industry reports since 2024, often conflated with conversational AI assistants or AI-powered product recommendations. A more precise definition is necessary.
 
-Agentic commerce refers to commercial transactions in which an AI agent, operating with some degree of autonomy, performs one or more of the following actions on behalf of a human principal: product discovery, evaluation and comparison, price negotiation, purchase execution, and post-purchase management (returns, reorders, subscription management). The defining characteristic is that the agent acts, rather than merely advises.
+Agentic commerce refers to commercial transactions in which an AI agent, operating with some degree of autonomy, performs one or more of the following actions on behalf of a human principal, including product discovery, evaluation and comparison, price negotiation, purchase execution, and post-purchase management (returns, reorders, subscription management). The defining characteristic is that the agent acts, rather than merely advises.
 
 ### 2.1 Autonomy Taxonomy
 
@@ -85,7 +85,7 @@ To produce an independent estimate that accounts for parameter uncertainty, we c
 - Average transaction value: Normal(mean=$85, std=$20), clipped to [$30, $200]
 - Addressable transaction volume: Triangular(min=8B, mode=12B, max=18B transactions)
 
-Market size is computed as: Adoption Rate x Average Transaction Value x Addressable Transactions.
+Market size is computed as Adoption Rate x Average Transaction Value x Addressable Transactions.
 
 **Table 3. Monte Carlo Simulation Results (n = 10,000)**
 
@@ -128,11 +128,11 @@ For AI agents to conduct transactions at scale, they need infrastructure that do
 
 ### 4.1 Payment Protocols and Tokenization
 
-Mastercard launched Agent Pay in early 2026 as a dedicated payment infrastructure for AI-initiated transactions (Mastercard, 2026). The system introduces "Agentic Tokens," scope-limited credentials that do not expose primary account numbers. Mastercard also introduced a "Know Your Agent" governance framework, under which AI agents must be registered and verified before they can participate in the payment network.
+Mastercard launched Agent Pay in April 2025 as a dedicated payment infrastructure for AI-initiated transactions (Mastercard, 2025). The system introduces "Agentic Tokens," scope-limited credentials that do not expose primary account numbers. Mastercard also introduced a "Know Your Agent" governance framework, under which AI agents must be registered and verified before they can participate in the payment network.
 
 Stripe and OpenAI jointly developed the Agentic Commerce Protocol (ACP), released as an open-source standard (Stripe/OpenAI, 2025). ACP defines how AI agents coordinate checkouts, share payment credentials securely, and communicate transaction intent with merchant systems.
 
-Google introduced two complementary programs: the Universal Commerce Protocol (UCP) for agent-merchant communication on inventory, pricing, and checkout, and the Agent Payments Protocol (AP2), developed with Mastercard and PayPal, for payment authorization using signed mandates (Google, 2025).
+Google introduced two complementary programs. The Universal Commerce Protocol (UCP) handles communication between agents and merchant backends for inventory, pricing, and checkout. The Agent Payments Protocol (AP2), developed with Mastercard and PayPal, manages payment authorization using signed mandates (Google, 2025).
 
 Visa launched the Trusted Agent Protocol, focusing on authenticated, no-code transactions for AI agents (Visa, 2025).
 
@@ -140,7 +140,7 @@ Visa launched the Trusted Agent Protocol, focusing on authenticated, no-code tra
 
 | Protocol | Developer(s) | Key Feature | Status |
 |---|---|---|---|
-| Agent Pay | Mastercard | Agentic Tokens, Know Your Agent registry | Launched Q1 2026 |
+| Agent Pay | Mastercard | Agentic Tokens, Know Your Agent registry | Launched April 2025 |
 | ACP | Stripe, OpenAI | Open-source, platform-agnostic checkout | Released 2025 |
 | UCP | Google | Agent-merchant inventory/pricing/checkout | Released 2025 |
 | AP2 | Google, Mastercard, PayPal | Signed payment mandates | Released 2025 |
@@ -167,7 +167,7 @@ Dispute resolution is another area without clear infrastructure. When an AI agen
 
 ### 5.1 Longitudinal Survey Evidence
 
-The most detailed publicly available data on consumer attitudes toward agentic commerce comes from Riskified, which conducted two surveys: Q4 2025 and Q1 2026. The results reveal a sharp reversal in consumer sentiment.
+The most detailed publicly available data on consumer attitudes toward agentic commerce comes from Riskified, which conducted two surveys in Q4 2025 and Q1 2026. The results reveal a sharp reversal in consumer sentiment.
 
 **Table 6. Consumer Trust Metrics (Riskified Surveys 2025-2026)**
 
@@ -201,7 +201,7 @@ Trust and adoption vary considerably across demographic cohorts. Aggregate data 
 | Gen X | 44-59 | 39% | 31% | 8 pp |
 | Boomers | 60+ | 22% | 18% | 4 pp |
 
-The trust-usage gap (the difference between using AI for research and trusting AI to make purchases) remains relatively consistent at 8-10 percentage points for younger cohorts but narrows to 4 points for Boomers. This narrowing may reflect a self-selection effect: the smaller number of older consumers who adopt AI tools at all tend to be more technologically confident.
+The trust-usage gap (the difference between using AI for research and trusting AI to make purchases) remains relatively consistent at 8-10 percentage points for younger cohorts but narrows to 4 points for Boomers. This narrowing may reflect a self-selection effect. The smaller number of older consumers who adopt AI tools at all tend to be more technologically confident.
 
 ![Fig. 6: Demographic Trust Breakdown](demographic_trust.png)
 <em class="caption">Fig. 6. AI shopping adoption and trust by demographic cohort. Note the consistent trust-usage gap across younger generations.</em>
@@ -214,7 +214,7 @@ This finding implies that agent adoption is likely to be uneven, concentrated fi
 
 ---
 
-## 6. AI Agent Selection Behavior: Experimental Evidence and Regression Analysis
+## 6. AI Agent Selection Behavior, Experimental Evidence, and Regression Analysis
 
 ### 6.1 The ACES Framework
 
@@ -240,7 +240,7 @@ The "Sponsored" penalty is particularly consequential. Sponsored product placeme
 ![Fig. 3: AI Agent Selection Bias](selection_bias.png)
 <em class="caption">Fig. 3. Selection probability changes based on product listing attributes, with error bars representing standard error. (Source: ACES Framework, Columbia/Yale)</em>
 
-### 6.3 Metadata Completeness and Selection: OLS Regression Analysis
+### 6.3 Metadata Completeness and Selection via OLS Regression
 
 To quantify the relationship between metadata completeness and agent selection probability, we performed OLS regression on simulated product-level data calibrated to ACES findings. The dataset consists of 60 product observations with metadata completeness scores ranging from 20% to 100%.
 
@@ -281,7 +281,7 @@ Different AI models prioritized product attributes with varying intensity. In so
 
 ### 7.1 The Data Completeness Advantage
 
-In human-directed commerce, brand recognition, emotional advertising, and visual design drive purchasing decisions. In agent-mediated commerce, these factors become largely irrelevant. An AI agent does not respond to a clever tagline or an aspirational brand image. It responds to structured data: specifications, ratings, review volume, price, availability, and return policies.
+In human-directed commerce, brand recognition, emotional advertising, and visual design drive purchasing decisions. In agent-mediated commerce, these factors become largely irrelevant. An AI agent does not respond to a clever tagline or an aspirational brand image. It responds to structured data, specifically specifications, ratings, review volume, price, availability, and return policies.
 
 Products with what Kantar calls a "Golden Record" (high attribute completeness across all relevant fields) are selected at much higher rates than products with gaps in their metadata, regardless of brand recognition (Kantar, 2025). Product data management, historically treated as a back-office function, becomes a front-line competitive capability.
 
@@ -303,7 +303,7 @@ If seller-side AI agents learn to adjust pricing and product descriptions to exp
 
 ### 8.1 Traditional Agency Law
 
-Under traditional agency law, the human who deploys an AI agent (the "principal") is generally liable for transactions the agent conducts within the scope of its delegated authority (University of Chicago Law, 2025). The concept of "apparent authority" adds complexity: if a merchant reasonably believes an agent has authority based on the principal's conduct, the principal may be held liable even if the agent acted outside its actual instructions.
+Under traditional agency law, the human who deploys an AI agent (the "principal") is generally liable for transactions the agent conducts within the scope of its delegated authority (University of Chicago Law, 2025). The concept of "apparent authority" adds complexity. If a merchant reasonably believes an agent has authority based on the principal's conduct, the principal may be held liable even if the agent acted outside its actual instructions.
 
 ### 8.2 Electronic Transaction Statutes
 
@@ -374,7 +374,7 @@ We conducted a qualitative risk assessment of eight primary risks associated wit
 | Regulatory Fragmentation | 0.75 | 0.50 | 0.38 | High |
 | Protocol Incompatibility | 0.50 | 0.40 | 0.20 | Medium |
 
-Liability ambiguity and unauthorized purchases rank as the two highest risks. Both carry risk scores above 0.50, indicating that they are likely to occur and, when they do, to produce considerable harm. These two risks are also interconnected: ambiguity in liability frameworks makes it harder to resolve disputes from unauthorized purchases, which in turn erodes consumer trust (Section 5).
+Liability ambiguity and unauthorized purchases rank as the two highest risks. Both carry risk scores above 0.50, indicating that they are likely to occur and, when they do, to produce considerable harm. These two risks are also connected. Ambiguity in liability frameworks makes it harder to resolve disputes from unauthorized purchases, which in turn erodes consumer trust (Section 5).
 
 ![Fig. 7: Risk Heat Map](risk_heatmap.png)
 <em class="caption">Fig. 7. Risk matrix for agentic commerce. Bubble size is proportional to the composite risk score (probability x impact).</em>
@@ -395,7 +395,7 @@ Fourth, the regulatory analysis in Section 9 uses qualitative scoring. Future wo
 
 Fifth, the legal analysis draws primarily on U.S. and EU law. Other major markets (India, Japan, Southeast Asia) may follow different trajectories.
 
-Several areas deserve further research: studies of actual agent-mediated purchases in the wild, longitudinal trust tracking across product categories, economic modeling of demand concentration under varying agent adoption levels, and legal analysis across additional jurisdictions.
+Several areas deserve further research, including studies of actual agent-mediated purchases in the wild, longitudinal trust tracking across product categories, economic modeling of demand concentration under varying agent adoption levels, and legal analysis across additional jurisdictions.
 
 ---
 
@@ -403,7 +403,7 @@ Several areas deserve further research: studies of actual agent-mediated purchas
 
 The transition from human-directed to agent-mediated commerce is not a hypothetical scenario. The infrastructure is being built by the largest payment networks and technology platforms in the world. The market projections, confirmed by our independent Monte Carlo simulation (median $127B, 90% CI [$52B, $247B]), indicate that agent-mediated transactions could represent a meaningful share of digital commerce by the end of this decade.
 
-Our analysis demonstrates five key findings. First, market size estimates converge on the hundreds-of-billions range, but definitions vary enough that precise point estimates are unreliable. Monte Carlo simulation produces a more honest range. Second, consumer trust eroded sharply between Q4 2025 and Q1 2026, with a 25-percentage-point decline in comfort that outpaces any comparable technology trust reversal in recent history. Third, AI agents select products based on metadata completeness and structured signals (badges, ratings) rather than brand equity, with R-squared = 0.871 in our regression model. This represents a competitive realignment away from marketing and toward data operations. Fourth, the risk of demand concentration is real: HHI scores for agent-mediated product selection are 2-4x higher than for equivalent human shopping sessions. Fifth, regulatory readiness lags infrastructure deployment, with the United States scoring below the midpoint (1.96/5.0) on our governance assessment despite hosting most of the infrastructure buildout.
+Our analysis produces five key findings. First, market size estimates converge on the hundreds-of-billions range, but definitions vary enough that precise point estimates are unreliable. Monte Carlo simulation produces a more honest range. Second, consumer trust eroded sharply between Q4 2025 and Q1 2026, with a 25-percentage-point decline in comfort that outpaces any comparable technology trust reversal in recent history. Third, AI agents select products based on metadata completeness and structured signals (badges, ratings) rather than brand equity, with R-squared = 0.871 in our regression model. This amounts to a competitive realignment away from marketing and toward data operations. Fourth, demand concentration in agent-mediated markets appears measurably higher than in human-directed markets, with HHI scores for agent product selection running 2-4x above equivalent human shopping sessions. Fifth, regulatory readiness trails infrastructure deployment, with the United States scoring below the midpoint (1.96/5.0) on our governance assessment despite hosting most of the infrastructure buildout.
 
 The gap between the speed of infrastructure deployment and the pace of regulatory, legal, and scholarly response is wide. Closing it will require sustained empirical research, cross-disciplinary collaboration between technologists and legal scholars, and regulatory frameworks that can adapt to a market structure in which the buyer is increasingly not a person.
 
@@ -419,13 +419,13 @@ Bain and Company (2025). Agentic Commerce. How AI Agents Will Reshape Online Ret
 
 Capgemini Research Institute (2025). Consumer Attitudes Toward AI in Retail. Capgemini Insights. [https://www.capgemini.com/insights/research-library/ai-retail](https://www.capgemini.com/insights/research-library/ai-retail)
 
-Columbia University and Yale University (2025). What Is Your AI Agent Buying? The ACES Framework for Evaluating AI Shopping Agent Behavior. Working Paper, Columbia Business School. [https://arxiv.org/abs/2502.18104](https://arxiv.org/abs/2502.18104)
+Columbia University and Yale University (2025). What Is Your AI Agent Buying? Evaluation, Biases, Model Dependence, and Emerging Implications for Agentic E-Commerce. arXiv preprint. [https://arxiv.org/abs/2508.02630](https://arxiv.org/abs/2508.02630)
 
 EU AI Act (2024). Regulation (EU) 2024/1689 of the European Parliament and of the Council. Official Journal of the European Union. [https://eur-lex.europa.eu/eli/reg/2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689)
 
-Frank, D.A., Folwarczny, M., and Otterbring, T. (2026). AI Autonomy and Consumer Adoption. The Moderating Role of Scarcity. Psychology and Marketing, 43(5). [https://pure.au.dk/portal/en/publications/ai-autonomy-consumer-adoption](https://pure.au.dk/portal/en/publications/ai-autonomy-consumer-adoption)
+Frank, D.A., Folwarczny, M., and Otterbring, T. (2026). Consumer Acceptance of High-Autonomy AI Assistants Is Driven by Perceived Benefits in Online Shopping Settings Characterized by Scarcity. Psychology and Marketing, 43(3), 538-555. [https://doi.org/10.1002/mar.22146](https://doi.org/10.1002/mar.22146)
 
-Gartner (2024). Predicts 2025. Machine Customers Will Transform Commercial Strategy. Gartner Research. [https://www.gartner.com/en/articles/machine-customers](https://www.gartner.com/en/articles/machine-customers)
+Gartner (2024). Predicts 2025. Machine Customers Will Transform Commercial Strategy. Gartner Research. [https://www.gartner.com/en/articles/what-are-machine-customers](https://www.gartner.com/en/articles/what-are-machine-customers)
 
 Google (2025). Universal Commerce Protocol (UCP) and Agent Payments Protocol (AP2). Google for Developers Blog. [https://developers.googleblog.com/en/universal-commerce-protocol](https://developers.googleblog.com/en/universal-commerce-protocol)
 
@@ -433,13 +433,13 @@ Jones Walker LLP (2025). The Liability Squeeze. Contractual Risks of Deploying A
 
 Kantar (2025). How AI Agents Evaluate Products. Metadata Quality, Attribute Completeness, and Selection Probability. Kantar Commerce Insights. [https://www.kantar.com/inspiration/technology/ai-agents-commerce](https://www.kantar.com/inspiration/technology/ai-agents-commerce)
 
-Mastercard (2026). Agent Pay. Enabling Secure AI-Initiated Commerce. Mastercard Newsroom. [https://www.mastercard.com/news/press/2026/agent-pay](https://www.mastercard.com/news/press/2026/agent-pay)
+Mastercard (2025). Mastercard Launches Agent Pay to Secure AI-Initiated Commerce. Mastercard Newsroom. [https://www.mastercard.com/news/press/2025/mastercard-agent-pay](https://www.mastercard.com/news/press/2025/mastercard-agent-pay)
 
 McKinsey and Company (2025). Agentic Commerce. The Next Frontier in Retail. McKinsey Digital. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/agentic-commerce)
 
 McKinsey and Company (2026). The Automation Curve in Agentic Commerce. McKinsey Digital. [https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-automation-curve-in-agentic-commerce](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-automation-curve-in-agentic-commerce)
 
-Mordor Intelligence (2025). Agentic AI in Retail and E-Commerce Market. Size, Share, and Forecast 2025-2031. Mordor Intelligence Industry Report. [https://www.mordorintelligence.com/industry-reports/agentic-ai-retail](https://www.mordorintelligence.com/industry-reports/agentic-ai-retail)
+Mordor Intelligence (2025). Agentic AI in Retail and E-Commerce Market. Size, Share, and Forecast 2025-2031. Mordor Intelligence Industry Report. [https://www.mordorintelligence.com/industry-reports/agentic-ai-in-retail-and-e-commerce-market](https://www.mordorintelligence.com/industry-reports/agentic-ai-in-retail-and-e-commerce-market)
 
 Morgan Lewis (2025). Algorithmic Pricing and Antitrust Risk in the Age of AI Agents. Morgan Lewis LawFlash. [https://www.morganlewis.com/pubs/algorithmic-pricing-antitrust-ai](https://www.morganlewis.com/pubs/algorithmic-pricing-antitrust-ai)
 
@@ -447,9 +447,9 @@ Morgan Stanley (2025). Agentic Shoppers. Sizing the U.S. E-Commerce Opportunity 
 
 Quad (2025). Consumer AI Trust Survey. Generational Differences in AI Shopping Adoption. Quad Marketing Report. [https://www.quad.com/insights/ai-trust-survey](https://www.quad.com/insights/ai-trust-survey)
 
-Riskified (2025). Agentic Commerce Survey. Consumer Attitudes Toward AI-Driven Purchasing, Q4 2025. Riskified Research. [https://www.riskified.com/resources/agentic-commerce-survey-2025](https://www.riskified.com/resources/agentic-commerce-survey-2025)
+Riskified (2025). Agentic Commerce Survey. Consumer Attitudes Toward AI-Driven Purchasing, Q4 2025. Riskified Research. [https://www.riskified.com/blog/agentic-commerce/](https://www.riskified.com/blog/agentic-commerce/)
 
-Riskified (2026). Agentic Commerce Pulse. Consumer Trust and Sentiment, Q1 2026. Riskified Research. [https://www.riskified.com/resources/agentic-commerce-pulse-2026](https://www.riskified.com/resources/agentic-commerce-pulse-2026)
+Riskified (2026). Agentic Commerce Pulse. Consumer Trust and Sentiment, Q1 2026. Via Business Wire. [https://www.businesswire.com/news/home/20260427038200/en/](https://www.businesswire.com/news/home/20260427038200/en/)
 
 Stanford Law School (2025). AI Agents, Electronic Contracts, and the Scope of Delegated Authority Under UETA. Stanford Technology Law Review Working Paper. [https://law.stanford.edu/publications/ai-agents-ueta](https://law.stanford.edu/publications/ai-agents-ueta)
 
@@ -461,6 +461,6 @@ The Regulatory Review (2025). Algorithmic Collusion and the Challenge for Antitr
 
 University of Chicago Law (2025). Agency Law and Artificial Intelligence. Who Is the Principal When the Agent Is a Machine? University of Chicago Law Review Online. [https://lawreview.uchicago.edu/online-archive/ai-agency-law](https://lawreview.uchicago.edu/online-archive/ai-agency-law)
 
-Visa (2025). Trusted Agent Protocol. Secure Payment Authentication for AI-Initiated Commerce. Visa Developer Center. [https://developer.visa.com/trusted-agent-protocol](https://developer.visa.com/trusted-agent-protocol)
+Visa (2025). Visa Intelligent Commerce. Visa Developer Center. [https://usa.visa.com/solutions/ai-and-analytics/intelligent-commerce.html](https://usa.visa.com/solutions/ai-and-analytics/intelligent-commerce.html)
 
 ---
