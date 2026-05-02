@@ -163,87 +163,7 @@ plt.tight_layout()
 plt.savefig('adoption_scurve.png')
 plt.close()
 
-# ════════════════════════════════════════════
-# FIGURE 5: Advanced Multi-Factor Monte Carlo Simulation
-# ════════════════════════════════════════════
-np.random.seed(42)
-n_sim = 10000
-
-# 1. Sector-specific Addressable Transactions (Billions) and AOV (USD)
-# Sectors: Grocery/FMCG, Electronics, Apparel, Travel/Experiences
-vol_grocery = np.random.triangular(4.0, 6.0, 8.0, n_sim)
-aov_grocery = np.random.normal(45, 10, n_sim)
-
-vol_elec = np.random.triangular(1.5, 2.5, 3.5, n_sim)
-aov_elec = np.random.normal(250, 40, n_sim)
-
-vol_apparel = np.random.triangular(2.0, 3.0, 4.5, n_sim)
-aov_apparel = np.random.normal(85, 20, n_sim)
-
-vol_travel = np.random.triangular(0.5, 1.0, 1.5, n_sim)
-aov_travel = np.random.normal(450, 80, n_sim)
-
-# 2. Baseline Adoption Trajectories (Segmented by Sector Friction)
-# Grocery is high frequency/low friction; Apparel is high friction (fit/style)
-adopt_grocery = np.random.triangular(0.10, 0.20, 0.35, n_sim)
-adopt_elec = np.random.triangular(0.05, 0.15, 0.25, n_sim)
-adopt_apparel = np.random.triangular(0.02, 0.08, 0.15, n_sim)
-adopt_travel = np.random.triangular(0.05, 0.12, 0.20, n_sim)
-
-# 3. Exogenous Shocks
-# Regulatory Shock: 30% chance of strict liability rules reducing adoption by 15-40%
-reg_shock_prob = np.random.uniform(0, 1, n_sim)
-reg_penalty = np.where(reg_shock_prob < 0.30, np.random.uniform(0.60, 0.85, n_sim), 1.0)
-
-# Macro Consumer Trust Deficit: General drag on adoption across all sectors
-trust_drag = np.random.beta(5, 2, n_sim) # Skewed toward high trust, but with tail risk
-
-# 4. Agent Infrastructure / LLM API Costs per transaction (USD)
-api_cost = np.random.uniform(0.05, 0.45, n_sim)
-
-# Calculate Net Market Volume
-gross_grocery = (vol_grocery * aov_grocery) * adopt_grocery
-gross_elec = (vol_elec * aov_elec) * adopt_elec
-gross_apparel = (vol_apparel * aov_apparel) * adopt_apparel
-gross_travel = (vol_travel * aov_travel) * adopt_travel
-
-gross_market = (gross_grocery + gross_elec + gross_apparel + gross_travel) * reg_penalty * trust_drag
-
-# Subtract API/Inference Costs across all successful agent transactions
-total_agent_txns = (vol_grocery * adopt_grocery + vol_elec * adopt_elec + 
-                    vol_apparel * adopt_apparel + vol_travel * adopt_travel) * reg_penalty * trust_drag
-net_market_size = gross_market - (total_agent_txns * api_cost)
-
-fig, ax = plt.subplots(figsize=(5.5, 3.5))
-n, bins, patches = ax.hist(net_market_size, bins=80, color=C_BLUE_LIGHT, edgecolor='white',
-                           linewidth=0.3, density=True, alpha=0.8)
-
-# Fit normal distribution overlay
-mu, std = norm.fit(net_market_size)
-xmin, xmax = ax.get_xlim()
-x_fit = np.linspace(xmin, xmax, 200)
-p = norm.pdf(x_fit, mu, std)
-ax.plot(x_fit, p, color=C_BLUE, linewidth=1.5)
-
-# Percentile lines
-p5 = np.percentile(net_market_size, 5)
-p50 = np.percentile(net_market_size, 50)
-p95 = np.percentile(net_market_size, 95)
-for pct, val, lbl in [(5, p5, '5th'), (50, p50, '50th'), (95, p95, '95th')]:
-    ax.axvline(val, color=C_RED if pct == 50 else C_GRAY, linewidth=1, linestyle='--')
-    ax.text(val, ax.get_ylim()[1] * 0.92, f'{lbl}: ${val:.0f}B',
-            ha='center', fontsize=7, rotation=0,
-            bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor=C_GRAY, alpha=0.8))
-
-ax.set_xlabel('Net Agentic Commerce Market Size by 2030 (USD Billions)')
-ax.set_ylabel('Probability Density')
-ax.set_title(f'Fig. 5. Multi-Variate Monte Carlo Simulation (n={n_sim:,})')
-ax.text(0.98, 0.75, f'Mean: ${mu:.0f}B\nStd: ${std:.0f}B\n90% CI: [${p5:.0f}B, ${p95:.0f}B]\nSectors: 4 | API Cost Factored',
-        transform=ax.transAxes, fontsize=7, ha='right', va='top',
-        bbox=dict(boxstyle='round', facecolor='#f8f8f8', edgecolor=C_GRAY))
-plt.tight_layout()
-plt.savefig('monte_carlo.png')
-plt.close()
+# Figure 5 (Monte Carlo) removed due to synthetic data constraints
 
 # ════════════════════════════════════════════
 # FIGURE 6: Demographic Trust Breakdown
@@ -380,55 +300,6 @@ plt.tight_layout()
 plt.savefig('infrastructure_timeline.png')
 plt.close()
 
-# ════════════════════════════════════════════
-# FIGURE 10: Regression - Metadata Completeness vs Selection
-# ════════════════════════════════════════════
-np.random.seed(123)
-n_products = 60
-metadata_completeness = np.random.uniform(20, 100, n_products)
-noise = np.random.normal(0, 8, n_products)
-selection_prob = 0.45 * metadata_completeness + 5 + noise
-selection_prob = np.clip(selection_prob, 0, 100)
-
-# OLS regression
-coeffs = np.polyfit(metadata_completeness, selection_prob, 1)
-poly = np.poly1d(coeffs)
-x_fit = np.linspace(15, 105, 100)
-y_fit = poly(x_fit)
-
-# Compute R-squared
-y_pred = poly(metadata_completeness)
-ss_res = np.sum((selection_prob - y_pred) ** 2)
-ss_tot = np.sum((selection_prob - np.mean(selection_prob)) ** 2)
-r_squared = 1 - (ss_res / ss_tot)
-
-# Standard error of prediction
-n = len(metadata_completeness)
-se = np.sqrt(ss_res / (n - 2))
-x_mean = np.mean(metadata_completeness)
-sx2 = np.sum((metadata_completeness - x_mean) ** 2)
-ci_band = 1.96 * se * np.sqrt(1/n + (x_fit - x_mean)**2 / sx2)
-
-fig, ax = plt.subplots(figsize=(5.5, 3.5))
-ax.scatter(metadata_completeness, selection_prob, s=25, color=C_BLUE, alpha=0.6,
-           edgecolors='white', linewidth=0.3, label='Product Observations')
-ax.plot(x_fit, y_fit, color=C_RED, linewidth=1.5, label=f'OLS Fit (R$^2$ = {r_squared:.3f})')
-ax.fill_between(x_fit, y_fit - ci_band, y_fit + ci_band, color=C_RED_LIGHT, alpha=0.15,
-                label='95% Confidence Interval')
-
-ax.set_xlabel('Metadata Completeness Score (%)')
-ax.set_ylabel('Agent Selection Probability (%)')
-ax.set_title('Fig. 10. Metadata Completeness vs. Agent Selection Probability')
-ax.legend(loc='upper left', fontsize=7)
-
-# Equation annotation
-ax.text(0.98, 0.15, f'$y = {coeffs[0]:.3f}x + {coeffs[1]:.2f}$\n'
-        f'$R^2 = {r_squared:.3f}$, $n = {n}$\n$SE = {se:.2f}$',
-        transform=ax.transAxes, fontsize=7, ha='right', va='bottom',
-        bbox=dict(boxstyle='round', facecolor='#f8f8f8', edgecolor=C_GRAY))
-
-plt.tight_layout()
-plt.savefig('metadata_regression.png')
-plt.close()
+# Figure 10 (Metadata Regression) removed due to synthetic data constraints
 
 print("All 10 figures generated successfully.")
