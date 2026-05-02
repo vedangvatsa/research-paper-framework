@@ -1,4 +1,4 @@
-# Post-Search Discovery Networks and the End of SEO
+# Post-Search Discovery Networks and the Evolution of Optimization
 
 <div class="author-info">
 **Vedang Ratan Vatsa**<br>
@@ -9,7 +9,7 @@
 
 ## Abstract
 
-The digital economy has relied on traditional search engine optimization and click-through attribution as its primary economic engine for over two decades. This paper presents a structural analysis of the transition from traditional search engines to generative "answer engines." Using verifiable industry forecasts and recent corporate licensing agreements, the analysis tracks the economic consequences of this shift. Gartner projects a 25-percent decline in traditional search volume by 2026 as consumers migrate to AI chatbots and virtual agents. This structural decline breaks the traditional ad-supported web model by satisfying user intent without requiring a click-through to the publisher's domain. In response, publishers and platform operators are pivoting from open-web indexing to proprietary licensing frameworks, evidenced by historic 2024 data partnerships between OpenAI, News Corp, and Reddit. The findings indicate that the discipline of search engine optimization is being rapidly superseded by Answer Engine Optimization (AEO), where visibility is achieved not through algorithmic ranking of hyperlinks but through direct ingestion and attribution within large language models. The paper concludes that this transition effectively ends the era of the open, discoverable web in favor of centralized, licensed discovery networks.
+The digital economy has relied on traditional search engine optimization and click-through attribution as its primary economic engine for over two decades. This paper presents a structural analysis of the transition from traditional search engines to generative "answer engines." Using verifiable industry forecasts and recent corporate licensing agreements, the analysis tracks the economic consequences of this shift. Gartner projects a 25-percent decline in traditional search volume by 2026 as consumers migrate to AI chatbots and virtual agents. This structural decline challenges the traditional ad-supported web model by satisfying user intent without requiring a click-through to the publisher's domain. In response, publishers and platform operators are pivoting from strictly open-web indexing to hybrid proprietary licensing frameworks, evidenced by historic 2024 data partnerships between OpenAI, News Corp, and Reddit. The findings indicate that the discipline of search engine optimization is being rapidly supplemented by Answer Engine Optimization (AEO), where visibility is achieved not just through algorithmic ranking of hyperlinks but through direct ingestion and attribution within large language models. The paper concludes that this transition forces a structural reorganization of the open web, integrating centralized, licensed discovery networks alongside traditional search.
 
 _**Keywords**_: answer engines, SEO, generative AI, publisher licensing, digital economics, search volume
 
@@ -45,7 +45,7 @@ These agreements mark the end of the free-crawling era. Publishers are erecting 
 
 ## 5. Conclusion
 
-The architectural shift from search engines to answer engines is fundamentally altering the economics of the internet. The projected 25-percent drop in traditional search volume by 2026 signals the end of the click-through economy. To survive this transition, publishers are abandoning traditional SEO and open-web indexing in favor of direct data licensing agreements with AI developers. This transition from open discovery to closed, licensed networks ensures that the digital media landscape of the late 2020s will be highly consolidated, deeply integrated with AI infrastructure, and fundamentally different from the web of the past two decades.
+The architectural shift from search engines to answer engines is fundamentally altering the economics of the internet. The projected 25-percent drop in traditional search volume by 2026 signals a fundamental shift in the click-through economy. To survive this transition, publishers are adapting traditional SEO and open-web indexing strategies to include direct data licensing agreements with AI developers. This transition from strictly open discovery to a hybrid of closed, licensed networks ensures that the digital media landscape of the late 2020s will be highly consolidated, deeply integrated with AI infrastructure, and fundamentally different from the web of the past two decades.
 
 ---
 
