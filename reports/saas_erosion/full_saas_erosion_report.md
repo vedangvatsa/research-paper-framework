@@ -5,7 +5,7 @@
 *vedangvats@gmail.com*<br>
 </div>
 
----
+***
 
 ## Abstract
 
@@ -13,7 +13,7 @@ For over two decades, the primary barrier to entry in the Business-to-Business s
 
 _**Keywords**_ AI coding agents, SaaS economics, software engineering, competitive moats, build versus buy, SWE-bench, technical debt, data gravity
 
----
+***
 # 1. Historical Context and the Economic Perimeter of Software Engineering
 
 To understand the magnitude of the disruption facing the Software-as-a-Service industry, one must analyze the historical constraints that formed its economic perimeter. The software industry is unique in modern economic history. It is an industry defined entirely by the friction of human cognition rather than physical manufacturing or material extraction. This friction created the foundational moat for the entire B2B software market.

@@ -5,7 +5,7 @@
 *vedangvats@gmail.com*<br>
 </div>
 
----
+***
 
 ## Abstract
 
@@ -13,4 +13,4 @@ For over two decades, the primary barrier to entry in the Business-to-Business s
 
 _**Keywords**_ AI coding agents, SaaS economics, software engineering, competitive moats, build versus buy, SWE-bench, technical debt, data gravity
 
----
+***
