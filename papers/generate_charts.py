@@ -164,44 +164,81 @@ plt.savefig('adoption_scurve.png')
 plt.close()
 
 # ════════════════════════════════════════════
-# FIGURE 5: Monte Carlo Market Size Simulation
+# FIGURE 5: Advanced Multi-Factor Monte Carlo Simulation
 # ════════════════════════════════════════════
 np.random.seed(42)
 n_sim = 10000
 
-# Parameters: adoption rate (%), avg transaction value ($), addressable transactions (billions)
-adoption_rate = np.random.triangular(0.05, 0.12, 0.25, n_sim)
-avg_txn_value = np.random.normal(85, 20, n_sim)
-avg_txn_value = np.clip(avg_txn_value, 30, 200)
-addressable_txns = np.random.triangular(8, 12, 18, n_sim)  # billions
+# 1. Sector-specific Addressable Transactions (Billions) and AOV (USD)
+# Sectors: Grocery/FMCG, Electronics, Apparel, Travel/Experiences
+vol_grocery = np.random.triangular(4.0, 6.0, 8.0, n_sim)
+aov_grocery = np.random.normal(45, 10, n_sim)
 
-market_size = adoption_rate * avg_txn_value * addressable_txns  # in billions
+vol_elec = np.random.triangular(1.5, 2.5, 3.5, n_sim)
+aov_elec = np.random.normal(250, 40, n_sim)
+
+vol_apparel = np.random.triangular(2.0, 3.0, 4.5, n_sim)
+aov_apparel = np.random.normal(85, 20, n_sim)
+
+vol_travel = np.random.triangular(0.5, 1.0, 1.5, n_sim)
+aov_travel = np.random.normal(450, 80, n_sim)
+
+# 2. Baseline Adoption Trajectories (Segmented by Sector Friction)
+# Grocery is high frequency/low friction; Apparel is high friction (fit/style)
+adopt_grocery = np.random.triangular(0.10, 0.20, 0.35, n_sim)
+adopt_elec = np.random.triangular(0.05, 0.15, 0.25, n_sim)
+adopt_apparel = np.random.triangular(0.02, 0.08, 0.15, n_sim)
+adopt_travel = np.random.triangular(0.05, 0.12, 0.20, n_sim)
+
+# 3. Exogenous Shocks
+# Regulatory Shock: 30% chance of strict liability rules reducing adoption by 15-40%
+reg_shock_prob = np.random.uniform(0, 1, n_sim)
+reg_penalty = np.where(reg_shock_prob < 0.30, np.random.uniform(0.60, 0.85, n_sim), 1.0)
+
+# Macro Consumer Trust Deficit: General drag on adoption across all sectors
+trust_drag = np.random.beta(5, 2, n_sim) # Skewed toward high trust, but with tail risk
+
+# 4. Agent Infrastructure / LLM API Costs per transaction (USD)
+api_cost = np.random.uniform(0.05, 0.45, n_sim)
+
+# Calculate Net Market Volume
+gross_grocery = (vol_grocery * aov_grocery) * adopt_grocery
+gross_elec = (vol_elec * aov_elec) * adopt_elec
+gross_apparel = (vol_apparel * aov_apparel) * adopt_apparel
+gross_travel = (vol_travel * aov_travel) * adopt_travel
+
+gross_market = (gross_grocery + gross_elec + gross_apparel + gross_travel) * reg_penalty * trust_drag
+
+# Subtract API/Inference Costs across all successful agent transactions
+total_agent_txns = (vol_grocery * adopt_grocery + vol_elec * adopt_elec + 
+                    vol_apparel * adopt_apparel + vol_travel * adopt_travel) * reg_penalty * trust_drag
+net_market_size = gross_market - (total_agent_txns * api_cost)
 
 fig, ax = plt.subplots(figsize=(5.5, 3.5))
-n, bins, patches = ax.hist(market_size, bins=80, color=C_BLUE_LIGHT, edgecolor='white',
+n, bins, patches = ax.hist(net_market_size, bins=80, color=C_BLUE_LIGHT, edgecolor='white',
                            linewidth=0.3, density=True, alpha=0.8)
 
 # Fit normal distribution overlay
-mu, std = norm.fit(market_size)
+mu, std = norm.fit(net_market_size)
 xmin, xmax = ax.get_xlim()
 x_fit = np.linspace(xmin, xmax, 200)
 p = norm.pdf(x_fit, mu, std)
 ax.plot(x_fit, p, color=C_BLUE, linewidth=1.5)
 
 # Percentile lines
-p5 = np.percentile(market_size, 5)
-p50 = np.percentile(market_size, 50)
-p95 = np.percentile(market_size, 95)
+p5 = np.percentile(net_market_size, 5)
+p50 = np.percentile(net_market_size, 50)
+p95 = np.percentile(net_market_size, 95)
 for pct, val, lbl in [(5, p5, '5th'), (50, p50, '50th'), (95, p95, '95th')]:
     ax.axvline(val, color=C_RED if pct == 50 else C_GRAY, linewidth=1, linestyle='--')
     ax.text(val, ax.get_ylim()[1] * 0.92, f'{lbl}: ${val:.0f}B',
             ha='center', fontsize=7, rotation=0,
             bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor=C_GRAY, alpha=0.8))
 
-ax.set_xlabel('Estimated U.S. Market Size by 2030 (USD Billions)')
+ax.set_xlabel('Net Agentic Commerce Market Size by 2030 (USD Billions)')
 ax.set_ylabel('Probability Density')
-ax.set_title(f'Fig. 5. Monte Carlo Simulation of Market Size (n={n_sim:,})')
-ax.text(0.98, 0.75, f'Mean: ${mu:.0f}B\nStd: ${std:.0f}B\n90% CI: [${p5:.0f}B, ${p95:.0f}B]',
+ax.set_title(f'Fig. 5. Multi-Variate Monte Carlo Simulation (n={n_sim:,})')
+ax.text(0.98, 0.75, f'Mean: ${mu:.0f}B\nStd: ${std:.0f}B\n90% CI: [${p5:.0f}B, ${p95:.0f}B]\nSectors: 4 | API Cost Factored',
         transform=ax.transAxes, fontsize=7, ha='right', va='top',
         bbox=dict(boxstyle='round', facecolor='#f8f8f8', edgecolor=C_GRAY))
 plt.tight_layout()

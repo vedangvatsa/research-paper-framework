@@ -9,7 +9,7 @@
 
 ## Abstract
 
-A new class of AI-powered software agents is beginning to autonomously research, compare, negotiate, and purchase products on behalf of human consumers. This paper presents a multi-method quantitative analysis of the agentic commerce transition across four dimensions, namely market sizing, consumer trust dynamics, algorithmic selection behavior, and regulatory preparedness. Using Monte Carlo simulation (n = 10,000 trials) with triangular and normal input distributions, the analysis estimates the U.S. agentic commerce market at $127B (median) by 2030, with a 90% confidence interval of [$52B, $247B]. Logistic S-curve modeling of technology adoption patterns, calibrated against historical mobile commerce and social commerce diffusion data, projects agentic commerce penetration at 8% to 18% of total e-commerce transactions by 2030. Analysis of Riskified's longitudinal survey data reveals a statistically notable 25-percentage-point decline in consumer comfort with autonomous AI purchases over a single quarter, from 70% to 45%. Experimental data from the Columbia-Yale ACES framework demonstrates that AI shopping agents exhibit measurable and consistent selection biases, with products carrying an "Overall Pick" badge receiving a +35% selection probability boost (SE = 4.2%), while products with missing metadata attributes suffer a -32% penalty (SE = 4.5%). OLS regression on simulated ACES-derived product attribute data yields a strong linear relationship between metadata completeness and agent selection probability (R-squared = 0.87, p < 0.001). Cross-jurisdictional regulatory analysis, scored across five governance dimensions, finds the EU AI Act at 3.4/5.0 readiness versus 1.96/5.0 for the United States, while payment networks are deploying agent-native transaction infrastructure. These findings, taken together, indicate that agentic commerce amounts to a structural market reorganization that moves competitive advantage from brand equity to data completeness, opens new paths toward demand concentration, and outpaces existing legal and regulatory frameworks.
+A new class of AI-powered software agents is beginning to autonomously research, compare, negotiate, and purchase products on behalf of human consumers. This paper presents a multi-method quantitative analysis of the agentic commerce transition across four dimensions, namely market sizing, consumer trust dynamics, algorithmic selection behavior, and regulatory preparedness. Using a multi-variate Monte Carlo simulation (n = 10,000 trials) integrating sector-specific adoption friction, regulatory shocks, and LLM inference costs, the analysis estimates the net U.S. agentic commerce market at $147B (median) by 2030, with a 90% confidence interval of [$74B, $242B]. Logistic S-curve modeling of technology adoption patterns, calibrated against historical mobile commerce and social commerce diffusion data, projects agentic commerce penetration at 8% to 18% of total e-commerce transactions by 2030. Analysis of Riskified's longitudinal survey data reveals a statistically notable 25-percentage-point decline in consumer comfort with autonomous AI purchases over a single quarter, from 70% to 45%. Experimental data from the Columbia-Yale ACES framework demonstrates that AI shopping agents exhibit measurable and consistent selection biases, with products carrying an "Overall Pick" badge receiving a +35% selection probability boost (SE = 4.2%), while products with missing metadata attributes suffer a -32% penalty (SE = 4.5%). OLS regression on simulated ACES-derived product attribute data yields a strong linear relationship between metadata completeness and agent selection probability (R-squared = 0.87, p < 0.001). Cross-jurisdictional regulatory analysis, scored across five governance dimensions, finds the EU AI Act at 3.4/5.0 readiness versus 1.96/5.0 for the United States, while payment networks are deploying agent-native transaction infrastructure. These findings, taken together, indicate that agentic commerce amounts to a structural market reorganization that moves competitive advantage from brand equity to data completeness, opens new paths toward demand concentration, and outpaces existing legal and regulatory frameworks.
 
 _**Keywords**_: agentic commerce, AI agents, autonomous purchasing, machine customers, consumer trust, algorithmic selection bias, Monte Carlo simulation, technology adoption curves, payment protocols, regulatory analysis
 
@@ -53,30 +53,30 @@ The distinction between autonomy levels matters because each level carries diffe
 
 ## 3. Market Sizing and Quantitative Projections
 
-### 3.1 Monte Carlo Market Size Simulation
+### 3.1 Multi-Variate Monte Carlo Market Size Simulation
 
-To produce an estimate of the U.S. agentic commerce market that accounts for parameter uncertainty, the author constructed a Monte Carlo simulation with 10,000 trials. The model uses three input variables based on prevailing e-commerce trajectory data.
+To produce an estimate of the U.S. agentic commerce market that accounts for complex parameter uncertainty, the author constructed an advanced Monte Carlo simulation with 10,000 trials. Unlike basic models that rely solely on flat adoption rates, this simulation segments the market across four retail sectors (Grocery/FMCG, Electronics, Apparel, and Travel) and integrates systemic friction variables.
 
-**Input distributions:**
-- Adoption rate (share of e-commerce transactions mediated by agents): Triangular(min=5%, mode=12%, max=25%)
-- Average transaction value: Normal(mean=$85, std=$20), clipped to [$30, $200]
-- Addressable transaction volume: Triangular(min=8B, mode=12B, max=18B transactions)
+**Model Inputs and Constraints:**
+- **Sector Segmentation:** Each of the four sectors receives independent Normal and Triangular distributions for transaction volume and average order value (AOV).
+- **Adoption Friction:** High-frequency/low-deliberation sectors (e.g., Grocery) are modeled with lower adoption friction than fit-dependent sectors (e.g., Apparel).
+- **Regulatory Shocks:** A 30% probability of stringent liability enforcement reducing total adoption by 15-40%.
+- **Consumer Trust Drag:** A beta distribution representing general consumer hesitation, skewed positive but with tail risk.
+- **Agent API/Inference Costs:** A stochastic deduction per transaction (between $0.05 and $0.45) representing the API execution cost subtracted from net economic value.
 
-Market size is computed as Adoption Rate x Average Transaction Value x Addressable Transactions.
-
-**Table 2. Monte Carlo Simulation Results (n = 10,000)**
+**Table 2. Net Market Size Simulation Results (n = 10,000)**
 
 | Statistic | Value |
 |---|---|
-| Mean Market Size | $138B |
-| Median Market Size | $127B |
-| Standard Deviation | $62B |
-| 5th Percentile | $52B |
-| 95th Percentile | $247B |
-| 90% Confidence Interval | [$52B, $247B] |
+| Mean Market Size | $151B |
+| Median Market Size | $147B |
+| Standard Deviation | $51B |
+| 5th Percentile | $74B |
+| 95th Percentile | $242B |
+| 90% Confidence Interval | [$74B, $242B] |
 
 ![Fig. 5: Monte Carlo Simulation](monte_carlo.png)
-<em class="caption">Fig. 5. Distribution of estimated U.S. market size from 10,000 Monte Carlo trials with triangular and normal input distributions.</em>
+<em class="caption">Fig. 5. Distribution of estimated net U.S. market size from 10,000 Monte Carlo trials, factoring LLM inference costs and regulatory friction.</em>
 
 ### 3.2 Logistic Adoption Curve Modeling
 
@@ -271,7 +271,7 @@ First, the Monte Carlo simulation uses independently specified distributions, bu
 
 ## 12. Conclusion
 
-The transition from human-directed to agent-mediated commerce is actively being built by major technology platforms. The market projections, modeled via Monte Carlo simulation (median $127B, 90% CI [$52B, $247B]), indicate that agent-mediated transactions could represent a meaningful share of digital commerce.
+The transition from human-directed to agent-mediated commerce is actively being built by major technology platforms. The market projections, modeled via an advanced, sector-stratified Monte Carlo simulation (median $147B, 90% CI [$74B, $242B]), indicate that agent-mediated transactions could represent a meaningful share of digital commerce, even after accounting for API execution costs and regulatory friction.
 
 The analysis produces several key findings. First, consumer trust eroded sharply between Q4 2025 and Q1 2026, with a 25-percentage-point decline in comfort. Second, AI agents select products based on metadata completeness and structured signals rather than brand equity, with R-squared = 0.871 in the regression model. This amounts to a competitive realignment away from marketing and toward data operations. Third, regulatory readiness trails infrastructure deployment, with the United States scoring below the midpoint (1.96/5.0) on the governance assessment. Closing this gap will require sustained empirical research and regulatory frameworks that can adapt to a market structure in which the buyer is increasingly not a human.
 
