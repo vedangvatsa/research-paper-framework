@@ -33,3 +33,14 @@ Whenever you are asked to write or assist in writing an academic research paper 
 Before starting a new paper, ask the user what type of paper they want to write. You can refer to the templates:
 *   `review_paper.md`: For synthesis, market analysis, or literature reviews.
 *   `empirical_study.md`: For papers presenting original data, methodology, and results.
+*   `computational_research.md`: For computational/ML research papers with method, experiments, baselines, and ablation studies (modeled after the [AI-Scientist](https://github.com/SakanaAI/AI-Scientist) structure).
+
+For detailed per-section writing guidance (what to cover in each section, common pitfalls), refer to `SECTION_GUIDE.md`.
+
+## 5. Pre-Submission Tools
+Before finalizing any paper, use these automated tools:
+*   **AI Peer Review:** `python scripts/review_paper.py papers/my_paper.md` — Get a structured academic review with scores, strengths, weaknesses, and accept/reject decision. Use `--ensemble 3` for a more reliable multi-reviewer assessment.
+*   **Novelty Check:** `python scripts/check_novelty.py papers/my_paper.md` — Verify that your research angle is not already covered by searching Semantic Scholar or OpenAlex.
+*   **Citation Finder:** `python scripts/find_citations.py papers/my_paper.md` — Identify missing citations and get suggestions for where to add them.
+*   **URL Verification:** `./scripts/verify_references.sh papers/my_paper.md` — Check all reference URLs for 404s.
+*   **PDF Generation:** `./scripts/generate_pdf.sh papers/my_paper.md papers/my_paper.pdf` — Generate the final PDF.
