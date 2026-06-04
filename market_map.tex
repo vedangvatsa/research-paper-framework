@@ -1,0 +1,365 @@
+\documentclass[border=2pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{amssymb}
+
+\usetikzlibrary{positioning, fit, calc, backgrounds, arrows.meta, decorations.markings}
+
+% ═══════════════════════════════════════
+% COLOR PALETTE
+% ═══════════════════════════════════════
+\definecolor{titleBg}{HTML}{0D1B2A}
+\definecolor{titleFg}{HTML}{FFFFFF}
+\definecolor{hdrAgents}{HTML}{1B4F72}
+\definecolor{hdrSecurity}{HTML}{6C3483}
+\definecolor{hdrEval}{HTML}{C0392B}
+\definecolor{hdrOrch}{HTML}{0E6655}
+\definecolor{hdrPerception}{HTML}{1A5276}
+\definecolor{hdrSandbox}{HTML}{922B21}
+\definecolor{hdrMemory}{HTML}{5D4037}
+\definecolor{hdrCompute}{HTML}{1C2833}
+\definecolor{bgAgents}{HTML}{E8F0FE}
+\definecolor{bgSecurity}{HTML}{F3E5F5}
+\definecolor{bgEval}{HTML}{FBE9E7}
+\definecolor{bgOrch}{HTML}{E0F2F1}
+\definecolor{bgPerception}{HTML}{E3F2FD}
+\definecolor{bgSandbox}{HTML}{FCE4EC}
+\definecolor{bgMemory}{HTML}{EFEBE9}
+\definecolor{bgCompute}{HTML}{ECEFF1}
+\definecolor{platBorder}{HTML}{90A4AE}
+\definecolor{acqRed}{HTML}{C62828}
+\definecolor{chipBorder}{HTML}{CFD8DC}
+\definecolor{vercelBg}{HTML}{EDE7F6}
+\definecolor{vercelBorder}{HTML}{B39DDB}
+\definecolor{ossBg}{HTML}{E8F5E9}
+\definecolor{ossBorder}{HTML}{81C784}
+\definecolor{depArrow}{HTML}{78909C}
+
+\begin{document}
+\begin{tikzpicture}[
+    every node/.style={font=\sffamily},
+    layerHeader/.style={
+        font=\sffamily\bfseries\footnotesize,
+        text=white,
+        minimum height=0.6cm,
+        minimum width=26cm,
+        rounded corners=2pt,
+        inner sep=4pt,
+        anchor=north west,
+    },
+    compChip/.style={
+        rounded corners=2pt,
+        fill=white,
+        draw=chipBorder,
+        line width=0.3pt,
+        font=\sffamily\scriptsize,
+        inner xsep=4pt,
+        inner ysep=2.5pt,
+        anchor=west,
+    },
+    acqChip/.style={
+        rounded corners=2pt,
+        fill=acqRed!8,
+        draw=acqRed!25,
+        line width=0.3pt,
+        font=\sffamily\scriptsize,
+        inner xsep=4pt,
+        inner ysep=2.5pt,
+        anchor=west,
+        text=acqRed!80!black,
+    },
+    mktChip/.style={
+        rounded corners=2pt,
+        fill=white,
+        draw=chipBorder,
+        line width=0.3pt,
+        font=\sffamily\scriptsize,
+        inner xsep=4pt,
+        inner ysep=2.5pt,
+        anchor=west,
+    },
+    ossChip/.style={
+        rounded corners=2pt,
+        fill=ossBg,
+        draw=ossBorder,
+        line width=0.3pt,
+        font=\sffamily\scriptsize,
+        inner xsep=4pt,
+        inner ysep=2.5pt,
+        anchor=west,
+    },
+    fundLabel/.style={
+        font=\sffamily\bfseries\footnotesize,
+        text=white,
+        anchor=east,
+    },
+    note/.style={
+        font=\sffamily\scriptsize,
+        text=gray!65,
+        anchor=west,
+    },
+]
+
+\def\cardW{26}
+\def\hdrH{0.6}
+
+% ═══════════════════════════════════════
+% TITLE
+% ═══════════════════════════════════════
+\node[fill=titleBg, text=titleFg, font=\sffamily\bfseries\large,
+      minimum width=26cm, minimum height=0.95cm, rounded corners=3pt,
+      inner sep=6pt] (title) at (0, 0)
+      {The Agent Infrastructure Stack \enspace$\vert$\enspace Market Map (Mid-2026)};
+\node[below=1pt of title.south, font=\sffamily\footnotesize, text=gray!55,
+      anchor=north] (subtitle)
+      {75+ companies \,$\cdot$\, \$14B+ disclosed funding \,$\cdot$\, 8 layers \,$\cdot$\, {\color{acqRed!70}Red = acquired} \,$\cdot$\, {\color{ossBorder!80!black}Green = open source}};
+
+% ═══════════════════════════════════════
+% DEPENDENCY ARROW (left side)
+% ═══════════════════════════════════════
+\draw[-{Stealth[length=5pt, width=4pt]}, line width=1.5pt, color=depArrow,
+      decorate, decoration={markings, mark=at position 0.35 with {\arrow{Stealth[length=5pt]}}, mark=at position 0.65 with {\arrow{Stealth[length=5pt]}}}]
+    (-\cardW/2 - 0.5, -22.5) -- (-\cardW/2 - 0.5, -0.9);
+\node[rotate=90, font=\sffamily\bfseries\scriptsize, text=depArrow, anchor=south] at (-\cardW/2 - 0.8, -11.5) {DEPENDENCY DIRECTION};
+
+% ═══════════════════════════════════════
+% LAYER 8: AGENTS AS PRODUCTS
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yA}{-1.2}
+\fill[bgAgents, rounded corners=2pt] (-\cardW/2, \yA) rectangle (\cardW/2, \yA - 2.15);
+\fill[hdrAgents, rounded corners=2pt] (-\cardW/2, \yA) rectangle (\cardW/2, \yA - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yA) {\raisebox{0.5pt}{$\blacktriangleright$}\enspace AGENTS AS PRODUCTS};
+\node[fundLabel] at (\cardW/2 - 0.1, \yA - \hdrH/2) {\textasciitilde\$6.1B+};
+
+\node[compChip] at (-11.8, \yA - 0.8) {Cognition\enspace\textbf{\$2.5B+}\enspace\textit{\$492M ARR, software eng.}};
+\node[compChip] at (-4.5, \yA - 0.8) {Sierra\enspace\textbf{\$1.585B}\enspace\textit{customer exp.}};
+\node[compChip] at (0.4, \yA - 0.8) {Harvey\enspace\textbf{\$1.22B+}\enspace\textit{legal}};
+\node[compChip] at (5.0, \yA - 0.8) {Decagon\enspace\textbf{\$481M}\enspace\textit{support}};
+\node[compChip] at (9.0, \yA - 0.8) {Factory\enspace\textbf{\$220M}};
+\node[mktChip] at (-11.8, \yA - 1.25) {CodeRabbit\enspace\textbf{\$88M}\enspace\textit{code review}};
+\node[mktChip] at (-7.0, \yA - 1.25) {Chatbase\enspace\textit{AI customer support agent}};
+\node[mktChip] at (-1.8, \yA - 1.25) {AssistLoop\enspace\textit{support + human escalation}};
+\node[mktChip] at (4.0, \yA - 1.25) {Cubic\enspace\textit{AI code reviews}};
+\node[mktChip] at (7.5, \yA - 1.25) {Sourcery\enspace\textit{AI code reviews}};
+\node[note] at (-11.8, \yA - 1.8) {Top 3 companies hold 87\% of layer capital; code review and customer support are the two largest verticals};
+
+% ═══════════════════════════════════════
+% LAYER 7: SECURITY
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yB}{\yA - 2.4}
+\fill[bgSecurity, rounded corners=2pt] (-\cardW/2, \yB) rectangle (\cardW/2, \yB - 2.15);
+\fill[hdrSecurity, rounded corners=2pt] (-\cardW/2, \yB) rectangle (\cardW/2, \yB - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yB) {\raisebox{0.5pt}{$\blacklozenge$}\enspace SECURITY};
+\node[fundLabel] at (\cardW/2 - 0.1, \yB - \hdrH/2) {\textasciitilde\$700M+};
+
+\node[acqChip] at (-11.8, \yB - 0.8) {Robust Intelligence $\rightarrow$ Cisco\enspace\textit{Oct 2024}};
+\node[acqChip] at (-5.5, \yB - 0.8) {Lakera $\rightarrow$ Check Point\enspace\textit{\textasciitilde\$300M, Sep 2025}};
+\node[acqChip] at (0.5, \yB - 0.8) {Galileo AI $\rightarrow$ Cisco\enspace\textit{Apr 2026}};
+\node[acqChip] at (6.0, \yB - 0.8) {Protect AI $\rightarrow$ Palo Alto\enspace\textit{\textasciitilde\$500M+, Apr 2025}};
+\node[compChip] at (-11.8, \yB - 1.25) {Patronus AI\enspace\textbf{\$40M}};
+\node[compChip] at (-8.0, \yB - 1.25) {Descope\enspace\textbf{\$88M}\enspace\textit{agent identity}};
+\node[mktChip] at (-3.0, \yB - 1.25) {Corridor\enspace\textbf{\$30.4M}\enspace\textit{AI coding guardrails}};
+\node[mktChip] at (2.0, \yB - 1.25) {Arcjet\enspace\textbf{\$12.1M}\enspace\textit{runtime security}};
+\node[acqChip] at (6.5, \yB - 1.25) {CalypsoAI $\rightarrow$ F5\enspace\textit{\$180M, Sep 2025}};
+\node[note] at (-11.8, \yB - 1.8) {5 of 7 earliest security startups acquired within 18 months; incumbents buying faster than startups can scale};
+
+% ═══════════════════════════════════════
+% LAYER 6: EVALUATION & OBSERVABILITY
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yC}{\yB - 2.4}
+\fill[bgEval, rounded corners=2pt] (-\cardW/2, \yC) rectangle (\cardW/2, \yC - 2.15);
+\fill[hdrEval, rounded corners=2pt] (-\cardW/2, \yC) rectangle (\cardW/2, \yC - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yC) {\raisebox{0.5pt}{$\circ$}\enspace EVALUATION \& OBSERVABILITY};
+\node[fundLabel] at (\cardW/2 - 0.1, \yC - \hdrH/2) {\textasciitilde\$500M+};
+
+\node[mktChip] at (-11.8, \yC - 0.8) {Braintrust\enspace\textbf{\$120M+}\enspace\textit{AI eval, monitoring}};
+\node[compChip] at (-5.8, \yC - 0.8) {Arize AI\enspace\textbf{\$131M}};
+\node[acqChip] at (-2.3, \yC - 0.8) {Langfuse $\rightarrow$ ClickHouse\enspace\textit{Jan 2026}};
+\node[acqChip] at (3.5, \yC - 0.8) {Helicone $\rightarrow$ Mintlify\enspace\textit{Mar 2026}};
+\node[acqChip] at (8.0, \yC - 0.8) {W\&B $\rightarrow$ CoreWeave\enspace\textit{\$1.7B}};
+\node[mktChip] at (-11.8, \yC - 1.25) {Autonoma AI\enspace\textit{end-to-end agent testing}};
+\node[mktChip] at (-6.0, \yC - 1.25) {Kubiks\enspace\textit{logs, traces, auto-fix PRs}};
+\node[compChip] at (-1.5, \yC - 1.25) {LangSmith (LangChain)\enspace\textit{tracing, eval}};
+\node[note] at (-11.8, \yC - 1.8) {Observability collapsing into databases (ClickHouse) and compute (CoreWeave); LangSmith part of LangChain's \$160M};
+
+% ═══════════════════════════════════════
+% LAYER 5: ORCHESTRATION
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yD}{\yC - 2.4}
+\fill[bgOrch, rounded corners=2pt] (-\cardW/2, \yD) rectangle (\cardW/2, \yD - 2.15);
+\fill[hdrOrch, rounded corners=2pt] (-\cardW/2, \yD) rectangle (\cardW/2, \yD - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yD) {\raisebox{0.5pt}{$\circlearrowright$}\enspace ORCHESTRATION};
+\node[fundLabel] at (\cardW/2 - 0.1, \yD - \hdrH/2) {\textasciitilde\$900M+};
+
+\node[compChip] at (-11.8, \yD - 0.8) {Temporal\enspace\textbf{\$650M}\enspace\textit{\$5B val, OpenAI uses for Codex}};
+\node[mktChip] at (-4.5, \yD - 0.8) {Inngest\enspace\textbf{\textasciitilde\$34M}\enspace\textit{AI workflows and agents}};
+\node[compChip] at (1.0, \yD - 0.8) {Composio\enspace\textbf{\$29M}\enspace\textit{100K+ devs}};
+\node[compChip] at (5.5, \yD - 0.8) {LangChain\enspace\textbf{\$160M}\enspace\textit{100K+ GitHub stars}};
+\node[compChip] at (-11.8, \yD - 1.25) {CrewAI\enspace\textbf{\$38M}\enspace\textit{multi-agent roles}};
+\node[compChip] at (-7.0, \yD - 1.25) {LlamaIndex\enspace\textbf{\$27.5M}\enspace\textit{data-aware agents}};
+\node[compChip] at (-2.0, \yD - 1.25) {Dify\enspace\textbf{\$30M}\enspace\textit{1.4M+ machines}};
+\node[ossChip] at (2.5, \yD - 1.25) {AutoGen/AG2\enspace\textit{OSS multi-agent}};
+\node[note] at (-11.8, \yD - 1.8) {OSS dominates prototyping; venture-backed targets production durability and enterprise support};
+
+% ═══════════════════════════════════════
+% LAYER 4: PERCEPTION
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yE}{\yD - 2.4}
+\fill[bgPerception, rounded corners=2pt] (-\cardW/2, \yE) rectangle (\cardW/2, \yE - 2.15);
+\fill[hdrPerception, rounded corners=2pt] (-\cardW/2, \yE) rectangle (\cardW/2, \yE - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yE) {\raisebox{0.5pt}{$\bigodot$}\enspace PERCEPTION};
+\node[fundLabel] at (\cardW/2 - 0.1, \yE - \hdrH/2) {\textasciitilde\$850M+};
+
+\node[mktChip] at (-11.8, \yE - 0.8) {Browserbase\enspace\textbf{\$67.5M}\enspace\textit{serverless browsers}};
+\node[mktChip] at (-5.5, \yE - 0.8) {Firecrawl\enspace\textbf{\$16.2M}\enspace\textit{web data API}};
+\node[mktChip] at (-0.5, \yE - 0.8) {Parallel\enspace\textbf{\$230M}\enspace\textit{web search for AI}};
+\node[compChip] at (4.5, \yE - 0.8) {Exa\enspace\textbf{\$357M}\enspace\textit{neural search API, \$2.2B val}};
+\node[mktChip] at (-11.8, \yE - 1.25) {Kernel\enspace\textbf{\$22M}\enspace\textit{open source}};
+\node[compChip] at (-7.5, \yE - 1.25) {Apify\enspace\textbf{\$3M}\enspace\textit{\$13.3M ARR}};
+\node[compChip] at (-3.5, \yE - 1.25) {Reducto\enspace\textbf{\$108M}\enspace\textit{doc parsing API}};
+\node[acqChip] at (1.5, \yE - 1.25) {Tavily $\rightarrow$ Nebius\enspace\textit{\$275M, Feb 2026}};
+\node[acqChip] at (6.5, \yE - 1.25) {Jina AI $\rightarrow$ Elastic\enspace\textit{Oct 2025}};
+\node[note] at (-11.8, \yE - 1.8) {Exa the largest pure-play AI search company; Tavily and Jina acquired; document parsing emerging as sub-category};
+
+% ═══════════════════════════════════════
+% LAYER 3: SANDBOXED EXECUTION
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yF}{\yE - 2.4}
+\fill[bgSandbox, rounded corners=2pt] (-\cardW/2, \yF) rectangle (\cardW/2, \yF - 1.15);
+\fill[hdrSandbox, rounded corners=2pt] (-\cardW/2, \yF) rectangle (\cardW/2, \yF - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yF) {\raisebox{0.5pt}{$\square$}\enspace SANDBOXED EXECUTION};
+\node[fundLabel] at (\cardW/2 - 0.1, \yF - \hdrH/2) {\textasciitilde\$70M};
+
+\node[compChip] at (-11.8, \yF - 0.8) {E2B\enspace\textbf{\$32M}\enspace\textit{88\% Fortune 100}};
+\node[compChip] at (-5.5, \yF - 0.8) {Daytona\enspace\textbf{\$31M}\enspace\textit{programmable sandboxes}};
+\node[compChip] at (0.5, \yF - 0.8) {Runloop\enspace\textbf{\$7M}\enspace\textit{enterprise devboxes}};
+\node[note] at (5.0, \yF - 0.8) {E2B integrated by HuggingFace, Perplexity, Groq};
+
+% ═══════════════════════════════════════
+% LAYER 2: MEMORY & RETRIEVAL
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yG}{\yF - 1.4}
+\fill[bgMemory, rounded corners=2pt] (-\cardW/2, \yG) rectangle (\cardW/2, \yG - 2.6);
+\fill[hdrMemory, rounded corners=2pt] (-\cardW/2, \yG) rectangle (\cardW/2, \yG - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yG) {\raisebox{0.5pt}{$\triangleright$}\enspace MEMORY \& RETRIEVAL};
+\node[fundLabel] at (\cardW/2 - 0.1, \yG - \hdrH/2) {\textasciitilde\$700M+};
+
+\node[compChip] at (-11.8, \yG - 0.8) {Mem0\enspace\textbf{\$24M}\enspace\textit{AWS SDK exclusive}};
+\node[mktChip] at (-6.0, \yG - 0.8) {Pinecone\enspace\textbf{\$138M}\enspace\textit{800K devs}};
+\node[compChip] at (-0.5, \yG - 0.8) {Qdrant\enspace\textbf{\$87.8M}};
+\node[compChip] at (3.0, \yG - 0.8) {Weaviate\enspace\textbf{\$67.7M}};
+\node[compChip] at (6.5, \yG - 0.8) {Zilliz (Milvus)\enspace\textbf{\$113M}};
+\node[compChip] at (-11.8, \yG - 1.25) {Chroma\enspace\textbf{\$20M}};
+\node[mktChip] at (-8.0, \yG - 1.25) {Upstash\enspace\textbf{\$11.9M}\enspace\textit{serverless Redis/Vector}};
+\node[mktChip] at (-2.0, \yG - 1.25) {Mixedbread\enspace\textit{multimodal search API}};
+\node[compChip] at (3.0, \yG - 1.25) {LanceDB\enspace\textbf{\$41M}\enspace\textit{multimodal AI data}};
+\node[compChip] at (7.5, \yG - 1.25) {Letta\enspace\textbf{\$10M}\enspace\textit{agent memory}};
+\node[acqChip] at (-11.8, \yG - 1.7) {Neon $\rightarrow$ Databricks\enspace\textit{\textasciitilde\$1B, May 2025}};
+\node[acqChip] at (-5.0, \yG - 1.7) {Voyage AI $\rightarrow$ MongoDB\enspace\textit{\textasciitilde\$220M, Feb 2025}};
+\node[note] at (1.5, \yG - 1.7) {Vector DB funding stalled since 2023; acqui-hires accelerating (Neon, Voyage AI); Zilliz only new raise};
+
+% ═══════════════════════════════════════
+% LAYER 1: COMPUTE & INFERENCE
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yH}{\yG - 2.85}
+\fill[bgCompute, rounded corners=2pt] (-\cardW/2, \yH) rectangle (\cardW/2, \yH - 2.6);
+\fill[hdrCompute, rounded corners=2pt] (-\cardW/2, \yH) rectangle (\cardW/2, \yH - \hdrH);
+\node[layerHeader, fill=none] at (-\cardW/2, \yH) {\raisebox{0.5pt}{$\blacksquare$}\enspace COMPUTE \& INFERENCE};
+\node[fundLabel] at (\cardW/2 - 0.1, \yH - \hdrH/2) {\textasciitilde\$10B+};
+
+\node[compChip] at (-11.8, \yH - 0.8) {Cerebras\enspace\textbf{\$95B mkt cap}\enspace\textit{IPO May 2026}};
+\node[mktChip] at (-4.5, \yH - 0.8) {Together AI\enspace\textbf{\$1.5B}\enspace\textit{generative AI cloud}};
+\node[compChip] at (1.5, \yH - 0.8) {Modal\enspace\textbf{\$466M}\enspace\textit{\textasciitilde\$300M ARR}};
+\node[compChip] at (6.5, \yH - 0.8) {Groq\enspace\textbf{\textasciitilde\$3B}\enspace\textit{custom LPU}};
+\node[compChip] at (-11.8, \yH - 1.25) {Fireworks AI\enspace\textbf{\$327M+}\enspace\textit{15T tok/day}};
+\node[mktChip] at (-5.5, \yH - 1.25) {fal.ai\enspace\textbf{\$587M+}\enspace\textit{media generation}};
+\node[compChip] at (-0.5, \yH - 1.25) {Lambda\enspace\textbf{\$2.3B+}\enspace\textit{GPU cloud}};
+\node[compChip] at (4.5, \yH - 1.25) {SambaNova\enspace\textbf{\$1.48B}\enspace\textit{custom SN50 chip}};
+\node[compChip] at (-11.8, \yH - 1.7) {CoreWeave\enspace\textit{IPO Mar 2025, CRWV}};
+\node[mktChip] at (-5.5, \yH - 1.7) {DeepInfra\enspace\textit{AI inference}};
+\node[mktChip] at (-1.5, \yH - 1.7) {Replicate\enspace\textit{run AI via API}};
+\node[note] at (2.5, \yH - 1.7) {Largest value pool in the stack; every other layer depends on compute; 3 IPOs in 12 months};
+
+% ═══════════════════════════════════════
+% PLATFORM BUNDLERS
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yP}{\yH - 3.1}
+\draw[platBorder, rounded corners=3pt, line width=0.6pt, dashed]
+    (-\cardW/2, \yP) rectangle (\cardW/2, \yP - 1.6);
+\node[font=\sffamily\bfseries\normalsize, text=gray!75, anchor=west] at (-\cardW/2 + 0.2, \yP - 0.2) {PLATFORM BUNDLERS};
+\node[font=\sffamily\footnotesize, text=gray!55, anchor=west] at (-\cardW/2 + 0.2, \yP - 0.5) {Absorbing standalone tools into unified provisioning surfaces};
+
+\node[compChip] at (-11.8, \yP - 0.9)
+    {Vercel Marketplace\enspace\textit{104 integrations, 22 categories, 14 in ``Agents''}};
+\node[compChip, fill=hdrCompute!6, draw=hdrCompute!20] at (-1.5, \yP - 0.9)
+    {Cloudflare Workers AI\enspace\textit{50+ models, 300+ edge PoPs}};
+\node[compChip, fill=hdrAgents!6, draw=hdrAgents!20] at (6.5, \yP - 0.9)
+    {AWS Bedrock Agents};
+\node[compChip, fill=hdrAgents!6, draw=hdrAgents!20] at (-11.8, \yP - 1.3)
+    {Google Vertex AI Agent Builder};
+\node[compChip, fill=hdrAgents!6, draw=hdrAgents!20] at (-5.5, \yP - 1.3)
+    {Azure AI Agent Service\enspace\textit{GA Jun 2025}};
+\node[note] at (1.0, \yP - 1.3) {Platforms span perception, eval, security, search, and support; mirroring the taxonomy};
+
+% ═══════════════════════════════════════
+% M&A TRACKER
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yM}{\yP - 1.85}
+\draw[acqRed!30, rounded corners=3pt, line width=0.5pt]
+    (-\cardW/2, \yM) rectangle (\cardW/2, \yM - 2.1);
+\fill[acqRed!3, rounded corners=3pt]
+    (-\cardW/2, \yM) rectangle (\cardW/2, \yM - 2.1);
+\node[font=\sffamily\bfseries\normalsize, text=acqRed!80, anchor=west] at (-\cardW/2 + 0.2, \yM - 0.2) {M\&A TRACKER (Sep 2024 -- May 2026)};
+
+% Row 1
+\node[acqChip, font=\sffamily\scriptsize] at (-12.2, \yM - 0.6)
+    {Cisco $\times$2 (Robust Intel., Galileo AI)};
+\node[acqChip, font=\sffamily\scriptsize] at (-5.5, \yM - 0.6)
+    {Check Point (Lakera \textasciitilde\$300M)};
+\node[acqChip, font=\sffamily\scriptsize] at (-0.5, \yM - 0.6)
+    {Palo Alto (Protect AI \textasciitilde\$500M+)};
+\node[acqChip, font=\sffamily\scriptsize] at (5.0, \yM - 0.6)
+    {CoreWeave (W\&B \$1.7B)};
+\node[acqChip, font=\sffamily\scriptsize] at (9.5, \yM - 0.6)
+    {Meta (Manus \textasciitilde\$2B)};
+
+% Row 2
+\node[acqChip, font=\sffamily\scriptsize] at (-12.2, \yM - 1.0)
+    {ClickHouse (Langfuse)};
+\node[acqChip, font=\sffamily\scriptsize] at (-7.5, \yM - 1.0)
+    {Mintlify (Helicone)};
+\node[acqChip, font=\sffamily\scriptsize] at (-3.0, \yM - 1.0)
+    {Nebius (Tavily \$275M)};
+\node[acqChip, font=\sffamily\scriptsize] at (1.5, \yM - 1.0)
+    {Databricks (Neon \textasciitilde\$1B)};
+\node[acqChip, font=\sffamily\scriptsize] at (6.5, \yM - 1.0)
+    {MongoDB (Voyage AI \textasciitilde\$220M)};
+
+% Row 3 - note
+\node[note] at (-12.2, \yM - 1.4) {Also: IBM acquired Confluent (\$11B) + HashiCorp (\$6.4B); F5 acquired CalypsoAI (\$180M); Elastic acquired Jina AI};
+
+
+% ═══════════════════════════════════════
+% LEGEND
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yL}{\yM - 1.7}
+\node[font=\sffamily\scriptsize, text=gray!50, anchor=north] at (0, \yL) {%
+\begin{tikzpicture}[baseline, every node/.style={font=\sffamily\scriptsize, inner sep=2pt}]
+\node[compChip, minimum width=1.3cm] (leg1) at (0,0) {Company};
+\node[font=\sffamily\scriptsize, text=gray!60, anchor=west] at (leg1.east) {\enspace= venture-backed};
+\node[acqChip, minimum width=1.3cm] (leg3) at (5,0) {Company};
+\node[font=\sffamily\scriptsize, text=gray!60, anchor=west] at (leg3.east) {\enspace= acquired};
+\node[ossChip, minimum width=1.3cm] (leg4) at (9.5,0) {Company};
+\node[font=\sffamily\scriptsize, text=gray!60, anchor=west] at (leg4.east) {\enspace= open source};
+\end{tikzpicture}};
+
+% ═══════════════════════════════════════
+% FOOTER
+% ═══════════════════════════════════════
+\pgfmathsetmacro{\yFooter}{\yL - 0.6}
+\node[font=\sffamily\footnotesize, text=gray!45, anchor=north] at (0, \yFooter)
+    {Source: Venture funding databases, SEC filings, company disclosures (May 2026).};
+
+\end{tikzpicture}
+\end{document}
