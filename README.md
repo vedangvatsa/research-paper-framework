@@ -16,6 +16,7 @@ A reusable framework for generating high-quality, human-authored academic papers
 
 1.  **Prerequisites:**
     *   `pandoc` — Mac: `brew install pandoc`
+    *   `tectonic` — Mac: `brew install tectonic` (for ICLR-style LaTeX papers)
     *   `Google Chrome` — for PDF generation
     *   Python 3.8+ — for AI-powered tools
 
@@ -50,6 +51,15 @@ Choose a template when starting a new paper:
 | **Review Paper** | Synthesis, market analysis, literature reviews | `templates/review_paper.md` |
 | **Empirical Study** | Original data, methodology, and results | `templates/empirical_study.md` |
 | **Computational Research** | ML/AI experiments with method, baselines, ablations (AI-Scientist style) | `templates/computational_research.md` |
+
+### Two Build Pipelines
+
+| Pipeline | Use Case | Tools | Output |
+|----------|----------|-------|--------|
+| **ICLR-style LaTeX** | Formal academic papers for SSRN/arxiv | `build_tex.py` + `tectonic` | Conference-formatted PDF |
+| **HTML/Chrome** | Industry reports, shorter papers | `generate_pdf.sh` + Chrome | Clean PDF with CSS styling |
+
+For ICLR-style papers, each paper lives in its own folder under `papers/` with a `build_tex.py` and supporting assets. See `papers/agent-infrastructure-stack/` for a working example.
 
 ## Usage Workflow
 
@@ -113,6 +123,7 @@ python scripts/review_paper.py papers/my_paper.md --ensemble 3
 
 ```
 ├── AI_INSTRUCTIONS.md          # Stylistic rules the AI must follow
+├── PAPER_FRAMEWORK.md          # Production pipeline, quality checklists, lessons learned
 ├── SECTION_GUIDE.md            # Per-section writing guidance
 ├── README.md                   # This file
 ├── templates/                  # Paper templates
@@ -128,9 +139,30 @@ python scripts/review_paper.py papers/my_paper.md --ensemble 3
 │   ├── llm_utils.py
 │   └── requirements.txt
 ├── papers/                     # Your research papers
+│   └── agent-infrastructure-stack/  # Example: ICLR-style paper
+│       ├── agent_infrastructure_stack.md   # Paper source (Markdown)
+│       ├── build_tex.py                    # Markdown → LaTeX converter
+│       ├── iclr2024_conference.sty         # ICLR style file
+│       └── market_map.pdf                  # Figure assets
 ├── reports/                    # Generated reports
 ├── pdf-style.css               # Default PDF styling
 └── pdf-style-ieee.css          # IEEE-format PDF styling
+```
+
+### New System Setup
+
+```bash
+git clone https://github.com/vedangvatsa/research-paper-framework.git
+brew install tectonic pandoc
+pip install -r scripts/requirements.txt
+```
+
+Then to build an ICLR-style paper:
+
+```bash
+cd papers/agent-infrastructure-stack/
+python3 build_tex.py && tectonic template.tex
+cp template.pdf ~/Desktop/PAPER_NAME.pdf
 ```
 
 ## Credits
