@@ -398,11 +398,81 @@ The time-series data reveals different methods at different lifecycle stages.
 
 **Explosive growth.** "Large language model" is in a phase of exponential growth with no sign of deceleration. The 2026 partial-year data (84,957 through June) projects to a full-year total higher than the entire 2025 count.
 
-### 4.4 The Chinese Research Lead
+### 4.4 The China-US Research Race
 
-China leads global AI research output in the abstract corpus (874,019 papers) by 21.6% over the United States (718,676). Six of the fifteen most productive institutions are Chinese, led by the Chinese Academy of Sciences (74,921 papers). The appearance of "DeepSeek" as the fastest-rising keyword (848.7x growth) adds a qualitative dimension to this quantitative lead. Chinese labs are producing not just papers but open-weight foundation models that compete directly with GPT-4 and Claude [7].
+#### 4.4.1 The Crossover
 
-India's position at rank 3 (369,931 papers) confirms its status as a major AI research producer. India produces more papers discussing AI methods in their abstracts than Japan (333,896), the United Kingdom (216,177), and Germany (163,172).
+China and the United States started the decade at near-parity. In 2013, the US produced 13,829 AI-related papers (by abstract count) while China produced 12,074. Both countries grew steadily through 2018, but their trajectories diverged after that.
+
+![Fig. 7. AI research output for China and the United States, 2013-2025. China overtook the US in 2021 and has widened the gap every year since.](figures/fig_china_vs_us.png)
+
+**Table 12. Year-by-year AI research output for top 5 countries.**
+
+| Year | China | United States | India | Japan | UK |
+|------|-------|--------------|-------|-------|-----|
+| 2013 | 12,074 | 13,829 | 2,761 | 2,223 | 4,312 |
+| 2014 | 11,897 | 14,551 | 3,445 | 2,277 | 4,557 |
+| 2015 | 11,766 | 16,713 | 3,976 | 2,478 | 5,030 |
+| 2016 | 12,229 | 18,988 | 4,996 | 2,913 | 5,762 |
+| 2017 | 17,125 | 23,991 | 5,919 | 3,616 | 7,057 |
+| 2018 | 27,353 | 33,567 | 8,592 | 5,075 | 9,567 |
+| 2019 | 41,011 | 45,404 | 11,585 | 6,508 | 12,732 |
+| 2020 | 53,743 | 58,622 | 17,612 | 7,712 | 16,574 |
+| 2021 | 71,273 | 64,931 | 26,158 | 8,854 | 19,788 |
+| 2022 | 90,485 | 64,486 | 35,760 | 9,420 | 19,798 |
+| 2023 | 112,646 | 77,664 | 48,990 | 11,095 | 24,429 |
+| 2024 | 144,452 | 90,915 | 65,398 | 12,657 | 28,174 |
+| 2025 | 187,887 | 122,449 | 89,287 | 15,558 | 37,104 |
+
+The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. The US output actually stalled between 2021 and 2022 (64,931 to 64,486, a slight decline), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs 122,449).
+
+The US stall in 2021-2022 is notable. US AI research output grew only 0.7% between 2020 and 2022 (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
+
+#### 4.4.2 Method-Specific Comparisons
+
+The China-US balance varies by research area.
+
+**Table 13. China vs US paper counts by method (2013-2026, abstract search).**
+
+| Method | China | US | China/US Ratio |
+|--------|-------|------|------|
+| transformer | 89,302 | 33,506 | 2.67x |
+| federated learning | 16,356 | 8,689 | 1.88x |
+| neural network | 332,858 | 177,752 | 1.87x |
+| deep learning | 241,216 | 140,965 | 1.71x |
+| reinforcement learning | 50,910 | 31,277 | 1.63x |
+| diffusion model | 66,832 | 56,315 | 1.19x |
+| large language model | 35,923 | 47,363 | **0.76x** |
+
+China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs 35,923, or 1.32x the Chinese count). This is a meaningful exception. While China produces more AI papers overall, the US produces more papers on the specific technology category that has attracted the most attention since 2023.
+
+#### 4.4.3 The LLM Convergence
+
+The US led China in LLM research throughout 2020-2024, but the gap narrowed steadily.
+
+![Fig. 8. LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
+
+**Table 14. Large language model papers by year, China vs US.**
+
+| Year | China | US | China/US |
+|------|-------|------|---------|
+| 2020 | 568 | 1,342 | 0.42 |
+| 2021 | 831 | 1,491 | 0.56 |
+| 2022 | 1,010 | 1,574 | 0.64 |
+| 2023 | 2,270 | 4,068 | 0.56 |
+| 2024 | 6,218 | 8,014 | 0.78 |
+| 2025 | 15,008 | 14,735 | **1.02** |
+
+In 2020, the US produced 2.4x more LLM papers than China. By 2025, China reached parity (15,008 vs 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3, Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
+
+The convergence pattern has three phases. First, the US led comfortably from 2020-2022 as LLM research was concentrated at US labs (OpenAI, Google, Meta). Second, the gap narrowed in 2023-2024 as Chinese labs released competitive open-weight models. Third, parity was reached in 2025, when Chinese LLM paper output matched the US for the first time.
+
+#### 4.4.4 India's Acceleration
+
+India's trajectory deserves separate attention. Indian AI research output grew from 2,761 papers in 2013 to 89,287 in 2025, a 32.3x increase. This growth rate is faster than both China (15.6x) and the US (8.9x) over the same period. India produced 89,287 AI papers in 2025, more than Japan (15,558) and the UK (37,104) combined.
+
+India's growth rate has been accelerating. Between 2013 and 2018, Indian output grew 3.1x. Between 2018 and 2025, it grew 10.4x. If current growth rates continue, India could approach or exceed US output levels by 2030.
+
 
 ### 4.5 The Cross-Disciplinary Spread of AI
 
