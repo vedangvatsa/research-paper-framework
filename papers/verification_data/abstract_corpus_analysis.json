@@ -1,0 +1,675 @@
+{
+  "total": 5003783,
+  "by_year": {
+    "2013": 93226,
+    "2014": 97510,
+    "2015": 105609,
+    "2016": 115423,
+    "2017": 137237,
+    "2018": 185192,
+    "2019": 242286,
+    "2020": 305903,
+    "2021": 369519,
+    "2022": 411098,
+    "2023": 520861,
+    "2024": 662417,
+    "2025": 944530,
+    "2026": 812972
+  },
+  "doc_types": {
+    "article": 3270717,
+    "preprint": 668948,
+    "book-chapter": 386449,
+    "dataset": 298570,
+    "review": 94567,
+    "dissertation": 92581,
+    "other": 85063,
+    "book": 32542,
+    "peer-review": 22523,
+    "report": 17526,
+    "paratext": 13131,
+    "editorial": 9453,
+    "letter": 8259,
+    "reference-entry": 1439
+  },
+  "source_types": {
+    "journal": 2232178,
+    "repository": 1370590,
+    "book series": 246842,
+    "conference": 111398,
+    "ebook platform": 69676,
+    "other": 16
+  },
+  "open_access": {
+    "closed": 1960226
+  },
+  "countries": {
+    "China": 874019,
+    "United States of America": 718676,
+    "India": 369931,
+    "Japan": 333896,
+    "United Kingdom of Great Britain and Northern Ireland": 216177,
+    "Germany": 163172,
+    "Canada": 117479,
+    "Italy": 105094,
+    "France": 97247,
+    "Korea, Republic of": 95171,
+    "Australia": 94136,
+    "Indonesia": 94085,
+    "Spain": 83161,
+    "Russian Federation": 66267,
+    "Turkey": 55034,
+    "Netherlands": 54455,
+    "Brazil": 53770,
+    "Saudi Arabia": 52755,
+    "Iran, Islamic Republic of": 52573,
+    "Switzerland": 47695
+  },
+  "institutions": {
+    "Ministry of Education, Culture, Sports, Science and Technology": 207048,
+    "National Institutes of Natural Sciences": 204247,
+    "National Institute for Fusion Science": 203751,
+    "Chinese Academy of Sciences": 74921,
+    "Nagoya University": 62452,
+    "Centre National de la Recherche Scientifique": 50145,
+    "University of London": 34887,
+    "Tsinghua University": 30519,
+    "University of Chinese Academy of Sciences": 23911,
+    "Shanghai Jiao Tong University": 23695,
+    "Zhejiang University": 23246,
+    "Harvard University": 21529,
+    "United States Department of Energy": 20244,
+    "Peking University": 20127,
+    "Stanford University": 19703,
+    "Helmholtz Association of German Research Centres": 19628,
+    "Board of the Swiss Federal Institutes of Technology": 18281,
+    "State Council of the People's Republic of China": 16984,
+    "University College London": 16898,
+    "Ministry of Industry and Information Technology": 16652
+  },
+  "bigrams": {
+    "neural network": 1522612,
+    "machine learning": 1287123,
+    "artificial intelligence": 745358,
+    "deep learning": 980070,
+    "reinforcement learning": 201098,
+    "natural language": 271245,
+    "large language": 405166,
+    "object detection": 206101,
+    "transfer learning": 224851,
+    "image segmentation": 243337,
+    "image classification": 390138,
+    "attention mechanism": 432079,
+    "knowledge graph": 90234,
+    "generative adversarial": 67647,
+    "federated learning": 59298,
+    "autonomous driving": 71930,
+    "sentiment analysis": 90102,
+    "speech recognition": 77219,
+    "data augmentation": 100484,
+    "self-supervised": 97164,
+    "zero-shot": 42563,
+    "graph neural": 90985,
+    "text classification": 102891,
+    "named entity": 40214,
+    "semantic segmentation": 59787,
+    "anomaly detection": 112572,
+    "contrastive learning": 175692,
+    "pose estimation": 59152,
+    "few shot": 42692,
+    "question answering": 662576,
+    "medical imaging": 359104,
+    "recommendation system": 387638,
+    "feature extraction": 256159,
+    "adversarial attack": 44783,
+    "domain adaptation": 71229,
+    "multi-modal": 126633,
+    "vision transformer": 40886,
+    "prompt engineering": 22108,
+    "instruction tuning": 12751,
+    "human feedback": 94076
+  },
+  "trigrams": {
+    "convolutional neural network": 394934,
+    "recurrent neural network": 88266,
+    "large language model": 292873,
+    "deep reinforcement learning": 72899,
+    "generative adversarial network": 62880,
+    "graph neural network": 86453,
+    "natural language processing": 172355,
+    "long short-term memory": 137359,
+    "medical image segmentation": 42960,
+    "natural language understanding": 44373,
+    "named entity recognition": 16564,
+    "few shot learning": 24661,
+    "image super resolution": 41598,
+    "automatic speech recognition": 21168,
+    "visual question answering": 24293,
+    "point cloud processing": 37971,
+    "deep neural network": 518431,
+    "artificial neural network": 261355,
+    "random forest classifier": 73385,
+    "support vector machine": 239347,
+    "retrieval augmented generation": 21647,
+    "vision language model": 54666,
+    "instruction fine tuning": 7177,
+    "chain of thought": 28032,
+    "human feedback reinforcement": 5957
+  },
+  "keywords": {
+    "learning": 5145727,
+    "network": 5408113,
+    "neural": 1911938,
+    "detection": 3049681,
+    "deep": 2811853,
+    "language": 2449816,
+    "intelligence": 1069074,
+    "classification": 2240136,
+    "recognition": 1256306,
+    "optimization": 4084308,
+    "prediction": 2212373,
+    "segmentation": 399652,
+    "transformer": 316216,
+    "generative": 280492,
+    "autonomous": 535764,
+    "robot": 663396,
+    "knowledge": 4296169,
+    "adversarial": 168790,
+    "embedding": 1126818,
+    "federated": 80191,
+    "explainable": 2544915,
+    "diffusion": 923836,
+    "multimodal": 316507,
+    "fairness": 429288,
+    "privacy": 435559,
+    "interpretability": 1262997,
+    "clinical": 6704069,
+    "medical": 3018848,
+    "healthcare": 1209886,
+    "diagnosis": 2732597,
+    "fine-tuning": 225911,
+    "distillation": 86236,
+    "pruning": 54510,
+    "pre-training": 251460,
+    "benchmark": 829848,
+    "reasoning": 341578,
+    "hallucination": 48759,
+    "guardrail": 7180,
+    "alignment": 517105,
+    "safety": 2354317,
+    "agent": 2179789
+  },
+  "growth": {
+    "deepseek": {
+      "new": 11033,
+      "old": 13,
+      "ratio": 848.7
+    },
+    "retrieval augmented generation": {
+      "new": 18196,
+      "old": 347,
+      "ratio": 52.4
+    },
+    "jailbreak": {
+      "new": 2803,
+      "old": 110,
+      "ratio": 25.5
+    },
+    "retrieval-augmented": {
+      "new": 21105,
+      "old": 1101,
+      "ratio": 19.2
+    },
+    "mistral": {
+      "new": 4361,
+      "old": 260,
+      "ratio": 16.8
+    },
+    "llm": {
+      "new": 161771,
+      "old": 10125,
+      "ratio": 16.0
+    },
+    "copilot": {
+      "new": 5699,
+      "old": 356,
+      "ratio": 16.0
+    },
+    "rag": {
+      "new": 19193,
+      "old": 1250,
+      "ratio": 15.4
+    },
+    "gemini": {
+      "new": 22365,
+      "old": 1650,
+      "ratio": 13.6
+    },
+    "guardrail": {
+      "new": 5046,
+      "old": 521,
+      "ratio": 9.7
+    },
+    "llama": {
+      "new": 14314,
+      "old": 2114,
+      "ratio": 6.8
+    },
+    "claude": {
+      "new": 19493,
+      "old": 2939,
+      "ratio": 6.6
+    },
+    "prompt": {
+      "new": 588390,
+      "old": 92967,
+      "ratio": 6.3
+    },
+    "instruction tuning": {
+      "new": 7461,
+      "old": 1406,
+      "ratio": 5.3
+    },
+    "hallucination": {
+      "new": 23580,
+      "old": 4868,
+      "ratio": 4.8
+    },
+    "foundation model": {
+      "new": 188518,
+      "old": 46410,
+      "ratio": 4.1
+    },
+    "chain-of-thought": {
+      "new": 11521,
+      "old": 3163,
+      "ratio": 3.6
+    },
+    "chatgpt": {
+      "new": 37642,
+      "old": 10865,
+      "ratio": 3.5
+    },
+    "tokenization": {
+      "new": 60448,
+      "old": 17960,
+      "ratio": 3.4
+    },
+    "reasoning": {
+      "new": 129999,
+      "old": 40713,
+      "ratio": 3.2
+    },
+    "alignment": {
+      "new": 204403,
+      "old": 63418,
+      "ratio": 3.2
+    },
+    "vision language": {
+      "new": 37744,
+      "old": 12771,
+      "ratio": 3.0
+    },
+    "grounding": {
+      "new": 27268,
+      "old": 9148,
+      "ratio": 3.0
+    },
+    "multimodal": {
+      "new": 128296,
+      "old": 46177,
+      "ratio": 2.8
+    },
+    "preference optimization": {
+      "new": 18278,
+      "old": 7101,
+      "ratio": 2.6
+    },
+    "fine-tuning": {
+      "new": 92403,
+      "old": 36278,
+      "ratio": 2.5
+    },
+    "reward model": {
+      "new": 26477,
+      "old": 10601,
+      "ratio": 2.5
+    },
+    "code generation": {
+      "new": 42596,
+      "old": 17708,
+      "ratio": 2.4
+    },
+    "human feedback": {
+      "new": 30810,
+      "old": 13242,
+      "ratio": 2.3
+    },
+    "benchmark": {
+      "new": 287553,
+      "old": 133525,
+      "ratio": 2.2
+    },
+    "red teaming": {
+      "new": 3614,
+      "old": 2088,
+      "ratio": 1.7
+    },
+    "in-context": {
+      "new": 972552,
+      "old": 667856,
+      "ratio": 1.5
+    },
+    "distillation": {
+      "new": 23987,
+      "old": 15876,
+      "ratio": 1.5
+    },
+    "diffusion": {
+      "new": 179682,
+      "old": 142165,
+      "ratio": 1.3
+    },
+    "synthetic": {
+      "new": 198270,
+      "old": 155870,
+      "ratio": 1.3
+    },
+    "text-to-image": {
+      "new": 48579,
+      "old": 40228,
+      "ratio": 1.2
+    },
+    "agentic": {
+      "new": 401469,
+      "old": 337810,
+      "ratio": 1.2
+    },
+    "safe": {
+      "new": 294409,
+      "old": 255050,
+      "ratio": 1.2
+    }
+  },
+  "timelines": {
+    "neural network": {
+      "2013": 23395,
+      "2014": 24339,
+      "2015": 25612,
+      "2016": 31000,
+      "2017": 42023,
+      "2018": 61555,
+      "2019": 83428,
+      "2020": 102938,
+      "2021": 124016,
+      "2022": 134741,
+      "2023": 154256,
+      "2024": 175688,
+      "2025": 207140,
+      "2026": 332481
+    },
+    "deep learning": {
+      "2013": 4120,
+      "2014": 4967,
+      "2015": 6836,
+      "2016": 9737,
+      "2017": 16844,
+      "2018": 29328,
+      "2019": 46622,
+      "2020": 65944,
+      "2021": 86254,
+      "2022": 102536,
+      "2023": 128200,
+      "2024": 157947,
+      "2025": 216713,
+      "2026": 104022
+    },
+    "reinforcement learning": {
+      "2013": 1784,
+      "2014": 1963,
+      "2015": 1970,
+      "2016": 2366,
+      "2017": 3552,
+      "2018": 5740,
+      "2019": 8916,
+      "2020": 12179,
+      "2021": 15363,
+      "2022": 17604,
+      "2023": 22553,
+      "2024": 28688,
+      "2025": 47498,
+      "2026": 30922
+    },
+    "large language model": {
+      "2018": 3248,
+      "2019": 4131,
+      "2020": 5243,
+      "2021": 6583,
+      "2022": 7931,
+      "2023": 21612,
+      "2024": 49970,
+      "2025": 96984,
+      "2026": 84957
+    },
+    "generative adversarial": {
+      "2014": 6,
+      "2015": 22,
+      "2016": 108,
+      "2017": 845,
+      "2018": 2444,
+      "2019": 4337,
+      "2020": 5762,
+      "2021": 7208,
+      "2022": 7529,
+      "2023": 8929,
+      "2024": 10983,
+      "2025": 13613,
+      "2026": 5852
+    },
+    "diffusion model": {
+      "2019": 18640,
+      "2020": 20028,
+      "2021": 20657,
+      "2022": 20762,
+      "2023": 27128,
+      "2024": 35208,
+      "2025": 49862,
+      "2026": 34797
+    },
+    "federated learning": {
+      "2017": 46,
+      "2018": 127,
+      "2019": 442,
+      "2020": 1628,
+      "2021": 3427,
+      "2022": 5245,
+      "2023": 8174,
+      "2024": 11319,
+      "2025": 18519,
+      "2026": 10205
+    },
+    "graph neural": {
+      "2017": 966,
+      "2018": 1561,
+      "2019": 2826,
+      "2020": 4808,
+      "2021": 7224,
+      "2022": 9264,
+      "2023": 12286,
+      "2024": 15505,
+      "2025": 21873,
+      "2026": 12813
+    },
+    "transformer": {
+      "2017": 7201,
+      "2018": 7914,
+      "2019": 9239,
+      "2020": 11497,
+      "2021": 16450,
+      "2022": 23726,
+      "2023": 36452,
+      "2024": 49951,
+      "2025": 78135,
+      "2026": 48158
+    },
+    "knowledge graph": {
+      "2013": 1700,
+      "2014": 1973,
+      "2015": 2118,
+      "2016": 2229,
+      "2017": 2660,
+      "2018": 3253,
+      "2019": 4207,
+      "2020": 5798,
+      "2021": 7315,
+      "2022": 8272,
+      "2023": 10579,
+      "2024": 11907,
+      "2025": 16519,
+      "2026": 11704
+    }
+  },
+  "citation_dist": {
+    "0": 2445876,
+    "1-10": 1700854,
+    "11-50": 648139,
+    "51-100": 122722,
+    "101-500": 78688,
+    "501-1000": 5029,
+    "1001+": 2475
+  },
+  "top_cited": [
+    {
+      "title": "Deep Residual Learning for Image Recognition",
+      "citations": 221202,
+      "year": 2016,
+      "first_author": "Kaiming He"
+    },
+    {
+      "title": "Diagnostic and Statistical Manual of Mental Disorders",
+      "citations": 113579,
+      "year": 2013,
+      "first_author": "Annette Lolk"
+    },
+    {
+      "title": "Fitting Linear Mixed-Effects Models Using <b>lme4</b>",
+      "citations": 84949,
+      "year": 2015,
+      "first_author": "Douglas M. Bates"
+    },
+    {
+      "title": "Deep learning",
+      "citations": 81158,
+      "year": 2015,
+      "first_author": "Yann LeCun"
+    },
+    {
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "citations": 75705,
+      "year": 2017,
+      "first_author": "Alex Krizhevsky"
+    },
+    {
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "citations": 75538,
+      "year": 2014,
+      "first_author": "Karen Simonyan"
+    },
+    {
+      "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",
+      "citations": 53947,
+      "year": 2016,
+      "first_author": "Shaoqing Ren"
+    },
+    {
+      "title": "",
+      "citations": 50266,
+      "year": 2021,
+      "first_author": "Chen, Kuan-Lin"
+    },
+    {
+      "title": "XGBoost",
+      "citations": 47929,
+      "year": 2016,
+      "first_author": "Tianqi Chen"
+    },
+    {
+      "title": "MEGA6: Molecular Evolutionary Genetics Analysis Version 6.0",
+      "citations": 47862,
+      "year": 2013,
+      "first_author": "Koichiro Tamura"
+    }
+  ],
+  "title_vs_abstract": {
+    "neural network": {
+      "title": 433556,
+      "abstract": 1522612,
+      "ratio": 3.5
+    },
+    "machine learning": {
+      "title": 495798,
+      "abstract": 1287123,
+      "ratio": 2.6
+    },
+    "deep learning": {
+      "title": 374975,
+      "abstract": 980070,
+      "ratio": 2.6
+    },
+    "large language model": {
+      "title": 71469,
+      "abstract": 292873,
+      "ratio": 4.1
+    },
+    "reinforcement learning": {
+      "title": 104021,
+      "abstract": 201098,
+      "ratio": 1.9
+    },
+    "generative adversarial": {
+      "title": 22362,
+      "abstract": 67647,
+      "ratio": 3.0
+    },
+    "diffusion model": {
+      "title": 42120,
+      "abstract": 324073,
+      "ratio": 7.7
+    },
+    "federated learning": {
+      "title": 39481,
+      "abstract": 59298,
+      "ratio": 1.5
+    },
+    "retrieval augmented": {
+      "title": 8137,
+      "abstract": 27394,
+      "ratio": 3.4
+    },
+    "hallucination": {
+      "title": 10711,
+      "abstract": 48759,
+      "ratio": 4.6
+    },
+    "transformer": {
+      "title": 129524,
+      "abstract": 316216,
+      "ratio": 2.4
+    },
+    "knowledge graph": {
+      "title": 28201,
+      "abstract": 90234,
+      "ratio": 3.2
+    },
+    "explainable": {
+      "title": 121569,
+      "abstract": 2544915,
+      "ratio": 20.9
+    },
+    "fairness": {
+      "title": 78835,
+      "abstract": 429288,
+      "ratio": 5.4
+    }
+  }
+}
