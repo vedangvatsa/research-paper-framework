@@ -193,7 +193,7 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 
 "Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934). These two trigrams together appear in over 913,000 abstracts.
 
-"Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). This is a reversal of what title-only analysis would show, where CNN (92,331) still leads LLM (51,603). The abstract data reveals that LLMs are discussed more broadly than titles suggest.
+"Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). The abstract data reveals that LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 11).
 
 "Support vector machine" (239,347) and "random forest classifier" (73,385) persist in the top 15. These classical methods continue to be widely referenced in abstracts, often as baselines for comparison or in application domains where simpler models remain competitive.
 
@@ -376,7 +376,7 @@ This finding has methodological consequences for bibliometric research. Title-on
 
 "Neural network" (1,522,612 abstract mentions) remains the most frequently referenced AI concept in academic papers. "Convolutional neural network" (394,934) and "deep neural network" (518,431) are the top two trigrams. These numbers confirm that neural architectures remain the dominant computational approach in AI, even as public attention has moved to large language models.
 
-The temporal data adds nuance. "Neural network" grew from 23,395 abstracts in 2013 to 207,140 in 2025, a steady 8.9x increase. It has not plateaued. New papers continue to use neural networks in increasingly diverse application domains. The term appears in the abstracts of papers in medicine, materials science, climate modeling, and finance, not just in AI-focused venues.
+The temporal data adds nuance. "Neural network" grew from 23,395 abstracts in 2013 to 207,140 in 2025, a steady 8.9x increase. It has not plateaued. New papers continue to use neural networks in increasingly diverse application domains, as evidenced by the 3.5x ratio between abstract and title counts (Table 11), indicating that most papers using neural networks do not place the term in their titles.
 
 ### 4.2 The LLM Inflection Point
 
@@ -424,9 +424,9 @@ China and the United States started the decade at near-parity. In 2013, the US p
 | 2024 | 144,452 | 90,915 | 65,398 | 12,657 | 28,174 |
 | 2025 | 187,887 | 122,449 | 89,287 | 15,558 | 37,104 |
 
-The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. The US output actually stalled between 2021 and 2022 (64,931 to 64,486, a slight decline), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs 122,449).
+The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. The US output actually declined between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs 122,449).
 
-The US stall in 2021-2022 is notable. US AI research output grew only 0.7% between 2020 and 2022 (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
+The US deceleration from 2020 to 2022 is notable. US AI research output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
 #### 4.4.2 Method-Specific Comparisons
 
