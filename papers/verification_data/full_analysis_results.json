@@ -1,0 +1,356 @@
+{
+  "total_papers": 14562979,
+  "by_year": {
+    "2013": 730699,
+    "2014": 751239,
+    "2015": 782254,
+    "2016": 781757,
+    "2017": 795912,
+    "2018": 874797,
+    "2019": 953280,
+    "2020": 1032506,
+    "2021": 1077309,
+    "2022": 1040833,
+    "2023": 1177354,
+    "2024": 1488787,
+    "2025": 1485442,
+    "2026": 1590810
+  },
+  "document_types": {
+    "article": 9591245,
+    "dataset": 1514506,
+    "preprint": 1218138,
+    "book-chapter": 1024546,
+    "other": 300453,
+    "dissertation": 268175,
+    "review": 152030,
+    "libguides": 133896,
+    "book": 91164,
+    "peer-review": 88372,
+    "report": 48024,
+    "paratext": 46057,
+    "letter": 25687,
+    "editorial": 17559,
+    "erratum": 15710,
+    "standard": 11965,
+    "reference-entry": 8785,
+    "software": 2176,
+    "retraction": 2041,
+    "supplementary-materials": 1633,
+    "database": 639,
+    "book-section": 138,
+    "report-component": 30,
+    "grant": 10
+  },
+  "keyword_counts": {
+    "learning": 1351867,
+    "network": 899596,
+    "neural": 481890,
+    "detection": 601062,
+    "deep": 467207,
+    "language": 271405,
+    "intelligence": 232167,
+    "generative": 87949,
+    "recognition": 253375,
+    "autonomous": 78589,
+    "reinforcement": 100492,
+    "classification": 330838,
+    "transformer": 78393,
+    "segmentation": 171725,
+    "robot": 297154,
+    "knowledge": 127255,
+    "adversarial": 61053,
+    "embedding": 80124,
+    "federated": 35109,
+    "explainable": 47388,
+    "diffusion": 54295,
+    "agentic": 102105,
+    "multimodal": 72517
+  },
+  "bigram_counts": {
+    "neural network": 404104,
+    "machine learning": 391325,
+    "artificial intelligence": 186667,
+    "deep learning": 334662,
+    "reinforcement learning": 96599,
+    "few shot": 16898,
+    "large language": 52570,
+    "object detection": 49601,
+    "attention mechanism": 15494,
+    "question answering": 16457,
+    "natural language": 25436,
+    "transfer learning": 40230,
+    "image segmentation": 61041,
+    "image classification": 60058,
+    "knowledge graph": 21110,
+    "generative adversarial": 21883,
+    "federated learning": 28825,
+    "autonomous driving": 11104,
+    "sentiment analysis": 34030,
+    "speech recognition": 20980,
+    "data augmentation": 13386,
+    "self-supervised": 21911,
+    "zero-shot": 12208,
+    "graph neural": 26275,
+    "text classification": 11902,
+    "named entity": 7951,
+    "semantic segmentation": 21397,
+    "pose estimation": 15194,
+    "anomaly detection": 36589,
+    "contrastive learning": 18854
+  },
+  "trigram_counts": {
+    "convolutional neural network": 92331,
+    "recurrent neural network": 17681,
+    "few shot learning": 7827,
+    "natural language processing": 14427,
+    "large language models": 51603,
+    "deep reinforcement learning": 30407,
+    "visual question answering": 2922,
+    "automatic speech recognition": 3619,
+    "medical image segmentation": 9381,
+    "generative adversarial network": 20007,
+    "graph neural network": 24917,
+    "long short-term memory": 9964,
+    "natural language understanding": 1192,
+    "named entity recognition": 6533,
+    "autonomous driving system": 1111,
+    "image super resolution": 15358
+  },
+  "fastest_rising": {
+    "deepseek": {
+      "new": 932,
+      "old": 0,
+      "ratio": 932.0
+    },
+    "rag": {
+      "new": 4006,
+      "old": 30,
+      "ratio": 133.5
+    },
+    "claude": {
+      "new": 847,
+      "old": 26,
+      "ratio": 32.6
+    },
+    "llm": {
+      "new": 37871,
+      "old": 1185,
+      "ratio": 32.0
+    },
+    "gemini": {
+      "new": 1059,
+      "old": 49,
+      "ratio": 21.6
+    },
+    "mistral": {
+      "new": 134,
+      "old": 7,
+      "ratio": 19.1
+    },
+    "retrieval-augmented": {
+      "new": 4830,
+      "old": 282,
+      "ratio": 17.1
+    },
+    "guardrail": {
+      "new": 387,
+      "old": 24,
+      "ratio": 16.1
+    },
+    "hallucination": {
+      "new": 3600,
+      "old": 339,
+      "ratio": 10.6
+    },
+    "chain-of-thought": {
+      "new": 1719,
+      "old": 174,
+      "ratio": 9.9
+    },
+    "llama": {
+      "new": 608,
+      "old": 79,
+      "ratio": 7.7
+    },
+    "copilot": {
+      "new": 364,
+      "old": 50,
+      "ratio": 7.3
+    },
+    "gen": {
+      "new": 1657,
+      "old": 361,
+      "ratio": 4.6
+    },
+    "reasoning": {
+      "new": 23276,
+      "old": 5305,
+      "ratio": 4.4
+    },
+    "tokenization": {
+      "new": 6092,
+      "old": 1460,
+      "ratio": 4.2
+    },
+    "fine-tuning": {
+      "new": 7284,
+      "old": 2125,
+      "ratio": 3.4
+    },
+    "prompt": {
+      "new": 11139,
+      "old": 3275,
+      "ratio": 3.4
+    },
+    "multimodal": {
+      "new": 35642,
+      "old": 10393,
+      "ratio": 3.4
+    },
+    "benchmark": {
+      "new": 20303,
+      "old": 6033,
+      "ratio": 3.4
+    },
+    "agentic": {
+      "new": 38451,
+      "old": 13258,
+      "ratio": 2.9
+    },
+    "alignment": {
+      "new": 13687,
+      "old": 4786,
+      "ratio": 2.9
+    },
+    "agent": {
+      "new": 38451,
+      "old": 13258,
+      "ratio": 2.9
+    },
+    "personalization": {
+      "new": 11790,
+      "old": 4761,
+      "ratio": 2.5
+    },
+    "diffusion": {
+      "new": 20200,
+      "old": 8697,
+      "ratio": 2.3
+    },
+    "grounding": {
+      "new": 2116,
+      "old": 944,
+      "ratio": 2.2
+    },
+    "synthetic": {
+      "new": 11806,
+      "old": 5925,
+      "ratio": 2.0
+    },
+    "instruction": {
+      "new": 4656,
+      "old": 3407,
+      "ratio": 1.4
+    },
+    "safety": {
+      "new": 10748,
+      "old": 8555,
+      "ratio": 1.3
+    },
+    "chatgpt": {
+      "new": 3602,
+      "old": 2770,
+      "ratio": 1.3
+    },
+    "in-context": {
+      "new": 18746,
+      "old": 13890,
+      "ratio": 1.3
+    },
+    "strategic": {
+      "new": 3768,
+      "old": 3207,
+      "ratio": 1.2
+    },
+    "pedagogy": {
+      "new": 2439,
+      "old": 2580,
+      "ratio": 0.9
+    }
+  },
+  "citation_distribution": {
+    "0 citations": 7518424,
+    "1-10 citations": 4750828,
+    "11-50 citations": 1786760,
+    "51-100 citations": 311700,
+    "101-500 citations": 180780,
+    "501-1000 citations": 9956,
+    "1001+ citations": 4531
+  },
+  "max_citations": 221202,
+  "subconcept_counts": {
+    "Machine Learning": 3153802,
+    "Deep Learning": 818814,
+    "Natural Language Processing": 941731,
+    "Computer Vision": 1882509,
+    "Artificial Neural Network": 1258198,
+    "Reinforcement Learning": 0,
+    "Pattern Recognition": 0,
+    "Speech Recognition": 0,
+    "Robot": 21019017,
+    "Data Mining": 2697584
+  },
+  "source_types": {
+    "journal": 6403449,
+    "repository": 3787703,
+    "book series": 586440,
+    "conference": 344771,
+    "ebook platform": 228847,
+    "igsnCatalog": 1611,
+    "other": 268,
+    "metadata": 3
+  },
+  "open_access": {
+    "closed": 6896658
+  },
+  "top_institutions": {
+    "Ministry of Education, Culture, Sports, Science and Technology": 212904,
+    "National Institutes of Natural Sciences": 205150,
+    "National Institute for Fusion Science": 203941,
+    "Centre National de la Recherche Scientifique": 187831,
+    "Chinese Academy of Sciences": 168574,
+    "Leibniz Association": 138862,
+    "Leibniz Institute DSMZ \u2013 German Collection of Microorganisms and Cell Cultures": 122330,
+    "University of London": 84896,
+    "Nagoya University": 68501,
+    "Tsinghua University": 67845,
+    "Shanghai Jiao Tong University": 53605,
+    "Zhejiang University": 53417,
+    "Harbin Institute of Technology": 51024,
+    "University of Chinese Academy of Sciences": 50000,
+    "Russian Academy of Sciences": 46326
+  },
+  "top_countries": {
+    "China": 2170617,
+    "United States of America": 1732242,
+    "India": 689461,
+    "Germany": 551883,
+    "United Kingdom of Great Britain and Northern Ireland": 551767,
+    "Japan": 544864,
+    "France": 330563,
+    "Canada": 291367,
+    "Indonesia": 282602,
+    "Italy": 274264,
+    "Australia": 247975,
+    "Korea, Republic of": 218687,
+    "Spain": 204789,
+    "Russian Federation": 202548,
+    "Netherlands": 159616,
+    "Iran, Islamic Republic of": 153331,
+    "Brazil": 149856,
+    "Turkey": 124979,
+    "Switzerland": 115480,
+    "Taiwan, Province of China": 112448
+  }
+}
