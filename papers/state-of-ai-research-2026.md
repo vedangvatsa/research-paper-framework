@@ -339,6 +339,8 @@ The China-US gap is not uniform across methods.
 
 In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs. 35,923, or 1.32x the Chinese count). While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing category since 2023.
 
+The method-level shares within each country differ. "Neural network" appears in 38.1% of Chinese AI papers but 24.7% of US papers. "Transformer" appears in 10.2% of Chinese papers but only 4.7% of US papers. By contrast, "diffusion model" is nearly even as a share of each country's output (7.6% for China, 7.8% for the US), and "large language model" tilts toward the US (6.6% vs. 4.1%). The overall pattern is that China's volume lead is concentrated in established neural network methods, while the US has a proportionally larger share in LLM and diffusion model research.
+
 #### 4.4.3 The LLM Convergence
 
 The US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China. By 2025, China reached parity (China: 15,008 vs. US: 14,735, a ratio of 1.02). Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi were released during the same period, giving Chinese researchers domestic foundation models to study, benchmark, and extend.
