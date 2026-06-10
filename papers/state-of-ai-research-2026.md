@@ -190,7 +190,7 @@ Three patterns in the keyword growth data.
 
 ### 3.5 Citation Distribution
 
-The citation distribution is extremely right-skewed across the corpus. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. This figure is partly inflated by recency: papers published in 2024-2026 have had little time to accumulate citations.
+The citation distribution is extremely right-skewed across the corpus. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. This figure is partly inflated by recency, as papers published in 2024-2026 have had little time to accumulate citations.
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
@@ -248,7 +248,7 @@ Of the 5,003,783 works in the corpus, 3,043,557 (60.8%) are published as open ac
 
 The ratio of abstract-to-title matches varies from 1.5x ("federated learning") to 7.7x ("diffusion model"). Methods that are commonly used as tools rather than as the primary topic of a paper have the highest ratios. "Diffusion model" (7.7x) is discussed in 324,073 abstracts but placed in the title of only 42,120 papers. Many of these papers use diffusion models as a component of a larger system without naming them in the title.
 
-"Fairness" (5.4x) and "hallucination" (4.6x) show high ratios because they are frequently discussed as secondary concerns in a paper's abstract rather than as the paper's primary topic. Note that both terms have non-AI uses: "hallucination" also appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. Their abstract counts may include some non-AI papers.
+"Fairness" (5.4x) and "hallucination" (4.6x) show high ratios because they are frequently discussed as secondary concerns in a paper's abstract rather than as the paper's primary topic. Both terms have non-AI uses. "Hallucination" also appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. Their abstract counts may include some non-AI papers.
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
