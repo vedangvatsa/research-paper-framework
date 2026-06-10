@@ -251,7 +251,7 @@ The ratio of abstract-to-title matches varies from 1.5x ("federated learning") t
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
-For bibliometric work, the implication is clear: title-only analysis systematically undercounts methods that are used as tools across disciplines, and abstract-level analysis captures more of that usage.
+For bibliometric work, this means that title-only analysis systematically undercounts methods that are used as tools across disciplines, and abstract-level analysis captures more of that usage.
 
 ## 4. Discussion
 
@@ -309,7 +309,7 @@ The crossover occurred in 2021. That year, China produced 71,273 papers while th
 
 The US deceleration from 2020 to 2022 is notable. In this corpus, US output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
-An important caveat: paper counts measure research volume, not research impact. This study does not analyze citation-weighted metrics, shares of top-1% highly cited papers, or venue prestige, which may yield different rankings. Publication incentive structures also differ across countries. Both China and the US have institutional pressures (tenure requirements, h-index targets, and ranking criteria) that can inflate output independently of research contribution.
+Paper counts measure research volume, not research impact. This study does not analyze citation-weighted metrics, shares of top-1% highly cited papers, or venue prestige, which may yield different rankings. Publication incentive structures also differ across countries. Both China and the US have institutional pressures (tenure requirements, h-index targets, and ranking criteria) that can inflate output independently of research contribution.
 
 #### 4.4.2 Method-Specific Comparisons
 
@@ -384,7 +384,7 @@ Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scal
 
 Five million works, analyzed through abstract-level keyword search, show three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than any other method in this corpus (29.9x over seven years). And research on reliability and safety (hallucination, guardrail, jailbreak) has grown rapidly alongside deployment.
 
-Six findings from this analysis:
+Six findings from this analysis.
 
 1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). This dominance has not diminished despite the attention given to LLMs.
 
