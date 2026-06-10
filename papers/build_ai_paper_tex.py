@@ -179,14 +179,14 @@ def md_to_latex(text):
                 fig_path = fig_match.group(2)
                 # Per-figure size overrides to avoid page gaps
                 fig_sizes = {
-                    'fig_established_methods': 0.6,
-                    'fig_llm_explosion': 0.5,
-                    'fig_rising_methods': 0.6,
-                    'fig_citation_dist': 0.55,
-                    'fig_countries': 0.72,
-                    'fig_llm_china_us': 0.72,
+                    'fig_established_methods': 0.85,
+                    'fig_llm_explosion': 0.75,
+                    'fig_rising_methods': 0.85,
+                    'fig_citation_dist': 0.75,
+                    'fig_countries': 0.80,
+                    'fig_llm_china_us': 0.80,
                     'fig_hype_cycle': 0.90,
-                    'fig_china_vs_us': 0.62,
+                    'fig_china_vs_us': 0.80,
                 }
                 fig_width = 1.0
                 for key, size in fig_sizes.items():
