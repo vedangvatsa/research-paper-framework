@@ -121,54 +121,18 @@ Formatting issues that are easy to miss on screen but obvious in PDF.
 
 ---
 
-## 9. Automated Checks
+## 9. Automated Checks (Single Script)
 
-Run these commands before every submission. Fix every hit or justify why it's acceptable.
+Run `scripts/quality_check.sh` before every submission. It checks all categories in one pass:
 
-### AI phrasing & dashes
 ```bash
-grep -nE '—|–|notably|comprehensive|striking|fundamental|furthermore|moreover|landscape|paradigm|unprecedented|leverage|foster|facilitate' paper.md
+./scripts/quality_check.sh papers/my_paper.md
 ```
 
-### Hedging violations
-```bash
-grep -nwE 'will|would|should' paper.md
-```
+The script checks for: AI phrasing, Unicode dashes, hedging violations, race/competition language, sensitivity red flags, AI opener patterns, cliché phrases, causal language, semantic overstatement, and LaTeX issues.
 
-### Race/competition language
-```bash
-grep -niE 'overtaking|overtook|beat|won|race|dominate|dominance|leader|leading' paper.md
-```
+Fix every hit or justify why it's acceptable.
 
-### Sensitivity red flags
-```bash
-grep -niE 'deserves|surprising|impressive|remarkable|notably' paper.md
-```
-
-### Definitive claims about trends
-```bash
-grep -niE 'has (not )?plateaued|replaced|confirms|prove[sd]?' paper.md
-```
-
-### LaTeX dash check (find Unicode dashes in .tex files)
-```bash
-grep -Pn '[\x{2013}\x{2014}]' paper.tex
-```
-
-### Overfull boxes
-```bash
-pdflatex paper.tex 2>&1 | grep -i 'overfull'
-```
-
-### Cross-reference number audit
-```bash
-# Extract all numbers from the conclusion and search for them in the body
-# (manual review required — run and inspect)
-grep -oE '[0-9]+(\.[0-9]+)?' conclusion.tex | sort -u | while read n; do
-  echo "=== $n ==="
-  grep -n "$n" body.tex
-done
-```
 
 ---
 
