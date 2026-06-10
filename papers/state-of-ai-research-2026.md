@@ -20,7 +20,7 @@ In 2025, over 944,000 academic works in the OpenAlex database mentioned artifici
 
 Many bibliometric studies of AI research rely on subject classification tags or curated keyword lists that may not capture cross-disciplinary usage of AI methods. When keyword search is used, title-based approaches capture only papers where the author chose to place the method name in the title. A paper titled "Predicting Protein Stability Under Thermal Stress" that uses a neural network throughout its methods section would be invisible to a title-only search for "neural network." Abstract-level analysis addresses this gap by searching the text where authors describe their methods, results, and contributions.
 
-To analyze these trends, a bibliometric corpus of 5,003,783 publications was defined by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts. No papers were downloaded; all analyses were performed through API count queries.
+To analyze these trends, a bibliometric corpus of 5,003,783 publications was defined by querying the OpenAlex scholarly database for academic works published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts. No papers were downloaded; all analyses were performed through API count queries.
 
 The analysis covers 14 annual cohorts (2013-2026), measuring publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
 
@@ -227,7 +227,7 @@ Note that OpenAlex's institution taxonomy includes umbrella organizations (CNRS,
 
 ### 3.8 Open Access
 
-Of the 5,003,783 papers in the corpus, 3,043,557 (60.8%) are published as open access (OA) literature, while 1,960,226 (39.2%) remain behind publisher paywalls. For context, Piwowar et al. [11] estimated the baseline open access rate across all academic fields at 28% in 2018. The higher rate in this corpus is consistent with the AI community's preprint culture, where arXiv is a common venue for early dissemination.
+Of the 5,003,783 works in the corpus, 3,043,557 (60.8%) are published as open access (OA) literature, while 1,960,226 (39.2%) remain behind publisher paywalls. For context, Piwowar et al. [11] estimated the baseline open access rate across all academic fields at 28% in 2018. The higher rate in this corpus is consistent with the AI community's preprint culture, where arXiv is a common venue for early dissemination.
 
 ### 3.9 Title vs. Abstract Comparison
 
@@ -393,7 +393,7 @@ This study contributes a methodological point to the bibliometrics literature. T
 
 ## 6. Conclusion
 
-Five million papers, analyzed through abstract-level keyword search, reveal an AI research field shaped by three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than other methods in this corpus (29.9x over seven years). And a growing body of research on reliability and safety (hallucination, guardrail, jailbreak) indicates increasing attention to the practical challenges of deploying these systems.
+Five million works, analyzed through abstract-level keyword search, reveal an AI research field shaped by three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than other methods in this corpus (29.9x over seven years). And a growing body of research on reliability and safety (hallucination, guardrail, jailbreak) indicates increasing attention to the practical challenges of deploying these systems.
 
 Six principal findings stand out.
 
