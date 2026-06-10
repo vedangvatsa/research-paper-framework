@@ -8,7 +8,7 @@
 
 ## Abstract
 
-This study analyzes over five million academic papers that discuss artificial intelligence methods in their abstracts, published between 2013 and mid-2026. The analysis measures keyword frequency, temporal trajectories, growth rates, citation distributions, geographic concentration, institutional output, open access rates, and title-versus-abstract coverage gaps. Key findings include the continued dominance of neural networks across 30% of all abstracts, the 29.9x growth of large language model papers from 2018 to 2025, China exceeding the United States in total AI research volume by paper count, and nearly half of all papers receiving zero citations.
+This study analyzes over five million academic works that discuss artificial intelligence methods in their abstracts, published between 2013 and mid-2026. The analysis measures keyword frequency, temporal trajectories, growth rates, citation distributions, geographic concentration, institutional output, open access rates, and title-versus-abstract coverage gaps. Key findings include the continued dominance of neural networks across 30% of all abstracts, the 29.9x growth of large language model papers from 2018 to 2025, China exceeding the United States in total AI research volume by paper count, and nearly half of all papers receiving zero citations.
 
 _**Keywords**_: artificial intelligence, machine learning, bibliometrics, research trends, large language models, neural networks, abstract analysis, OpenAlex
 
@@ -16,7 +16,7 @@ _**Keywords**_: artificial intelligence, machine learning, bibliometrics, resear
 
 ## 1. Introduction
 
-In 2025, over 944,000 academic papers in the OpenAlex database mentioned artificial intelligence methods in their abstracts. Through early June 2026, 812,972 such papers have been recorded, putting the full year on pace for approximately 1.6 million total papers.
+In 2025, over 944,000 academic works in the OpenAlex database mentioned artificial intelligence methods in their abstracts. Through early June 2026, 812,972 such papers have been recorded, putting the full year on pace for approximately 1.6 million total papers.
 
 Many bibliometric studies of AI research rely on subject classification tags or curated keyword lists that may not capture cross-disciplinary usage of AI methods. When keyword search is used, title-based approaches capture only papers where the author chose to place the method name in the title. A paper titled "Predicting Protein Stability Under Thermal Stress" that uses a neural network throughout its methods section would be invisible to a title-only search for "neural network." Abstract-level analysis addresses this gap by searching the text where authors describe their methods, results, and contributions.
 
