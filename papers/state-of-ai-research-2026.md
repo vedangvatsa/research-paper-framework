@@ -194,7 +194,7 @@ The citation distribution is extremely right-skewed across the corpus. Nearly ha
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
-The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 (113,579 citations) and the lme4 statistics package (84,949), are not research contributions to the field but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among field-specific papers, the top entries (ResNet, Deep Learning [5], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all foundational infrastructure. Papers that provide widely-used building blocks receive orders of magnitude more citations than application-specific work.
+The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 [23] (113,579 citations) and the lme4 statistics package [24] (84,949), are not research contributions to the field but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among field-specific papers, the top entries (ResNet, Deep Learning [5], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all foundational infrastructure. Papers that provide widely-used building blocks receive orders of magnitude more citations than application-specific work.
 
 ### 3.6 Geographic Distribution
 
@@ -455,3 +455,7 @@ Six principal findings stand out.
 [21] T. B. Brown et al. "Language Models are Few-Shot Learners." NeurIPS, 2020. [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
 
 [22] C. Lefebvre et al. "Searching for studies." Cochrane Handbook for Systematic Reviews of Interventions, 2019. [https://doi.org/10.1002/9781119536604.ch4](https://doi.org/10.1002/9781119536604.ch4)
+
+[23] American Psychiatric Association. "Diagnostic and Statistical Manual of Mental Disorders (DSM-5)." 5th ed., 2013. [https://doi.org/10.1176/appi.books.9780890425596](https://doi.org/10.1176/appi.books.9780890425596)
+
+[24] D. Bates, M. Mächler, B. Bolker, and S. Walker. "Fitting Linear Mixed-Effects Models Using lme4." Journal of Statistical Software, vol. 67, no. 1, 2015. [https://doi.org/10.18637/jss.v067.i01](https://doi.org/10.18637/jss.v067.i01)
