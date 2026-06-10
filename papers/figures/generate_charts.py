@@ -87,19 +87,12 @@ def chart1():
     ax2 = ax1.twinx()
     yoy_years = [y for y, g in zip(years, yoy) if g is not None and y < 2026]
     yoy_vals = [g for y, g in zip(years, yoy) if g is not None and y < 2026]
-    ax2.plot(yoy_years, yoy_vals, '^--', color='#d6604d', linewidth=1.2, markersize=3.5, alpha=0.85, zorder=2)
+    ax2.plot(yoy_years, yoy_vals, '--', color='#d6604d', linewidth=1.2, alpha=0.85, zorder=2)
     ax2.set_ylabel('YoY Growth (%)', color='#d6604d')
     ax2.tick_params(axis='y', labelcolor='#d6604d')
     ax2.set_ylim(0, 50)
     
-    # Combined legend
-    from matplotlib.lines import Line2D
-    legend_elements = [
-        Line2D([0], [0], color='#2166ac', marker='o', markersize=4, linewidth=2, label='Full Year'),
-        Line2D([0], [0], color='#2166ac', marker='o', markersize=6, linestyle=':', linewidth=2, markerfacecolor='white', markeredgewidth=2, label='Projected (2026)'),
-        Line2D([0], [0], color='#d6604d', marker='^', markersize=3.5, linestyle='--', linewidth=1.2, label='YoY Growth (%)'),
-    ]
-    ax1.legend(handles=legend_elements, frameon=True, fancybox=True, shadow=False, fontsize=7, loc='upper left')
+
     
     cleanup_axes(ax1)
     ax2.spines['top'].set_visible(False)
