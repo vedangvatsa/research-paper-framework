@@ -55,5 +55,51 @@ Before finalizing any paper, use these automated tools:
 *   **URL Verification:** `./scripts/verify_references.sh papers/my_paper.md` — Check all reference URLs for 404s.
 *   **PDF Generation:** `./scripts/generate_pdf.sh papers/my_paper.md papers/my_paper.pdf` — Generate the final PDF.
 
-## 6. Pre-Publication Review Checklist
-*   **QUALITY REVIEW:** Before finalizing any paper, run through `QUALITY_CHECKLIST.md` which provides a comprehensive review from four perspectives: fact checking, sensitivity reading, semantic precision, and ethics/legal review.
+## 6. Mandatory Quality Review (Automatic)
+
+Before presenting any paper as "done" or "ready", you **MUST** automatically perform the following. Do not wait to be asked. This is as mandatory as avoiding slop words.
+
+### 6.1 Automated Checks
+Run these grep commands against the paper and fix every hit before proceeding:
+
+```bash
+# AI phrasing & Unicode dashes
+grep -nE '—|–|notably|comprehensive|striking|fundamental|furthermore|moreover|landscape|paradigm|unprecedented|leverage|foster|facilitate' paper.md
+
+# Hedging violations
+grep -nwE 'will|would|should' paper.md
+
+# Race/competition language
+grep -niE 'overtaking|overtook|beat|won|race|dominate|dominance' paper.md
+
+# Sensitivity red flags
+grep -niE 'deserves|surprising|impressive|remarkable' paper.md
+
+# Definitive trend claims
+grep -niE 'has (not )?plateaued|replaced|confirms|prove[sd]?' paper.md
+```
+
+### 6.2 Ten-Reviewer Pass
+After writing is complete, review the entire paper from each of these ten perspectives. Fix all issues found before presenting to the user.
+
+| Pass | Reviewer | Focus |
+|------|----------|-------|
+| A | **Fact Checker** | Re-derive every %, ratio, and cross-reference. Verify table row counts match prose. |
+| B | **Sensitivity Reader** | Neutral country comparisons, balanced caveats, no patronizing framing. |
+| C | **Semantic Reviewer** | "indicates" not "confirms", no double-counting language, no overstatement. |
+| D | **Ethics / Legal** | Conclusion caveats present, no implied quality judgments, no weaponizable claims. |
+| E | **AI Phrasing Detector** | No slop words, no filler, no clichés, no Unicode dashes. |
+| F | **Hedging / Claims** | could/may not will/would, projection math disclosed, trends hedged. |
+| G | **Logic / Consistency** | Conclusion matches body, contributions are actions, roadmap matches sections. |
+| H | **Copy Editor** | Typos, acronyms defined, consistent formatting and tense. |
+| I | **LaTeX / Typesetting** | No overfull hbox, hyphenation controlled, tables fit margins. |
+| J | **Structural / Flow** | Logical transitions, no redundancy, discussion adds beyond results. |
+
+For the full checklist with detailed items for each reviewer, see `QUALITY_CHECKLIST.md`.
+
+### 6.3 Reporting
+After completing the ten-reviewer pass, present a brief summary to the user listing:
+- How many issues were found and fixed per reviewer category
+- Any remaining items that require the user's judgment (e.g., sensitivity framing choices)
+
+**Do NOT skip this step.** A paper that has not been through the ten-reviewer pass is not ready.
