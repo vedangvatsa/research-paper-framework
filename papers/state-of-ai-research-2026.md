@@ -112,7 +112,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual output in this corpus exceeds 1 million papers.
 
-To put the acceleration in perspective, the 2025 output alone (944,530 papers) exceeds the entire first six years of the corpus combined (2013-2018, 734,197 papers). More than half of the corpus (58.8%) was published from 2023 onward, meaning that the majority of AI-related academic work indexed by OpenAlex is less than four years old.
+The corpus is heavily weighted toward recent years. Papers published from 2023 onward account for 58.8% of the total, meaning that the majority of AI-related academic work indexed by OpenAlex is less than four years old.
 
 
 ![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
