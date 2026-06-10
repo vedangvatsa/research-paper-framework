@@ -64,7 +64,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 1. **Keyword frequency.** For each keyword, bigram, or trigram of interest, a single API call was issued using `abstract.search:<term>,publication_year:2013-2026` and the `meta.count` field from the response was recorded.
 
-2. **Growth detection.** For each keyword, the total publication count from 2025-2026 was divided by the total from 2022-2023 to produce a growth ratio. Two-year windows were used to reduce noise from single-year fluctuations.
+2. **Growth detection.** For each keyword, the total publication count from 2025-2026 was divided by the total from 2022-2023 to produce a growth ratio.
 
 3. **Time-series trajectories.** For 10 selected methods, year-by-year API calls were issued to construct annual publication counts from 2013 (or the method's introduction year) through 2026.
 
