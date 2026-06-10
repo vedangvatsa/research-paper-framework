@@ -335,7 +335,7 @@ The US led China in LLM research output throughout 2020-2024, with the gap narro
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
-The convergence played out in three stages. From 2020-2022, the US led as LLM research was concentrated at US-based labs. In 2023-2024, the gap narrowed as Chinese labs released competitive open-weight models. In 2025, parity was reached, when Chinese LLM paper output in the corpus matched the US for the first time.
+From 2020-2022, the US led as LLM research was concentrated at US-based labs. In 2023-2024, the gap narrowed as Chinese labs released competitive open-weight models. In 2025, Chinese LLM paper output matched the US for the first time.
 
 #### 4.4.4 India's Acceleration
 
