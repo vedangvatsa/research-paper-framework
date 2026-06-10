@@ -112,7 +112,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
-To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million papers therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI papers constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI papers represent approximately 5.2% of estimated global output. AI research is growing roughly five times faster than scholarship overall.
+To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million works therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI works constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI works represent approximately 5.2% of estimated global output.
 
 ![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
 
