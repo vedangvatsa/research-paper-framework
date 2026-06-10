@@ -110,7 +110,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent expansion of LLM-related research.
 
-The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
+The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers.
 
 For context, OpenAlex indexes over 250 million works across all fields and time periods. The AI corpus of 5 million works spans 2013 through mid-2026, a 13.5-year window. Within that window, annual AI output grew from 93,226 works in 2013 to 944,530 in 2025, a 10.1x increase.
 
