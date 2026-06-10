@@ -434,8 +434,8 @@ template = r"""\documentclass{article}
 
 \title{State of AI Research}
 
-\author{Vedang Ratan Vatsa \\\\
-Founder, Hashtag Web3 \\\\
+\author{Vedang Ratan Vatsa \\
+Founder, Hashtag Web3 \\
 \texttt{vedangvats@gmail.com}}
 
 \begin{document}
