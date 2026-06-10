@@ -108,7 +108,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch [20]) reached stable releases during this period, alongside widely adopted optimizers such as Adam [4]. Growth decelerated to 11.2% in 2022.
 
-**Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. ChatGPT was released in November 2022, and the subsequent expansion of LLM-related research (Section 3.3) likely contributed to this re-acceleration.
+**Phase 3 (2023-2026), LLM-driven re-acceleration, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. ChatGPT was released in November 2022, and the subsequent expansion of LLM-related research (Section 3.3) likely contributed to this re-acceleration.
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual output in this corpus exceeds 1 million papers.
 
@@ -267,7 +267,7 @@ For bibliometric work, this means that title-only analysis systematically underc
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years, with the 2025 count (207,140) still higher than the 2024 count (175,688).
 
 ### 4.2 The LLM Inflection Point
 
