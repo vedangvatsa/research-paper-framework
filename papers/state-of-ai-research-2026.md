@@ -245,7 +245,7 @@ Of the 5,003,783 works in the corpus, 3,043,557 (60.8%) are published as open ac
 | reinforcement learning | 104,021 | 201,098 | 97,077 | 1.9x |
 | knowledge graph | 28,201 | 90,234 | 62,033 | 3.2x |
 
-The ratio of abstract-to-title matches varies from 1.5x ("federated learning") to 7.7x ("diffusion model"). Methods that are commonly used as tools rather than as the primary topic of a paper have the highest ratios. "Diffusion model" (7.7x) is discussed in 324,073 abstracts but placed in the title of only 42,120 papers. Many of these papers use diffusion models as a component of a larger system without naming them in the title.
+The ratio of abstract-to-title matches varies from 1.5x ("federated learning") to 7.7x ("diffusion model"). "Diffusion model" (7.7x) is discussed in 324,073 abstracts but placed in the title of only 42,120 papers. However, as noted in Section 3.3, the abstract count for "diffusion model" includes non-AI uses (e.g., diffusion of innovations in social science), which inflates the ratio. The remaining high-ratio terms are more interpretable.
 
 "Fairness" (5.4x) and "hallucination" (4.6x) show high ratios because they are frequently discussed as secondary concerns in a paper's abstract rather than as the paper's primary topic. Both terms have non-AI uses. "Hallucination" also appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. Their abstract counts may include some non-AI papers.
 
