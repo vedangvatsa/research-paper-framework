@@ -69,16 +69,16 @@ def chart1():
     
     # Primary axis: publication volume line
     ax1.plot(years[:-1], counts[:-1], 'o-', color='#2166ac', linewidth=2, markersize=4, zorder=3)
-    # 2026 estimated: open marker, dashed
-    ax1.plot(years[-1], counts[-1], 'o', color='#2166ac', markersize=5, zorder=3, markerfacecolor='white', markeredgewidth=1.5)
-    ax1.plot([years[-2], years[-1]], [counts[-2], counts[-1]], '--', color='#2166ac', linewidth=1.5, alpha=0.6, zorder=3)
+    # 2026 estimated: open marker, dotted line
+    ax1.plot(years[-1], counts[-1], 'o', color='#2166ac', markersize=6, zorder=3, markerfacecolor='white', markeredgewidth=2)
+    ax1.plot([years[-2], years[-1]], [counts[-2], counts[-1]], ':', color='#2166ac', linewidth=2, alpha=0.7, zorder=3)
     
     ax1.set_xlabel('Year')
     ax1.set_ylabel('Number of Publications', color='#2166ac')
     ax1.tick_params(axis='y', labelcolor='#2166ac')
     ax1.set_xticks(years)
     labels = [str(y) for y in years]
-    labels[-1] = '2026\n(est.)'
+    labels[-1] = '2026'
     ax1.set_xticklabels(labels, rotation=45)
     ax1.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e6:.1f}M' if x >= 1e6 else f'{x/1e3:.0f}K'))
     ax1.set_ylim(0, max(counts) * 1.12)
@@ -96,7 +96,7 @@ def chart1():
     from matplotlib.lines import Line2D
     legend_elements = [
         Line2D([0], [0], color='#2166ac', marker='o', markersize=4, linewidth=2, label='Full Year'),
-        Line2D([0], [0], color='#2166ac', marker='o', markersize=5, linestyle='--', linewidth=1.5, markerfacecolor='white', markeredgewidth=1.5, label='Estimated (2026)'),
+        Line2D([0], [0], color='#2166ac', marker='o', markersize=6, linestyle=':', linewidth=2, markerfacecolor='white', markeredgewidth=2, label='Projected (2026)'),
         Line2D([0], [0], color='#d6604d', marker='^', markersize=3.5, linestyle='--', linewidth=1.2, label='YoY Growth (%)'),
     ]
     ax1.legend(handles=legend_elements, frameon=True, fancybox=True, shadow=False, fontsize=7, loc='upper left')
@@ -137,15 +137,15 @@ def chart2():
         (years_trans, transformer, 'D', 'Transformer', '#ff7f00', '--'),
     ]:
         ax.plot(yrs[:-1], vals[:-1], marker=marker, markersize=4, linewidth=1.5, label=label, color=color, linestyle=ls)
-        # 2026 estimated: open marker, dashed
-        ax.plot(yrs[-1], vals[-1], marker=marker, markersize=5, color=color, markerfacecolor='white', markeredgewidth=1.5, zorder=5)
-        ax.plot([yrs[-2], yrs[-1]], [vals[-2], vals[-1]], '--', color=color, linewidth=1, alpha=0.5)
+        # 2026 projected: open marker, dotted
+        ax.plot(yrs[-1], vals[-1], marker=marker, markersize=6, color=color, markerfacecolor='white', markeredgewidth=2, zorder=5)
+        ax.plot([yrs[-2], yrs[-1]], [vals[-2], vals[-1]], ':', color=color, linewidth=1.5, alpha=0.7)
 
     ax.set_xlabel('Year')
     ax.set_ylabel('Number of Publications')
     ax.set_xticks(years_full)
     labels = [str(y) for y in years_full]
-    labels[-1] = '2026\n(est.)'
+    labels[-1] = '2026'
     ax.set_xticklabels(labels, rotation=45)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     ax.legend(frameon=True, fancybox=True, shadow=False, fontsize=9)
@@ -171,8 +171,8 @@ def chart3():
 
     # Solid line for actual years, dashed for estimate
     ax.plot(years[:-1], counts[:-1], marker='o', markersize=5, linewidth=2, color='#1a5276', zorder=5)
-    ax.plot(years[-1], counts[-1], marker='o', markersize=6, color='#1a5276', markerfacecolor='white', markeredgewidth=1.5, zorder=5)
-    ax.plot([years[-2], years[-1]], [counts[-2], counts[-1]], '--', color='#1a5276', linewidth=1.5, alpha=0.5, zorder=4)
+    ax.plot(years[-1], counts[-1], marker='o', markersize=7, color='#1a5276', markerfacecolor='white', markeredgewidth=2, zorder=5)
+    ax.plot([years[-2], years[-1]], [counts[-2], counts[-1]], ':', color='#1a5276', linewidth=2, alpha=0.7, zorder=4)
     ax.fill_between(years[:-1], counts[:-1], alpha=0.15, color='#2980b9')
 
     ax.axvline(x=2022.5, color='#c0392b', linestyle='--', linewidth=1.2, alpha=0.8)
@@ -185,7 +185,7 @@ def chart3():
     ax.set_ylabel('Number of Publications')
     ax.set_xticks(years)
     labels = [str(y) for y in years]
-    labels[-1] = '2026\n(est.)'
+    labels[-1] = '2026'
     ax.set_xticklabels(labels)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     cleanup_axes(ax)
@@ -224,16 +224,16 @@ def chart4():
         (years_kg, knowledge, 'D', 'Knowledge Graph', '#984ea3'),
     ]:
         ax.plot(yrs[:-1], vals[:-1], marker=marker, markersize=4, linewidth=1.5, label=label, color=color)
-        # 2026 estimated: open marker, dashed
-        ax.plot(yrs[-1], vals[-1], marker=marker, markersize=5, color=color, markerfacecolor='white', markeredgewidth=1.5, zorder=5)
-        ax.plot([yrs[-2], yrs[-1]], [vals[-2], vals[-1]], '--', color=color, linewidth=1, alpha=0.5)
+        # 2026 projected: open marker, dotted
+        ax.plot(yrs[-1], vals[-1], marker=marker, markersize=6, color=color, markerfacecolor='white', markeredgewidth=2, zorder=5)
+        ax.plot([yrs[-2], yrs[-1]], [vals[-2], vals[-1]], ':', color=color, linewidth=1.5, alpha=0.7)
 
     ax.set_xlabel('Year')
     ax.set_ylabel('Number of Publications')
     all_years = sorted(set(years_diff + years_fed + years_gnn + years_kg))
     ax.set_xticks(all_years)
     labels = [str(y) for y in all_years]
-    labels[-1] = '2026\n(est.)'
+    labels[-1] = '2026'
     ax.set_xticklabels(labels, rotation=45)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     ax.legend(frameon=True, fancybox=True, shadow=False, fontsize=9)
