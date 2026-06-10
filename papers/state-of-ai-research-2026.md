@@ -148,6 +148,8 @@ To put the acceleration in perspective, the 2025 output alone (944,530 papers) e
 
 "Support vector machine" (239,347) and "random forest classifier" (73,385) persist in the top 10. These classical methods continue to be widely referenced in abstracts, often as baselines for comparison or in application domains where simpler models remain competitive.
 
+Both lists are top-heavy. The highest-ranked bigram (1,522,612) has 5.9x the count of the tenth (256,159), and the highest trigram (518,431) has 7.1x the count of the tenth (73,385). Five of the ten trigrams end in "network" (deep neural, convolutional neural, artificial neural, recurrent neural, graph neural), reflecting how many research areas have developed their own neural network variant. The bigram list splits between method-level terms in the top six (neural network through large language, totaling 5.37 million mentions) and application-level terms in the bottom four (image classification through feature extraction, totaling 1.39 million).
+
 ### 3.3 Time-Series Trajectories
 
 **Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase). In 2025, "deep learning" surpassed "neural network" in annual abstract mentions for the first time (216,713 vs. 207,140), after closing the gap steadily from a 0.18 ratio in 2013 to 0.90 in 2024. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (a 10.9x increase). The early counts (2017-2018) likely include non-AI uses of "transformer" (e.g., electrical engineering).
