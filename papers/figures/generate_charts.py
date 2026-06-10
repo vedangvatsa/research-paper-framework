@@ -47,22 +47,57 @@ def chart1():
     years = sorted([int(y) for y in by_year.keys()])
     counts = [by_year[str(y)] for y in years]
     
-    fig, ax = plt.subplots(figsize=(5.5, 3.5))
-    colors = ['#2166ac'] * 13 + ['#92c5de']
-    bars = ax.bar(years, counts, color=colors, edgecolor='white', width=0.75)
+    # Compute YoY growth (skip 2013 and 2026)
+    yoy = [None]  # No growth for first year
+    for i in range(1, len(counts)):
+        yoy.append((counts[i] - counts[i-1]) / counts[i-1] * 100)
     
-    # Add legend to explain the two shades
+    fig, ax1 = plt.subplots(figsize=(5.5, 3.5))
+    
+    # Phase shading
+    ax1.axvspan(2012.5, 2016.5, alpha=0.08, color='#4393c3', zorder=0)
+    ax1.axvspan(2016.5, 2022.5, alpha=0.08, color='#2166ac', zorder=0)
+    ax1.axvspan(2022.5, 2026.5, alpha=0.08, color='#b2182b', zorder=0)
+    
+    # Phase labels at top
+    ax1.text(2014.5, max(counts)*0.55, 'Phase 1', ha='center', fontsize=7, color='#4393c3', fontweight='bold')
+    ax1.text(2019.5, max(counts)*1.02, 'Phase 2', ha='center', fontsize=7, color='#2166ac', fontweight='bold')
+    ax1.text(2024.5, max(counts)*1.02, 'Phase 3', ha='center', fontsize=7, color='#b2182b', fontweight='bold')
+    
+    # Primary axis: publication volume line
+    ax1.plot(years[:-1], counts[:-1], 'o-', color='#2166ac', linewidth=2, markersize=4, zorder=3, label='Publications')
+    ax1.plot(years[-1], counts[-1], 's', color='#92c5de', markersize=5, zorder=3)  # partial year marker
+    ax1.plot([years[-2], years[-1]], [counts[-2], counts[-1]], '--', color='#92c5de', linewidth=1.5, zorder=3)
+    
+    ax1.set_xlabel('Year')
+    ax1.set_ylabel('Number of Publications', color='#2166ac')
+    ax1.tick_params(axis='y', labelcolor='#2166ac')
+    ax1.set_xticks(years)
+    ax1.set_xticklabels([str(y) for y in years], rotation=45)
+    ax1.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e6:.1f}M' if x >= 1e6 else f'{x/1e3:.0f}K'))
+    ax1.set_ylim(0, max(counts) * 1.12)
+    
+    # Secondary axis: YoY growth rate
+    ax2 = ax1.twinx()
+    yoy_years = [y for y, g in zip(years, yoy) if g is not None and y < 2026]
+    yoy_vals = [g for y, g in zip(years, yoy) if g is not None and y < 2026]
+    ax2.plot(yoy_years, yoy_vals, '^--', color='#d6604d', linewidth=1.2, markersize=3.5, alpha=0.85, zorder=2, label='YoY Growth')
+    ax2.set_ylabel('YoY Growth (%)', color='#d6604d')
+    ax2.tick_params(axis='y', labelcolor='#d6604d')
+    ax2.set_ylim(0, 50)
+    
+    # Combined legend
+    from matplotlib.lines import Line2D
     from matplotlib.patches import Patch
-    legend_elements = [Patch(facecolor='#2166ac', edgecolor='white', label='Full Year'),
-                       Patch(facecolor='#92c5de', edgecolor='white', label='Partial Year (Jan–Jun)')]
-    ax.legend(handles=legend_elements, frameon=True, fancybox=True, shadow=False, fontsize=9)
+    legend_elements = [
+        Line2D([0], [0], color='#2166ac', marker='o', markersize=4, linewidth=2, label='Publications (Full Year)'),
+        Line2D([0], [0], color='#92c5de', marker='s', markersize=5, linestyle='--', linewidth=1.5, label='Publications (Partial Year)'),
+        Line2D([0], [0], color='#d6604d', marker='^', markersize=3.5, linestyle='--', linewidth=1.2, label='YoY Growth Rate (%)'),
+    ]
+    ax1.legend(handles=legend_elements, frameon=True, fancybox=True, shadow=False, fontsize=7, loc='upper left')
     
-    ax.set_xlabel('Year')
-    ax.set_ylabel('Number of Publications')
-    ax.set_xticks(years)
-    ax.set_xticklabels([str(y) for y in years], rotation=45)
-    ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e6:.1f}M' if x >= 1e6 else f'{x/1e3:.0f}K'))
-    cleanup_axes(ax)
+    cleanup_axes(ax1)
+    ax2.spines['top'].set_visible(False)
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_publication_volume.png', dpi=300, bbox_inches='tight')
     plt.close(fig)
