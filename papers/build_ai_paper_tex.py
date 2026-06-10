@@ -191,7 +191,7 @@ def md_to_latex(text):
                     'fig_llm_explosion': 0.75,
                     'fig_rising_methods': 0.85,
                     'fig_citation_dist': 0.65,
-                    'fig_countries': 0.70,
+                    'fig_countries': 0.85,
                     'fig_llm_china_us': 0.80,
                     'fig_hype_cycle': 1.0,
                     'fig_china_vs_us': 0.80,
