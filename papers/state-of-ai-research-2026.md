@@ -106,7 +106,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** Annual output grew from 93,226 to 115,423 papers. Deep learning was still an active research area rather than a standard tool.
 
-**Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch) matured during this period, lowering the barrier for researchers across disciplines to adopt neural network methods. Growth decelerated to 11.2% in 2022.
+**Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch) reached stable releases during this period. Growth decelerated to 11.2% in 2022.
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. ChatGPT was released in November 2022, and the subsequent expansion of LLM-related research (Section 3.3) likely contributed to this re-acceleration.
 
@@ -138,9 +138,9 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 "Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104).
 
-"Feature extraction" (256,159) at rank 10 reflects how many AI papers describe preprocessing pipelines rather than end-to-end architectures.
+"Feature extraction" (256,159) at rank 10 is a general-purpose term used across many machine learning pipelines.
 
-"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934) [3]. Together these account for over 913,000 abstract mentions, driven largely by image-related deep learning tasks.
+"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934) [3]. Together these account for over 913,000 abstract mentions.
 
 "Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 6).
 
@@ -247,7 +247,7 @@ Of the 5,003,783 works in the corpus, 3,043,557 (60.8%) are published as open ac
 
 The ratio of abstract-to-title matches varies from 1.5x ("federated learning") to 7.7x ("diffusion model"). "Diffusion model" (7.7x) is discussed in 324,073 abstracts but placed in the title of only 42,120 papers. However, as noted in Section 3.3, the abstract count for "diffusion model" includes non-AI uses (e.g., diffusion of innovations in social science), which inflates the ratio. The remaining high-ratio terms are more interpretable.
 
-"Fairness" (5.4x) and "hallucination" (4.6x) show high ratios because they are frequently discussed as secondary concerns in a paper's abstract rather than as the paper's primary topic. Both terms have non-AI uses. "Hallucination" also appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. Their abstract counts may include some non-AI papers.
+"Fairness" (5.4x) and "hallucination" (4.6x) also show high ratios. Both terms have significant non-AI uses — "hallucination" appears in psychiatric and neuroscience literature, "fairness" in social science and economics — so their abstract counts are inflated by non-AI papers, similar to "diffusion model."
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
@@ -257,7 +257,7 @@ The practical takeaway for bibliometric work is straightforward. Title-only anal
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. Two reasons explain this. First, optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles — neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
@@ -335,7 +335,7 @@ The US led China in LLM research output throughout 2020-2024, with the gap narro
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
-From 2020-2022, the US led as LLM research was concentrated at US-based labs. In 2023-2024, the gap narrowed as Chinese labs released competitive open-weight models. In 2025, Chinese LLM paper output matched the US for the first time.
+From 2020-2022, the US produced more LLM papers than China. In 2023-2024, the gap narrowed as Chinese labs released competitive open-weight models. In 2025, Chinese LLM paper output matched the US for the first time.
 
 #### 4.4.4 India's Acceleration
 
