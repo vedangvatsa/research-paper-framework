@@ -157,7 +157,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 ![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
 
-The year-over-year pattern is striking. From 2018 to 2022, annual growth was steady but slow (3,248 → 4,131 → 5,243 → 6,583 → 7,931). In 2023, the count jumped to 21,612, a 2.7x increase in a single year. In 2024 it reached 49,970 (2.3x over 2023), and in 2025 it reached 96,984 (1.9x over 2024). The abbreviation "LLM" itself grew 16.0x between 2022-2023 and 2025-2026 (Table 4). Related terms grew in parallel. "ChatGPT" appeared in 37,642 papers in 2025-2026 versus 10,865 in 2022-2023 (3.5x). "Hallucination" reached 48,759 total abstract mentions, and "vision language" grew 3.0x (from 12,771 to 37,744) as multimodal LLMs became a research focus.
+The year-over-year acceleration is visible in the raw counts. From 2018 to 2022, annual mentions grew slowly (3,248 → 4,131 → 5,243 → 6,583 → 7,931). In 2023, the count jumped to 21,612 (2.7x in one year), then 49,970 in 2024 (2.3x), and 96,984 in 2025 (1.9x). The abbreviation "LLM" itself grew 16.0x between 2022-2023 and 2025-2026 (Table 4).
 
 **Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). Early counts include non-AI uses of "diffusion model" (e.g., diffusion of innovations in social science). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
