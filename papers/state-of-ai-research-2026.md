@@ -64,7 +64,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 1. **Keyword frequency.** For each keyword, bigram, or trigram of interest, a single API call was issued using `abstract.search:<term>,publication_year:2013-2026` and the `meta.count` field from the response was recorded.
 
-2. **Growth detection.** For each keyword, the publication count in the 2025-2026 cohort was compared against the 2022-2023 baseline cohort. The growth ratio was computed by dividing the newer count by the older count. A two-year gap was used intentionally rather than comparing adjacent years, as this wider window is better suited for detecting newly emerging terms that had near-zero usage in 2022-2023 and would show only modest single-year increases in an adjacent comparison.
+2. **Growth detection.** For each keyword, publications from 2025-2026 were pooled and compared against publications from 2022-2023. The growth ratio was computed by dividing the newer count by the older count. Pooling two years per window smooths annual fluctuations, and the three-year span between windows (2022-2023 vs 2025-2026) is wide enough to detect newly emerging terms that had near-zero usage in the earlier period.
 
 3. **Time-series trajectories.** For 10 selected methods, year-by-year API calls were issued to construct annual publication counts from 2013 (or the method's introduction year) through 2026.
 
