@@ -272,16 +272,37 @@ def chart5():
     colors = [cmap(v) for v in norm_vals]
 
     fig, ax = plt.subplots(figsize=(5.5, 2.8))
-    bars = ax.barh(countries, counts, color=colors, edgecolor='white', height=0.7)
+    
+    # Lollipop chart: thin stems + dots
+    y_pos = np.arange(len(countries))
+    
+    # Color dots by value intensity
+    cmap = plt.cm.Blues
+    norm_vals = np.linspace(0.4, 0.9, len(countries))
+    colors = [cmap(v) for v in norm_vals]
+    
+    # Draw stems (thin horizontal lines from 0 to value)
+    for i, (count, color) in enumerate(zip(counts, colors)):
+        ax.plot([0, count], [i, i], color=color, linewidth=1.5, zorder=2)
+    
+    # Draw dots at the end of each stem
+    ax.scatter(counts, y_pos, color=colors, s=40, zorder=3, edgecolors='white', linewidth=0.5)
+    
+    # Value labels
+    for i, count in enumerate(counts):
+        ax.text(count + 15000, i, f'{count:,}', va='center', fontsize=7.5)
 
-    for bar, count in zip(bars, counts):
-        ax.text(bar.get_width() + 15000, bar.get_y() + bar.get_height() / 2,
-                f'{count:,}', va='center', fontsize=7.5)
-
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(countries)
     ax.set_xlabel('Number of Publications')
     ax.set_xlim(0, max(counts) * 1.15)
     ax.tick_params(axis='y', labelsize=7.5)
     ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
+    
+    # Light horizontal grid lines for readability
+    ax.set_axisbelow(True)
+    ax.xaxis.grid(True, alpha=0.15, linestyle='-')
+    
     cleanup_axes(ax)
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_countries.png', dpi=300, bbox_inches='tight')
