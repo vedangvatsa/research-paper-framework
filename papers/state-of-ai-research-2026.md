@@ -148,7 +148,7 @@ To put the acceleration in perspective, the 2025 output alone (944,530 papers) e
 
 "Support vector machine" (239,347) and "random forest classifier" (73,385) persist in the top 10. These classical methods continue to be widely referenced in abstracts, often as baselines for comparison or in application domains where simpler models remain competitive.
 
-Both lists are top-heavy. The highest-ranked bigram (1,522,612) has 5.9x the count of the tenth (256,159), and the highest trigram (518,431) has 7.1x the count of the tenth (73,385). Five of the ten trigrams end in "network" (deep neural, convolutional neural, artificial neural, recurrent neural, graph neural), reflecting how many research areas have developed their own neural network variant. The bigram list splits between method-level terms in the top six (neural network through large language, totaling 5.37 million mentions) and application-level terms in the bottom four (image classification through feature extraction, totaling 1.39 million).
+Both the bigram and trigram lists are top-heavy. The highest-ranked bigram (1,522,612) has 5.9x the count of the tenth (256,159), and the highest trigram (518,431) has 7.1x the count of the tenth (73,385). Five of the ten trigrams end in "network" (deep neural, convolutional neural, artificial neural, recurrent neural, graph neural), reflecting how many research areas have developed their own neural network variant. The bigram list splits between method-level terms in the top six (neural network through large language, totaling 5.37 million mentions) and application-level terms in the bottom four (image classification through feature extraction, totaling 1.39 million).
 
 ### 3.3 Time-Series Trajectories
 
