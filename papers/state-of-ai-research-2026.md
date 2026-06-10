@@ -112,7 +112,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
-To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million papers therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI papers constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI papers represent approximately 5.2% of estimated global output. AI research is growing roughly four times faster than scholarship overall.
+To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million papers therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI papers constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI papers represent approximately 5.2% of estimated global output. AI research is growing roughly five times faster than scholarship overall.
 
 ![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
 
@@ -264,7 +264,7 @@ As shown in §3.2, "neural network" remains the most frequently referenced AI co
 
 ### 4.2 The LLM Inflection Point
 
-The LLM trajectory (§3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. What the raw growth numbers do not capture is the nature of the surrounding research. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety. "Instruction tuning," "preference optimization," and "human feedback" reflect the practical work of aligning models to user intent.
+The LLM trajectory (§3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. What the raw growth numbers do not capture is the nature of the surrounding research. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
 The rapid standardization of "LLM" as an abbreviation (16.0x growth, Table 4) is itself a signal. LLMs have become a recognized category in AI research vocabulary, similar to how "CNN" and "RNN" became standard abbreviations in previous waves.
 
@@ -312,7 +312,7 @@ The crossover occurred in 2021. That year, China produced 71,273 papers while th
 
 The US deceleration from 2020 to 2022 is notable. US AI research output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
-An important caveat: paper counts measure research volume, not research impact. Citation-weighted analyses, shares of top-1% highly cited papers, and venue prestige may tell a different story. China's volume lead does not necessarily imply a quality lead. Publication incentive structures differ across countries. Both China and the US have institutional pressures -- tenure requirements, h-index targets, and ranking criteria -- that can inflate output independently of research contribution.
+An important caveat: paper counts measure research volume, not research impact. This study does not analyze citation-weighted metrics, shares of top-1% highly cited papers, or venue prestige, which may yield different rankings. Publication incentive structures also differ across countries. Both China and the US have institutional pressures — tenure requirements, h-index targets, and ranking criteria — that can inflate output independently of research contribution.
 
 #### 4.4.2 Method-Specific Comparisons
 
@@ -403,7 +403,7 @@ Six principal findings stand out.
 
 3. **The field is expanding from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x).
 
-4. **China leads in volume, not necessarily in impact.** In the corpus, China produces 21.6% more AI research papers than the United States. However, this metric measures output, not research quality or influence. Citation-weighted rankings may differ.
+4. **China leads in volume.** In the corpus, China produces 21.6% more AI research papers than the United States by paper count. This study does not measure citation impact or venue prestige, which may yield different rankings.
 
 5. **Half of all papers go uncited.** 48.9% of papers have zero citations, indicating extreme concentration of academic impact. This figure is inflated by recent publications that have not yet had time to accumulate citations.
 
