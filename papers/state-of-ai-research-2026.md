@@ -310,7 +310,7 @@ The crossover occurred in 2021. That year, China produced 71,273 papers while th
 
 The US deceleration from 2020 to 2022 is notable. US AI research output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
-An important caveat: paper counts measure research volume, not research impact. This study does not analyze citation-weighted metrics, shares of top-1% highly cited papers, or venue prestige, which may yield different rankings. Publication incentive structures also differ across countries. Both China and the US have institutional pressures — tenure requirements, h-index targets, and ranking criteria — that can inflate output independently of research contribution.
+An important caveat: paper counts measure research volume, not research impact. This study does not analyze citation-weighted metrics, shares of top-1% highly cited papers, or venue prestige, which may yield different rankings. Publication incentive structures also differ across countries. Both China and the US have institutional pressures (tenure requirements, h-index targets, and ranking criteria) that can inflate output independently of research contribution.
 
 #### 4.4.2 Method-Specific Comparisons
 
@@ -359,7 +359,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 **Causation vs. correlation.** Growth in keyword frequency reflects research attention, not research quality or real-world deployment. A 16x increase in "LLM" papers does not mean LLMs are 16x more useful than they were in 2022.
 
-**Volume vs. impact.** All country and institutional comparisons are based on paper counts, which measure volume, not impact. The caveats discussed in Section 4.4.1 — citation-weighted metrics, venue prestige, and differing publication incentive structures — apply to all geographic and institutional comparisons in this paper.
+**Volume vs. impact.** All country and institutional comparisons are based on paper counts, which measure volume, not impact. The caveats discussed in Section 4.4.1 (citation-weighted metrics, venue prestige, and differing publication incentive structures) apply to all geographic and institutional comparisons in this paper.
 
 **Cross-disciplinary inclusion.** As noted in Section 3.5, the most-cited papers in the corpus include non-AI entries (e.g., DSM-5, lme4) whose abstracts happen to mention AI-related terms. This is an inherent feature of abstract-level search.
 
