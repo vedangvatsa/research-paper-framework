@@ -398,17 +398,19 @@ Five million works, analyzed through abstract-level keyword search, show three c
 
 Six findings from this analysis.
 
-1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). This dominance has not diminished despite the attention given to LLMs.
+1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). This dominance has not diminished despite the attention given to LLMs. In 2025, "deep learning" surpassed "neural network" in annual abstract mentions for the first time (216,713 vs. 207,140), though "neural network" retains a larger cumulative total.
 
-2. **LLMs are the fastest-growing category.** "Large language model" grew from 3,248 abstracts in 2018 to 96,984 in 2025 (29.9x), with an inflection point in 2022-2023 coinciding with the release of ChatGPT.
+2. **LLMs are the fastest-growing category.** "Large language model" grew from 3,248 abstracts in 2018 to 96,984 in 2025 (29.9x), with an inflection point in 2022-2023 coinciding with the release of ChatGPT. By 2025, LLM papers accounted for 10.3% of the corpus, up from 1.9% in 2022.
 
-3. **The field is expanding from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x).
+3. **The field is expanding from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x). All ten of the fastest-rising keywords in Table 4 are related to large language models.
 
-4. **China leads in volume.** In the corpus, China produces 21.6% more AI research papers than the United States by paper count. This study does not measure citation impact or venue prestige, which may yield different rankings.
+4. **China leads in volume.** In the corpus, China produces 21.6% more AI research papers than the United States by paper count. China leads in six of seven method categories, but the US leads in "large language model" (1.32x the Chinese count). China reached LLM parity with the US in 2025. This study does not measure citation impact or venue prestige, which may yield different rankings.
 
-5. **Half of all papers go uncited.** 48.9% of papers have zero citations, indicating extreme concentration of academic impact. This figure is inflated by recent publications that have not yet had time to accumulate citations.
+5. **Half of all papers go uncited.** 48.9% of papers have zero citations, while only 2,475 papers (0.05%) have exceeded 1,000 citations. This figure is inflated by recent publications that have not yet had time to accumulate citations.
 
-6. **Title-only analysis misses most AI research.** Abstract search captures 1.5x to 7.7x more papers per keyword, depending on the method. Studies that rely on title-level filtering provide an incomplete view of AI research activity.
+6. **Title-only analysis misses most AI research.** Abstract search captures 1.5x to 7.7x more papers per keyword, depending on the method. The gap is smallest for methods that are typically the main contribution of a paper (federated learning, 1.5x) and largest for terms with significant non-AI uses (diffusion model, 7.7x).
+
+The methodological contribution of this study is that all results are derived from a single free API (OpenAlex) using abstract-level keyword search. Every count reported in this paper can be independently verified and updated. The corpus definition, search queries, and analysis methods are fully described in Section 2, making the analysis reproducible without access to proprietary databases.
 
 The scale of the field is itself a finding. More papers were published in 2025 alone (944,530) than in the first six years of this corpus combined (2013-2018, 734,197). More than half of the corpus (58.8%) was published from 2023 onward. If the 2026 trajectory holds, this corpus will exceed 1.6 million papers in a single year.
 
