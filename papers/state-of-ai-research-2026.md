@@ -19,15 +19,11 @@ In 2025, over 944,000 academic papers in the OpenAlex database mentioned artific
 
 Many bibliometric studies of AI research rely on subject classification tags or curated keyword lists that may not capture cross-disciplinary usage of AI methods. When keyword search is used, title-based approaches capture only papers where the author chose to place the method name in the title. A paper titled "Predicting Protein Stability Under Thermal Stress" that uses a neural network throughout its methods section would be invisible to a title-only search for "neural network." Abstract-level analysis addresses this gap by searching the text where authors describe their methods, results, and contributions.
 
-To analyze these trends, this study constructed a bibliometric corpus containing 5,003,783 publications. This dataset was built by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts.
+To analyze these trends, a bibliometric corpus of 5,003,783 publications was constructed by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts.
 
-This paper makes three contributions.
+The analysis traces 14 AI-related keywords across 13 annual cohorts (2013–2026), measures publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
 
-- **Abstract-level analysis.** The corpus of 5,003,783 papers was built by searching abstracts rather than titles or subject tags, capturing cross-disciplinary AI method usage.
-- **Reproducibility.** Every count in this paper can be verified through the OpenAlex API, a free and open database, using the filters described in Section 2.
-- **Abstract vs. title comparison.** This study quantifies how much research is missed by title-only bibliometrics, finding that abstract search captures 1.5x to 7.7x more papers per keyword.
-
-The rest of this paper is organized as follows. Section 2 describes the dataset construction and analysis methods. Section 3 presents results across nine dimensions: publication volume, n-gram frequency, time-series trajectories, fastest-rising keywords, citation distribution, geographic distribution, institutional output, open access, and title-versus-abstract comparison. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
+The rest of this paper is organized as follows. Section 2 describes the dataset construction and analysis methods. Section 3 presents results across nine dimensions. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
 
 ## 2. Methodology
 
