@@ -139,9 +139,9 @@ To contextualize this growth: OpenAlex indexes over 250 million works across all
 
 "Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104), demonstrating how quickly the LLM category has accumulated volume.
 
-"Feature extraction" (256,159) at rank 10 indicates the continued prevalence of feature extraction methods.
+"Feature extraction" (256,159) at rank 10 reflects how many AI papers describe preprocessing pipelines rather than end-to-end architectures.
 
-"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934), representing widely adopted convolutional architectures [3]. These two trigrams together account for over 913,000 abstract mentions in total.
+"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934) [3]. Together these account for over 913,000 abstract mentions, reflecting the dominance of image-related deep learning tasks in the corpus.
 
 "Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). The abstract data reveals that LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 6).
 
