@@ -153,11 +153,9 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 ![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_established_methods.png)
 
-**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The annualized 2026 estimate (approximately 170,000 papers, based on 84,957 recorded through June) suggests another 1.8x increase over the 2025 volume.
+**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The acceleration is visible year by year, jumping to 21,612 in 2023 (2.7x), 49,970 in 2024 (2.3x), and 96,984 in 2025 (1.9x). The annualized 2026 estimate (approximately 170,000 papers, based on 84,957 recorded through June) suggests another 1.8x increase over the 2025 volume.
 
 ![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
-
-The acceleration is visible year by year: mentions grew steadily from 3,248 to 7,931 between 2018 and 2022, then jumped to 21,612 in 2023 (2.7x), 49,970 in 2024 (2.3x), and 96,984 in 2025 (1.9x).
 
 **Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). Early counts include non-AI uses of "diffusion model" (e.g., diffusion of innovations in social science). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
