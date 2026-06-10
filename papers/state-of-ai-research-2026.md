@@ -136,7 +136,7 @@ To put the acceleration in perspective, the 2025 output alone (944,530 papers) e
 
 "Neural network" (1,522,612) dominates the list, appearing in 30.4% of all paper abstracts. "Machine learning" (1,287,123) and "deep learning" (980,070) round out the top three. Together, these three terms account for over 3.8 million abstract mentions in total (including duplicate counts where multiple terms appear in the same abstract).
 
-"Attention mechanism" (432,079) ranks 5th. Attention-based architectures have spread across NLP, computer vision, and multimodal tasks since the transformer's introduction in 2017.
+"Attention mechanism" (432,079) ranks 5th. Attention-based architectures appear across NLP, computer vision, and multimodal tasks in this corpus, consistent with the transformer's influence since 2017 [6].
 
 "Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104).
 
@@ -189,7 +189,7 @@ The keyword growth data groups into three categories. Growth ratios were compute
 
 **Category 1, named models as research subjects.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific commercial models, not architectures or methods. Their presence in a fastest-rising keyword list suggests that researchers are spending more time evaluating and comparing named products.
 
-**Category 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. RAG has become the standard pattern for connecting language models to external knowledge bases [8]. Its three variants in the growth table reflect how quickly researchers adopted it as both a technique and an abbreviation.
+**Category 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. Lewis et al. [8] introduced retrieval-augmented generation for knowledge-intensive NLP tasks, and the pattern has since been widely adopted. Its three variants in the growth table reflect how quickly researchers adopted it as both a technique and an abbreviation.
 
 **Category 3, safety and reliability.** "Jailbreak" (25.5x) and "guardrail" (9.7x) reflect the growing research effort to make language models reliable and safe. "Jailbreak" research (2,803 papers in 2025-2026, up from 110 in 2022-2023) investigates adversarial prompts that circumvent model safety filters. "Guardrail" (5,046, up from 521) covers techniques for constraining model outputs.
 
@@ -267,13 +267,13 @@ For bibliometric work, this means that title-only analysis systematically underc
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
-The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context. Researchers are building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
+The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context. The keyword data suggests that research activity has shifted from training LLMs to building systems around them. RAG (52.4x growth) is the clearest example of this shift. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
-The abbreviation "LLM" itself grew 16.0x (Table 4), indicating that researchers now use the shorthand as frequently as the full phrase.
+The abbreviation "LLM" itself grew 16.0x (Table 4), which is consistent with the abbreviation becoming as common as the full phrase in abstracts.
 
 ### 4.3 Method Lifecycles
 
@@ -402,7 +402,7 @@ Six findings from this analysis.
 
 2. **LLMs are the fastest-growing category.** "Large language model" grew from 3,248 abstracts in 2018 to 96,984 in 2025 (29.9x), with an inflection point in 2022-2023 coinciding with the release of ChatGPT. By 2025, LLM papers accounted for 10.3% of the corpus, up from 1.9% in 2022.
 
-3. **The field is expanding from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x). All ten of the fastest-rising keywords in Table 4 are related to large language models.
+3. **Research attention is shifting from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x). All ten of the fastest-rising keywords in Table 4 are related to large language models.
 
 4. **China leads in volume.** In the corpus, China produces 21.6% more AI research papers than the United States by paper count. China leads in six of seven method categories, but the US leads in "large language model" (1.32x the Chinese count). China reached LLM parity with the US in 2025. This study does not measure citation impact or venue prestige, which may yield different rankings.
 
