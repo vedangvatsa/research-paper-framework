@@ -77,7 +77,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 ### 2.4 Stemming and Precision
 
-OpenAlex's search filters apply stemming, meaning a search for "agentic" also matches "agent" and "agents." For multi-word phrases ("retrieval augmented generation," "graph neural network") and proper nouns ("DeepSeek," "Claude," "Mistral"), stemming has minimal effect. For single common words ("diffusion," "safety," "clinical"), stemming can inflate counts by matching non-AI uses of the word. For example, "clinical" returns 6,704,069 abstract matches, more than the entire corpus of 5,003,783 papers, because stemming matches "clinic," "clinically," and related forms across medical literature. Similarly, "agent" returns 2,179,789 matches, most of which refer to chemical or biological agents rather than AI agents. This limitation is discussed further in Section 4.5.
+OpenAlex's search filters apply stemming, meaning a search for "agentic" also matches "agent" and "agents." For multi-word phrases ("retrieval augmented generation," "graph neural network") and proper nouns ("DeepSeek," "Claude," "Mistral"), stemming has minimal effect. For single common words ("diffusion," "safety," "clinical"), stemming can inflate counts by matching non-AI uses of the word. For example, searching "clinical" across all OpenAlex papers (2013-2026) returns 6,704,069 abstract matches, far exceeding the 5,003,783 papers in our AI-filtered corpus. Similarly, "agent" returns 2,179,789 matches, inflated by non-AI uses of the word in chemistry, pharmacology, and other fields. This limitation is discussed further in Section 4.5.
 
 ## 3. Results
 
@@ -157,7 +157,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 ![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
 
-The year-over-year acceleration is visible in the raw counts. From 2018 to 2022, annual mentions grew slowly (3,248 → 4,131 → 5,243 → 6,583 → 7,931). In 2023, the count jumped to 21,612 (2.7x in one year), then 49,970 in 2024 (2.3x), and 96,984 in 2025 (1.9x). The abbreviation "LLM" itself grew 16.0x between 2022-2023 and 2025-2026 (Table 4).
+The acceleration is visible year by year: mentions grew steadily from 3,248 to 7,931 between 2018 and 2022, then jumped to 21,612 in 2023 (2.7x), 49,970 in 2024 (2.3x), and 96,984 in 2025 (1.9x).
 
 **Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). Early counts include non-AI uses of "diffusion model" (e.g., diffusion of innovations in social science). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
