@@ -106,7 +106,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** Annual output grew from 93,226 to 115,423 papers. Deep learning was still an active research area rather than a standard tool.
 
-**Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch) reached stable releases during this period. Growth decelerated to 11.2% in 2022.
+**Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch [20]) reached stable releases during this period, alongside widely adopted optimizers such as Adam [4]. Growth decelerated to 11.2% in 2022.
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. ChatGPT was released in November 2022, and the subsequent expansion of LLM-related research (Section 3.3) likely contributed to this re-acceleration.
 
@@ -251,7 +251,7 @@ The ratio of abstract-to-title matches varies from 1.5x ("federated learning") t
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
-The practical takeaway for bibliometric work is straightforward. Title-only analysis systematically undercounts methods that are used as tools across disciplines. Abstract-level analysis captures more of that usage.
+For bibliometric work, the implication is clear: title-only analysis systematically undercounts methods that are used as tools across disciplines, and abstract-level analysis captures more of that usage.
 
 ## 4. Discussion
 
