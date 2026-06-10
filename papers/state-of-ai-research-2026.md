@@ -305,7 +305,7 @@ China and the United States started the decade at near-parity. In 2013, the US p
 | 2024 | 144,452 | 90,915 | 65,398 | 12,657 | 28,174 | **1.59** |
 | 2025 | 187,887 | 122,449 | 89,287 | 15,558 | 37,104 | **1.53** |
 
-The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. US output declined between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs. 122,449).
+The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. US output fell slightly between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs. 122,449).
 
 The US deceleration from 2020 to 2022 is notable. In this corpus, US output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
@@ -339,7 +339,7 @@ From 2020-2022, the US produced more LLM papers than China. In 2023-2024, the ga
 
 #### 4.4.4 India's Acceleration
 
-India shows a distinct growth pattern. In the corpus, Indian AI research output grew from 2,761 papers in 2013 to 89,287 in 2025, a 32.3x increase. This growth rate is faster than both China (15.6x) and the US (8.9x) over the same period. India produced 89,287 AI papers in 2025, more than Japan (15,558) and the UK (37,104) combined.
+India shows a distinct growth pattern. In the corpus, Indian AI research output grew from 2,761 papers in 2013 to 89,287 in 2025, a 32.3x increase. This growth multiple is higher than both China (15.6x) and the US (8.9x) over the same period. India produced 89,287 AI papers in 2025, more than Japan (15,558) and the UK (37,104) combined.
 
 India's growth rate has been accelerating. Between 2013 and 2018, Indian output grew 3.1x. Between 2018 and 2025, it grew 10.4x.
 
@@ -370,7 +370,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 The Stanford HAI AI Index Report [9] is a widely cited annual survey of AI research trends. The 2025 edition tracks publications, patents, investment, and policy across multiple data sources including Dimensions, Epoch, and LMSYS. This study differs in two ways. First, it uses abstract-level search rather than subject classification, capturing cross-disciplinary AI method usage. Second, every count in the analysis can be verified through the free OpenAlex API, rather than requiring access to proprietary databases.
 
-The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together total 1,592,695 paper-country assignments (31.8% of the corpus total, though this figure is inflated by co-authored papers counted in both countries). The lower relative share compared to the AI Index is because this corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by that report.
+The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together total 1,592,695 paper-country assignments (31.8% of the corpus total, though this figure is inflated by co-authored papers counted in both countries). The lower relative share compared to the AI Index reflects that this corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by that report.
 
 Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus is consistent with that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search captures 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
 
