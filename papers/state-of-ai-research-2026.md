@@ -108,7 +108,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch) matured during this period, lowering the barrier for researchers across disciplines to adopt neural network methods. Growth decelerated to 11.2% in 2022.
 
-**Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. ChatGPT was released in November 2022, and the subsequent expansion of LLM-related research (Section 3.3) accounts for a growing share of this increase.
+**Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. ChatGPT was released in November 2022, and the subsequent expansion of LLM-related research (Section 3.3) likely contributed to this re-acceleration.
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual output in this corpus exceeds 1 million papers.
 
