@@ -8,7 +8,7 @@
 
 ## Abstract
 
-This study analyzes over five million academic papers that discuss artificial intelligence methods in their abstracts, published between 2013 and mid-2026. The analysis measures keyword frequency, temporal trajectories, growth rates, citation distributions, geographic concentration, institutional output, open access rates, and title-versus-abstract coverage gaps. Key findings include the continued dominance of neural networks across 30% of all abstracts, the 29.9x growth of large language model papers from 2018 to 2025, China exceeding the United States in total AI research volume (though not necessarily in citation impact), and nearly half of all papers receiving zero citations.
+This study analyzes over five million academic papers that discuss artificial intelligence methods in their abstracts, published between 2013 and mid-2026. The analysis measures keyword frequency, temporal trajectories, growth rates, citation distributions, geographic concentration, institutional output, open access rates, and title-versus-abstract coverage gaps. Key findings include the continued dominance of neural networks across 30% of all abstracts, the 29.9x growth of large language model papers from 2018 to 2025, China exceeding the United States in total AI research volume by paper count, and nearly half of all papers receiving zero citations.
 
 _**Keywords**_: artificial intelligence, machine learning, bibliometrics, research trends, large language models, neural networks, abstract analysis, OpenAlex
 
