@@ -113,7 +113,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million papers therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI papers constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI papers represent approximately 5.2% of estimated global output. AI research is growing roughly four times faster than scholarship overall.
 
-![AI research publication volume, 2013-2026. Each bar represents papers mentioning AI terms in their abstracts. 2026 covers January through June only.](figures/fig_publication_volume.png)
+![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
 
 ### 3.2 N-gram Frequency
 
@@ -150,15 +150,15 @@ To contextualize this growth: OpenAlex indexes over 250 million works across all
 
 **Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (representing a 10.9x increase).
 
-![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. 2026 covers January through June only.](figures/fig_established_methods.png)
+![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_established_methods.png)
 
-**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The 2026 partial-year data (84,957 mentions recorded through June) puts the full year on pace for approximately 204,000 papers, which could represent another 2.1x increase over the 2025 volume.
+**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The annualized 2026 estimate (approximately 170,000 papers, based on 84,957 recorded through June) suggests another 1.8x increase over the 2025 volume.
 
-![Growth of "large language model" in paper abstracts.](figures/fig_llm_explosion.png)
+![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
 
 **Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
-![Rising AI methods by annual abstract mentions. 2026 covers January through June only.](figures/fig_rising_methods.png)
+![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
 "Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025. The lifecycle implications of this trajectory are discussed in §4.3.
 

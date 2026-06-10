@@ -47,7 +47,10 @@ def chart1():
     years = sorted([int(y) for y in by_year.keys()])
     counts = [by_year[str(y)] for y in years]
     
-    # Compute YoY growth (skip 2013 and 2026)
+    # Estimate full-year 2026 (double the half-year count)
+    counts[-1] = counts[-1] * 2
+    
+    # Compute YoY growth (skip 2013)
     yoy = [None]  # No growth for first year
     for i in range(1, len(counts)):
         yoy.append((counts[i] - counts[i-1]) / counts[i-1] * 100)
@@ -59,40 +62,42 @@ def chart1():
     ax1.axvspan(2016.5, 2022.5, alpha=0.08, color='#2166ac', zorder=0)
     ax1.axvspan(2022.5, 2026.5, alpha=0.08, color='#b2182b', zorder=0)
     
-    # Phase labels at top
-    ax1.text(2014.5, max(counts)*0.55, 'Phase 1', ha='center', fontsize=7, color='#4393c3', fontweight='bold')
+    # Phase labels
+    ax1.text(2014.5, max(counts)*0.45, 'Phase 1', ha='center', fontsize=7, color='#4393c3', fontweight='bold')
     ax1.text(2019.5, max(counts)*1.02, 'Phase 2', ha='center', fontsize=7, color='#2166ac', fontweight='bold')
     ax1.text(2024.5, max(counts)*1.02, 'Phase 3', ha='center', fontsize=7, color='#b2182b', fontweight='bold')
     
     # Primary axis: publication volume line
-    ax1.plot(years[:-1], counts[:-1], 'o-', color='#2166ac', linewidth=2, markersize=4, zorder=3, label='Publications')
-    ax1.plot(years[-1], counts[-1], 's', color='#92c5de', markersize=5, zorder=3)  # partial year marker
-    ax1.plot([years[-2], years[-1]], [counts[-2], counts[-1]], '--', color='#92c5de', linewidth=1.5, zorder=3)
+    ax1.plot(years[:-1], counts[:-1], 'o-', color='#2166ac', linewidth=2, markersize=4, zorder=3)
+    # 2026 estimated: open marker, dashed
+    ax1.plot(years[-1], counts[-1], 'o', color='#2166ac', markersize=5, zorder=3, markerfacecolor='white', markeredgewidth=1.5)
+    ax1.plot([years[-2], years[-1]], [counts[-2], counts[-1]], '--', color='#2166ac', linewidth=1.5, alpha=0.6, zorder=3)
     
     ax1.set_xlabel('Year')
     ax1.set_ylabel('Number of Publications', color='#2166ac')
     ax1.tick_params(axis='y', labelcolor='#2166ac')
     ax1.set_xticks(years)
-    ax1.set_xticklabels([str(y) for y in years], rotation=45)
+    labels = [str(y) for y in years]
+    labels[-1] = '2026\n(est.)'
+    ax1.set_xticklabels(labels, rotation=45)
     ax1.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e6:.1f}M' if x >= 1e6 else f'{x/1e3:.0f}K'))
     ax1.set_ylim(0, max(counts) * 1.12)
     
-    # Secondary axis: YoY growth rate
+    # Secondary axis: YoY growth rate (exclude 2026 estimate)
     ax2 = ax1.twinx()
     yoy_years = [y for y, g in zip(years, yoy) if g is not None and y < 2026]
     yoy_vals = [g for y, g in zip(years, yoy) if g is not None and y < 2026]
-    ax2.plot(yoy_years, yoy_vals, '^--', color='#d6604d', linewidth=1.2, markersize=3.5, alpha=0.85, zorder=2, label='YoY Growth')
+    ax2.plot(yoy_years, yoy_vals, '^--', color='#d6604d', linewidth=1.2, markersize=3.5, alpha=0.85, zorder=2)
     ax2.set_ylabel('YoY Growth (%)', color='#d6604d')
     ax2.tick_params(axis='y', labelcolor='#d6604d')
     ax2.set_ylim(0, 50)
     
     # Combined legend
     from matplotlib.lines import Line2D
-    from matplotlib.patches import Patch
     legend_elements = [
-        Line2D([0], [0], color='#2166ac', marker='o', markersize=4, linewidth=2, label='Publications (Full Year)'),
-        Line2D([0], [0], color='#92c5de', marker='s', markersize=5, linestyle='--', linewidth=1.5, label='Publications (Partial Year)'),
-        Line2D([0], [0], color='#d6604d', marker='^', markersize=3.5, linestyle='--', linewidth=1.2, label='YoY Growth Rate (%)'),
+        Line2D([0], [0], color='#2166ac', marker='o', markersize=4, linewidth=2, label='Full Year'),
+        Line2D([0], [0], color='#2166ac', marker='o', markersize=5, linestyle='--', linewidth=1.5, markerfacecolor='white', markeredgewidth=1.5, label='Estimated (2026)'),
+        Line2D([0], [0], color='#d6604d', marker='^', markersize=3.5, linestyle='--', linewidth=1.2, label='YoY Growth (%)'),
     ]
     ax1.legend(handles=legend_elements, frameon=True, fancybox=True, shadow=False, fontsize=7, loc='upper left')
     
@@ -101,7 +106,7 @@ def chart1():
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_publication_volume.png', dpi=300, bbox_inches='tight')
     plt.close(fig)
-    print("✓ Chart 1 saved")
+    print("\u2713 Chart 1 saved")
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -115,20 +120,32 @@ def chart2():
     deep =   [timelines["deep learning"].get(str(y), 0) for y in years_full]
     rl =     [timelines["reinforcement learning"].get(str(y), 0) for y in years_full]
     
+    # Estimate full-year 2026
+    neural[-1] *= 2
+    deep[-1] *= 2
+    rl[-1] *= 2
+    
     years_trans = list(range(2017, 2027))
     transformer = [timelines["transformer"].get(str(y), 0) for y in years_trans]
+    transformer[-1] *= 2
 
     fig, ax = plt.subplots(figsize=(5.5, 3.5))
-    ax.plot(years_full, neural, marker='o', markersize=4, linewidth=1.5, label='Neural Network', color='#2166ac')
-    ax.plot(years_full, deep,   marker='s', markersize=4, linewidth=1.5, label='Deep Learning',  color='#d6604d')
-    ax.plot(years_full, rl,     marker='^', markersize=4, linewidth=1.5, label='Reinforcement Learning', color='#4daf4a')
-    ax.plot(years_trans, transformer, marker='D', markersize=4, linewidth=1.5, label='Transformer', color='#ff7f00', linestyle='--')
+    for yrs, vals, marker, label, color, ls in [
+        (years_full, neural, 'o', 'Neural Network', '#2166ac', '-'),
+        (years_full, deep, 's', 'Deep Learning', '#d6604d', '-'),
+        (years_full, rl, '^', 'Reinforcement Learning', '#4daf4a', '-'),
+        (years_trans, transformer, 'D', 'Transformer', '#ff7f00', '--'),
+    ]:
+        ax.plot(yrs[:-1], vals[:-1], marker=marker, markersize=4, linewidth=1.5, label=label, color=color, linestyle=ls)
+        # 2026 estimated: open marker, dashed
+        ax.plot(yrs[-1], vals[-1], marker=marker, markersize=5, color=color, markerfacecolor='white', markeredgewidth=1.5, zorder=5)
+        ax.plot([yrs[-2], yrs[-1]], [vals[-2], vals[-1]], '--', color=color, linewidth=1, alpha=0.5)
 
     ax.set_xlabel('Year')
     ax.set_ylabel('Number of Publications')
     ax.set_xticks(years_full)
     labels = [str(y) for y in years_full]
-    labels[-1] = '2026\n(Jun)'
+    labels[-1] = '2026\n(est.)'
     ax.set_xticklabels(labels, rotation=45)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     ax.legend(frameon=True, fancybox=True, shadow=False, fontsize=9)
@@ -136,7 +153,7 @@ def chart2():
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_established_methods.png', dpi=300, bbox_inches='tight')
     plt.close(fig)
-    print("✓ Chart 2 saved")
+    print("\u2713 Chart 2 saved")
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -146,15 +163,21 @@ def chart3():
     timelines = data["timelines"]
     years = list(range(2018, 2027))
     counts = [timelines["large language model"].get(str(y), 0) for y in years]
+    
+    # Estimate full-year 2026
+    counts[-1] *= 2
 
     fig, ax = plt.subplots(figsize=(5.5, 3.5))
 
-    ax.plot(years, counts, marker='o', markersize=5, linewidth=2, color='#1a5276', zorder=5)
-    ax.fill_between(years, counts, alpha=0.15, color='#2980b9')
+    # Solid line for actual years, dashed for estimate
+    ax.plot(years[:-1], counts[:-1], marker='o', markersize=5, linewidth=2, color='#1a5276', zorder=5)
+    ax.plot(years[-1], counts[-1], marker='o', markersize=6, color='#1a5276', markerfacecolor='white', markeredgewidth=1.5, zorder=5)
+    ax.plot([years[-2], years[-1]], [counts[-2], counts[-1]], '--', color='#1a5276', linewidth=1.5, alpha=0.5, zorder=4)
+    ax.fill_between(years[:-1], counts[:-1], alpha=0.15, color='#2980b9')
 
     ax.axvline(x=2022.5, color='#c0392b', linestyle='--', linewidth=1.2, alpha=0.8)
-    ax.annotate('ChatGPT\nrelease', xy=(2022.5, max(counts) * 0.85),
-                xytext=(2020.0, max(counts) * 0.90),
+    ax.annotate('ChatGPT\nrelease', xy=(2022.5, max(counts) * 0.75),
+                xytext=(2020.0, max(counts) * 0.80),
                 fontsize=9, color='#c0392b', fontweight='bold',
                 arrowprops=dict(arrowstyle='->', color='#c0392b', lw=1.0))
 
@@ -162,14 +185,14 @@ def chart3():
     ax.set_ylabel('Number of Publications')
     ax.set_xticks(years)
     labels = [str(y) for y in years]
-    labels[-1] = '2026\n(upto June)'
+    labels[-1] = '2026\n(est.)'
     ax.set_xticklabels(labels)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     cleanup_axes(ax)
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_llm_explosion.png', dpi=300, bbox_inches='tight')
     plt.close(fig)
-    print("✓ Chart 3 saved")
+    print("\u2713 Chart 3 saved")
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -179,28 +202,38 @@ def chart4():
     timelines = data["timelines"]
     years_diff = list(range(2019, 2027))
     diffusion = [timelines["diffusion model"].get(str(y), 0) for y in years_diff]
+    diffusion[-1] *= 2
 
     years_fed = list(range(2017, 2027))
     federated = [timelines["federated learning"].get(str(y), 0) for y in years_fed]
+    federated[-1] *= 2
 
     years_gnn = list(range(2017, 2027))
     gnn = [timelines["graph neural"].get(str(y), 0) for y in years_gnn]
+    gnn[-1] *= 2
 
     years_kg = list(range(2013, 2027))
     knowledge = [timelines["knowledge graph"].get(str(y), 0) for y in years_kg]
+    knowledge[-1] *= 2
 
     fig, ax = plt.subplots(figsize=(5.5, 3.5))
-    ax.plot(years_diff, diffusion, marker='o', markersize=4, linewidth=1.5, label='Diffusion Model', color='#e41a1c')
-    ax.plot(years_fed, federated,  marker='s', markersize=4, linewidth=1.5, label='Federated Learning', color='#377eb8')
-    ax.plot(years_gnn, gnn,        marker='^', markersize=4, linewidth=1.5, label='Graph Neural Network', color='#4daf4a')
-    ax.plot(years_kg, knowledge,   marker='D', markersize=4, linewidth=1.5, label='Knowledge Graph', color='#984ea3')
+    for yrs, vals, marker, label, color in [
+        (years_diff, diffusion, 'o', 'Diffusion Model', '#e41a1c'),
+        (years_fed, federated, 's', 'Federated Learning', '#377eb8'),
+        (years_gnn, gnn, '^', 'Graph Neural Network', '#4daf4a'),
+        (years_kg, knowledge, 'D', 'Knowledge Graph', '#984ea3'),
+    ]:
+        ax.plot(yrs[:-1], vals[:-1], marker=marker, markersize=4, linewidth=1.5, label=label, color=color)
+        # 2026 estimated: open marker, dashed
+        ax.plot(yrs[-1], vals[-1], marker=marker, markersize=5, color=color, markerfacecolor='white', markeredgewidth=1.5, zorder=5)
+        ax.plot([yrs[-2], yrs[-1]], [vals[-2], vals[-1]], '--', color=color, linewidth=1, alpha=0.5)
 
     ax.set_xlabel('Year')
     ax.set_ylabel('Number of Publications')
     all_years = sorted(set(years_diff + years_fed + years_gnn + years_kg))
     ax.set_xticks(all_years)
     labels = [str(y) for y in all_years]
-    labels[-1] = '2026\n(upto June)'
+    labels[-1] = '2026\n(est.)'
     ax.set_xticklabels(labels, rotation=45)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     ax.legend(frameon=True, fancybox=True, shadow=False, fontsize=9)
@@ -208,7 +241,7 @@ def chart4():
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_rising_methods.png', dpi=300, bbox_inches='tight')
     plt.close(fig)
-    print("✓ Chart 4 saved")
+    print("\u2713 Chart 4 saved")
 
 
 # ══════════════════════════════════════════════════════════════════════════
