@@ -174,7 +174,7 @@ done
 
 ## 10. Multi-Lens Reviewer Personas
 
-Before submission, review the paper from four distinct perspectives. Each reviewer persona catches issues the others miss.
+Before submission, review the paper from ten distinct perspectives. Each reviewer persona catches issues the others miss.
 
 ### Reviewer A: Fact Checker
 
@@ -222,13 +222,85 @@ Checks for claims that could be misquoted, weaponized, or taken out of context.
 - [ ] Method lifecycle claims don't prematurely declare methods dead ("plateau candidate" not "dead")
 - [ ] Correlation is never implied as causation ("16x more papers does not mean 16x more useful")
 
+### Reviewer E: AI Phrasing Detector
+
+Identifies language patterns that reveal AI-generated text and undermine credibility.
+
+- [ ] No filler words: *notably, comprehensive, significant, striking, fundamental, furthermore, moreover*
+- [ ] No AI opener patterns: *"has grown at an accelerating pace"*, *"in the rapidly evolving landscape"*
+- [ ] No cliché phrases: *"blurred boundary"*, *"double-edged sword"*, *"paradigm shift"*, *"unprecedented"*
+- [ ] No inflated verbs: *leverage, foster, facilitate, underscore, highlight*
+- [ ] No Unicode em-dashes or en-dashes in source (use ASCII `---` and `--`)
+- [ ] No "AI summary" sentence patterns: *"This paper provides a comprehensive analysis..."*
+- [ ] Prose reads like a human wrote it, not like a prompt response
+
+### Reviewer F: Hedging / Claims Reviewer
+
+Ensures all predictions, projections, and trend claims use appropriately open language.
+
+- [ ] Projections use "could / may / can", never "will / would / should"
+- [ ] Annualized projections from partial-year data disclose the assumption ("assuming even distribution")
+- [ ] Use "on pace for approximately" not "on track for over"
+- [ ] Trend continuations say "has not yet shown signs of" not "has not" (definitive)
+- [ ] Comparisons between time periods don't imply the old category stopped ("expanding toward" not "moving from")
+- [ ] Causal language is absent unless causation is demonstrated ("aligns with" not "caused by")
+
+### Reviewer G: Logic / Consistency Reviewer
+
+Checks that the paper does not contradict itself across sections.
+
+- [ ] Every finding in the conclusion appears in a body section with supporting data
+- [ ] Every claim in the abstract is supported by a specific section
+- [ ] Terms used in the conclusion are actually discussed as trends in the body (don't mention SVM decline if undiscussed)
+- [ ] Contribution list items are actions (not dataset properties) and don't overlap
+- [ ] Section roadmap in the introduction matches the actual section structure
+- [ ] Methodological claims ("single API call", "14 keywords") match the actual methods used
+- [ ] Reference numbers in text match bibliography entries after any reordering
+
+### Reviewer H: Copy Editor
+
+Catches typos, grammar issues, and formatting inconsistencies.
+
+- [ ] No typos (e.g., "upto" → "up to")
+- [ ] Consistent spelling throughout (e.g., British vs American English)
+- [ ] All acronyms defined on first use
+- [ ] Consistent number formatting (commas in thousands, decimal places)
+- [ ] Consistent table formatting (same font size, alignment, border style)
+- [ ] No orphaned or dangling references ("as shown in Figure X" where X doesn't exist)
+- [ ] Consistent use of past vs present tense within sections
+
+### Reviewer I: LaTeX / Typesetting Reviewer
+
+Checks the rendered PDF for formatting problems invisible in the source.
+
+- [ ] No overfull hbox warnings (check build log)
+- [ ] No excessive word hyphenation (add `\hyphenpenalty=5000`, `\tolerance=1000`)
+- [ ] Microtypography enabled (`\usepackage{microtype}`)
+- [ ] ASCII dashes only — Times font cannot render Unicode em/en-dashes
+- [ ] Tables fit within margins at `\footnotesize`
+- [ ] Wide figures use `0.90\textwidth` or narrower
+- [ ] No words cut off at page/column edges
+- [ ] Figure and table placement doesn't create large whitespace gaps
+
+### Reviewer J: Structural / Flow Reviewer
+
+Evaluates whether the paper tells a coherent story from start to finish.
+
+- [ ] Each section flows logically into the next (no abrupt topic changes)
+- [ ] Transitions between subsections exist and make sense
+- [ ] No redundancy — the same information isn't repeated across sections
+- [ ] The introduction motivates the problem before stating contributions
+- [ ] Related work positions this paper relative to prior work, not just lists papers
+- [ ] Discussion adds interpretation beyond what Results already stated
+- [ ] Conclusion doesn't introduce new data or claims not in the body
+
 ---
 
 ## How to Use This Checklist
 
 1. **Pass 1 (automated):** Run all commands from §9. Fix every flagged line.
 2. **Pass 2 (section-by-section):** Walk through §1–§8 manually, checking each box.
-3. **Pass 3 (multi-lens review):** Read the full paper four times, each time as a different reviewer persona from §10. Check each persona's boxes.
+3. **Pass 3 (multi-lens review):** Read the paper ten times, each time as a different reviewer persona from §10. Check each persona's boxes.
 4. **Pass 4 (fresh eyes):** Have a co-author or colleague read the paper with this checklist open.
 5. **Final gate:** All boxes checked → paper is ready for submission.
 
@@ -238,4 +310,5 @@ Checks for claims that could be misquoted, weaponized, or taken out of context.
 
 > [!TIP]
 > For AI-assisted review, prompt the assistant: *"Act as Reviewer A (Fact Checker) and review this paper"*
-> then repeat for B, C, and D. Each pass catches different issues.
+> then repeat for B through J. Each pass catches different issues.
+
