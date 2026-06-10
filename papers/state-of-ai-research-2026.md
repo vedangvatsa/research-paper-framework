@@ -247,7 +247,7 @@ Of the 5,003,783 works in the corpus, 3,043,557 (60.8%) are published as open ac
 
 The ratio of abstract-to-title matches varies from 1.5x ("federated learning") to 7.7x ("diffusion model"). "Diffusion model" (7.7x) is discussed in 324,073 abstracts but placed in the title of only 42,120 papers. However, as noted in Section 3.3, the abstract count for "diffusion model" includes non-AI uses (e.g., diffusion of innovations in social science), which inflates the ratio. The remaining high-ratio terms are more interpretable.
 
-"Fairness" (5.4x) and "hallucination" (4.6x) also show high ratios. Both terms have significant non-AI uses — "hallucination" appears in psychiatric and neuroscience literature, "fairness" in social science and economics — so their abstract counts are inflated by non-AI papers, similar to "diffusion model."
+"Fairness" (5.4x) and "hallucination" (4.6x) also show high ratios. Both terms have significant non-AI uses. "Hallucination" appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. Their abstract counts are inflated by non-AI papers, similar to "diffusion model."
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
@@ -257,11 +257,11 @@ For bibliometric work, the implication is clear: title-only analysis systematica
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles — neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
-The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context — researchers are building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
+The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context. Researchers are building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
 The abbreviation "LLM" itself grew 16.0x (Table 4), indicating that researchers now use the shorthand as frequently as the full phrase.
 
