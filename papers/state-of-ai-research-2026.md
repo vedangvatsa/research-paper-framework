@@ -189,7 +189,7 @@ The keyword growth data reveals three patterns. Growth ratios were computed by d
 
 ### 3.5 Citation Distribution
 
-The citation distribution is extremely right-skewed across the corpus. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. This figure is partly inflated by recency, as papers published in 2024-2026 have had little time to accumulate citations.
+The citation distribution is heavily right-skewed. Nearly half of all papers (48.9%) have zero citations, partly because papers from 2024-2026 have had little time to accumulate them. At the other end, only 2,475 papers (0.05%) exceed 1,000 citations.
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
