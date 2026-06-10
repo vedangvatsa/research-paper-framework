@@ -193,7 +193,11 @@ The keyword growth data groups into three categories. Growth ratios were compute
 
 **Category 3, safety and reliability.** "Jailbreak" (25.5x) and "guardrail" (9.7x) reflect the growing research effort to make language models reliable and safe. "Jailbreak" research (2,803 papers in 2025-2026, up from 110 in 2022-2023) investigates adversarial prompts that circumvent model safety filters. "Guardrail" (5,046, up from 521) covers techniques for constraining model outputs.
 
-All ten of the fastest-rising keywords are related to large language models. None involve computer vision, reinforcement learning, or graph methods. "Copilot" (16.0x), the remaining term in the table, refers to AI coding assistants and reflects how LLM-based tools are entering software engineering research. The table as a whole suggests that the current growth in AI publishing is driven almost entirely by LLM-adjacent work.
+All ten of the fastest-rising keywords are related to large language models. None involve computer vision, reinforcement learning, or graph methods. "Copilot" (16.0x), the remaining term in the table, refers to LLM-based assistants for coding (GitHub Copilot), productivity (Microsoft 365 Copilot), and other domains.
+
+The growth ratios in this table should be read with caution. "DeepSeek" (848.7x) had only 13 papers in the 2022-2023 baseline, so a small denominator inflates the ratio. By absolute count, "LLM" (161,771 papers in 2025-2026) is the largest term in the table, followed by "Gemini" (22,365) and "retrieval-augmented" (21,105). The three RAG variants (retrieval augmented generation, retrieval-augmented, RAG) total 58,494 papers in 2025-2026, making retrieval augmentation the second-largest topic cluster after the LLM abbreviation itself.
+
+This table captures what is growing fastest, not what contributes the most new papers in absolute terms. Established methods like "deep learning" added 58,766 new papers from 2024 to 2025 (157,947 to 216,713), far more than any single term in this table. The fastest-rising keywords indicate where research attention is shifting, while established methods continue to add volume through steady growth.
 
 ### 3.5 Citation Distribution
 
