@@ -64,7 +64,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 1. **Keyword frequency.** For each keyword, bigram, or trigram of interest, a single API call was issued using `abstract.search:<term>,publication_year:2013-2026` and the `meta.count` field from the response was recorded.
 
-2. **Growth detection.** For each keyword, publications from 2025-2026 were pooled and compared against publications from 2022-2023. The growth ratio was computed by dividing the newer count by the older count. Pooling two years per window smooths annual fluctuations, and the three-year span between windows (2022-2023 vs 2025-2026) is wide enough to detect newly emerging terms that had near-zero usage in the earlier period.
+2. **Growth detection.** For each keyword, publications from 2025-2026 were pooled and compared against publications from 2022-2023. The growth ratio was computed by dividing the newer count by the older count. Pooling two years per window smooths annual fluctuations, and the three-year span between windows (2022-2023 vs. 2025-2026) is wide enough to detect newly emerging terms that had near-zero usage in the earlier period.
 
 3. **Time-series trajectories.** For 10 selected methods, year-by-year API calls were issued to construct annual publication counts from 2013 (or the method's introduction year) through 2026.
 
@@ -109,7 +109,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent proliferation of LLM-related research.
 
-The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.9 million publications for the full year. If realized, this projection indicates that 2026 would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
+The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.9 million publications for the full year. If realized, this projection indicates that 2026 could be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
 ![AI research publication volume, 2013-2026. Each bar represents papers mentioning AI terms in their abstracts. 2026 covers January through June only.](figures/fig_publication_volume.png)
 
@@ -150,7 +150,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 ![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. 2026 covers January through June only.](figures/fig_established_methods.png)
 
-**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The 2026 partial-year data (84,957 mentions recorded through June) puts the full year on pace for approximately 204,000 papers, which would represent another 2.1x increase over the 2025 volume.
+**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The 2026 partial-year data (84,957 mentions recorded through June) puts the full year on pace for approximately 204,000 papers, which could represent another 2.1x increase over the 2025 volume.
 
 ![Growth of "large language model" in paper abstracts.](figures/fig_llm_explosion.png)
 
@@ -162,7 +162,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 ### 3.4 Fastest-Rising Keywords
 
-**Table 4. Top 10 fastest-rising keywords in paper abstracts (2025-2026 vs 2022-2023).**
+**Table 4. Top 10 fastest-rising keywords in paper abstracts (2025-2026 vs. 2022-2023).**
 
 | Keyword | 2025-2026 (Count) | 2022-2023 (Count) | Growth (Ratio) |
 |---------|-----------|-----------|--------|
@@ -305,7 +305,7 @@ China and the United States started the decade at near-parity. In 2013, the US p
 | 2024 | 144,452 | 90,915 | 65,398 | 12,657 | 28,174 | **1.59** |
 | 2025 | 187,887 | 122,449 | 89,287 | 15,558 | 37,104 | **1.53** |
 
-The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. The US output actually declined between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs 122,449).
+The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. The US output actually declined between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs. 122,449).
 
 The US deceleration from 2020 to 2022 is notable. US AI research output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
@@ -315,7 +315,7 @@ An important caveat: paper counts measure research volume, not research impact. 
 
 The China-US balance varies by research area.
 
-**Table 8. China vs US paper counts by method (2013-2026, abstract search).**
+**Table 8. China vs. US paper counts by method (2013-2026, abstract search).**
 
 | Method | China | US | Total | China/US |
 |--------|-------|------|-------|------|
@@ -327,11 +327,11 @@ The China-US balance varies by research area.
 | diffusion model | 66,832 | 56,315 | 123,147 | 1.19x |
 | large language model | 35,923 | 47,363 | 83,286 | **0.76x** |
 
-In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs 35,923, or 1.32x the Chinese count). This is a meaningful exception. While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing technology category since 2023.
+In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs. 35,923, or 1.32x the Chinese count). This is a meaningful exception. While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing technology category since 2023.
 
 #### 4.4.3 The LLM Convergence
 
-In the corpus, the US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China in the corpus. By 2025, China reached parity (China: 15,008 vs US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
+In the corpus, the US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China in the corpus. By 2025, China reached parity (China: 15,008 vs. US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
@@ -346,7 +346,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 ### 4.5 Limitations
 
-**Stemming and noise.** OpenAlex applies stemming to search queries, which inflates counts for common words. "Explainable" returns 2,544,915 abstract matches, which is clearly inflated by stemming matching "explain" in non-AI contexts. Single-word keyword counts in Table 3 should be interpreted with this caveat. Multi-word phrases and proper nouns are minimally affected.
+**Stemming and noise.** OpenAlex applies stemming to search queries, which inflates counts for common words. "Explainable" returns 2,544,915 abstract matches, which is clearly inflated by stemming matching "explain" in non-AI contexts. Single-word keyword counts in Table 3 are best interpreted with this caveat in mind. Multi-word phrases and proper nouns are minimally affected.
 
 **Cross-disciplinary noise.** As noted in §2.2, an estimated 5-8% of the corpus consists of non-AI papers matching broad terms like "autonomous" or "generative." This is an inherent tradeoff of abstract-level analysis versus title-level analysis (which is more precise but less complete).
 
