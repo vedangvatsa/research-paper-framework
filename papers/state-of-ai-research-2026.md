@@ -161,7 +161,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 ![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
-"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025. The lifecycle implications of this trajectory are discussed in §4.3.
+"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025. Its slowing growth is discussed in §4.3.
 
 ### 3.4 Fastest-Rising Keywords
 
