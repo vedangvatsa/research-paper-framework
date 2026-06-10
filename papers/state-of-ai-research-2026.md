@@ -112,7 +112,6 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers.
 
-For context, OpenAlex indexes over 250 million works across all fields and time periods. The AI corpus of 5 million works spans 2013 through mid-2026, a 13.5-year window. Within that window, annual AI output grew from 93,226 works in 2013 to 944,530 in 2025, a 10.1x increase.
 
 ![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
 
@@ -143,7 +142,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 "Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934) [3]. Together these account for over 913,000 abstract mentions, reflecting the dominance of image-related deep learning tasks in the corpus.
 
-"Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). The abstract data reveals that LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 6).
+"Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 6).
 
 "Support vector machine" (239,347) and "random forest classifier" (73,385) persist in the top 10. These classical methods continue to be widely referenced in abstracts, often as baselines for comparison or in application domains where simpler models remain competitive.
 
@@ -198,7 +197,7 @@ The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x th
 
 ### 3.6 Geographic Distribution
 
-In terms of total geographic distribution of research output in the corpus, authors affiliated with Chinese institutions lead with 874,019 publications, which is 21.6% higher than the output of authors affiliated with US institutions (718,676). India ranks third with 369,931 publications, surpassing the outputs of Japan (333,896) and the United Kingdom (216,177).
+China leads with 874,019 publications, 21.6% higher than the United States (718,676). India ranks third with 369,931 publications, surpassing Japan (333,896) and the United Kingdom (216,177).
 
 ![Top 10 countries by AI research output (abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
 
@@ -306,7 +305,7 @@ China and the United States started the decade at near-parity. In 2013, the US p
 | 2024 | 144,452 | 90,915 | 65,398 | 12,657 | 28,174 | **1.59** |
 | 2025 | 187,887 | 122,449 | 89,287 | 15,558 | 37,104 | **1.53** |
 
-The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. The US output actually declined between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs. 122,449).
+The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. US output declined between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs. 122,449).
 
 The US deceleration from 2020 to 2022 is notable. US AI research output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
@@ -332,7 +331,7 @@ In the corpus, China leads in six of seven method categories. The lead is strong
 
 #### 4.4.3 The LLM Convergence
 
-In the corpus, the US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China in the corpus. By 2025, China reached parity (China: 15,008 vs. US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
+The US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China. By 2025, China reached parity (China: 15,008 vs. US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
