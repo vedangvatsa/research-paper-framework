@@ -42,7 +42,7 @@ The corpus was defined using OpenAlex's `abstract.search` filter. The search que
 
 **Resulting corpus.** 5,003,783 papers.
 
-Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and may capture non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. Based on manual inspection of 100 random results from each of these two broader search terms, an estimated 5-8% of the corpus consists of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
+Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and may capture non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. An estimated 5-8% of the corpus may consist of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
 
 **Table 1. Corpus composition by document type and source type.**
 
@@ -133,7 +133,7 @@ To contextualize this growth: OpenAlex indexes over 250 million works across all
 | 9 | medical imaging | 359,104 | graph neural network | 86,453 |
 | 10 | feature extraction | 256,159 | random forest classifier | 73,385 |
 
-"Neural network" (1,522,612) dominates the list, appearing in 30.4% of all paper abstracts. "Machine learning" (1,287,123) and "deep learning" (980,070) round out the top three. Together, these three terms account for over 3.7 million abstract mentions in total (including duplicate counts where multiple terms appear in the same abstract).
+"Neural network" (1,522,612) dominates the list, appearing in 30.4% of all paper abstracts. "Machine learning" (1,287,123) and "deep learning" (980,070) round out the top three. Together, these three terms account for over 3.8 million abstract mentions in total (including duplicate counts where multiple terms appear in the same abstract).
 
 "Attention mechanism" (432,079) ranks 5th, reflecting the wide adoption of attention-based architectures across NLP, computer vision, and multimodal tasks since the transformer's introduction in 2017.
 
@@ -149,7 +149,7 @@ To contextualize this growth: OpenAlex indexes over 250 million works across all
 
 ### 3.3 Time-Series Trajectories
 
-**Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (representing a 10.9x increase).
+**Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (a 10.9x increase); note that the early counts (2017-2018) likely include non-AI uses of "transformer" (e.g., electrical engineering), so the AI-specific growth ratio may be higher.
 
 ![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_established_methods.png)
 
@@ -157,7 +157,7 @@ To contextualize this growth: OpenAlex indexes over 250 million works across all
 
 ![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
 
-**Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
+**Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase); early counts include non-AI uses of "diffusion model" (e.g., diffusion of innovations in social science), so the AI-specific growth may be steeper. "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
 ![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
@@ -194,7 +194,7 @@ The citation distribution is extremely right-skewed across the corpus. Nearly ha
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
-The most-cited paper is ResNet [2] with 221,202 citations, nearly 2.0x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 (113,579 citations) and the lme4 statistics package (84,949), are not research contributions to the field but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among field-specific papers, the top entries (ResNet, Deep Learning [5], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all foundational infrastructure. Papers that provide widely-used building blocks receive orders of magnitude more citations than application-specific work.
+The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 (113,579 citations) and the lme4 statistics package (84,949), are not research contributions to the field but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among field-specific papers, the top entries (ResNet, Deep Learning [5], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all foundational infrastructure. Papers that provide widely-used building blocks receive orders of magnitude more citations than application-specific work.
 
 ### 3.6 Geographic Distribution
 
@@ -361,7 +361,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 **Causation vs. correlation.** Growth in keyword frequency reflects research attention, not research quality or real-world deployment. A 16x increase in "LLM" papers does not mean LLMs are 16x more useful than they were in 2022.
 
-**Volume vs. impact.** All country and institutional comparisons are based on paper counts, which measure volume, not impact. The caveats discussed in §4.4.1 -- citation-weighted metrics, venue prestige, and differing publication incentive structures -- apply to all geographic and institutional comparisons in this paper.
+**Volume vs. impact.** All country and institutional comparisons are based on paper counts, which measure volume, not impact. The caveats discussed in §4.4.1 — citation-weighted metrics, venue prestige, and differing publication incentive structures — apply to all geographic and institutional comparisons in this paper.
 
 **Cross-disciplinary inclusion.** As noted in §3.5, the most-cited papers in the corpus include non-AI entries (e.g., DSM-5, lme4) whose abstracts happen to mention AI-related terms. This is an inherent feature of abstract-level search.
 
