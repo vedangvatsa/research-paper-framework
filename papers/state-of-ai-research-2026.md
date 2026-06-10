@@ -185,7 +185,7 @@ Three patterns stand out in the keyword growth data. Growth ratios were computed
 
 **Story 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. RAG has become the standard pattern for connecting language models to external knowledge bases [8]. Its three variants in the growth table reflect how quickly researchers adopted it as both a technique and an abbreviation.
 
-**Story 3, safety and reliability.** "Jailbreak" (25.5x) and "guardrail" (9.7x) reflect the growing research effort to make language models reliable and safe. "Jailbreak" research (2,803 papers) investigates adversarial prompts that circumvent model safety filters. "Guardrail" (5,046) covers techniques for constraining model outputs. These terms barely existed in the research literature before 2023.
+**Story 3, safety and reliability.** "Jailbreak" (25.5x) and "guardrail" (9.7x) reflect the growing research effort to make language models reliable and safe. "Jailbreak" research (2,803 papers in 2025-2026, up from 110 in 2022-2023) investigates adversarial prompts that circumvent model safety filters. "Guardrail" (5,046, up from 521) covers techniques for constraining model outputs.
 
 ### 3.5 Citation Distribution
 
