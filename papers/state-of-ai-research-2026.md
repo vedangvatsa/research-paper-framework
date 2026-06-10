@@ -112,6 +112,8 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual output in this corpus exceeds 1 million papers.
 
+To put the acceleration in perspective, the 2025 output alone (944,530 papers) exceeds the entire first six years of the corpus combined (2013-2018, 734,197 papers). More than half of the corpus (58.8%) was published from 2023 onward, meaning that the majority of AI-related academic work indexed by OpenAlex is less than four years old.
+
 
 ![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
 
@@ -179,7 +181,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 | gemini | 22,365 | 1,650 | 13.6x |
 | guardrail | 5,046 | 521 | 9.7x |
 
-Three patterns stand out in the keyword growth data. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
+The keyword growth data groups into three categories. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
 
 **Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific commercial models, not architectures or methods. Their presence in a fastest-rising keyword list suggests that researchers are spending more time evaluating and comparing named products.
 
