@@ -57,7 +57,7 @@ Eight of the ten search terms are specific to AI. Two terms ("generative" and "a
 | Other | 191,951 | 3.8% | | | |
 | **Total** | **5,003,783** | | | | |
 
-Repositories (primarily arXiv) account for 27.4% of the corpus, reflecting the significant role of preprints in AI research dissemination. Journals remain the largest single source at 44.6%.
+Repositories (primarily arXiv) account for 27.4% of the corpus, which is expected given how heavily AI researchers rely on preprints. Journals remain the largest single source at 44.6%.
 
 ### 2.3 Analysis Methods
 
@@ -134,13 +134,13 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 "Neural network" (1,522,612) dominates the list, appearing in 30.4% of all paper abstracts. "Machine learning" (1,287,123) and "deep learning" (980,070) round out the top three. Together, these three terms account for over 3.8 million abstract mentions in total (including duplicate counts where multiple terms appear in the same abstract).
 
-"Attention mechanism" (432,079) ranks 5th, reflecting the wide adoption of attention-based architectures across NLP, computer vision, and multimodal tasks since the transformer's introduction in 2017.
+"Attention mechanism" (432,079) ranks 5th. Attention-based architectures have spread across NLP, computer vision, and multimodal tasks since the transformer's introduction in 2017.
 
 "Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104), demonstrating how quickly the LLM category has accumulated volume.
 
 "Feature extraction" (256,159) at rank 10 reflects how many AI papers describe preprocessing pipelines rather than end-to-end architectures.
 
-"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934) [3]. Together these account for over 913,000 abstract mentions, reflecting the dominance of image-related deep learning tasks in the corpus.
+"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934) [3]. Together these account for over 913,000 abstract mentions, driven largely by image-related deep learning tasks.
 
 "Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 6).
 
@@ -179,7 +179,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 | gemini | 22,365 | 1,650 | 13.6x |
 | guardrail | 5,046 | 521 | 9.7x |
 
-The keyword growth data reveals three patterns. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
+Three patterns stand out in the keyword growth data. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
 
 **Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific models. Researchers are studying specific products, not just abstract architectures. The field is increasingly focused on model-level evaluation and comparison alongside architecture research.
 
@@ -193,7 +193,7 @@ The citation distribution is extremely right-skewed. Nearly half of all papers (
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
-The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 [23] (113,579 citations) and the lme4 statistics package [24] (84,949), are not research contributions to the field but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among field-specific papers, the top entries (ResNet, Deep Learning [5], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all foundational infrastructure. Papers that provide widely-used building blocks receive orders of magnitude more citations than application-specific work.
+The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 [23] (113,579 citations) and the lme4 statistics package [24] (84,949), are not AI research contributions but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among AI-specific papers, the top entries (ResNet, Deep Learning [5], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all widely reused building blocks. Papers that provide such infrastructure receive orders of magnitude more citations than application-specific work.
 
 ### 3.6 Geographic Distribution
 
@@ -257,7 +257,7 @@ This finding has methodological consequences for bibliometric research. Title-on
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. This dominance persists despite public attention moving to large language models. Two reasons explain this. First, foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. Two reasons explain this. First, optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
@@ -378,7 +378,7 @@ Jurowetzki et al. (2021) documented increasing overlap between academic and comm
 
 Sevilla et al. (2022) analyzed compute trends in machine learning, documenting distinct scaling eras with doubling times ranging from 5-6 months in the deep learning era to approximately 10 months in the large-scale era [13]. The periods of fastest publication growth in this corpus (2017-2018 and 2023-2025) align with the periods when compute scaling enabled new model capabilities.
 
-Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scaling") [16], and Kaplan et al. (2020) characterized neural scaling laws [17]. The growth of "large language model" (29.9x from 2018 to 2025) reflects the research activity that this scaling race generated, catalyzed by models like GPT-3 [21].
+Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scaling") [16], and Kaplan et al. (2020) characterized neural scaling laws [17]. The growth of "large language model" (29.9x from 2018 to 2025) tracks the research activity that followed, accelerated by models like GPT-3 [21].
 
 ## 6. Conclusion
 
