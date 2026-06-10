@@ -271,15 +271,16 @@ def chart5():
     norm_vals = np.linspace(0.4, 0.9, len(countries))
     colors = [cmap(v) for v in norm_vals]
 
-    fig, ax = plt.subplots(figsize=(5.5, 3.5))
+    fig, ax = plt.subplots(figsize=(5.5, 2.8))
     bars = ax.barh(countries, counts, color=colors, edgecolor='white', height=0.7)
 
     for bar, count in zip(bars, counts):
         ax.text(bar.get_width() + 15000, bar.get_y() + bar.get_height() / 2,
-                f'{count:,}', va='center', fontsize=9)
+                f'{count:,}', va='center', fontsize=7.5)
 
     ax.set_xlabel('Number of Publications')
     ax.set_xlim(0, max(counts) * 1.15)
+    ax.tick_params(axis='y', labelsize=7.5)
     ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x/1e3:.0f}K'))
     cleanup_axes(ax)
     plt.tight_layout()
