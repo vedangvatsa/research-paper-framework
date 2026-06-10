@@ -20,7 +20,7 @@ In 2025, over 944,000 academic papers in the OpenAlex database mentioned artific
 
 Many bibliometric studies of AI research rely on subject classification tags or curated keyword lists that may not capture cross-disciplinary usage of AI methods. When keyword search is used, title-based approaches capture only papers where the author chose to place the method name in the title. A paper titled "Predicting Protein Stability Under Thermal Stress" that uses a neural network throughout its methods section would be invisible to a title-only search for "neural network." Abstract-level analysis addresses this gap by searching the text where authors describe their methods, results, and contributions.
 
-To analyze these trends, a bibliometric corpus of 5,003,783 publications was constructed by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts.
+To analyze these trends, a bibliometric corpus of 5,003,783 publications was defined by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts. No papers were downloaded; all analyses were performed through API count queries.
 
 The analysis covers 14 annual cohorts (2013-2026), measuring publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
 
@@ -34,7 +34,7 @@ OpenAlex is an open scholarly database indexing over 250 million academic works 
 
 ### 2.2 Corpus Construction
 
-The corpus was constructed using OpenAlex's `abstract.search` filter. The search query combined 10 AI-related terms using boolean OR logic.
+The corpus was defined using OpenAlex's `abstract.search` filter. The search query combined 10 AI-related terms using boolean OR logic.
 
 **Search terms.** *artificial intelligence, machine learning, deep learning, neural network, language model, reinforcement learning, computer vision, natural language, generative, autonomous.*
 
