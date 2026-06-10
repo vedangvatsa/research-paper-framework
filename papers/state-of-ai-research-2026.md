@@ -104,7 +104,7 @@ OpenAlex's search filters apply stemming, meaning a search for "agentic" also ma
 
 The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase over 12 years. The growth curve shows three distinct phases.
 
-**Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** AI research was growing but had not yet reached mainstream adoption. Deep learning was still an active research area rather than a standard tool.
+**Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** Annual output grew from 93,226 to 115,423 papers. Deep learning was still an active research area rather than a standard tool.
 
 **Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%). The transformer architecture was introduced in 2017 [6], and deep learning frameworks (TensorFlow, PyTorch) matured during this period, lowering the barrier for researchers across disciplines to adopt neural network methods. Growth decelerated to 11.2% in 2022.
 
@@ -136,7 +136,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 "Attention mechanism" (432,079) ranks 5th. Attention-based architectures have spread across NLP, computer vision, and multimodal tasks since the transformer's introduction in 2017.
 
-"Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104), demonstrating how quickly the LLM category has accumulated volume.
+"Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104).
 
 "Feature extraction" (256,159) at rank 10 reflects how many AI papers describe preprocessing pipelines rather than end-to-end architectures.
 
@@ -181,7 +181,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 Three patterns stand out in the keyword growth data. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
 
-**Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific models. Researchers are studying specific products, not just abstract architectures. The field is increasingly focused on model-level evaluation and comparison alongside architecture research.
+**Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific commercial models, not architectures or methods. Their presence in a fastest-rising keyword list suggests that researchers are spending more time evaluating and comparing named products.
 
 **Story 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. RAG has become the standard pattern for connecting language models to external knowledge bases [8]. Its three variants in the growth table reflect how quickly researchers adopted it as both a technique and an abbreviation.
 
@@ -251,7 +251,7 @@ The ratio of abstract-to-title matches varies from 1.5x ("federated learning") t
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
-This finding has methodological consequences for bibliometric research. Title-only analysis systematically undercounts methods that are used as tools across disciplines. Abstract-level analysis captures a more complete picture of method adoption.
+The practical takeaway for bibliometric work is straightforward. Title-only analysis systematically undercounts methods that are used as tools across disciplines. Abstract-level analysis captures more of that usage.
 
 ## 4. Discussion
 
@@ -261,13 +261,13 @@ As shown in Section 3.2, "neural network" remains the most frequently referenced
 
 ### 4.2 The LLM Inflection Point
 
-The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. What the raw growth numbers do not capture is the nature of the surrounding research. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
+The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context — researchers are building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
 The abbreviation "LLM" itself grew 16.0x (Table 4), following the same pattern as "CNN" and "RNN" in previous waves. Once a method gets a widely used shorthand, it has become a settled category in the research vocabulary.
 
 ### 4.3 Method Lifecycles
 
-The time-series data in Section 3.3 shows methods at different lifecycle stages.
+The time-series data (Section 3.3) places each method at a different lifecycle stage.
 
 **Mature methods (steady growth).** "Neural network" and "knowledge graph" show consistent growth without acceleration or deceleration. These methods have large, established research communities.
 
@@ -313,7 +313,7 @@ An important caveat: paper counts measure research volume, not research impact. 
 
 #### 4.4.2 Method-Specific Comparisons
 
-The China-US balance varies by research area.
+The China-US gap is not uniform across methods.
 
 **Table 8. China vs. US paper counts by method (2013-2026, abstract search).**
 
@@ -331,7 +331,7 @@ In the corpus, China leads in six of seven method categories. The lead is strong
 
 #### 4.4.3 The LLM Convergence
 
-The US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China. By 2025, China reached parity (China: 15,008 vs. US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
+The US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China. By 2025, China reached parity (China: 15,008 vs. US: 14,735, a ratio of 1.02). Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi were released during the same period, giving Chinese researchers domestic foundation models to study, benchmark, and extend.
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
@@ -382,7 +382,7 @@ Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scal
 
 ## 6. Conclusion
 
-Five million works, analyzed through abstract-level keyword search, show three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than any other method in this corpus (29.9x over seven years). And a growing body of research on reliability and safety (hallucination, guardrail, jailbreak) has emerged alongside deployment.
+Five million works, analyzed through abstract-level keyword search, show three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than any other method in this corpus (29.9x over seven years). And research on reliability and safety (hallucination, guardrail, jailbreak) has grown rapidly alongside deployment.
 
 Six findings from this analysis:
 
