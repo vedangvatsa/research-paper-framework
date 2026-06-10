@@ -42,7 +42,7 @@ The corpus was defined using OpenAlex's `abstract.search` filter. The search que
 
 **Resulting corpus.** 5,003,783 papers.
 
-Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and match non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. Some fraction of the corpus consists of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
+Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and match non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. Some fraction of the corpus consists of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,638 papers) and autonomous driving (71,930 papers).
 
 **Table 1. Corpus composition by document type and source type.**
 
@@ -160,7 +160,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 ![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
-"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025, totaling 67,647 papers across the corpus. Year-over-year growth peaked at 682% in 2017 and 189% in 2018, then fell to 4.5% in 2022 before settling at around 23% in 2024-2025. By comparison, "diffusion model" reached 49,862 annual mentions in 2025, 3.7x the GAN count that year. The lifecycle pattern is discussed in Section 4.3.
+"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025, totaling 67,638 papers across the corpus. Year-over-year growth peaked at 682% in 2017 and 189% in 2018, then fell to 4.5% in 2022 before settling at around 23% in 2024-2025. By comparison, "diffusion model" reached 49,862 annual mentions in 2025, 3.7x the GAN count that year. The lifecycle pattern is discussed in Section 4.3.
 
 ### 3.4 Fastest-Rising Keywords
 
@@ -273,7 +273,7 @@ The time-series data in Section 3.3 shows methods at different lifecycle stages.
 
 **Growth phase.** "Deep learning," "transformer," "graph neural," and "federated learning" are all growing faster than the corpus average.
 
-**Plateau candidates.** "Generative adversarial" growth has slowed since 2020, as GANs are being supplemented by diffusion models for many image generation tasks.
+**Plateau candidates.** "Generative adversarial" year-over-year growth dropped from 33% in 2020 to 4.5% in 2022, before recovering to around 23% in 2024-2025. GANs are being supplemented by diffusion models for many image generation tasks.
 
 **Continued growth.** "Large language model" shows no signs of deceleration. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
 
@@ -370,7 +370,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 The Stanford HAI AI Index Report [9] is a widely cited annual survey of AI research trends. The 2025 edition tracks publications, patents, investment, and policy across multiple data sources including Dimensions, Epoch, and LMSYS. This study differs in two ways. First, it uses abstract-level search rather than subject classification, capturing cross-disciplinary AI method usage. Second, every count in the analysis can be verified through the free OpenAlex API, rather than requiring access to proprietary databases.
 
-The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together account for 31.8% of all papers, a lower share because the corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by the AI Index.
+The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together total 1,592,695 paper-country assignments (31.8% of the corpus total, though this figure is inflated by co-authored papers counted in both countries). The lower relative share compared to the AI Index is because this corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by that report.
 
 Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus is consistent with that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search captures 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
 
@@ -388,7 +388,7 @@ Six findings from this analysis:
 
 1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). This dominance has not diminished despite the attention given to LLMs.
 
-2. **LLMs are the fastest-growing category.** "Large language model" grew from 3,248 abstracts in 2018 to 96,984 in 2025 (29.9x), with an inflection point at the release of ChatGPT.
+2. **LLMs are the fastest-growing category.** "Large language model" grew from 3,248 abstracts in 2018 to 96,984 in 2025 (29.9x), with an inflection point in 2022-2023 coinciding with the release of ChatGPT.
 
 3. **The field is expanding from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x).
 
