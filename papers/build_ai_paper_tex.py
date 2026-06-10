@@ -193,7 +193,7 @@ def md_to_latex(text):
                     'fig_citation_dist': 0.75,
                     'fig_countries': 0.80,
                     'fig_llm_china_us': 0.80,
-                    'fig_hype_cycle': 0.90,
+                    'fig_hype_cycle': 1.0,
                     'fig_china_vs_us': 0.80,
                 }
                 fig_width = 1.0
