@@ -230,7 +230,7 @@ China leads with 874,019 publications, 21.6% higher than the United States (718,
 
 The Chinese Academy of Sciences leads with 74,921 papers, 49.4% more than CNRS (50,145). Six of the top ten institutions are Chinese. Harvard (21,529) is the highest-ranked US institution at position 8.
 
-Note that OpenAlex's institution taxonomy includes umbrella organizations (CNRS, Helmholtz Association, US Department of Energy) alongside individual universities. These umbrella organizations aggregate papers from their constituent laboratories and institutes, which inflates their counts relative to standalone universities.
+OpenAlex's institution taxonomy includes umbrella organizations (CNRS, Helmholtz Association, US Department of Energy) alongside individual universities. These umbrella organizations aggregate papers from their constituent laboratories and institutes, which inflates their counts relative to standalone universities.
 
 ### 3.8 Open Access
 
@@ -257,7 +257,7 @@ Of the 5,003,783 works in the corpus, 3,043,557 (60.8%) are published as open ac
 
 The ratio of abstract-to-title matches varies from 1.5x ("federated learning") to 7.7x ("diffusion model"). "Diffusion model" (7.7x) is discussed in 324,073 abstracts but placed in the title of only 42,120 papers. However, as noted in Section 3.3, the abstract count for "diffusion model" includes non-AI uses (e.g., diffusion of innovations in social science), which inflates the ratio. The remaining high-ratio terms are more interpretable.
 
-"Fairness" (5.4x) and "hallucination" (4.6x) also show high ratios. Both terms have significant non-AI uses. "Hallucination" appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. Their abstract counts are inflated by non-AI papers, similar to "diffusion model."
+"Fairness" (5.4x) and "hallucination" (4.6x) also show high ratios. Both "fairness" and "hallucination" have significant non-AI uses. "Hallucination" appears in psychiatric and neuroscience literature, and "fairness" in social science and economics. The abstract counts for these two terms are inflated by non-AI papers, similar to "diffusion model."
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
@@ -337,7 +337,7 @@ The China-US gap is not uniform across methods.
 | diffusion model | 66,832 | 56,315 | 123,147 | 1.19x |
 | large language model | 35,923 | 47,363 | 83,286 | **0.76x** |
 
-In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs. 35,923, or 1.32x the Chinese count). While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing category since 2023.
+In the corpus, China leads in six of seven method categories. China's lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs. 35,923, or 1.32x the Chinese count). While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing category since 2023.
 
 The method-level shares within each country differ. "Neural network" appears in 38.1% of Chinese AI papers but 24.7% of US papers. "Transformer" appears in 10.2% of Chinese papers but only 4.7% of US papers. By contrast, "diffusion model" is nearly even as a share of each country's output (7.6% for China, 7.8% for the US), and "large language model" tilts toward the US (6.6% vs. 4.1%). The overall pattern is that China's volume lead is concentrated in established neural network methods, while the US has a proportionally larger share in LLM and diffusion model research.
 
@@ -408,7 +408,7 @@ Six findings from this analysis.
 
 5. **Half of all papers go uncited.** 48.9% of papers have zero citations, while only 2,475 papers (0.05%) have exceeded 1,000 citations. This figure is inflated by recent publications that have not yet had time to accumulate citations.
 
-6. **Title-only analysis misses most AI research.** Abstract search captures 1.5x to 7.7x more papers per keyword, depending on the method. The gap is smallest for methods that are typically the main contribution of a paper (federated learning, 1.5x) and largest for terms with significant non-AI uses (diffusion model, 7.7x).
+6. **Title-only analysis misses most AI research.** Abstract search captures 1.5x to 7.7x more papers per keyword, depending on the method. The abstract-to-title ratio is smallest for methods that are typically the main contribution of a paper (federated learning, 1.5x) and largest for terms with significant non-AI uses (diffusion model, 7.7x).
 
 The methodological contribution of this study is that all results are derived from a single free API (OpenAlex) using abstract-level keyword search. Every count reported in this paper can be independently verified and updated. The corpus definition, search queries, and analysis methods are fully described in Section 2, making the analysis reproducible without access to proprietary databases.
 
