@@ -410,6 +410,10 @@ Six findings from this analysis.
 
 6. **Title-only analysis misses most AI research.** Abstract search captures 1.5x to 7.7x more papers per keyword, depending on the method. Studies that rely on title-level filtering provide an incomplete view of AI research activity.
 
+The scale of the field is itself a finding. More papers were published in 2025 alone (944,530) than in the first six years of this corpus combined (2013-2018, 734,197). More than half of the corpus (58.8%) was published from 2023 onward. If the 2026 trajectory holds, this corpus will exceed 1.6 million papers in a single year.
+
+Several questions remain outside the scope of this study. Citation-weighted analysis would reveal whether China's volume lead translates to proportional impact. Tracking author-level flows between academia and industry would extend the findings of Jurowetzki et al. [15]. Method co-occurrence analysis (which methods appear together in the same abstract) would show how researchers combine techniques. And longitudinal analysis of the 48.9% zero-citation papers would separate genuinely uncited work from papers that are simply too recent to have accumulated citations.
+
 
 ## References
 
