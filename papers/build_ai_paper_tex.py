@@ -38,6 +38,14 @@ refs_text = refs_match.group(1).strip()
 
 def escape_latex_text(text):
     """Escape LaTeX special chars in running text."""
+    # Unicode to LaTeX conversions (must come before other escapes)
+    text = text.replace('§', '\\S{}')
+    text = text.replace('\u2014', '---')  # em-dash
+    text = text.replace('\u2013', '--')   # en-dash
+    text = text.replace('\u2018', '`')    # left single quote
+    text = text.replace('\u2019', "'")    # right single quote
+    text = text.replace('\u201C', '``')   # left double quote
+    text = text.replace('\u201D', "''")   # right double quote
     text = re.sub(r'(?<!\\)\$(\d)', r'\\$\1', text)
     text = re.sub(r'(?<!\\)%', r'\\%', text)
     text = re.sub(r'(?<!\\)&', r'\\&', text)

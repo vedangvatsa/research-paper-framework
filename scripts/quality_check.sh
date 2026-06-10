@@ -94,6 +94,11 @@ HITS=$(grep -nwE '\bwe\b|\bour\b' "$PAPER" 2>/dev/null || true)
 if [ -n "$HITS" ]; then echo "$HITS"; count_hits "$HITS"; else echo "  ✓ Clean"; fi
 echo ""
 
+# 12. Unicode Characters (invisible in LaTeX Times font)
+echo "━━━ 12. UNICODE CHARS (won't render in LaTeX) ━━━"
+HITS=$(grep -nP '[\x{2013}\x{2014}\x{2018}\x{2019}\x{201C}\x{201D}]' "$PAPER" 2>/dev/null || true)
+if [ -n "$HITS" ]; then echo "$HITS"; count_hits "$HITS"; else echo "  ✓ Clean"; fi
+echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 if [ "$ISSUES" -eq 0 ]; then
   echo "✓ ALL AUTOMATED CHECKS PASSED"
