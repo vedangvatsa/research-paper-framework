@@ -160,7 +160,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 
 ![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
-"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025. Its slowing growth is discussed in Section 4.3.
+"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025, totaling 67,647 papers across the corpus. Early growth was explosive (682% in 2017, 189% in 2018) but decelerated sharply, dropping to just 4.5% in 2022 before recovering to around 23% in 2024-2025. Its lifecycle pattern is discussed in Section 4.3.
 
 ### 3.4 Fastest-Rising Keywords
 
