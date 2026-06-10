@@ -102,7 +102,7 @@ OpenAlex's search filters apply stemming, meaning a search for "agentic" also ma
 | 2025 | 944,530 | +42.6% | 4,190,811 | 18.9% |
 | 2026 (up to June) | 812,972 | - | 5,003,783 | 16.2% |
 
-The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase over 12 years. Part of this growth reflects the expansion of academic publishing overall (global scholarly output roughly doubled over the same period), but AI growth has consistently outpaced the baseline, particularly after 2017. The growth curve shows three distinct phases.
+The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase over 12 years. Part of this growth reflects the general expansion of academic publishing, but AI growth has consistently outpaced the baseline, particularly after 2017. The growth curve shows three distinct phases.
 
 **Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** AI research was growing but had not yet reached mainstream adoption. Deep learning was still an active research area rather than a standard tool.
 
@@ -112,7 +112,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
-To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million works therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI works constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI works represent approximately 5.2% of estimated global output.
+For context, OpenAlex indexes over 250 million works across all fields and time periods. The AI corpus of 5 million works spans 2013 through mid-2026, a 13.5-year window. Within that window, annual AI output grew from 93,226 works in 2013 to 944,530 in 2025, a 10.1x increase.
 
 ![AI research publication volume, 2013-2026. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_publication_volume.png)
 
@@ -149,7 +149,7 @@ To contextualize this growth: OpenAlex indexes over 250 million works across all
 
 ### 3.3 Time-Series Trajectories
 
-**Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (a 10.9x increase); note that the early counts (2017-2018) likely include non-AI uses of "transformer" (e.g., electrical engineering), so the AI-specific growth ratio may be higher.
+**Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (a 10.9x increase). The early counts (2017-2018) likely include non-AI uses of "transformer" (e.g., electrical engineering).
 
 ![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_established_methods.png)
 
@@ -365,7 +365,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 **Cross-disciplinary inclusion.** As noted in §3.5, the most-cited papers in the corpus include non-AI entries (e.g., DSM-5, lme4) whose abstracts happen to mention AI-related terms. This is an inherent feature of abstract-level search.
 
-**No normalization against baseline.** The growth rates in this paper are raw, not normalized against overall academic publishing growth. Global scholarly output has roughly doubled over 2013-2026, so some of the observed AI growth reflects this baseline expansion rather than AI-specific acceleration.
+**No normalization against baseline.** The growth rates in this paper are raw, not normalized against overall academic publishing growth. Some of the observed AI growth reflects baseline expansion of scholarly output rather than AI-specific acceleration.
 
 ## 5. Related Work
 
