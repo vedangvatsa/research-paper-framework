@@ -21,7 +21,7 @@ Many bibliometric studies of AI research rely on subject classification tags or 
 
 To analyze these trends, a bibliometric corpus of 5,003,783 publications was constructed by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts.
 
-The analysis traces 14 AI-related keywords across 13 annual cohorts (2013-2026), measures publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
+The analysis covers 14 annual cohorts (2013-2026), measuring publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
 
 The rest of this paper is organized as follows. Section 2 describes the dataset construction and analysis methods. Section 3 presents results across nine dimensions. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
 
