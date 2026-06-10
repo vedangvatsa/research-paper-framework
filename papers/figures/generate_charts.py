@@ -63,7 +63,7 @@ def chart1():
     ax1.axvspan(2022.5, 2026.5, alpha=0.08, color='#b2182b', zorder=0)
     
     # Phase labels
-    ax1.text(2014.5, max(counts)*0.45, 'Phase 1', ha='center', fontsize=7, color='#4393c3', fontweight='bold')
+    ax1.text(2014.5, max(counts)*1.02, 'Phase 1', ha='center', fontsize=7, color='#4393c3', fontweight='bold')
     ax1.text(2019.5, max(counts)*1.02, 'Phase 2', ha='center', fontsize=7, color='#2166ac', fontweight='bold')
     ax1.text(2024.5, max(counts)*1.02, 'Phase 3', ha='center', fontsize=7, color='#b2182b', fontweight='bold')
     
