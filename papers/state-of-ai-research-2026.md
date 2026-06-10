@@ -190,7 +190,7 @@ The keyword growth data highlights three primary research trends.
 
 ### 3.5 Citation Distribution
 
-The citation distribution is extremely right-skewed across the corpus. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. Note that this figure is inflated by recency: papers published in 2024-2026 have had little time to accumulate citations. Even so, the zero-citation rate among pre-2023 papers remains above 35%, indicating a structural pattern rather than a purely temporal artifact.
+The citation distribution is extremely right-skewed across the corpus. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. This figure is partly inflated by recency: papers published in 2024-2026 have had little time to accumulate citations.
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
@@ -202,7 +202,7 @@ In terms of total geographic distribution of research output in the corpus, auth
 
 ![Top 10 countries by AI research output (abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
 
-Japan's position at rank 4 (333,896) in the abstract corpus is higher than in title-only analysis (rank 8, 41,964). This is because many Japanese research papers in robotics, materials science, and plasma physics discuss neural networks in their methods sections without placing them in their titles.
+Japan's position at rank 4 (333,896) in the abstract corpus is notable. Many Japanese research papers in robotics, materials science, and plasma physics discuss neural networks in their methods sections without placing them in their titles, which means abstract-level search captures a larger share of Japanese AI research than title-only approaches would.
 
 ### 3.7 Institutional Output
 
