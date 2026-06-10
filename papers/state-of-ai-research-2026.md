@@ -263,7 +263,7 @@ As shown in Section 3.2, "neural network" remains the most frequently referenced
 
 The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context — researchers are building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
-The abbreviation "LLM" itself grew 16.0x (Table 4), following the same pattern as "CNN" and "RNN" in previous waves. Once a method gets a widely used shorthand, it has become a settled category in the research vocabulary.
+The abbreviation "LLM" itself grew 16.0x (Table 4), indicating that researchers now use the shorthand as frequently as the full phrase.
 
 ### 4.3 Method Lifecycles
 
