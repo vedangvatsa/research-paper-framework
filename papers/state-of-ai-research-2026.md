@@ -267,15 +267,15 @@ The abbreviation "LLM" itself grew 16.0x (Table 4), indicating that researchers 
 
 ### 4.3 Method Lifecycles
 
-The time-series data (Section 3.3) places each method at a different lifecycle stage.
+The time-series data (Section 3.3) places each method at a different lifecycle stage. The corpus as a whole grew 42.6% from 2024 to 2025, which serves as a baseline for comparing individual methods.
 
-**Mature methods (steady growth).** "Neural network" and "knowledge graph" show consistent growth without acceleration or deceleration. These methods have large, established research communities.
+**Mature methods (steady growth).** "Neural network" grew 17.9% from 2024 to 2025, well below the corpus average. "Knowledge graph" grew 38.7%, closer to the average. Both have large cumulative totals and show no signs of decline.
 
-**Growth phase.** "Deep learning," "transformer," "graph neural," and "federated learning" are all growing faster than the corpus average.
+**Growth phase.** "Deep learning" (+37.2%), "transformer" (+56.4%), "graph neural" (+41.1%), and "federated learning" (+63.6%) all grew faster than the corpus average in 2024-2025. "Federated learning" has the highest relative growth rate of this group, though its absolute count (18,519 in 2025) remains small compared to "deep learning" (216,713).
 
-**Plateau candidates.** "Generative adversarial" year-over-year growth dropped from 33% in 2020 to 4.5% in 2022, before recovering to around 23% in 2024-2025. GANs are being supplemented by diffusion models for many image generation tasks.
+**Plateau candidates.** "Generative adversarial" year-over-year growth dropped from 33% in 2020 to 4.5% in 2022, before recovering to around 23% in 2024-2025. GANs are being supplemented by diffusion models for many image generation tasks. By 2025, "diffusion model" reached 3.7x the annual GAN count (49,862 vs. 13,613).
 
-**Continued growth.** "Large language model" shows no signs of deceleration. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
+**Continued growth.** "Large language model" grew 94.1% from 2024 to 2025, more than double the corpus average. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
 
 ![Hype cycle for methods in the corpus. Colors indicate lifecycle category: red (hype peak), blue (growth phase), green (foundational/mature), gray (declining). Placement is interpretive, based on growth trajectories, not a quantitative model.](figures/fig_hype_cycle.png)
 
