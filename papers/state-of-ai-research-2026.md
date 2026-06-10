@@ -16,7 +16,7 @@ _**Keywords**_: artificial intelligence, machine learning, bibliometrics, resear
 
 ## 1. Introduction
 
-In 2025, over 944,000 academic papers in the OpenAlex database mentioned artificial intelligence methods in their abstracts. Through early June 2026, 812,972 such papers have been recorded, putting the full year on pace for approximately 1.9 million total papers.
+In 2025, over 944,000 academic papers in the OpenAlex database mentioned artificial intelligence methods in their abstracts. Through early June 2026, 812,972 such papers have been recorded, putting the full year on pace for approximately 1.6 million total papers.
 
 Many bibliometric studies of AI research rely on subject classification tags or curated keyword lists that may not capture cross-disciplinary usage of AI methods. When keyword search is used, title-based approaches capture only papers where the author chose to place the method name in the title. A paper titled "Predicting Protein Stability Under Thermal Stress" that uses a neural network throughout its methods section would be invisible to a title-only search for "neural network." Abstract-level analysis addresses this gap by searching the text where authors describe their methods, results, and contributions.
 
@@ -24,7 +24,7 @@ To analyze these trends, a bibliometric corpus of 5,003,783 publications was def
 
 The analysis covers 14 annual cohorts (2013-2026), measuring publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
 
-The rest of this paper is organized as follows. Section 2 describes the dataset construction and analysis methods. Section 3 presents results across nine dimensions. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
+The rest of this paper is organized as follows. Section 2 describes the corpus definition and analysis methods. Section 3 presents results across nine dimensions. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
 
 ## 2. Methodology
 
@@ -32,7 +32,7 @@ The rest of this paper is organized as follows. Section 2 describes the dataset 
 
 OpenAlex is an open scholarly database indexing over 250 million academic works [1, 19]. It provides free API access with structured metadata including titles, abstracts (stored as inverted index), author affiliations, citation counts, open access status, and machine-learned concept tags. OpenAlex was chosen over Web of Science or Scopus because it is freely accessible, covers preprints (including arXiv), and exposes structured API filters that allow exact-count queries without downloading raw data.
 
-### 2.2 Corpus Construction
+### 2.2 Corpus Definition
 
 The corpus was defined using OpenAlex's `abstract.search` filter. The search query combined 10 AI-related terms using boolean OR logic.
 
@@ -67,7 +67,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 2. **Growth detection.** For each keyword, the total publication count from 2025-2026 was divided by the total from 2022-2023 to produce a growth ratio.
 
-3. **Time-series trajectories.** For 10 selected methods, year-by-year API calls were issued to construct annual publication counts from 2013 (or the method's introduction year) through 2026.
+3. **Time-series trajectories.** For 10 selected methods, year-by-year API calls were issued to obtain annual publication counts from 2013 (or the method's introduction year) through 2026.
 
 4. **Citation distribution.** The `cited_by_count` filter was used to count papers in seven citation ranges (0, 1-10, 11-50, 51-100, 101-500, 501-1000, 1000+).
 
@@ -110,7 +110,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent proliferation of LLM-related research.
 
-The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.9 million publications for the full year. If realized, this projection indicates that 2026 could be the first year in which annual AI research output exceeds 1 million papers in the corpus.
+The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
 To contextualize this growth: OpenAlex indexes over 250 million works across all fields. The AI corpus of 5 million papers therefore represents roughly 2% of global scholarly output. However, AI's share has been rising. In 2013, the 93,226 AI papers constituted approximately 1.1% of global output (estimated at 8.5 million works that year). By 2025, the 944,530 AI papers represent approximately 5.2% of estimated global output. AI research is growing roughly four times faster than scholarship overall.
 
@@ -278,7 +278,7 @@ The time-series data in §3.3 reveals different methods at different lifecycle s
 
 **Plateau candidates.** "Generative adversarial" growth has slowed since 2020, as GANs are being supplemented by diffusion models for many image generation tasks.
 
-**Continued growth.** "Large language model" shows no signs of deceleration. The 2026 partial-year data suggests the full-year total could exceed the 2025 count. These lifecycle patterns are summarized visually in Figure 7.
+**Continued growth.** "Large language model" shows no signs of deceleration. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
 
 ![Hype cycle for methods in the corpus. Colors indicate lifecycle category: red (hype peak), blue (growth phase), green (foundational/mature), gray (declining). Placement is interpretive, based on growth trajectories, not a quantitative model.](figures/fig_hype_cycle.png)
 
