@@ -436,7 +436,7 @@ template = r"""\documentclass{article}
 
 \author{Vedang Ratan Vatsa \\\\
 Founder, Hashtag Web3 \\\\
-\\texttt{vedangvats@gmail.com}}
+\texttt{vedangvats@gmail.com}}
 
 \begin{document}
 \raggedbottom
