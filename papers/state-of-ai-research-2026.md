@@ -394,7 +394,7 @@ Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scal
 
 ## 6. Conclusion
 
-Five million works, analyzed through abstract-level keyword search, show three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than any other method in this corpus (29.9x over seven years). And research on reliability and safety (hallucination, guardrail, jailbreak) has grown rapidly alongside deployment.
+Five million papers, analyzed through abstract-level keyword search, show three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than any other method in this corpus (29.9x over seven years). And research on reliability and safety (hallucination, guardrail, jailbreak) has grown rapidly alongside deployment.
 
 Six findings from this analysis.
 
