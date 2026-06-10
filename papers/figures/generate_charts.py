@@ -327,37 +327,17 @@ def chart6():
     ]
 
     fig, ax = plt.subplots(figsize=(5.5, 3.5))
-    
-    x_pos = np.arange(len(categories))
-    
-    # Color by value intensity
-    cmap = plt.cm.Blues
-    norm_vals = np.linspace(0.9, 0.4, len(categories))
-    colors = [cmap(v) for v in norm_vals]
-    
-    # Draw stems (thin vertical lines from bottom to value)
-    for i, (count, color) in enumerate(zip(counts, colors)):
-        ax.plot([i, i], [1e3, count], color=color, linewidth=1.5, zorder=2)
-    
-    # Draw dots at the top of each stem
-    ax.scatter(x_pos, counts, color=colors, s=40, zorder=3, edgecolors='white', linewidth=0.5)
-    
+    bars = ax.bar(categories, counts, color='#2166ac', edgecolor='white', width=0.65)
+
     ax.set_yscale('log')
     ax.set_xlabel('Citation Count')
     ax.set_ylabel('Number of Papers (log scale)')
 
-    # Value labels
-    for i, count in enumerate(counts):
-        ax.text(i, count * 1.3, f'{count:,}', ha='center', va='bottom', fontsize=7.5, fontweight='bold')
+    for bar, count in zip(bars, counts):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() * 1.15,
+                f'{count:,}', ha='center', va='bottom', fontsize=9, fontweight='bold')
 
-    ax.set_xticks(x_pos)
-    ax.set_xticklabels(categories)
     ax.set_ylim(1e3, 1e7)
-    
-    # Light grid for readability
-    ax.set_axisbelow(True)
-    ax.yaxis.grid(True, alpha=0.15, linestyle='-')
-    
     cleanup_axes(ax)
     ax.yaxis.set_minor_locator(plt.NullLocator())
     plt.tight_layout()
