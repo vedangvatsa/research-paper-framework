@@ -202,8 +202,6 @@ In terms of total geographic distribution of research output in the corpus, auth
 
 ![Top 10 countries by AI research output (abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
 
-Japan's position at rank 4 (333,896) in the abstract corpus is notable. Many Japanese research papers in robotics, materials science, and plasma physics discuss neural networks in their methods sections without placing them in their titles, which means abstract-level search captures a larger share of Japanese AI research than title-only approaches would.
-
 ### 3.7 Institutional Output
 
 **Table 5. Top 10 institutions by paper count.**
