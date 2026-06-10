@@ -2,6 +2,7 @@
 
 <div class="author-info">
 **Vedang Ratan Vatsa**<br>
+*Founder, Hashtag Web3*<br>
 *vedangvats@gmail.com*<br>
 </div>
 
