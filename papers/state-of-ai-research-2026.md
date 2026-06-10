@@ -42,7 +42,7 @@ The corpus was defined using OpenAlex's `abstract.search` filter. The search que
 
 **Resulting corpus.** 5,003,783 papers.
 
-Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and may capture non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. An estimated 5-8% of the corpus may consist of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
+Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and match non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. Some fraction of the corpus consists of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
 
 **Table 1. Corpus composition by document type and source type.**
 
@@ -106,7 +106,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** AI research was growing but had not yet reached mainstream adoption. Deep learning was still an active research area rather than a standard tool.
 
-**Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%), aligning with the publication of "Attention Is All You Need" [6] and the broad adoption of deep learning across application domains. Growth decelerated to 11.2% in 2022, suggesting the field was absorbing the deep learning wave.
+**Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** Growth was fastest in 2017-2018 (+18.9% and +34.9%), aligning with the publication of "Attention Is All You Need" [6] and the broad adoption of deep learning across application domains. Growth decelerated to 11.2% in 2022.
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent expansion of LLM-related research.
 
@@ -157,7 +157,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 ![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
 
-**Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase); early counts include non-AI uses of "diffusion model" (e.g., diffusion of innovations in social science), so the AI-specific growth may be steeper. "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
+**Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). Early counts include non-AI uses of "diffusion model" (e.g., diffusion of innovations in social science). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
 ![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
@@ -351,7 +351,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 **Stemming and noise.** OpenAlex applies stemming to search queries, which inflates counts for common words. "Explainable" returns 2,544,915 abstract matches, which is clearly inflated by stemming matching "explain" in non-AI contexts. Single-word keyword counts in Table 3 are best interpreted with this caveat in mind. Multi-word phrases and proper nouns are minimally affected.
 
-**Cross-disciplinary noise.** As noted in §2.2, an estimated 5-8% of the corpus consists of non-AI papers matching broad terms like "autonomous" or "generative." This is an inherent tradeoff of abstract-level analysis versus title-level analysis (which is more precise but less complete).
+**Cross-disciplinary noise.** As noted in §2.2, some fraction of the corpus consists of non-AI papers matching broad terms like "autonomous" or "generative." This is an inherent tradeoff of abstract-level analysis versus title-level analysis (which is more precise but less complete).
 
 **Temporal coverage.** The 2026 cohort covers January through early June. Annualized projections assume even distribution throughout the year, which may not hold due to conference deadlines and journal publication cycles.
 
