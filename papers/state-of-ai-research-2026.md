@@ -257,29 +257,25 @@ This finding has methodological consequences for bibliometric research. Title-on
 
 ### 4.1 The Persistence of Neural Networks
 
-"Neural network" (1,522,612 abstract mentions) remains the most frequently referenced AI concept in academic papers. "Convolutional neural network" (394,934) and "deep neural network" (518,431) are the top two trigrams. These numbers indicate that neural architectures remain the most frequently referenced computational approach in AI, even as public attention has moved to large language models. This dominance is underpinned by foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20], which stabilized neural network training.
-
-The temporal data adds nuance. "Neural network" grew from 23,395 abstracts in 2013 to 207,140 in 2025, a steady 8.9x increase. It has not yet shown signs of plateauing. New papers continue to use neural networks in increasingly diverse application domains, as evidenced by the 3.5x ratio between abstract and title counts (Table 6), indicating that most papers using neural networks do not place the term in their titles.
+As shown in §3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. This dominance persists despite public attention moving to large language models. Two factors underpin it. First, foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles — neural networks have become a standard tool rather than a novel contribution. The temporal data (§3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
-As shown in §3.3, "large language model" papers exhibit the sharpest inflection in the corpus, with growth accelerating from 2.4x over four years (2018-2022) to 12.2x over three years (2022-2025). No other method matches this acceleration profile.
+The LLM trajectory (§3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. What the raw growth numbers do not capture is the nature of the surrounding research. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety. "Instruction tuning," "preference optimization," and "human feedback" reflect the practical work of aligning models to user intent.
 
-The supporting terms tell a story about how the field is maturing. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety. "Instruction tuning," "preference optimization," and "human feedback" reflect the practical work of aligning models to user intent.
-
-The growth of "LLM" as an abbreviation is itself a signal. It grew from 10,125 abstracts in 2022-2023 to 161,771 in 2025-2026 (16.0x). Its rapid standardization suggests that LLMs have become a recognized category in AI research vocabulary, similar to how "CNN" and "RNN" became standard abbreviations in previous waves.
+The rapid standardization of "LLM" as an abbreviation (16.0x growth, Table 4) is itself a signal. LLMs have become a recognized category in AI research vocabulary, similar to how "CNN" and "RNN" became standard abbreviations in previous waves.
 
 ### 4.3 Method Lifecycles
 
-The time-series data reveals different methods at different lifecycle stages.
+The time-series data in §3.3 reveals different methods at different lifecycle stages.
 
 **Mature methods (steady growth).** "Neural network" and "knowledge graph" show consistent growth without acceleration or deceleration. These methods have large, established research communities.
 
-**Growth phase.** "Deep learning," "transformer," "graph neural," and "federated learning" are all growing faster than the corpus average. Federated learning shows the strongest sustained growth (402.6x from 2017 to 2025).
+**Growth phase.** "Deep learning," "transformer," "graph neural," and "federated learning" are all growing faster than the corpus average.
 
-**Plateau candidates.** "Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025 (2,268.8x total), but annual growth has slowed since 2020. GANs are being supplemented by diffusion models for many image generation tasks.
+**Plateau candidates.** "Generative adversarial" growth has slowed since 2020, as GANs are being supplemented by diffusion models for many image generation tasks.
 
-**Continued growth.** "Large language model" grew 29.9x from 2018 to 2025. The 2026 partial-year data (84,957 through June) suggests the full-year total could exceed the 2025 count. These lifecycle patterns are summarized visually in Figure 7.
+**Continued growth.** "Large language model" shows no signs of deceleration. The 2026 partial-year data suggests the full-year total could exceed the 2025 count. These lifecycle patterns are summarized visually in Figure 7.
 
 ![Hype cycle for methods in the corpus. Colors indicate lifecycle category: red (hype peak), blue (growth phase), green (foundational/mature), gray (declining). Placement is interpretive, based on growth trajectories, not a quantitative model.](figures/fig_hype_cycle.png)
 
