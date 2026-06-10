@@ -108,7 +108,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 2 (2017-2022), deep learning adoption, 11.2-34.9% per year.** The steepest acceleration occurred in 2017-2018 (+18.9% and +34.9%), aligning with the publication of "Attention Is All You Need" [6] and the broad adoption of deep learning across application domains. Growth decelerated to 11.2% in 2022, suggesting the field was absorbing the deep learning wave.
 
-**Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent proliferation of LLM-related research.
+**Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent expansion of LLM-related research.
 
 The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.6 million publications for the full year based on linear extrapolation. If realized, this would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
