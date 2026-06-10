@@ -14,6 +14,7 @@ Whenever you are asked to write or assist in writing an academic research paper 
 *   **PASSIVE ATTRIBUTION:** Use 'receive citations' not 'collect citations'. Use 'indicates' not 'confirms' when describing what data shows.
 *   **BALANCED CAVEATS:** When discussing limitations that apply to multiple countries/entities, name all of them explicitly. Do not place a caveat only adjacent to one country's data.
 *   **NO CLICHES:** In addition to the existing banned list, also ban: 'blurred boundary/boundaries', 'at an accelerating pace', 'deserves separate attention', 'attracted the most attention'.
+*   **THIRD PERSON FOR SINGLE-AUTHOR PAPERS:** Unless the paper has multiple authors, never use first-person plural pronouns ('we', 'our', 'us'). Use 'this study', 'the corpus', 'the analysis', 'the data' instead. For multi-author papers, 'we' is acceptable.
 
 ## 2. Research and Data Integrity
 *   **NO HALLUCINATIONS OR DATE BUMPING:** Never invent data, citations, or survey results. Never artificially bump publication years to make research seem "newer." All quantitative data, legal precedents, and source material must be fiercely fact-checked, factual, and verifiable. Avoid making over-broad, boastful, or unverifiable meta-claims (e.g., "Every number in this paper is verifiable through a single API call" or "unprecedented depth"). Every claim must be strictly objective, precise, and backed directly by verifiable sources or clear methodologies.

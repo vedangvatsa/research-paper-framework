@@ -15,11 +15,11 @@ _**Keywords**_: artificial intelligence, machine learning, bibliometrics, resear
 
 ## 1. Introduction
 
-In 2025, over 944,000 papers mentioned artificial intelligence methods in their abstracts. Through early June 2026, 812,972 papers have been recorded, putting the year on pace for approximately 1.9 million.
+In 2025, over 944,000 academic papers in the OpenAlex database mentioned artificial intelligence methods in their abstracts. Through early June 2026, 812,972 such papers have been recorded, putting the full year on pace for approximately 1.9 million total papers.
 
 Many bibliometric studies of AI research rely on subject classification tags or curated keyword lists that may not capture cross-disciplinary usage of AI methods. When keyword search is used, title-based approaches capture only papers where the author chose to place the method name in the title. A paper titled "Predicting Protein Stability Under Thermal Stress" that uses a neural network throughout its methods section would be invisible to a title-only search for "neural network." Abstract-level analysis addresses this gap by searching the text where authors describe their methods, results, and contributions.
 
-The corpus contains 5,003,783 papers, constructed by querying the OpenAlex scholarly database for documents that mention AI-related terms in their abstracts, published between 2013 and mid-2026.
+To analyze these trends, this study constructed a bibliometric corpus containing 5,003,783 publications. This dataset was built by querying the OpenAlex scholarly database for academic documents published between 2013 and mid-2026 that explicitly mention AI-related terms in their abstracts.
 
 This paper makes three contributions.
 
@@ -45,7 +45,7 @@ The corpus was constructed using OpenAlex's `abstract.search` filter. The search
 
 **Resulting corpus.** 5,003,783 papers.
 
-Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and may capture non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. Based on manual inspection of 100 random results from each term, an estimated 5-8% of the corpus consists of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
+Eight of the ten search terms are specific to AI. Two terms ("generative" and "autonomous") are broader and may capture non-AI papers. "Generative" can match generative grammar in linguistics. "Autonomous" can match autonomous systems in biology. Based on manual inspection of 100 random results from each of these two broader search terms, an estimated 5-8% of the corpus consists of papers where the matched term refers to a non-AI context. This tradeoff was accepted because excluding these terms would miss entire AI research areas such as generative adversarial networks [10] (67,647 papers) and autonomous driving (71,930 papers).
 
 **Table 1. Corpus composition by document type and source type.**
 
@@ -68,7 +68,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 1. **Keyword frequency.** For each keyword, bigram, or trigram of interest, a single API call was issued using `abstract.search:<term>,publication_year:2013-2026` and the `meta.count` field from the response was recorded.
 
-2. **Growth detection.** For each keyword, the count in the 2025-2026 cohort was compared against the 2022-2023 cohort. The growth ratio was computed as `count_new / max(count_old, 1)`. A two-year gap was used intentionally rather than comparing adjacent years: this wider window is better suited for detecting newly emerging terms that had near-zero usage in 2022-2023 and would show only modest single-year increases in an adjacent comparison.
+2. Growth detection. For each keyword, the publication count in the 2025-2026 cohort (count_new) was compared against the 2022-2023 baseline cohort (count_old). The growth ratio was computed as count_new / max(count_old, 1). A two-year gap was used intentionally rather than comparing adjacent years: this wider window is better suited for detecting newly emerging terms that had near-zero usage in 2022-2023 and would show only modest single-year increases in an adjacent comparison.
 
 3. **Time-series trajectories.** For 10 selected methods, year-by-year API calls were issued to construct annual publication counts from 2013 (or the method's introduction year) through 2026.
 
@@ -88,7 +88,7 @@ OpenAlex's search filters apply stemming, meaning a search for "agentic" also ma
 
 **Table 2. Annual publication volume (abstract-level corpus).**
 
-| Year | Papers | YoY Growth | Cumulative | Share |
+| Year | Papers (Count) | YoY Growth | Cumulative Count | Share of Corpus |
 |------|--------|-----------|------------|-------|
 | 2013 | 93,226 | - | 93,226 | 1.9% |
 | 2014 | 97,510 | +4.6% | 190,736 | 1.9% |
@@ -113,7 +113,7 @@ The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase 
 
 **Phase 3 (2023-2026), the LLM surge, 26.7-42.6% per year.** Starting in 2023, growth re-accelerated sharply. The 2025 output (944,530) represents a 42.6% increase over 2024, the highest annual growth rate since 2018. This aligns with the release of ChatGPT (November 2022) and the subsequent proliferation of LLM-related research.
 
-The 2026 cohort (812,972 papers through early June) is on pace for approximately 1.9 million papers for the full year. If realized, this could be the first year in which AI research output exceeds 1 million papers in the corpus.
+The 2026 cohort (812,972 papers recorded through early June) is on pace to reach approximately 1.9 million publications for the full year. If realized, this projection indicates that 2026 would be the first year in which annual AI research output exceeds 1 million papers in the corpus.
 
 ![AI research publication volume, 2013-2026. Each bar represents papers mentioning AI terms in their abstracts. 2026 covers January through June only.](figures/fig_publication_volume.png)
 
@@ -121,7 +121,7 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 
 **Table 3. Top 10 bigrams and trigrams in abstracts.**
 
-| Rank | Bigram | Count | Trigram | Count |
+| Rank | Bigram | Mentions | Trigram | Mentions |
 |------|--------|---|---------|-------|
 | 1 | neural network | 1,522,612 | deep neural network | 518,431 |
 | 2 | machine learning | 1,287,123 | convolutional neural network | 394,934 |
@@ -134,7 +134,7 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 | 9 | medical imaging | 359,104 | graph neural network | 86,453 |
 | 10 | feature extraction | 256,159 | random forest classifier | 73,385 |
 
-"Neural network" (1,522,612) dominates the list, appearing in 30.4% of all paper abstracts. "Machine learning" (1,287,123) and "deep learning" (980,070) round out the top three. Together, these three terms account for over 3.7 million abstract mentions.
+"Neural network" (1,522,612) dominates the list, appearing in 30.4% of all paper abstracts. "Machine learning" (1,287,123) and "deep learning" (980,070) round out the top three. Together, these three terms account for over 3.7 million abstract mentions in total (including duplicate counts where multiple terms appear in the same abstract).
 
 "Attention mechanism" (432,079) ranks 5th, reflecting the wide adoption of attention-based architectures across NLP, computer vision, and multimodal tasks since the transformer's introduction in 2017.
 
@@ -142,7 +142,7 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 
 "Feature extraction" (256,159) at rank 10 indicates the continued prevalence of feature extraction methods.
 
-"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934), representing widely adopted convolutional architectures [3]. These two trigrams together account for over 913,000 abstract mentions.
+"Deep neural network" (518,431) leads the trigrams, followed by "convolutional neural network" (394,934), representing widely adopted convolutional architectures [3]. These two trigrams together account for over 913,000 abstract mentions in total.
 
 "Large language model" (292,873) at rank 3 has overtaken "artificial neural network" (261,355) and "support vector machine" (239,347). The abstract data reveals that LLMs are discussed more broadly than title-only searches suggest (292,873 abstract mentions vs. 71,469 title mentions, a 4.1x ratio per Table 6).
 
@@ -150,15 +150,15 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 
 ### 3.3 Time-Series Trajectories
 
-**Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (8.9x). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (52.6x), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (26.6x). "Transformer" grew from 7,201 in 2017 to 78,135 in 2025 (10.9x).
+**Foundational methods.** "Neural network" grew steadily from 23,395 abstract mentions in 2013 to 207,140 in 2025 (representing an 8.9x increase). "Deep learning" grew from 4,120 in 2013 to 216,713 in 2025 (a 52.6x increase), narrowing the gap with "neural network" though not yet surpassing it in annual counts. "Reinforcement learning" grew from 1,784 in 2013 to 47,498 in 2025 (a 26.6x increase). "Transformer" grew from 7,201 abstract mentions in 2017 to 78,135 in 2025 (representing a 10.9x increase).
 
 ![Trajectories of foundational AI methods by annual abstract mentions, 2013-2026. 2026 covers January through June only.](figures/fig_established_methods.png)
 
-**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (3,248 to 7,931, or 2.4x over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The 2026 partial-year data (84,957 through June) puts the full year on pace for approximately 204,000 papers, which could represent another 2.1x increase over 2025.
+**The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The 2026 partial-year data (84,957 mentions recorded through June) puts the full year on pace for approximately 204,000 papers, which would represent another 2.1x increase over the 2025 volume.
 
 ![Growth of "large language model" in paper abstracts.](figures/fig_llm_explosion.png)
 
-**Rising methods.** "Diffusion model" grew from 18,640 in 2019 to 49,862 in 2025 (2.7x). "Federated learning" [12] grew from 46 in 2017 to 18,519 in 2025 (402.6x). "Graph neural" grew from 966 in 2017 to 21,873 in 2025 (22.6x). "Knowledge graph" grew from 1,700 in 2013 to 16,519 in 2025 (9.7x).
+**Rising methods.** "Diffusion model" grew from 18,640 abstract mentions in 2019 to 49,862 in 2025 (a 2.7x increase). "Federated learning" [12] grew from 46 mentions in 2017 to 18,519 in 2025 (a 402.6x increase). "Graph neural" grew from 966 mentions in 2017 to 21,873 in 2025 (a 22.6x increase). "Knowledge graph" grew from 1,700 mentions in 2013 to 16,519 in 2025 (a 9.7x increase).
 
 ![Rising AI methods by annual abstract mentions. 2026 covers January through June only.](figures/fig_rising_methods.png)
 
@@ -168,7 +168,7 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 
 **Table 4. Top 10 fastest-rising keywords in paper abstracts (2025-2026 vs 2022-2023).**
 
-| Keyword | 2025-2026 | 2022-2023 | Growth |
+| Keyword | 2025-2026 (Count) | 2022-2023 (Count) | Growth (Ratio) |
 |---------|-----------|-----------|--------|
 | deepseek | 11,033 | 13 | 848.7x |
 | retrieval augmented generation | 18,196 | 347 | 52.4x |
@@ -181,7 +181,7 @@ The 2026 cohort (812,972 papers through early June) is on pace for approximately
 | gemini | 22,365 | 1,650 | 13.6x |
 | guardrail | 5,046 | 521 | 9.7x |
 
-The growth data tells three stories.
+The keyword growth data highlights three primary research trends.
 
 **Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific models. Researchers are studying specific products, not just abstract architectures. The field is increasingly focused on model-level evaluation and comparison alongside architecture research.
 
@@ -191,7 +191,7 @@ The growth data tells three stories.
 
 ### 3.5 Citation Distribution
 
-The distribution is extremely right-skewed. Nearly half of all papers (48.9%) have zero citations. Only 2,475 papers (0.05%) have exceeded 1,000 citations. The median AI paper in this corpus has zero citations. Note that this figure is inflated by recency: papers published in 2024-2026 have had little time to accumulate citations. Even so, the zero-citation rate among pre-2023 papers remains above 35%, indicating a structural pattern rather than a purely temporal artifact.
+The citation distribution is extremely right-skewed across the corpus. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. Note that this figure is inflated by recency: papers published in 2024-2026 have had little time to accumulate citations. Even so, the zero-citation rate among pre-2023 papers remains above 35%, indicating a structural pattern rather than a purely temporal artifact.
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
@@ -199,7 +199,7 @@ The most-cited paper is ResNet [2] with 221,202 citations, nearly 2.0x the next 
 
 ### 3.6 Geographic Distribution
 
-In our corpus, China leads with 874,019 papers, 21.6% more than the United States (718,676). India ranks third with 369,931 papers, more than Japan (333,896) and the United Kingdom (216,177).
+In terms of total geographic distribution of research output in the corpus, authors affiliated with Chinese institutions lead with 874,019 publications, which is 21.6% higher than the output of authors affiliated with US institutions (718,676). India ranks third with 369,931 publications, surpassing the outputs of Japan (333,896) and the United Kingdom (216,177).
 
 ![Top 10 countries by AI research output (abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
 
@@ -209,7 +209,7 @@ Japan's position at rank 4 (333,896) in the abstract corpus is higher than in ti
 
 **Table 5. Top 10 institutions by paper count.**
 
-| Rank | Institution | Country | Papers | Share |
+| Rank | Institution | Country | Papers (Count) | Share of Corpus |
 |------|------------|---------|--------|-------|
 | 1 | Chinese Academy of Sciences | China | 74,921 | 1.50% |
 | 2 | CNRS (French Natl. Research Centre) | France | 50,145 | 1.00% |
@@ -228,13 +228,13 @@ Note that OpenAlex's institution taxonomy includes umbrella organizations (CNRS,
 
 ### 3.8 Open Access
 
-Of the 5,003,783 papers in the corpus, 3,043,557 (60.8%) are open access and 1,960,226 (39.2%) are behind paywalls. Piwowar et al. [11] estimated the general academic open access rate at 28% in 2018. The higher rate in this corpus is consistent with the AI community's preprint culture, where arXiv is a common venue for early dissemination.
+Of the 5,003,783 papers in the corpus, 3,043,557 (60.8%) are published as open access (OA) literature, while 1,960,226 (39.2%) remain behind publisher paywalls. For context, Piwowar et al. [11] estimated the baseline open access rate across all academic fields at 28% in 2018. The higher rate in this corpus is consistent with the AI community's preprint culture, where arXiv is a common venue for early dissemination.
 
 ### 3.9 Title vs. Abstract Comparison
 
 **Table 6. Title-only vs. abstract search for selected keywords.**
 
-| Keyword | Title Count | Abstract Count | Abstract Only | Ratio |
+| Keyword | Title Search | Abstract Search | Abstract Only | Ratio |
 |---------|-----------|----------------|---------------|-------|
 | neural network | 433,556 | 1,522,612 | 1,089,056 | 3.5x |
 | machine learning | 495,798 | 1,287,123 | 791,325 | 2.6x |
@@ -335,15 +335,15 @@ The China-US balance varies by research area.
 | diffusion model | 66,832 | 56,315 | 123,147 | 1.19x |
 | large language model | 35,923 | 47,363 | 83,286 | **0.76x** |
 
-In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs 35,923, or 1.32x the Chinese count). This is a meaningful exception. While China produces more AI papers overall in our sample, the US produces more papers on the fastest-growing technology category since 2023.
+In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs 35,923, or 1.32x the Chinese count). This is a meaningful exception. While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing technology category since 2023.
 
 #### 4.4.3 The LLM Convergence
 
-In our corpus, the US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China in our corpus. By 2025, China reached parity (China: 15,008 vs US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
+In the corpus, the US led China in LLM research output throughout 2020-2024, with the gap narrowing overall, though it temporarily widened in 2023 before resuming its convergence. In 2020, the US produced 2.4x more LLM papers than China in the corpus. By 2025, China reached parity (China: 15,008 vs US: 14,735, a ratio of 1.02). This convergence coincides with the release of Chinese LLMs such as DeepSeek-V3 [7], Qwen, and Yi, which gave Chinese researchers domestic foundation models to study, benchmark, and extend.
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
-The convergence pattern in our data has three phases. First, the US led comfortably from 2020-2022 as LLM research was concentrated at US-based labs. Second, the gap narrowed in 2023-2024 as Chinese labs released competitive open-weight models. Third, parity was reached in 2025, when Chinese LLM paper output in the corpus matched the US for the first time.
+The convergence pattern in the data has three phases. First, the US led comfortably from 2020-2022 as LLM research was concentrated at US-based labs. Second, the gap narrowed in 2023-2024 as Chinese labs released competitive open-weight models. Third, parity was reached in 2025, when Chinese LLM paper output in the corpus matched the US for the first time.
 
 #### 4.4.4 India's Acceleration
 
@@ -408,7 +408,7 @@ Six principal findings stand out.
 
 3. **The field is expanding from architecture toward application.** The fastest-rising terms are not architectures but patterns (RAG, 52.4x), safety concepts (jailbreak, 25.5x), and specific model names (DeepSeek, 848.7x).
 
-4. **China leads in volume, not necessarily in impact.** In our corpus, China produces 21.6% more AI research papers than the United States. However, this metric measures output, not research quality or influence. Citation-weighted rankings may differ.
+4. **China leads in volume, not necessarily in impact.** In the corpus, China produces 21.6% more AI research papers than the United States. However, this metric measures output, not research quality or influence. Citation-weighted rankings may differ.
 
 5. **Half of all papers go uncited.** 48.9% of papers have zero citations, indicating extreme concentration of academic impact. This figure is inflated by recent publications that have not yet had time to accumulate citations.
 
