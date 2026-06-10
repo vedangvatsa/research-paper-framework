@@ -77,7 +77,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 ### 2.4 Stemming and Precision
 
-OpenAlex's search filters apply stemming, meaning a search for "agentic" also matches "agent" and "agents." For multi-word phrases ("retrieval augmented generation," "graph neural network") and proper nouns ("DeepSeek," "Claude," "Mistral"), stemming has minimal effect. For single common words ("diffusion," "safety," "clinical"), stemming can inflate counts by matching non-AI uses of the word. This limitation is discussed further in §4.5.
+OpenAlex's search filters apply stemming, meaning a search for "agentic" also matches "agent" and "agents." For multi-word phrases ("retrieval augmented generation," "graph neural network") and proper nouns ("DeepSeek," "Claude," "Mistral"), stemming has minimal effect. For single common words ("diffusion," "safety," "clinical"), stemming can inflate counts by matching non-AI uses of the word. This limitation is discussed further in Section 4.5.
 
 ## 3. Results
 
@@ -161,7 +161,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 
 ![Rising AI methods by annual abstract mentions. The 2026 values are annualized estimates based on January-June data (open markers).](figures/fig_rising_methods.png)
 
-"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025. Its slowing growth is discussed in §4.3.
+"Generative adversarial" grew from 6 papers in 2014 to 13,613 in 2025. Its slowing growth is discussed in Section 4.3.
 
 ### 3.4 Fastest-Rising Keywords
 
@@ -260,17 +260,17 @@ This finding has methodological consequences for bibliometric research. Title-on
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in §3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. This dominance persists despite public attention moving to large language models. Two factors underpin it. First, foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (§3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. This dominance persists despite public attention moving to large language models. Two factors underpin it. First, foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
-The LLM trajectory (§3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. What the raw growth numbers do not capture is the nature of the surrounding research. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
+The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. What the raw growth numbers do not capture is the nature of the surrounding research. The fastest-rising keywords (Table 4) show researchers building systems around LLMs, not just training them. RAG has become the standard pattern for connecting language models to external knowledge. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
 The rapid standardization of "LLM" as an abbreviation (16.0x growth, Table 4) is itself a signal. LLMs have become a recognized category in AI research vocabulary, similar to how "CNN" and "RNN" became standard abbreviations in previous waves.
 
 ### 4.3 Method Lifecycles
 
-The time-series data in §3.3 reveals different methods at different lifecycle stages.
+The time-series data in Section 3.3 reveals different methods at different lifecycle stages.
 
 **Mature methods (steady growth).** "Neural network" and "knowledge graph" show consistent growth without acceleration or deceleration. These methods have large, established research communities.
 
@@ -351,7 +351,7 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 **Stemming and noise.** OpenAlex applies stemming to search queries, which inflates counts for common words. "Explainable" returns 2,544,915 abstract matches, which is clearly inflated by stemming matching "explain" in non-AI contexts. Single-word keyword counts in Table 3 are best interpreted with this caveat in mind. Multi-word phrases and proper nouns are minimally affected.
 
-**Cross-disciplinary noise.** As noted in §2.2, some fraction of the corpus consists of non-AI papers matching broad terms like "autonomous" or "generative." This is an inherent tradeoff of abstract-level analysis versus title-level analysis (which is more precise but less complete).
+**Cross-disciplinary noise.** As noted in Section 2.2, some fraction of the corpus consists of non-AI papers matching broad terms like "autonomous" or "generative." This is an inherent tradeoff of abstract-level analysis versus title-level analysis (which is more precise but less complete).
 
 **Temporal coverage.** The 2026 cohort covers January through early June. Annualized projections assume even distribution throughout the year, which may not hold due to conference deadlines and journal publication cycles.
 
@@ -361,9 +361,9 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 **Causation vs. correlation.** Growth in keyword frequency reflects research attention, not research quality or real-world deployment. A 16x increase in "LLM" papers does not mean LLMs are 16x more useful than they were in 2022.
 
-**Volume vs. impact.** All country and institutional comparisons are based on paper counts, which measure volume, not impact. The caveats discussed in §4.4.1 — citation-weighted metrics, venue prestige, and differing publication incentive structures — apply to all geographic and institutional comparisons in this paper.
+**Volume vs. impact.** All country and institutional comparisons are based on paper counts, which measure volume, not impact. The caveats discussed in Section 4.4.1 — citation-weighted metrics, venue prestige, and differing publication incentive structures — apply to all geographic and institutional comparisons in this paper.
 
-**Cross-disciplinary inclusion.** As noted in §3.5, the most-cited papers in the corpus include non-AI entries (e.g., DSM-5, lme4) whose abstracts happen to mention AI-related terms. This is an inherent feature of abstract-level search.
+**Cross-disciplinary inclusion.** As noted in Section 3.5, the most-cited papers in the corpus include non-AI entries (e.g., DSM-5, lme4) whose abstracts happen to mention AI-related terms. This is an inherent feature of abstract-level search.
 
 **No normalization against baseline.** The growth rates in this paper are raw, not normalized against overall academic publishing growth. Some of the observed AI growth reflects baseline expansion of scholarly output rather than AI-specific acceleration.
 
