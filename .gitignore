@@ -14,3 +14,8 @@ __pycache__/
 
 # Temp files
 /tmp/
+
+# Build artifacts
+papers/latex_build/
+papers/page_screenshots/
+*.log

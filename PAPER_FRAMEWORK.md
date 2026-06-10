@@ -44,6 +44,8 @@ Both types follow the same writing and quality rules below. The build pipeline s
 | "The contrast is informative/instructive" | AI padding | Cut. The contrast speaks for itself. |
 | "Holistic" | AI word | Cut or use "complete," "full" |
 | "Paradigm" | Jargon | "Pattern," "model," "approach" |
+| "Rapid rise / rapidly rising / rapidly expanding" | AI slop | Use specific growth statistics (e.g., "grew Xx in Y years") or plain terms ("fast-growing") |
+| Boastful meta-claims (e.g., "Every number is verifiable", "unprecedented depth") | Redundant and boastful | Avoid boastful/unverifiable claims. State facts objectively. |
 
 ### Formatting
 
@@ -87,6 +89,7 @@ Both types follow the same writing and quality rules below. The build pipeline s
 3. **Verify every link before finalizing.** Use the batch URL verification script below. Check ALL URLs in one pass, not piecemeal.
 4. **Prefer stable sources.** SEC filings > company newsrooms/press releases > industry news sites > company blog posts. Blog posts get restructured and URLs break.
 5. **When a URL is dead,** replace it with a stable alternative (e.g., Cisco Newsroom press release instead of Cisco blog post) or note it as "Company disclosure; original domain no longer active" if no public URL exists.
+6. **Every reference MUST be cited in-text.** Never list references in the Bibliography/References section that are not explicitly cited in the body of the paper (e.g., using `[N]` or `\cite{...}`). Avoid "dead" or unused references.
 
 ### URL Stability Hierarchy
 
@@ -165,6 +168,9 @@ grep -n '^\d\+\.' YOUR_PAPER.md | grep -v 'arxiv.org\|\.com/\|\.dev/\|\.io/\|\.a
 - [ ] **Reference completeness.** Every reference must have a URL. No exceptions (see Reference Integrity above).
 - [ ] **URL verification.** Batch-check ALL URLs in one pass. Fix any that return 404 or 000. Ignore 403 (bot-blocked).
 - [ ] **Hedge check.** Verify definitive claims use hedging language ("appears to," "seems to," "the data suggests") unless the claim is directly supported by verifiable data.
+- [ ] **In-text citation check.** Verify that every reference listed in the Bibliography is cited in the body of the paper, and that no un-cited bibliography entries exist.
+- [ ] **Chart text overlap check.** Verify that all generated chart images have clean layouts, with labels, titles, and legends not overlapping or clipping. Ensure no redundant titles exist inside chart images.
+- [ ] **Table consistency check.** Verify that all tables have consistent text/font sizing (e.g., using `\footnotesize` consistently in LaTeX) and fit within margins/columns without overflow.
 - [ ] **Build test.** Run `python3 build_tex.py && tectonic template.tex` and verify clean compilation with no errors.
 - [ ] **Last-page check.** Open the PDF and verify the last page of references has a reasonable number of items (not just 2-3 orphans). If orphaned, see Bibliography Formatting below.
 - [ ] **Copy to Desktop.** `cp template.pdf ~/Desktop/PAPER_NAME.pdf`

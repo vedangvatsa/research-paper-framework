@@ -1,63 +1,75 @@
 /* ═══════════════════════════════════════════════════════════
-   ICLR 2024 Preprint Style — CSS adaptation
-   Based on SakanaAI/AI-Scientist iclr2024_conference.sty
-   Text width: 5.5in, margins: ~1.5in sides, Times Roman
+   ICLR 2024 Conference Style — Faithful CSS adaptation
+   Based on iclr2024_conference.sty (LaTeX class)
+   Single column, letter size, Times, 10pt body
    ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
 @page {
   size: letter;
-  margin: 1in 1.5in;
+  margin: 1in 1in 1in 1in;
 }
 
 body {
-  font-family: "Times New Roman", "Times", "Nimbus Roman", serif;
-  font-size: 11pt;
-  line-height: 1.45;
+  font-family: "Noto Serif", "Times New Roman", "Times", serif;
+  font-size: 10pt;
+  line-height: 1.5;
   color: #000;
-  max-width: 5.5in;
+  max-width: 6.5in;
   margin: 0 auto;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
 }
 
-/* ── Title — ICLR uses large small-caps ── */
+/* ── Title — ICLR: bold, centered, ~17pt ── */
 h1 {
   font-size: 17pt;
-  font-weight: normal;
-  font-variant: small-caps;
+  font-weight: bold;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 0.4em;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
+  margin-bottom: 0.3em;
+  line-height: 1.25;
 }
 
 /* ── Author block ── */
 .author-info {
   text-align: center;
   margin-top: 0.3em;
-  margin-bottom: 2em;
-  font-size: 11pt;
+  margin-bottom: 1.5em;
+  font-size: 10pt;
   line-height: 1.4;
 }
 
-/* ── Section headings — ICLR: bold, numbered ── */
+/* ── Section headings — ICLR: numbered, uppercase, bold, 12pt ── */
 h2 {
   font-size: 12pt;
   font-weight: bold;
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
+  text-transform: uppercase;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
   page-break-after: avoid;
   break-after: avoid;
 }
 
-/* ── Subsection headings — ICLR: bold, slightly smaller ── */
+/* ── Subsection headings — ICLR: bold, title case, 11pt ── */
 h3 {
   font-size: 11pt;
   font-weight: bold;
-  margin-top: 1.1em;
+  margin-top: 1.2em;
   margin-bottom: 0.4em;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+/* ── Sub-subsection headings ── */
+h4 {
+  font-size: 10pt;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
   page-break-after: avoid;
   break-after: avoid;
 }
@@ -65,12 +77,12 @@ h3 {
 /* ── Paragraphs ── */
 p {
   margin-top: 0;
-  margin-bottom: 0.65em;
+  margin-bottom: 0.6em;
   orphans: 4;
   widows: 4;
 }
 
-/* ── Horizontal rules ── */
+/* ── Horizontal rules — thin separator ── */
 hr {
   border: none;
   border-top: 0.5px solid #999;
@@ -78,7 +90,7 @@ hr {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   TABLES — Clean academic style with visible borders
+   TABLES — Clean booktabs-style (top/bottom thick rules)
    ═══════════════════════════════════════════════════════════ */
 table {
   width: 100%;
@@ -86,8 +98,8 @@ table {
   margin: 0.8em 0 1.2em 0;
   font-size: 9pt;
   line-height: 1.35;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  border-top: 1.5pt solid #000;
+  border-bottom: 1.5pt solid #000;
 }
 
 thead {
@@ -97,57 +109,53 @@ thead {
 th {
   font-weight: bold;
   font-size: 9pt;
-  padding: 6px 8px;
+  padding: 5px 6px;
   text-align: left;
   vertical-align: bottom;
-  background-color: #f0f0f0;
-  border-bottom: 1.5px solid #000;
-  border-right: 1px solid #ccc;
-}
-
-th:last-child {
-  border-right: none;
+  border-bottom: 0.75pt solid #000;
 }
 
 td {
-  padding: 5px 8px;
+  padding: 4px 6px;
   text-align: left;
   vertical-align: top;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #eee;
+  border-bottom: none;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-td:last-child {
-  border-right: none;
-}
-
-/* Last row — thicker bottom already on table */
-tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Subtle alternating rows for readability */
+/* Subtle alternating rows */
 tbody tr:nth-child(even) {
   background-color: #f8f8f8;
-}
-
-/* Bold first column */
-td:first-child {
-  font-weight: 600;
 }
 
 /* ── Table captions (bold paragraphs before tables) ── */
 p > strong:only-child {
   display: block;
-  font-size: 10pt;
-  text-align: center;
+  font-size: 9pt;
+  text-align: left;
   margin-top: 1em;
   margin-bottom: 0.3em;
 }
 
-/* ── Links — dark blue, no underline (like hyperref defaults) ── */
+/* ── Figures ── */
+img {
+  max-width: 85%;
+  max-height: 4in;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0.6em auto;
+  object-fit: contain;
+}
+
+figcaption, img + em, p > img + br {
+  font-size: 9pt;
+  text-align: center;
+  color: #333;
+}
+
+/* ── Links — dark blue (hyperref default) ── */
 a {
   color: #00009e;
   text-decoration: none;
@@ -165,14 +173,17 @@ strong {
 /* ── Code ── */
 code {
   font-family: "Courier New", Courier, monospace;
-  font-size: 9pt;
+  font-size: 8.5pt;
+  background-color: #f5f5f5;
+  padding: 1px 3px;
+  border-radius: 2px;
 }
 
 /* ── Block quotes ── */
 blockquote {
   margin: 0.8em 1.5em;
   padding: 0;
-  font-size: 10pt;
+  font-size: 9pt;
   color: #333;
 }
 
@@ -188,13 +199,11 @@ li {
 
 /* ═══════════════════════════════════════════════════════════
    REFERENCES — Compact, hanging indent, small font
-   Matches natbib/ICLR reference list style
    ═══════════════════════════════════════════════════════════ */
-/* Target paragraphs after the last h2 (References heading) */
 h2:last-of-type ~ p {
-  font-size: 9pt;
-  line-height: 1.25;
-  margin-bottom: 0.15em;
+  font-size: 8.5pt;
+  line-height: 1.3;
+  margin-bottom: 0.2em;
   text-indent: -1.5em;
   padding-left: 1.5em;
   text-align: left;
@@ -202,7 +211,7 @@ h2:last-of-type ~ p {
 
 /* ── Keywords line ── */
 p > em > strong {
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 /* ── Page break helpers ── */
@@ -216,7 +225,6 @@ h2, h3 {
   break-after: avoid;
 }
 
-/* Allow tables to flow across pages, thead repeats */
 table {
   page-break-inside: auto;
 }
@@ -226,14 +234,21 @@ tr {
   break-inside: avoid;
 }
 
-/* Keep heading + first few lines together */
 h2 + p, h3 + p {
   orphans: 6;
   widows: 4;
 }
 
-/* Prevent breaks inside short sections */
 section {
   orphans: 5;
   widows: 5;
+}
+
+/* ── Abstract styling ── */
+h2:first-of-type {
+  font-size: 10pt;
+  font-variant: small-caps;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 1px;
 }
