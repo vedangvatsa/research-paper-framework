@@ -371,15 +371,15 @@ India's growth rate has been accelerating. Between 2013 and 2018, Indian output 
 
 The Stanford HAI AI Index Report [9] is a widely cited annual survey of AI research trends. The 2025 edition tracks publications, patents, investment, and policy across multiple data sources including Dimensions, Epoch, and LMSYS. This study differs in two ways. First, it uses abstract-level search rather than subject classification, capturing cross-disciplinary AI method usage. Second, every count in the analysis can be verified through the free OpenAlex API, rather than requiring access to proprietary databases.
 
-Zhang et al. (2021) conducted a bibliometric analysis of deep learning research using Web of Science data, finding that China and the US together accounted for over 50% of deep learning publications [14]. The abstract-level data in this study is consistent with this finding. China (874,019) and the US (718,676) together account for approximately 32% of all papers in the corpus discussing AI methods, though this percentage is lower because the corpus includes a broader set of documents.
+The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together account for 31.8% of all papers, a lower share because the corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by the AI Index.
 
 Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus is consistent with that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search captures 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
 
 ### 5.2 Compute and Scaling Studies
 
-Sevilla et al. (2022) analyzed compute trends in machine learning, documenting distinct scaling eras with doubling times ranging from 5-6 months in the deep learning era to approximately 10 months in the large-scale era [13]. The publication growth data in this study is consistent with their findings. The periods of fastest publication growth (2017-2018 and 2023-2025) align with the periods when compute scaling enabled new model capabilities.
+Sevilla et al. (2022) analyzed compute trends in machine learning, documenting distinct scaling eras with doubling times ranging from 5-6 months in the deep learning era to approximately 10 months in the large-scale era [13]. The periods of fastest publication growth in this corpus (2017-2018 and 2023-2025) align with the periods when compute scaling enabled new model capabilities.
 
-Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scaling") [16], and Kaplan et al. (2020) characterized neural scaling laws [17]. These papers provided the theoretical foundation for the compute scaling race. The data on the growth of "large language model" (29.9x from 2018 to 2025) reflects the research activity that this scaling race generated, catalyzed by models like GPT-3 [21].
+Hoffmann et al. (2022) introduced compute-optimal scaling laws ("Chinchilla scaling") [16], and Kaplan et al. (2020) characterized neural scaling laws [17]. The growth of "large language model" (29.9x from 2018 to 2025) reflects the research activity that this scaling race generated, catalyzed by models like GPT-3 [21].
 
 ## 6. Conclusion
 
