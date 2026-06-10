@@ -187,11 +187,13 @@ In 2022, LLM papers were 1.9% of the corpus. By 2025, that share had grown to 10
 
 The keyword growth data groups into three categories. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
 
-**Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific commercial models, not architectures or methods. Their presence in a fastest-rising keyword list suggests that researchers are spending more time evaluating and comparing named products.
+**Story 1, named models as research subjects.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific commercial models, not architectures or methods. Their presence in a fastest-rising keyword list suggests that researchers are spending more time evaluating and comparing named products.
 
 **Story 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. RAG has become the standard pattern for connecting language models to external knowledge bases [8]. Its three variants in the growth table reflect how quickly researchers adopted it as both a technique and an abbreviation.
 
 **Story 3, safety and reliability.** "Jailbreak" (25.5x) and "guardrail" (9.7x) reflect the growing research effort to make language models reliable and safe. "Jailbreak" research (2,803 papers in 2025-2026, up from 110 in 2022-2023) investigates adversarial prompts that circumvent model safety filters. "Guardrail" (5,046, up from 521) covers techniques for constraining model outputs.
+
+All ten of the fastest-rising keywords are related to large language models. None involve computer vision, reinforcement learning, or graph methods. "Copilot" (16.0x), the remaining term in the table, refers to AI coding assistants and reflects how LLM-based tools are entering software engineering research. The table as a whole suggests that the current growth in AI publishing is driven almost entirely by LLM-adjacent work.
 
 ### 3.5 Citation Distribution
 
