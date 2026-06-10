@@ -1,6 +1,5 @@
 # Pre-Publication Quality Checklist
 
-> Lessons learned from editing the *State of AI Research* paper.
 > Run through every section before finalizing any manuscript.
 
 ---
@@ -173,13 +172,70 @@ done
 
 ---
 
+## 10. Multi-Lens Reviewer Personas
+
+Before submission, review the paper from four distinct perspectives. Each reviewer persona catches issues the others miss.
+
+### Reviewer A: Fact Checker
+
+Verifies every number, claim, and cross-reference against the paper's own data.
+
+- [ ] Re-derive every percentage and ratio from raw numbers
+- [ ] Verify every number in the abstract/conclusion traces to a body section
+- [ ] Check that table row counts match prose claims ("14 keywords" vs 12-row table)
+- [ ] Confirm figure captions describe what the figure actually shows
+- [ ] Check that partial-year projections show honest math (e.g., 812K × 365/159 = 1.87M, not "over 1.9M")
+- [ ] Verify which country/entity a number belongs to when pairs are presented ("15,008 vs 14,735" — which is which?)
+
+### Reviewer B: Sensitivity Reader
+
+Checks political, cultural, and regional framing for bias or implied judgment.
+
+- [ ] Country comparisons use neutral language (no "overtaking", "race", "dominance")
+- [ ] Caveats about volume vs impact are placed neutrally, not adjacent to one country
+- [ ] Publication incentive critiques name ALL countries in the comparison
+- [ ] Figure captions (which get quoted in media) contain no race framing
+- [ ] Developing country framing is not patronizing ("shows a distinct pattern" not "deserves attention")
+- [ ] Lab/company naming is balanced across countries, or uses generic references
+- [ ] Subjective phrases like "most attention" are replaced with measurable ones ("fastest growth")
+
+### Reviewer C: Semantic Reviewer
+
+Checks that every sentence says exactly what it means — no ambiguity, overstatement, or logical gap.
+
+- [ ] Data "indicates", never "confirms" or "proves"
+- [ ] Ongoing trends use hedged language ("has not yet shown signs of plateauing")
+- [ ] "Expanding toward" not "moving from" (don't imply the old thing stopped)
+- [ ] "Supplemented" not "replaced" (unless adoption actually dropped to near-zero)
+- [ ] Aggregated counts say "mentions" not "papers" when double-counting is possible
+- [ ] Culture claims match the data (don't say "preprint-first" when journals dominate)
+- [ ] Comparisons that skip items are flagged ("exceeded only by X" when Y is also higher)
+- [ ] Clichés are replaced with precise descriptions ("boundary blurred" → say what actually happened)
+
+### Reviewer D: Ethics / Legal Reviewer
+
+Checks for claims that could be misquoted, weaponized, or taken out of context.
+
+- [ ] Headlines in the conclusion include necessary caveats (e.g., "half uncited" must mention recency inflation)
+- [ ] Country quality judgments are never implied — state explicitly "this study does not measure quality"
+- [ ] Projection language uses "could/may", never "will/would"
+- [ ] Method lifecycle claims don't prematurely declare methods dead ("plateau candidate" not "dead")
+- [ ] Correlation is never implied as causation ("16x more papers does not mean 16x more useful")
+
+---
+
 ## How to Use This Checklist
 
-1. **First pass (automated):** Run all commands from §9. Fix every flagged line.
-2. **Second pass (section-by-section):** Walk through §1–§8 manually, checking each box.
-3. **Third pass (fresh eyes):** Have a co-author or reviewer read the paper with this checklist open.
-4. **Final gate:** All boxes checked → paper is ready for submission.
+1. **Pass 1 (automated):** Run all commands from §9. Fix every flagged line.
+2. **Pass 2 (section-by-section):** Walk through §1–§8 manually, checking each box.
+3. **Pass 3 (multi-lens review):** Read the full paper four times, each time as a different reviewer persona from §10. Check each persona's boxes.
+4. **Pass 4 (fresh eyes):** Have a co-author or colleague read the paper with this checklist open.
+5. **Final gate:** All boxes checked → paper is ready for submission.
 
 > [!TIP]
 > Copy this file into your paper's repository and check boxes directly in version control.
 > A partially-checked checklist in the commit history shows exactly what was reviewed and when.
+
+> [!TIP]
+> For AI-assisted review, prompt the assistant: *"Act as Reviewer A (Fact Checker) and review this paper"*
+> then repeat for B, C, and D. Each pass catches different issues.
