@@ -24,7 +24,7 @@ To analyze these trends, a bibliometric corpus of 5,003,783 publications was def
 
 The analysis covers 14 annual cohorts (2013-2026), measuring publication volume, n-gram frequency, growth rates, citation distributions, geographic output, and open access rates, and compares abstract-level search against title-only search to quantify the coverage gap.
 
-The rest of this paper is organized as follows. Section 2 describes the corpus definition and analysis methods. Section 3 presents results across nine dimensions. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
+Section 2 describes the corpus definition and analysis methods. Section 3 presents results across nine dimensions. Section 4 discusses the findings. Section 5 reviews related work. Section 6 concludes.
 
 ## 2. Methodology
 
@@ -102,7 +102,7 @@ OpenAlex's search filters apply stemming, meaning a search for "agentic" also ma
 | 2025 | 944,530 | +42.6% | 4,190,811 | 18.9% |
 | 2026 (up to June) | 812,972 | - | 5,003,783 | 16.2% |
 
-The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase over 12 years. Part of this growth reflects the general expansion of academic publishing, but AI growth has consistently outpaced the baseline, particularly after 2017. The growth curve shows three distinct phases.
+The corpus grew from 93,226 papers in 2013 to 944,530 in 2025, a 10.1x increase over 12 years. The growth curve shows three distinct phases.
 
 **Phase 1 (2013-2016), slow growth, 4.6-9.3% per year.** AI research was growing but had not yet reached mainstream adoption. Deep learning was still an active research area rather than a standard tool.
 
@@ -180,7 +180,7 @@ For context, OpenAlex indexes over 250 million works across all fields and time 
 | gemini | 22,365 | 1,650 | 13.6x |
 | guardrail | 5,046 | 521 | 9.7x |
 
-The keyword growth data highlights three primary research trends.
+Three patterns in the keyword growth data.
 
 **Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific models. Researchers are studying specific products, not just abstract architectures. The field is increasingly focused on model-level evaluation and comparison alongside architecture research.
 
@@ -258,7 +258,7 @@ This finding has methodological consequences for bibliometric research. Title-on
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. This dominance persists despite public attention moving to large language models. Two factors underpin it. First, foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. This dominance persists despite public attention moving to large language models. Two reasons explain this. First, foundational optimization methods such as Adam [4] and standard libraries like PyTorch [20] have stabilized neural network training, making the architecture accessible across disciplines. Second, the 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. Neural networks have become a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years with no signs of plateauing.
 
 ### 4.2 The LLM Inflection Point
 
@@ -268,7 +268,7 @@ The rapid standardization of "LLM" as an abbreviation (16.0x growth, Table 4) is
 
 ### 4.3 Method Lifecycles
 
-The time-series data in Section 3.3 reveals different methods at different lifecycle stages.
+The time-series data in Section 3.3 shows methods at different lifecycle stages.
 
 **Mature methods (steady growth).** "Neural network" and "knowledge graph" show consistent growth without acceleration or deceleration. These methods have large, established research communities.
 
@@ -328,7 +328,7 @@ The China-US balance varies by research area.
 | diffusion model | 66,832 | 56,315 | 123,147 | 1.19x |
 | large language model | 35,923 | 47,363 | 83,286 | **0.76x** |
 
-In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs. 35,923, or 1.32x the Chinese count). This is a meaningful exception. While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing technology category since 2023.
+In the corpus, China leads in six of seven method categories. The lead is strongest in "transformer" (2.67x), "federated learning" (1.88x), and "neural network" (1.87x). But the US leads in "large language model" (47,363 vs. 35,923, or 1.32x the Chinese count). While China produces more AI papers overall in the sample, the US produces more papers on the fastest-growing category since 2023.
 
 #### 4.4.3 The LLM Convergence
 
@@ -336,7 +336,7 @@ In the corpus, the US led China in LLM research output throughout 2020-2024, wit
 
 ![LLM research papers per year for China and the United States. The US led from 2020-2024, with China reaching parity in 2025.](figures/fig_llm_china_us.png)
 
-The convergence pattern in the data has three phases. First, the US led comfortably from 2020-2022 as LLM research was concentrated at US-based labs. Second, the gap narrowed in 2023-2024 as Chinese labs released competitive open-weight models. Third, parity was reached in 2025, when Chinese LLM paper output in the corpus matched the US for the first time.
+The convergence played out in three stages. From 2020-2022, the US led as LLM research was concentrated at US-based labs. In 2023-2024, the gap narrowed as Chinese labs released competitive open-weight models. In 2025, parity was reached, when Chinese LLM paper output in the corpus matched the US for the first time.
 
 #### 4.4.4 India's Acceleration
 
@@ -391,9 +391,9 @@ This study contributes a methodological point to the bibliometrics literature. T
 
 ## 6. Conclusion
 
-Five million works, analyzed through abstract-level keyword search, reveal an AI research field shaped by three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than other methods in this corpus (29.9x over seven years). And a growing body of research on reliability and safety (hallucination, guardrail, jailbreak) indicates increasing attention to the practical challenges of deploying these systems.
+Five million works, analyzed through abstract-level keyword search, show three concurrent trends. Established methods (neural networks, deep learning, reinforcement learning) continue to dominate by accumulated volume. The LLM category has grown faster than any other method in this corpus (29.9x over seven years). And a growing body of research on reliability and safety (hallucination, guardrail, jailbreak) has emerged alongside deployment.
 
-Six principal findings stand out.
+Six findings from this analysis:
 
 1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). This dominance has not diminished despite the attention given to LLMs.
 
