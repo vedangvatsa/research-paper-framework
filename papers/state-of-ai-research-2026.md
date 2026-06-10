@@ -179,7 +179,7 @@ The 2026 cohort (812,972 papers recorded through early June) is on pace to reach
 | gemini | 22,365 | 1,650 | 13.6x |
 | guardrail | 5,046 | 521 | 9.7x |
 
-The keyword growth data reveals three patterns.
+The keyword growth data reveals three patterns. Growth ratios were computed by dividing 2025-2026 abstract counts by 2022-2023 counts for each term (Section 2.3).
 
 **Story 1, the model name explosion.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific models. Researchers are studying specific products, not just abstract architectures. The field is increasingly focused on model-level evaluation and comparison alongside architecture research.
 
