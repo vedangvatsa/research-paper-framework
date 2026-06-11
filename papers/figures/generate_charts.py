@@ -501,15 +501,15 @@ def chart9():
         (1.5,  'RAG',                    C_HYPE,   -0.14),
         # Peak of Inflated Expectations
         (2.7,  'LLM',                    C_HYPE,    0.22),
-        (3.3,  'Diffusion\nModel',       C_GROWTH, -0.17),
         # Trough of Disillusionment
         (4.3,  'BERT',                   C_DECLINE,-0.14),
         (5.0,  'GAN',                    C_DECLINE, 0.16),
         # Slope of Enlightenment
-        (5.9,  'Multimodal',             C_GROWTH, -0.16),
-        (6.2,  'Federated\nLearning',    C_GROWTH,  0.18),
-        (6.8,  'Reinforcement\nLearning', C_GROWTH, -0.18),
-        (7.4,  'Transformer',            C_GROWTH,  0.17),
+        (5.7,  'Diffusion\nModel',       C_GROWTH,  0.17),
+        (6.1,  'Multimodal',             C_GROWTH, -0.16),
+        (6.5,  'Federated\nLearning',    C_GROWTH,  0.18),
+        (7.0,  'Reinforcement\nLearning', C_GROWTH, -0.18),
+        (7.5,  'Transformer',            C_GROWTH,  0.17),
         # Plateau of Productivity
         (8.0,  'Graph\nNeural',          C_GROWTH, -0.14),
         (8.5,  'Deep\nLearning',         C_MATURE,  0.16),
