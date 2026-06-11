@@ -201,7 +201,7 @@ Growth ratios from small baselines should be read with caution. "DeepSeek" (848.
 
 The citation distribution is extremely right-skewed. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. This figure is partly inflated by recency, as papers published in 2024-2026 have had little time to accumulate citations.
 
-![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
+![Citation distribution of AI papers on a log scale.](figures/fig_citation_dist.png)
 
 The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 [23] (113,579 citations) and the lme4 statistics package [24] (84,949), are not AI research contributions but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among AI-specific papers, the top entries (ResNet, Deep Learning [5], Adam [4], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all widely reused building blocks. Papers that provide reusable infrastructure can accumulate orders of magnitude more citations than application-specific work, because they are cited by every downstream paper that builds on the tool or architecture, regardless of application domain.
 
