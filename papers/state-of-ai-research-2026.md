@@ -138,7 +138,7 @@ The corpus is heavily weighted toward recent years. Papers published from 2023 o
 
 "Attention mechanism" (432,079) ranks 5th. Attention-based architectures appear across NLP, computer vision, and multimodal tasks in this corpus, consistent with the transformer's influence since 2017 [6].
 
-"Large language" (405,166) at rank 6 captures the LLM wave. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104).
+"Large language" (405,166) at rank 6 reflects the LLM growth in this corpus. It already surpasses older application-oriented terms such as "image classification" (390,138), "recommendation system" (387,638), and "medical imaging" (359,104).
 
 "Feature extraction" (256,159) at rank 10 is a general-purpose term used across many machine learning pipelines.
 
@@ -195,7 +195,7 @@ The keyword growth data groups into three categories. Growth ratios were compute
 
 All ten of the fastest-rising keywords are related to large language models. None involve computer vision, reinforcement learning, or graph methods. "Copilot" (16.0x), the remaining term in the table, refers to LLM-based assistants for coding (GitHub Copilot), productivity (Microsoft 365 Copilot), and other domains.
 
-Growth ratios from small baselines should be read with caution. "DeepSeek" (848.7x) had only 13 papers in the 2022-2023 baseline. By absolute count, "LLM" (161,771 papers in 2025-2026) is the largest term in the table, and the three RAG variants total 58,494. This table captures where research attention is shifting, not what contributes the most new papers overall. Established methods like "deep learning" added 58,766 papers from 2024 to 2025, far more than any single term here.
+Growth ratios from small baselines should be read with caution. "DeepSeek" (848.7x) had only 13 papers in the 2022-2023 baseline. By absolute count, "LLM" (161,771 papers in 2025-2026) is the largest term in the table, and the three RAG variants total 58,494. This table shows where research attention is shifting, not what contributes the most new papers overall. Established methods like "deep learning" added 58,766 papers from 2024 to 2025, far more than any single term here.
 
 ### 3.5 Citation Distribution
 
@@ -261,7 +261,7 @@ The ratio of abstract-to-title matches varies from 1.5x ("federated learning") t
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
-For bibliometric work, this means that title-only analysis systematically undercounts methods that are used as tools across disciplines, and abstract-level analysis captures more of that usage.
+For bibliometric work, this means that title-only analysis systematically undercounts methods that are used as tools across disciplines, and abstract-level analysis returns more of that usage.
 
 ## 4. Discussion
 
@@ -384,7 +384,7 @@ The Stanford HAI AI Index Report [9] is a widely cited annual survey of AI resea
 
 The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together total 1,592,695 paper-country assignments (31.8% of the corpus total, though this figure is inflated by co-authored papers counted in both countries). The lower relative share compared to the AI Index reflects that this corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by that report.
 
-Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus is consistent with that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search captures 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
+Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus is consistent with that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search returns 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
 
 ### 5.2 Compute and Scaling Studies
 
@@ -408,7 +408,7 @@ Six findings from this analysis.
 
 5. **Half of all papers go uncited.** 48.9% of papers have zero citations, while only 2,475 papers (0.05%) have exceeded 1,000 citations. This figure is inflated by recent publications that have not yet had time to accumulate citations.
 
-6. **Title-only analysis misses most AI research.** Abstract search captures 1.5x to 7.7x more papers per keyword, depending on the method. The abstract-to-title ratio is smallest for methods that are typically the main contribution of a paper (federated learning, 1.5x) and largest for terms with significant non-AI uses (diffusion model, 7.7x).
+6. **Title-only analysis misses most AI research.** Abstract search returns 1.5x to 7.7x more papers per keyword, depending on the method. The abstract-to-title ratio is smallest for methods that are typically the main contribution of a paper (federated learning, 1.5x) and largest for terms with significant non-AI uses (diffusion model, 7.7x).
 
 The methodological contribution of this study is that all results are derived from a single free API (OpenAlex) using abstract-level keyword search. Every count reported in this paper can be independently verified and updated. The corpus definition, search queries, and analysis methods are fully described in Section 2, making the analysis reproducible without access to proprietary databases.
 
