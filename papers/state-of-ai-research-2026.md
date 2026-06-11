@@ -273,7 +273,7 @@ As shown in Section 3.2, "neural network" remains the most frequently referenced
 
 The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) suggest that research activity has moved from training LLMs to building systems around them. RAG (52.4x growth) is one example, as it focuses on integrating external knowledge into LLM pipelines. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
-The abbreviation "LLM" itself grew 16.0x (Table 4), which may reflect the abbreviation becoming as common as the full phrase in abstracts.
+The abbreviation "LLM" itself grew 16.0x (Table 4), which may reflect the abbreviation becoming as common as the full phrase in abstracts. All ten of the fastest-rising terms in Table 4 are LLM-related, and none involve computer vision, reinforcement learning, or graph methods, suggesting that no other subfield experienced comparable acceleration during this period.
 
 ### 4.3 Method Lifecycles
 
