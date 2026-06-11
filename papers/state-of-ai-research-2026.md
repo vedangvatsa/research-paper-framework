@@ -287,7 +287,7 @@ The time-series data (Section 3.3) places each method at a different lifecycle s
 
 **Continued growth.** "Large language model" grew 94.1% from 2024 to 2025, more than double the corpus average. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
 
-![Hype cycle for methods in the corpus (Section 4.3). Methods are placed by their 2024-2025 growth rates relative to the corpus average of 42.6%. Colors: red (hype peak, e.g., LLM at 94.1%), blue (above-average growth, e.g., transformer at 56.4%), green (mature/below-average, e.g., neural network at 17.9%), gray (plateauing, e.g., GAN at 23.9%). Placement is interpretive, not a quantitative model.](figures/fig_hype_cycle.png)
+![Interpretive hype cycle for AI methods, based on 2024-2025 growth rates (corpus average 42.6%). Red = hype peak (LLM, 94.1%), blue = above-average growth, green = mature/below-average, gray = plateauing.](figures/fig_hype_cycle.png)
 
 ### 4.4 The China-US Research Balance
 
