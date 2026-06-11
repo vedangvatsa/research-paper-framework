@@ -199,7 +199,7 @@ Growth ratios from small baselines should be read with caution. "DeepSeek" (848.
 
 ### 3.5 Citation Distribution
 
-The citation distribution is extremely right-skewed. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. Because 58.8% of the corpus was published from 2023 onward, many papers have not yet had time to accumulate citations, and the zero-citation rate is likely inflated by recency. A separate analysis controlling for publication year would be needed to determine the steady-state zero-citation rate for AI papers.
+The citation distribution is extremely right-skewed. Nearly half of all papers (48.9%) have received zero citations to date. Only 2,475 papers (0.05%) have accumulated more than 1,000 citations. Consequently, the median paper in this AI corpus has zero citations. This figure is partly inflated by recency, as papers published in 2024-2026 have had little time to accumulate citations.
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
