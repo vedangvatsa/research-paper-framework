@@ -511,7 +511,7 @@ def chart9():
         (7.0,  'Reinforcement\nLearning', C_GROWTH, -0.18),
         (7.5,  'Transformer',            C_GROWTH,  0.17),
         # Plateau of Productivity
-        (8.0,  'Graph\nNeural',          C_GROWTH, -0.14),
+        (8.0,  'Graph\nNeural',          C_MATURE, -0.14),
         (8.5,  'Deep\nLearning',         C_MATURE,  0.16),
         (9.0,  'CNN',                    C_MATURE, -0.13),
         (9.3,  'Neural\nNetwork',        C_MATURE,  0.16),
