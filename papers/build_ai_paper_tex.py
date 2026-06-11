@@ -425,7 +425,7 @@ template = r"""\documentclass{article}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{caption}
-\captionsetup{font=small}
+\captionsetup{font=small, justification=justified, singlelinecheck=false}
 \captionsetup[table]{skip=6pt}
 \hyphenpenalty=5000
 \tolerance=1000
