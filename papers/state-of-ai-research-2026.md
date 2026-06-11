@@ -234,7 +234,7 @@ OpenAlex's institution taxonomy includes umbrella organizations (CNRS, Helmholtz
 
 ### 3.8 Open Access
 
-Of the 5,003,783 papers in the corpus, 3,043,557 (60.8%) are published as open access (OA) literature, while 1,960,226 (39.2%) remain behind publisher paywalls. For context, Piwowar et al. [11] estimated the baseline open access rate across all academic fields at 28% in 2018. The higher rate in this corpus is consistent with the AI community's preprint culture, where arXiv is widely used to share work before formal publication.
+Of the 5,003,783 papers in the corpus, 3,043,557 (60.8%) are published as open access (OA) literature, while 1,960,226 (39.2%) remain behind publisher paywalls. For context, Piwowar et al. [11] estimated the baseline open access rate across all academic fields at 28% in 2018. The higher rate in this corpus may reflect the AI community's preprint culture, where arXiv is widely used to share work before formal publication.
 
 ### 3.9 Title vs. Abstract Comparison
 
