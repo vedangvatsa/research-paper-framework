@@ -271,7 +271,7 @@ As shown in Section 3.2, "neural network" remains the most frequently referenced
 
 ### 4.2 The LLM Inflection Point
 
-The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context. The keyword data suggests that research activity has shifted from training LLMs to building systems around them. RAG (52.4x growth) is the clearest example of this shift. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
+The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) suggest that research activity has shifted from training LLMs to building systems around them. RAG (52.4x growth) is the clearest example of this shift. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
 The abbreviation "LLM" itself grew 16.0x (Table 4), which may reflect the abbreviation becoming as common as the full phrase in abstracts.
 
