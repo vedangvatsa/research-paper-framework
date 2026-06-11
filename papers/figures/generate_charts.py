@@ -498,35 +498,33 @@ def chart9():
     # Format: (x_pos, label, color, y_offset, growth_label)
     methods = [
         # Innovation Trigger
-        (0.6,  'Agentic',                '#c0392b', 0.17,  'new'),
-        (1.5,  'RAG',                    '#c0392b', -0.14, '52x'),
+        (0.6,  'Agentic',                '#c0392b', 0.17),
+        (1.5,  'RAG',                    '#c0392b', -0.14),
         # Peak of Inflated Expectations
-        (2.7,  'LLM',                    '#c0392b', 0.22,  '12.2x'),
-        (3.3,  'Diffusion\nModel',       '#1565c0', -0.17, '34%'),
+        (2.7,  'LLM',                    '#c0392b', 0.22),
+        (3.3,  'Diffusion\nModel',       '#1565c0', -0.17),
         # Trough of Disillusionment
-        (4.3,  'BERT',                   '#78909c', -0.14, ''),
-        (5.0,  'GAN',                    '#78909c', 0.16,  '22%'),
+        (4.3,  'BERT',                   '#333333', -0.14),
+        (5.0,  'GAN',                    '#333333', 0.16),
         # Slope of Enlightenment
-        (5.9,  'Multimodal',             '#1565c0', -0.16, ''),
-        (6.2,  'Federated\nLearning',    '#1565c0', 0.18,  '52%'),
-        (6.8,  'Reinforcement\nLearning', '#1565c0', -0.18, '39%'),
-        (7.4,  'Transformer',            '#1565c0', 0.17,  '49%'),
+        (5.9,  'Multimodal',             '#1565c0', -0.16),
+        (6.2,  'Federated\nLearning',    '#1565c0', 0.18),
+        (6.8,  'Reinforcement\nLearning', '#1565c0', -0.18),
+        (7.4,  'Transformer',            '#1565c0', 0.17),
         # Plateau of Productivity
-        (8.0,  'Graph\nNeural',          '#1565c0', -0.14, '33%'),
-        (8.5,  'Deep\nLearning',         '#2e7d32', 0.16,  '28%'),
-        (9.0,  'CNN',                    '#2e7d32', -0.13, ''),
-        (9.3,  'Neural\nNetwork',        '#2e7d32', 0.16,  '15%'),
-        (9.7,  'Knowledge\nGraph',       '#2e7d32', -0.13, '26%'),
+        (8.0,  'Graph\nNeural',          '#1565c0', -0.14),
+        (8.5,  'Deep\nLearning',         '#2e7d32', 0.16),
+        (9.0,  'CNN',                    '#2e7d32', -0.13),
+        (9.3,  'Neural\nNetwork',        '#2e7d32', 0.16),
+        (9.7,  'Knowledge\nGraph',       '#2e7d32', -0.13),
     ]
 
-    for mx, mlabel, mcolor, mdy, glabel in methods:
+    for mx, mlabel, mcolor, mdy in methods:
         my = np.interp(mx, t, y)
         ax.plot(mx, my, 'o', color=mcolor, markersize=6.5, zorder=5,
                 markeredgecolor='white', markeredgewidth=1.0)
-        # Build label with optional growth rate (CAGR)
-        full_label = f'{mlabel}\n({glabel} CAGR)' if glabel else mlabel
-        ax.annotate(full_label, xy=(mx, my), xytext=(mx, my + mdy),
-                    fontsize=5.8, fontweight='bold', color=mcolor,
+        ax.annotate(mlabel, xy=(mx, my), xytext=(mx, my + mdy),
+                    fontsize=6.5, fontweight='bold', color=mcolor,
                     ha='center', va='bottom' if mdy > 0 else 'top',
                     linespacing=0.85,
                     arrowprops=dict(arrowstyle='-', color='#bbbbbb', lw=0.5),
@@ -541,7 +539,7 @@ def chart9():
                markersize=7, label='CAGR > 32% (corpus avg)'),
         Line2D([0], [0], marker='o', color='w', markerfacecolor='#2e7d32',
                markersize=7, label='CAGR < 32% (mature)'),
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='#78909c',
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='#333333',
                markersize=7, label='Plateauing / declining'),
     ]
     ax.legend(handles=legend_items, loc='upper right', fontsize=6.5,

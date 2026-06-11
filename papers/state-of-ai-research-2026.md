@@ -315,7 +315,7 @@ China and the United States started the decade at near-parity. In 2013, the US p
 
 The crossover occurred in 2021. That year, China produced 71,273 papers while the US produced 64,931. US output fell slightly between 2021 and 2022 (64,931 to 64,486), while China continued to accelerate. By 2025, the gap had widened to 53.4% (187,887 vs. 122,449).
 
-The US deceleration from 2020 to 2022 is notable. In this corpus, US output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
+The US slowed from 2020 to 2022. In this corpus, US output grew 10.0% over two years (58,622 to 64,486), compared to 68.4% growth for China over the same period (53,743 to 90,485). Growth resumed in the US from 2023 onward (77,664 to 122,449 by 2025, a 57.7% increase over two years), but not fast enough to close the gap.
 
 Paper counts measure research volume, not research impact. This study does not analyze citation-weighted metrics, shares of top-1% highly cited papers, or venue prestige, which may yield different rankings. Publication incentive structures also differ across countries. Both China and the US have institutional pressures (tenure requirements, h-index targets, and ranking criteria) that can inflate output independently of research contribution.
 
