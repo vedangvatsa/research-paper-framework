@@ -209,7 +209,7 @@ The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x th
 
 China leads with 874,019 publications, 21.6% higher than the United States (718,676). India ranks third with 369,931 publications, surpassing Japan (333,896) and the United Kingdom (216,177).
 
-![Top 10 countries by AI research output (abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
+![Top 10 countries by AI research output (5M+ paper abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
 
 ### 3.7 Institutional Output
 
