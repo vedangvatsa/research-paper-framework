@@ -261,7 +261,7 @@ The ratio of abstract-to-title matches varies from 1.5x ("federated learning") t
 
 "Federated learning" (1.5x) has the lowest ratio, meaning papers that discuss federated learning almost always include it in their title. This suggests that federated learning is typically the main contribution of the paper, not a supporting technique.
 
-For bibliometric work, this means that title-only analysis systematically undercounts methods that are used as tools across disciplines, and abstract-level analysis returns more of that usage.
+For bibliometric work, these ratios suggest that title-only analysis may systematically undercount methods that are used as tools across disciplines, and abstract-level analysis returns more of that usage.
 
 ## 4. Discussion
 
