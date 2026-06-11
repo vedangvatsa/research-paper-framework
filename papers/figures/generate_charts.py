@@ -471,16 +471,16 @@ def chart9():
 
     fig, ax = plt.subplots(figsize=(7.5, 4.5))
 
-    # ── Phase background shading ──
+    # ── Phase background shading (subtle) ──
     phase_regions = [
-        (0.0, 2.0,  '#fff3e0', 'Innovation\nTrigger'),
-        (2.0, 3.8,  '#fce4ec', 'Peak of Inflated\nExpectations'),
-        (3.8, 5.5,  '#eceff1', 'Trough of\nDisillusionment'),
-        (5.5, 7.8,  '#e8f5e9', 'Slope of\nEnlightenment'),
-        (7.8, 10.0, '#e3f2fd', 'Plateau of\nProductivity'),
+        (0.0, 2.0,  '#f5f5f5', 'Innovation\nTrigger'),
+        (2.0, 3.8,  '#f0f0f0', 'Peak of Inflated\nExpectations'),
+        (3.8, 5.5,  '#ebebeb', 'Trough of\nDisillusionment'),
+        (5.5, 7.8,  '#f0f0f0', 'Slope of\nEnlightenment'),
+        (7.8, 10.0, '#f5f5f5', 'Plateau of\nProductivity'),
     ]
     for x0, x1, bg_color, phase_label in phase_regions:
-        ax.axvspan(x0, x1, alpha=0.5, color=bg_color, zorder=0)
+        ax.axvspan(x0, x1, alpha=0.7, color=bg_color, zorder=0)
         ax.text((x0 + x1) / 2, -0.12, phase_label, ha='center', va='top',
                 fontsize=7, color='#555555', linespacing=1.15, style='italic')
 
@@ -489,34 +489,33 @@ def chart9():
     ax.fill_between(t, 0, y, alpha=0.05, color='#2c3e50')
 
     # ── Method placements ──
-    # Colors based on 2022-2025 CAGR vs corpus avg of 32.0%:
-    #   Red   (#c0392b) = Hype peak / Innovation trigger
-    #   Blue  (#1565c0) = Above-average CAGR (>32%)
-    #   Green (#2e7d32) = Mature / below-average CAGR (<32%)
-    #   Gray  (#78909c) = Declining / plateauing
+    # Formal muted palette based on 2022-2025 CAGR vs corpus avg of 32.0%:
+    C_HYPE    = '#8B1A1A'  # dark maroon - hype peak / emerging
+    C_GROWTH  = '#2C5F8A'  # steel blue  - above-average CAGR (>32%)
+    C_MATURE  = '#4A7C59'  # sage green  - below-average CAGR (<32%)
+    C_DECLINE = '#2D2D2D'  # charcoal    - plateauing / declining
     #
-    # Format: (x_pos, label, color, y_offset, growth_label)
     methods = [
         # Innovation Trigger
-        (0.6,  'Agentic',                '#c0392b', 0.17),
-        (1.5,  'RAG',                    '#c0392b', -0.14),
+        (0.6,  'Agentic',                C_HYPE,    0.17),
+        (1.5,  'RAG',                    C_HYPE,   -0.14),
         # Peak of Inflated Expectations
-        (2.7,  'LLM',                    '#c0392b', 0.22),
-        (3.3,  'Diffusion\nModel',       '#1565c0', -0.17),
+        (2.7,  'LLM',                    C_HYPE,    0.22),
+        (3.3,  'Diffusion\nModel',       C_GROWTH, -0.17),
         # Trough of Disillusionment
-        (4.3,  'BERT',                   '#333333', -0.14),
-        (5.0,  'GAN',                    '#333333', 0.16),
+        (4.3,  'BERT',                   C_DECLINE,-0.14),
+        (5.0,  'GAN',                    C_DECLINE, 0.16),
         # Slope of Enlightenment
-        (5.9,  'Multimodal',             '#1565c0', -0.16),
-        (6.2,  'Federated\nLearning',    '#1565c0', 0.18),
-        (6.8,  'Reinforcement\nLearning', '#1565c0', -0.18),
-        (7.4,  'Transformer',            '#1565c0', 0.17),
+        (5.9,  'Multimodal',             C_GROWTH, -0.16),
+        (6.2,  'Federated\nLearning',    C_GROWTH,  0.18),
+        (6.8,  'Reinforcement\nLearning', C_GROWTH, -0.18),
+        (7.4,  'Transformer',            C_GROWTH,  0.17),
         # Plateau of Productivity
-        (8.0,  'Graph\nNeural',          '#1565c0', -0.14),
-        (8.5,  'Deep\nLearning',         '#2e7d32', 0.16),
-        (9.0,  'CNN',                    '#2e7d32', -0.13),
-        (9.3,  'Neural\nNetwork',        '#2e7d32', 0.16),
-        (9.7,  'Knowledge\nGraph',       '#2e7d32', -0.13),
+        (8.0,  'Graph\nNeural',          C_GROWTH, -0.14),
+        (8.5,  'Deep\nLearning',         C_MATURE,  0.16),
+        (9.0,  'CNN',                    C_MATURE, -0.13),
+        (9.3,  'Neural\nNetwork',        C_MATURE,  0.16),
+        (9.7,  'Knowledge\nGraph',       C_MATURE, -0.13),
     ]
 
     for mx, mlabel, mcolor, mdy in methods:
@@ -533,13 +532,13 @@ def chart9():
     # ── Legend ──
     from matplotlib.lines import Line2D
     legend_items = [
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='#c0392b',
+        Line2D([0], [0], marker='o', color='w', markerfacecolor=C_HYPE,
                markersize=7, label='Hype peak / emerging'),
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='#1565c0',
+        Line2D([0], [0], marker='o', color='w', markerfacecolor=C_GROWTH,
                markersize=7, label='CAGR > 32% (corpus avg)'),
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='#2e7d32',
+        Line2D([0], [0], marker='o', color='w', markerfacecolor=C_MATURE,
                markersize=7, label='CAGR < 32% (mature)'),
-        Line2D([0], [0], marker='o', color='w', markerfacecolor='#333333',
+        Line2D([0], [0], marker='o', color='w', markerfacecolor=C_DECLINE,
                markersize=7, label='Plateauing / declining'),
     ]
     ax.legend(handles=legend_items, loc='upper right', fontsize=6.5,
