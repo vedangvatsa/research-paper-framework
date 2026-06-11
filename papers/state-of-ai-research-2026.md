@@ -267,7 +267,7 @@ For bibliometric work, this means that title-only analysis systematically underc
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. The temporal data (Section 3.3) shows steady 8.9x growth over 12 years, with the 2025 count (207,140) still higher than the 2024 count (175,688).
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. Growth has been steady across all 12 years in the dataset (Section 3.3).
 
 ### 4.2 The LLM Inflection Point
 
@@ -398,7 +398,7 @@ Five million papers, analyzed through abstract-level keyword search, show three 
 
 Six findings from this analysis.
 
-1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). This dominance has not diminished despite the attention given to LLMs. In 2025, "deep learning" surpassed "neural network" in annual abstract mentions for the first time (216,713 vs. 207,140), though "neural network" retains a larger cumulative total.
+1. **Neural networks remain dominant.** "Neural network" appears in 1,522,612 paper abstracts (30.4% of the corpus). In 2025, "deep learning" surpassed "neural network" in annual abstract mentions for the first time, though "neural network" retains a larger cumulative total.
 
 2. **LLMs are the fastest-growing category.** "Large language model" grew from 3,248 abstracts in 2018 to 96,984 in 2025 (29.9x), with an inflection point in 2022-2023 coinciding with the release of ChatGPT. By 2025, LLM papers accounted for 10.3% of the corpus, up from 1.9% in 2022.
 
