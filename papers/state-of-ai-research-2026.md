@@ -189,7 +189,7 @@ The keyword growth data groups into three categories. Growth ratios were compute
 
 **Category 1, named models as research subjects.** "DeepSeek" (848.7x), "Mistral" (16.8x), and "Gemini" (13.6x) are all names of specific commercial models, not architectures or methods. Their presence in a fastest-rising keyword list suggests that researchers are spending more time evaluating and comparing named products.
 
-**Category 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. Lewis et al. [8] introduced retrieval-augmented generation for knowledge-intensive NLP tasks, and the pattern has since been widely adopted. These three terms appear separately in Table 4 because researchers use the full phrase, the hyphenated adjective, and the abbreviation interchangeably in abstracts.
+**Category 2, the RAG pipeline.** "Retrieval augmented generation" (52.4x), "retrieval-augmented" (19.2x), and "RAG" (15.4x) all show rapid growth. Lewis et al. [8] introduced retrieval-augmented generation for knowledge-intensive NLP tasks, and the pattern has since been widely adopted.
 
 **Category 3, safety and reliability.** "Jailbreak" (25.5x) and "guardrail" (9.7x) reflect the growing research effort to make language models reliable and safe. "Jailbreak" research (2,803 papers in 2025-2026, up from 110 in 2022-2023) investigates adversarial prompts that circumvent model safety filters. "Guardrail" (5,046, up from 521) covers techniques for constraining model outputs.
 
