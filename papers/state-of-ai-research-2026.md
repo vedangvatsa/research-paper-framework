@@ -203,7 +203,7 @@ The citation distribution is extremely right-skewed. Nearly half of all papers (
 
 ![Citation distribution of AI papers on a log scale. Nearly half of all papers have zero citations. Only 2,475 papers have exceeded 1,000 citations.](figures/fig_citation_dist.png)
 
-The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 [23] (113,579 citations) and the lme4 statistics package [24] (84,949), are not AI research contributions but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among AI-specific papers, the top entries (ResNet, Deep Learning [5], Adam [4], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all widely reused building blocks. Papers that provide such infrastructure receive orders of magnitude more citations than application-specific work.
+The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x the next entry. Several of the most-cited papers in the corpus, including the DSM-5 [23] (113,579 citations) and the lme4 statistics package [24] (84,949), are not AI research contributions but mention related methods in their abstracts, illustrating the breadth of abstract-level search. Among AI-specific papers, the top entries (ResNet, Deep Learning [5], Adam [4], AlexNet, VGGNet, Faster R-CNN, XGBoost) are all widely reused building blocks. Papers that provide reusable infrastructure can accumulate orders of magnitude more citations than application-specific work.
 
 ### 3.6 Geographic Distribution
 
