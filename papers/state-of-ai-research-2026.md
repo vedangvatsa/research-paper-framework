@@ -77,7 +77,7 @@ All analyses were performed through direct OpenAlex API calls. No local text pro
 
 ### 2.4 Stemming and Precision
 
-OpenAlex's search filters apply stemming, meaning a search for "agentic" also matches "agent" and "agents." For multi-word phrases ("retrieval augmented generation," "graph neural network") and proper nouns ("DeepSeek," "Claude," "Mistral"), stemming has minimal effect. For single common words ("diffusion," "safety," "clinical"), stemming can inflate counts by matching non-AI uses of the word. For example, searching "clinical" across all OpenAlex papers (2013-2026) returns 6,704,069 abstract matches, far exceeding the 5,003,783 papers in our AI-filtered corpus. Similarly, "agent" returns 2,179,789 matches, inflated by non-AI uses of the word in chemistry, pharmacology, and other fields. This limitation is discussed further in Section 4.5.
+OpenAlex's search filters apply stemming, meaning a search for "agentic" also matches "agent" and "agents." For multi-word phrases ("retrieval augmented generation," "graph neural network") and proper nouns ("DeepSeek," "Claude," "Mistral"), stemming has minimal effect. For single common words ("diffusion," "safety," "clinical"), stemming can inflate counts by matching non-AI uses of the word. For example, searching "clinical" across all OpenAlex papers (2013-2026) returns 6,704,069 abstract matches, far exceeding the 5,003,783 papers in the AI-filtered corpus. Similarly, "agent" returns 2,179,789 matches, inflated by non-AI uses of the word in chemistry, pharmacology, and other fields. This limitation is discussed further in Section 4.5.
 
 ## 3. Results
 
