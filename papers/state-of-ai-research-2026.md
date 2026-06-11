@@ -267,13 +267,13 @@ For bibliometric work, this means that title-only analysis systematically underc
 
 ### 4.1 The Persistence of Neural Networks
 
-As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) indicates that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. Growth has been steady across all 12 years in the dataset (Section 3.3).
+As shown in Section 3.2, "neural network" remains the most frequently referenced AI concept in the corpus, appearing in 30.4% of all abstracts. It holds this position despite public attention moving to large language models. The 3.5x ratio between abstract and title counts (Table 6) suggests that most papers using neural networks do not place the term in their titles. In this corpus, neural networks appear to function as a standard tool rather than a novel contribution. Growth has been steady across all 12 years in the dataset (Section 3.3).
 
 ### 4.2 The LLM Inflection Point
 
 The LLM trajectory (Section 3.3) shows the sharpest inflection in the corpus. No other method matches this acceleration profile. The fastest-rising keywords (Table 4) add context. The keyword data suggests that research activity has shifted from training LLMs to building systems around them. RAG (52.4x growth) is the clearest example of this shift. "Hallucination," "guardrail," and "jailbreak" indicate growing attention to reliability and safety.
 
-The abbreviation "LLM" itself grew 16.0x (Table 4), which is consistent with the abbreviation becoming as common as the full phrase in abstracts.
+The abbreviation "LLM" itself grew 16.0x (Table 4), which may reflect the abbreviation becoming as common as the full phrase in abstracts.
 
 ### 4.3 Method Lifecycles
 
@@ -384,7 +384,7 @@ The Stanford HAI AI Index Report [9] is a widely cited annual survey of AI resea
 
 The AI Index 2021 report [14] found that China and the US together dominated global AI publication output. In this corpus, China (874,019) and the US (718,676) together total 1,592,695 paper-country assignments (31.8% of the corpus total, though this figure is inflated by co-authored papers counted in both countries). The lower relative share compared to the AI Index reflects that this corpus includes a broader set of AI-adjacent documents beyond the core AI fields tracked by that report.
 
-Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus is consistent with that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search returns 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
+Jurowetzki et al. (2021) documented increasing overlap between academic and commercial AI development [15]. The growth of named models (DeepSeek, Gemini, Mistral) as the fastest-rising research terms in this corpus may reflect that trend. Ahmed and Wahed (2020) examined the compute divide between industry and academic labs [18]. The title vs. abstract comparison (Table 6) adds a methodological datapoint, showing that abstract search returns 1.5x to 7.7x more papers per keyword than title-only search, consistent with standard recommendations for thorough search strategies [22].
 
 ### 5.2 Compute and Scaling Studies
 
