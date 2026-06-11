@@ -158,7 +158,7 @@ Both the bigram and trigram lists are top-heavy. The highest-ranked bigram (1,52
 
 **The LLM trajectory.** "Large language model" abstract mentions grew from 3,248 in 2018 to 96,984 in 2025, representing a 29.9x increase. The growth curve has a clear inflection point. Between 2018 and 2022, mentions grew at a modest pace (from 3,248 to 7,931 mentions, or a 2.4x increase over four years). Between 2022 and 2025, mentions grew 12.2x in three years. The acceleration is visible year by year, jumping to 21,612 in 2023 (2.7x), 49,970 in 2024 (2.3x), and 96,984 in 2025 (1.9x). The annualized 2026 estimate (approximately 170,000 papers, based on 84,957 recorded through June) suggests another 1.8x increase over the 2025 volume. By 2025, LLM papers accounted for 10.3% of all AI papers in the corpus, up from 4.1% in 2023. No other method grew at a comparable rate over the same period. From 2022 to 2025, "transformer" grew 3.3x, "reinforcement learning" 2.7x, "deep learning" 2.1x, and "neural network" 1.5x.
 
-![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate (open marker).](figures/fig_llm_explosion.png)
+![Growth of "large language model" in paper abstracts. The 2026 value is an annualized estimate based on January-June data (open marker).](figures/fig_llm_explosion.png)
 
 In 2022, LLM papers were 1.9% of the corpus. By 2025, that share had grown to 10.3%. If the 2026 trajectory holds, roughly one in nine AI papers will mention large language models by year-end.
 
