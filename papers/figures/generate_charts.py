@@ -427,6 +427,15 @@ def chart9():
     """
     Gartner-style hype cycle curve with methods placed along the lifecycle
     based on their growth trajectories in the corpus data.
+
+    Placement logic (2022-2025 CAGR, corpus avg = 32.0%):
+      - Innovation Trigger: brand-new methods (Agentic, RAG)
+      - Peak of Inflated Expectations: maximum hype (LLM +130% CAGR)
+      - Trough of Disillusionment: superseded or declining (BERT, GAN)
+      - Slope of Enlightenment: sustained above-avg CAGR
+        (Federated Learning, Transformer, Reinforcement Learning, Diffusion Model, Graph Neural)
+      - Plateau of Productivity: mature/below-avg CAGR
+        (Deep Learning, Knowledge Graph, Neural Network, CNN)
     """
     # Define control points for a smooth hype cycle shape
     cx = np.array([0.0, 0.8, 1.6, 2.4, 3.0, 3.5, 4.2, 5.0, 5.8, 6.5, 7.5, 8.5, 9.5, 10.0])
@@ -460,66 +469,95 @@ def chart9():
         y[j] = (h00 * cy[idx] + h10 * h[idx] * m[idx] +
                 h01 * cy[idx+1] + h11 * h[idx] * m[idx+1])
 
-    fig, ax = plt.subplots(figsize=(7.0, 3.8))
-    ax.plot(t, y, color='#34495e', linewidth=2.5, zorder=2)
-    ax.fill_between(t, 0, y, alpha=0.04, color='#34495e')
+    fig, ax = plt.subplots(figsize=(7.5, 4.5))
 
-    # Phase labels along bottom
-    phases = [
-        (1.0, 'Innovation\nTrigger'),
-        (3.0, 'Peak of Inflated\nExpectations'),
-        (4.6, 'Trough of\nDisillusionment'),
-        (6.2, 'Slope of\nEnlightenment'),
-        (8.5, 'Plateau of\nProductivity'),
+    # ── Phase background shading ──
+    phase_regions = [
+        (0.0, 2.0,  '#fff3e0', 'Innovation\nTrigger'),
+        (2.0, 3.8,  '#fce4ec', 'Peak of Inflated\nExpectations'),
+        (3.8, 5.5,  '#eceff1', 'Trough of\nDisillusionment'),
+        (5.5, 7.8,  '#e8f5e9', 'Slope of\nEnlightenment'),
+        (7.8, 10.0, '#e3f2fd', 'Plateau of\nProductivity'),
     ]
-    for px, plabel in phases:
-        ax.text(px, -0.10, plabel, ha='center', va='top', fontsize=7.5,
-                color='#222222', linespacing=1.1)
+    for x0, x1, bg_color, phase_label in phase_regions:
+        ax.axvspan(x0, x1, alpha=0.5, color=bg_color, zorder=0)
+        ax.text((x0 + x1) / 2, -0.12, phase_label, ha='center', va='top',
+                fontsize=7, color='#555555', linespacing=1.15, style='italic')
 
-    # Place methods along the curve based on corpus data patterns
-    # Colors encode lifecycle category:
-    #   Green (#27ae60) = Foundational/mature
-    #   Blue  (#2471a3) = Growth phase
-    #   Red   (#c0392b) = Hype peak
-    #   Gray  (#7f8c8d) = Declining
+    # ── Draw main curve ──
+    ax.plot(t, y, color='#2c3e50', linewidth=2.8, zorder=2)
+    ax.fill_between(t, 0, y, alpha=0.05, color='#2c3e50')
+
+    # ── Method placements ──
+    # Colors based on 2022-2025 CAGR vs corpus avg of 32.0%:
+    #   Red   (#c0392b) = Hype peak / Innovation trigger
+    #   Blue  (#1565c0) = Above-average CAGR (>32%)
+    #   Green (#2e7d32) = Mature / below-average CAGR (<32%)
+    #   Gray  (#78909c) = Declining / plateauing
+    #
+    # Format: (x_pos, label, color, y_offset, growth_label)
     methods = [
-        (0.7, 'Agentic', '#c0392b', 0.16),
-        (1.4, 'Federated\nLearning', '#2471a3', 0.18),
-        (1.9, 'RAG', '#c0392b', -0.14),
-        (2.5, 'LLM', '#c0392b', 0.20),
-        (2.8, 'Diffusion\nModel', '#2471a3', 0.14),
-        (3.2, 'Graph\nNeural', '#27ae60', -0.16),
-        (4.0, 'Multimodal', '#2471a3', -0.16),
-        (4.5, 'Transformer', '#2471a3', 0.28),
-        (5.2, 'BERT', '#7f8c8d', -0.14),
-        (5.8, 'GAN', '#7f8c8d', 0.15),
-        (6.8, 'Reinforcement\nLearning', '#2471a3', 0.16),
-        (7.8, 'Deep\nLearning', '#27ae60', 0.15),
-        (8.5, 'CNN', '#27ae60', -0.13),
-        (8.8, 'Neural\nNetwork', '#27ae60', 0.15),
-        (9.5, 'Knowledge\nGraph', '#27ae60', -0.13),
+        # Innovation Trigger
+        (0.6,  'Agentic',                '#c0392b', 0.17,  'new'),
+        (1.5,  'RAG',                    '#c0392b', -0.14, '52x'),
+        # Peak of Inflated Expectations
+        (2.7,  'LLM',                    '#c0392b', 0.22,  '12.2x'),
+        (3.3,  'Diffusion\nModel',       '#1565c0', -0.17, '34%'),
+        # Trough of Disillusionment
+        (4.3,  'BERT',                   '#78909c', -0.14, ''),
+        (5.0,  'GAN',                    '#78909c', 0.16,  '22%'),
+        # Slope of Enlightenment
+        (5.9,  'Multimodal',             '#1565c0', -0.16, ''),
+        (6.2,  'Federated\nLearning',    '#1565c0', 0.18,  '52%'),
+        (6.8,  'Reinforcement\nLearning', '#1565c0', -0.18, '39%'),
+        (7.4,  'Transformer',            '#1565c0', 0.17,  '49%'),
+        # Plateau of Productivity
+        (8.0,  'Graph\nNeural',          '#1565c0', -0.14, '33%'),
+        (8.5,  'Deep\nLearning',         '#2e7d32', 0.16,  '28%'),
+        (9.0,  'CNN',                    '#2e7d32', -0.13, ''),
+        (9.3,  'Neural\nNetwork',        '#2e7d32', 0.16,  '15%'),
+        (9.7,  'Knowledge\nGraph',       '#2e7d32', -0.13, '26%'),
     ]
 
-    for mx, mlabel, mcolor, mdy in methods:
+    for mx, mlabel, mcolor, mdy, glabel in methods:
         my = np.interp(mx, t, y)
-        ax.plot(mx, my, 'o', color=mcolor, markersize=6, zorder=5,
-                markeredgecolor='white', markeredgewidth=0.8)
-        ax.annotate(mlabel, xy=(mx, my), xytext=(mx, my + mdy),
-                    fontsize=6.5, fontweight='bold', color=mcolor,
+        ax.plot(mx, my, 'o', color=mcolor, markersize=6.5, zorder=5,
+                markeredgecolor='white', markeredgewidth=1.0)
+        # Build label with optional growth rate (CAGR)
+        full_label = f'{mlabel}\n({glabel} CAGR)' if glabel else mlabel
+        ax.annotate(full_label, xy=(mx, my), xytext=(mx, my + mdy),
+                    fontsize=5.8, fontweight='bold', color=mcolor,
                     ha='center', va='bottom' if mdy > 0 else 'top',
                     linespacing=0.85,
-                    arrowprops=dict(arrowstyle='-', color='#cccccc', lw=0.5),
+                    arrowprops=dict(arrowstyle='-', color='#bbbbbb', lw=0.5),
                     zorder=6)
 
-    ax.set_xlim(-0.3, 10.5)
-    ax.set_ylim(-0.22, 1.30)
-    ax.set_ylabel('Expectations', fontsize=9)
+    # ── Legend ──
+    from matplotlib.lines import Line2D
+    legend_items = [
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='#c0392b',
+               markersize=7, label='Hype peak / emerging'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='#1565c0',
+               markersize=7, label='CAGR > 32% (corpus avg)'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='#2e7d32',
+               markersize=7, label='CAGR < 32% (mature)'),
+        Line2D([0], [0], marker='o', color='w', markerfacecolor='#78909c',
+               markersize=7, label='Plateauing / declining'),
+    ]
+    ax.legend(handles=legend_items, loc='upper right', fontsize=6.5,
+              frameon=True, fancybox=True, framealpha=0.9, edgecolor='#cccccc')
+
+    # ── Subtitle with methodology ──
+    ax.text(5.0, 1.30, 'Growth rates are 2022-2025 CAGR. Placement is interpretive.',
+            ha='center', va='top', fontsize=6.5, color='#888888', style='italic')
+
+    ax.set_xlim(-0.3, 10.3)
+    ax.set_ylim(-0.24, 1.35)
+    ax.set_ylabel('Research Attention', fontsize=9, color='#444444')
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.spines['left'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
     plt.tight_layout()
     fig.savefig(f'{SAVE_DIR}/fig_hype_cycle.png', dpi=300, bbox_inches='tight')
     plt.close(fig)

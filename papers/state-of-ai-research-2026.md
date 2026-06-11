@@ -277,17 +277,15 @@ The abbreviation "LLM" itself grew 16.0x (Table 4), which may reflect the abbrev
 
 ### 4.3 Method Lifecycles
 
-The time-series data (Section 3.3) places each method at a different lifecycle stage. The corpus as a whole grew 42.6% from 2024 to 2025, which serves as a baseline for comparing individual methods.
+The time-series data (Section 3.3) places each method at a different lifecycle stage. To smooth out year-to-year fluctuations, we use the compound annual growth rate (CAGR) from 2022 to 2025 as the primary metric. The corpus as a whole has a CAGR of 32.0% over this period, which serves as the baseline for comparing individual methods.
 
-**Mature methods (below corpus average).** "Neural network" grew 17.9% from 2024 to 2025, well below the corpus average. "Deep learning" grew 37.2%, also below average despite adding the most papers in absolute terms (58,766). "Knowledge graph" (+38.7%) and "graph neural" (+41.1%) grew near but still below the average. All four have large cumulative totals and show no signs of decline.
+**Mature methods (CAGR below 32%).** "Neural network" has a CAGR of 15.4%, well below the corpus average. "Deep learning" (28.3% CAGR) is also below average despite having the largest absolute count (216,713 in 2025). "Knowledge graph" (25.9% CAGR) and "generative adversarial" (21.8% CAGR) round out this group. All have large cumulative totals and show no signs of decline, but their growth has not kept pace with the corpus.
 
-**Growth phase (above corpus average).** "Transformer" (+56.4%), "federated learning" (+63.6%), and "reinforcement learning" (+65.6%) all grew faster than the corpus average in 2024-2025. "Reinforcement learning" has the highest growth rate in this group, though its absolute count (47,498 in 2025) is smaller than "transformer" (78,135). "Diffusion model" (+41.6%) grew near the corpus average.
+**Growth phase (CAGR above 32%).** "Federated learning" (52.3% CAGR, 3.5x growth), "transformer" (48.8% CAGR, 3.3x), "reinforcement learning" (39.2% CAGR, 2.7x), "diffusion model" (33.9% CAGR, 2.4x), and "graph neural" (33.2% CAGR, 2.4x) all outpaced the corpus over three years. "Federated learning" has the highest CAGR in this group, though its absolute count (18,519 in 2025) remains small compared to "transformer" (78,135).
 
-**Plateau candidates.** "Generative adversarial" year-over-year growth dropped from 33% in 2020 to 4.5% in 2022, before recovering to around 23% in 2024-2025. GANs are being supplemented by diffusion models for many image generation tasks. By 2025, "diffusion model" reached 3.7x the annual GAN count (49,862 vs. 13,613).
+**Continued acceleration.** "Large language model" is an outlier with a CAGR of 130.4% (12.2x growth from 2022 to 2025). No other method comes close. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
 
-**Continued growth.** "Large language model" grew 94.1% from 2024 to 2025, more than double the corpus average. The annualized 2026 estimate (approximately 170,000 papers) suggests continued acceleration over the 2025 count of 96,984. These lifecycle patterns are summarized visually in Figure 7.
-
-![Interpretive hype cycle for AI methods, based on 2024-2025 growth rates (corpus average 42.6%). Red = hype peak (LLM, 94.1%), blue = above-average growth, green = mature/below-average, gray = plateauing.](figures/fig_hype_cycle.png)
+![Interpretive hype cycle for AI methods. Growth rates shown are 2022-2025 CAGR (corpus average 32.0%). See legend for color coding.](figures/fig_hype_cycle.png)
 
 ### 4.4 The China-US Research Balance
 
