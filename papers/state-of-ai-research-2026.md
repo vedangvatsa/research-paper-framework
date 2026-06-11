@@ -195,7 +195,7 @@ The keyword growth data groups into three categories. Growth ratios were compute
 
 All ten of the fastest-rising keywords are related to large language models. None involve computer vision, reinforcement learning, or graph methods. "Copilot" (16.0x), the remaining term in the table, refers to LLM-based assistants for coding (GitHub Copilot), productivity (Microsoft 365 Copilot), and other domains.
 
-Growth ratios from small baselines should be read with caution. "DeepSeek" (848.7x) had only 13 papers in the 2022-2023 baseline. By absolute count, "LLM" (161,771 papers in 2025-2026) is the largest term in the table, and the three RAG variants total 58,494. This table shows where research attention is shifting, not what contributes the most new papers overall. Established methods like "deep learning" added 58,766 papers from 2024 to 2025, far more than any single term here.
+Growth ratios from small baselines should be read with caution. "DeepSeek" (848.7x) had only 13 papers in the 2022-2023 baseline. By absolute count, "LLM" (161,771 papers in 2025-2026) is the largest term in the table, and the three RAG variants total 58,494. This table shows where research attention is shifting, not what contributes the most new papers overall. Established methods like "deep learning" added 58,766 papers from 2024 to 2025, far more than any single term in Table 4, but "deep learning" does not appear in the table because its growth ratio is low (approximately 2.1x over the same period) due to its large baseline.
 
 ### 3.5 Citation Distribution
 
