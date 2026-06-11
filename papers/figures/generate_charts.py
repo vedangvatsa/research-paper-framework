@@ -482,7 +482,7 @@ def chart9():
     for x0, x1, bg_color, phase_label in phase_regions:
         ax.axvspan(x0, x1, alpha=0.7, color=bg_color, zorder=0)
         ax.text((x0 + x1) / 2, -0.12, phase_label, ha='center', va='top',
-                fontsize=7, color='#555555', linespacing=1.15, style='italic')
+                fontsize=7, color='#111111', linespacing=1.15, style='italic')
 
     # ── Draw main curve ──
     ax.plot(t, y, color='#2c3e50', linewidth=2.8, zorder=2)
@@ -546,7 +546,7 @@ def chart9():
 
     # ── Subtitle with methodology ──
     ax.text(5.0, 1.30, 'Growth rates are 2022-2025 CAGR. Placement is interpretive.',
-            ha='center', va='top', fontsize=6.5, color='#888888', style='italic')
+            ha='center', va='top', fontsize=6.5, color='#111111', style='italic')
 
     ax.set_xlim(-0.3, 10.3)
     ax.set_ylim(-0.24, 1.35)
