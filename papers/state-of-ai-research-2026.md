@@ -277,7 +277,7 @@ The abbreviation "LLM" itself grew 16.0x (Table 4), which may reflect the abbrev
 
 ### 4.3 Method Lifecycles
 
-The time-series data (Section 3.3) places each method at a different lifecycle stage. To smooth out year-to-year fluctuations, we use the compound annual growth rate (CAGR) from 2022 to 2025 as the primary metric. The corpus as a whole has a CAGR of 32.0% over this period, which serves as the baseline for comparing individual methods.
+The time-series data (Section 3.3) places each method at a different lifecycle stage. To smooth out year-to-year fluctuations, this section uses the compound annual growth rate (CAGR) from 2022 to 2025 as the primary metric. The corpus as a whole has a CAGR of 32.0% over this period, which serves as the baseline for comparing individual methods.
 
 **Mature methods (CAGR near or below 32%).** "Neural network" has a CAGR of 15.4%, well below the corpus average. "Deep learning" (28.3% CAGR) is also below average despite having the largest absolute count (216,713 in 2025). "Knowledge graph" (25.9% CAGR), "generative adversarial" (21.8% CAGR), and "graph neural" (33.2% CAGR) round out this group. All have large cumulative totals and show no signs of decline, but their growth has roughly tracked or trailed the corpus.
 
