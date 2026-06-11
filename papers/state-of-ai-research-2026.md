@@ -207,7 +207,7 @@ The most-cited paper is ResNet [2] with 221,202 citations, approximately 1.9x th
 
 ### 3.6 Geographic Distribution
 
-China leads with 874,019 publications, 21.6% higher than the United States (718,676). India ranks third with 369,931 publications, surpassing Japan (333,896) and the United Kingdom (216,177). The distribution is heavily concentrated: the top two countries alone account for 42.5% of all country-paper assignments, and the top ten account for 82.5%. A steep drop separates the US from India (1.94x), suggesting that AI research output is dominated by a small number of countries. The five largest European contributors (UK, Germany, Italy, France, Spain) combine to 664,851 country-paper assignments, comparable to the US alone (718,676) but well below China.
+China leads with 874,019 publications, 21.6% higher than the United States (718,676). India ranks third with 369,931 publications, surpassing Japan (333,896) and the United Kingdom (216,177). The top two countries alone account for 42.5% of all country-paper assignments, and the top ten account for 82.5%. The gap between the US and India (1.94x) is nearly as large as the gap between China and the US (1.22x). The five largest European contributors (UK, Germany, Italy, France, Spain) combine to 664,851 country-paper assignments, comparable to the US alone (718,676) but well below China.
 
 ![Top 10 countries by AI research output (5M+ paper abstract-level corpus, 2013-2026). A single paper with co-authors from multiple countries is counted once per country.](figures/fig_countries.png)
 
