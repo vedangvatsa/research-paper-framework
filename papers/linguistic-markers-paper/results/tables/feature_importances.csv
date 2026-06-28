@@ -1,0 +1,9 @@
+Feature,Importance
+sent_len_cv,0.32027504402763246
+self_mention_density,0.14292877874897483
+mean_sent_len,0.14181333302025242
+lexical_diversity_mtld,0.12539945597794802
+connector_density,0.08113025758752859
+booster_density,0.07378468392849255
+hedge_density,0.06245935979471664
+first_word_connector_ratio,0.052209086914454556
