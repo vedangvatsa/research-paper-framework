@@ -2,18 +2,20 @@
 """Convert paper/manuscript.md to proper ICLR LaTeX and package it."""
 import re, os, shutil, subprocess
 
-PROJECT_DIR = '/Users/vedang/.gemini/antigravity/scratch/linguistic-markers-paper'
-SRC = os.path.join(PROJECT_DIR, 'paper', 'manuscript.md')
-STY_SRC = '/Users/vedang/.gemini/antigravity/scratch/research-paper-framework/papers/agent-infrastructure-stack/iclr2024_conference.sty'
-OUT_DIR = os.path.join(PROJECT_DIR, 'paper', 'latex_build')
+PROJECT_DIR = '/Users/vedang/ZCodeProject/research-paper-framework/papers/linguistic-markers-paper'
+SRC = os.path.join(PROJECT_DIR, 'linguistic_markers_paper.md')
+STY_SRC = os.path.join(PROJECT_DIR, 'latex_build', 'iclr2024_conference.sty')
+OUT_DIR = os.path.join(PROJECT_DIR, 'latex_build')
 
 os.makedirs(OUT_DIR, exist_ok=True)
 os.makedirs(os.path.join(OUT_DIR, 'figures'), exist_ok=True)
 
 # Copy .sty file
-if os.path.exists(STY_SRC):
+if os.path.exists(STY_SRC) and os.path.dirname(STY_SRC) != OUT_DIR:
     shutil.copy2(STY_SRC, OUT_DIR)
     print(f"Copied {STY_SRC} to {OUT_DIR}")
+elif os.path.exists(STY_SRC):
+    print(f"STY file already in output directory")
 else:
     print(f"Error: {STY_SRC} does not exist!")
 
@@ -73,6 +75,7 @@ def escape_latex_text(text):
 
 def escape_latex_cell(text):
     """Escape LaTeX special chars in table cells only."""
+    text = text.replace('±', r'\textpm{}')
     text = re.sub(r'\$(\d)', r'\\$\1', text)
     text = text.replace('%', '\\%')
     text = text.replace('#', '\\#')
@@ -169,12 +172,12 @@ def md_to_latex(text):
                 items = re.split(r'\n[-*]\s+', para_text)
                 list_lines = ['\\begin{itemize}']
                 for item in items:
-                    item_clean = item.strip().lstrip('-').lstrip('*').strip()
+                    item_clean = re.sub(r'^[-*]\s+', '', item.strip()).strip()
                     if item_clean:
                         list_lines.append(f'  \\item {process_paragraph(item_clean)}')
                 list_lines.append('\\end{itemize}')
                 output_blocks.append('\n'.join(list_lines))
-            elif para_text.strip().startswith('1. ') or para_text.strip().startswith('2. ') or para_text.strip().startswith('3. '):
+            elif re.match(r'^\d+\.\s', para_text.strip()):
                 items = re.split(r'\n\d+\.\s+', para_text)
                 list_lines = ['\\begin{enumerate}']
                 for item in items:
@@ -182,9 +185,31 @@ def md_to_latex(text):
                     if item_clean:
                         list_lines.append(f'  \\item {process_paragraph(item_clean)}')
                 list_lines.append('\\end{enumerate}')
-                output_blocks.append('\n'.join(list_lines))
+                # Merge with previous enumerate block if it exists (skipping empty blocks)
+                prev_enum_idx = None
+                for j in range(len(output_blocks) - 1, -1, -1):
+                    if output_blocks[j].strip() == '':
+                        continue
+                    if output_blocks[j].strip().endswith('\\end{enumerate}'):
+                        prev_enum_idx = j
+                    break
+                if prev_enum_idx is not None:
+                    prev_block = output_blocks[prev_enum_idx]
+                    # Extract items from previous enumerate block
+                    prev_stripped = prev_block.strip()
+                    if prev_stripped.startswith('\\begin{enumerate}') and prev_stripped.endswith('\\end{enumerate}'):
+                        prev_items = prev_stripped[len('\\begin{enumerate}'):-len('\\end{enumerate}')].strip()
+                        new_items = '\n'.join(list_lines[1:-1])
+                        output_blocks[prev_enum_idx] = f'\\begin{{enumerate}}\n{prev_items}\n{new_items}\n\\end{{enumerate}}'
+                    else:
+                        output_blocks.append('\n'.join(list_lines))
+                else:
+                    output_blocks.append('\n'.join(list_lines))
             else:
-                output_blocks.append(process_paragraph(para_text))
+                rendered = process_paragraph(para_text)
+                if re.match(r'\\textbf\{\d+\.', rendered):
+                    rendered = '\\vspace{-3pt}\n' + rendered
+                output_blocks.append(rendered)
             current_para = []
 
     i = 0
@@ -252,9 +277,6 @@ def md_to_latex(text):
             img_basename = os.path.splitext(os.path.basename(img_path))[0]
             # Sourced from workspace root or similar
             src_img = os.path.join(PROJECT_DIR, img_path)
-            if not os.path.exists(src_img):
-                # Fallback to copy from artifacts directory if needed
-                src_img = os.path.join('/Users/vedang/.gemini/antigravity/brain/26308437-9497-4071-b30c-18ffda34304c', img_path)
             if os.path.exists(src_img):
                 shutil.copy2(src_img, os.path.join(OUT_DIR, 'figures'))
                 print(f"Copied figure {src_img} to {OUT_DIR}/figures")
@@ -285,17 +307,23 @@ def build_bibliography(refs_text):
     """Convert numbered references to thebibliography with clean hyperlinks."""
     REF_URLS = {
         '1': 'https://doi.org/10.1017/CBO9780511621024',
-        '2': 'https://doi.org/10.3138/cmlr.63.3.445',
+        '2': 'https://scholar.google.com/scholar?q=Hyland+Metadiscourse+Exploring+Interaction+Writing+2005',
         '3': 'https://doi.org/10.1017/CBO9781139524599',
         '4': 'https://doi.org/10.1109/BigDataService58306.2023.00011',
         '5': 'https://arxiv.org/abs/2301.07597',
         '6': 'https://arxiv.org/abs/2303.11156',
         '7': 'https://arxiv.org/abs/2303.13408',
-        '8': 'https://scigen.csail.mit.edu',
+        '8': 'https://pdos.csail.mit.edu/archive/scigen/',
         '9': 'https://arxiv.org/abs/2301.11305',
         '10': 'https://arxiv.org/abs/2403.19074',
-        '11': 'https://www.memphis.edu/iis/pdfs/mccarthy_dissertation.pdf',
-        '12': 'https://press.uchicago.edu/ucp/books/book/chicago/D/bo3616656.html'
+        '11': 'https://www.proquest.com/docview/305349212',
+        '12': 'https://press.uchicago.edu/ucp/books/book/chicago/D/bo3631492.html',
+        '13': 'https://arxiv.org/abs/2205.01833',
+        '14': 'https://doi.org/10.1002/asi.21001',
+        '15': 'https://arxiv.org/abs/2005.14165',
+        '16': 'https://doi.org/10.1023/a:1010933404324',
+        '17': 'https://arxiv.org/abs/2203.02155',
+        '18': 'https://doi.org/10.3758/brm.42.2.381'
     }
     
     entries = re.split(r'\n\n+', refs_text.strip())
@@ -333,6 +361,7 @@ bib_tex = build_bibliography(refs_text)
 template = r"""\documentclass{article}
 \usepackage{iclr2024_conference,times}
 \usepackage{amsmath}
+\usepackage{textcomp}
 \usepackage[htt]{hyphenat}
 
 \tolerance=1500
@@ -362,28 +391,27 @@ template = r"""\documentclass{article}
 \iclrfinalcopy
 \setcitestyle{numbers,square}
 
-\title{Detecting AI-Written Research Abstracts\\using Linguistic Markers}
+\title{Language Patterns in AI vs Human\\Scientific Abstracts}
 
-\author{Vedang Vatsa \\
-Independent Researcher \\
-\texttt{contact@veda.ng}}
+\author{Vedang Ratan Vatsa \\
+\href{https://veda.ng}{veda.ng} \textperiodcentered{} \href{mailto:vedangvats@gmail.com}{vedangvats@gmail.com}}
 
 \begin{document}
 \hypersetup{
-  pdftitle={Detecting AI-Written Research Abstracts using Linguistic Markers},
-  pdfauthor={Vedang Vatsa},
-  pdfsubject={Analysis of 10,000 Scientific Abstracts},
+  pdftitle={Language Patterns in AI vs Human Scientific Abstracts},
+  pdfauthor={Vedang Ratan Vatsa},
+  pdfsubject={Analysis of 200,000 Scientific Abstracts},
   pdfkeywords={LLM detection, corpus linguistics, metadiscourse, stylometrics, lexical diversity, scientific register},
-  pdfcreator={Vedang Vatsa},
-  pdfproducer={Vedang Vatsa}
+  pdfcreator={Vedang Ratan Vatsa},
+  pdfproducer={Vedang Ratan Vatsa}
 }
 \special{pdf:docinfo <<
-/Title (Detecting AI-Written Research Abstracts using Linguistic Markers)
-/Author (Vedang Vatsa)
-/Subject (Analysis of 10,000 Scientific Abstracts)
+/Title (Language Patterns in AI vs Human Scientific Abstracts)
+/Author (Vedang Ratan Vatsa)
+/Subject (Analysis of 200,000 Scientific Abstracts)
 /Keywords (LLM detection, corpus linguistics, metadiscourse, stylometrics, lexical diversity, scientific register)
-/Creator (Vedang Vatsa)
-/Producer (Vedang Vatsa)
+/Creator (Vedang Ratan Vatsa)
+/Producer (Vedang Ratan Vatsa)
 >>}
 \raggedbottom
 
@@ -413,13 +441,13 @@ try:
     res = subprocess.run(['tectonic', 'paper.tex'], cwd=OUT_DIR, check=True, capture_output=True, text=True)
     print("Compilation successful.")
     pdf_src = os.path.join(OUT_DIR, 'paper.pdf')
-    pdf_dest = os.path.join(PROJECT_DIR, 'paper', 'manuscript.pdf')
+    pdf_dest = os.path.join(PROJECT_DIR, 'linguistic_markers_paper.pdf')
     shutil.copy2(pdf_src, pdf_dest)
     print(f"Copied compiled PDF to {pdf_dest}")
     # Also copy to Desktop if exists
     desktop = '/Users/vedang/Desktop'
     if os.path.exists(desktop):
-        shutil.copy2(pdf_src, os.path.join(desktop, 'manuscript.pdf'))
+        shutil.copy2(pdf_src, os.path.join(desktop, 'linguistic_markers_paper.pdf'))
         print("Copied compiled PDF to Desktop")
 except subprocess.CalledProcessError as e:
     print(f"Compilation failed with exit code {e.returncode}")

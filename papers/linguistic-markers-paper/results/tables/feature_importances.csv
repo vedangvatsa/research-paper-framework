@@ -1,9 +1,9 @@
 Feature,Importance
-sent_len_cv,0.32027504402763246
-self_mention_density,0.14292877874897483
-mean_sent_len,0.14181333302025242
-lexical_diversity_mtld,0.12539945597794802
-connector_density,0.08113025758752859
-booster_density,0.07378468392849255
-hedge_density,0.06245935979471664
-first_word_connector_ratio,0.052209086914454556
+lexical_diversity_mtld,0.23167606252884027
+sent_len_cv,0.20017740320550187
+connector_density,0.14244917273385785
+first_word_connector_ratio,0.13225184465818518
+self_mention_density,0.09849196278145264
+hedge_density,0.07862363499782474
+mean_sent_len,0.06882652992728697
+booster_density,0.04750338916705054

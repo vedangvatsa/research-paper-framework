@@ -1,6 +1,6 @@
 Classification Evaluation Metrics (5-Fold CV):
-Accuracy:  0.7901 ± 0.0052
-Precision: 0.7907 ± 0.0106
-Recall:    0.7896 ± 0.0120
-F1 Score:  0.7900 ± 0.0049
-AUC-ROC:   0.8774 ± 0.0070
+Accuracy:  0.9569 ± 0.0012
+Precision: 0.9618 ± 0.0014
+Recall:    0.9515 ± 0.0026
+F1 Score:  0.9566 ± 0.0013
+AUC-ROC:   0.9906 ± 0.0003
