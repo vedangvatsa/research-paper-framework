@@ -1,0 +1,16 @@
+# Raw scan rows and source snapshots stay local (large binaries).
+# Everything needed to verify headline numbers ships tracked below.
+data/results.jsonl
+data/results-gentle.jsonl
+data/results-shard*.jsonl
+data/results-r2-shard*.jsonl
+data/results-r2b-shard*.jsonl
+data/results-r3-shard*.jsonl
+data/*.zip
+data/*.gz
+data/checkpoints/
+data/shard*.txt
+data/r2shard*.txt
+data/r2bshard*.txt
+data/r3shard*.txt
+data/validation2000.txt

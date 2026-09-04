@@ -1,0 +1,76 @@
+{
+  "attempted_domains": 50000,
+  "completed": 50000,
+  "errors": 0,
+  "status_counts": {
+    "completed": 50000
+  },
+  "mean_score": 25.7,
+  "tier_means": {
+    "tier1_top10k": 26.1,
+    "tier2_10k_100k": 25.2,
+    "tier3_100k_1m": 25.9
+  },
+  "tier_n": {
+    "tier1_top10k": 10000,
+    "tier2_10k_100k": 20000,
+    "tier3_100k_1m": 20000
+  },
+  "adoption_tracked_checks": {
+    "robots-ai-policy": {
+      "pass": 21881,
+      "n": 50000,
+      "share": 0.4376
+    },
+    "llms-txt": {
+      "pass": 3310,
+      "n": 50000,
+      "share": 0.0662
+    },
+    "markdown-negotiation": {
+      "pass": 1474,
+      "n": 50000,
+      "share": 0.0295
+    },
+    "bot-ua-access": {
+      "pass": 18912,
+      "n": 50000,
+      "share": 0.3782
+    },
+    "mcp-server-live": {
+      "pass": 910,
+      "n": 50000,
+      "share": 0.0182
+    },
+    "openapi-spec": {
+      "pass": 78,
+      "n": 50000,
+      "share": 0.0016
+    },
+    "https-tls": {
+      "pass": 50000,
+      "n": 50000,
+      "share": 1.0
+    },
+    "security-txt": {
+      "pass": 2288,
+      "n": 50000,
+      "share": 0.0458
+    },
+    "json-ld": {
+      "pass": 10687,
+      "n": 50000,
+      "share": 0.2137
+    },
+    "seo-author-eeat": {
+      "pass": 6910,
+      "n": 50000,
+      "share": 0.1382
+    },
+    "agent-payments": {
+      "pass": 163,
+      "n": 50000,
+      "share": 0.0033
+    }
+  }
+}

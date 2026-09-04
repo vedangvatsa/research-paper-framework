@@ -1,0 +1,18 @@
+{
+  "seed": 20260903,
+  "total": 50000,
+  "tiers": {
+    "tier1_top10k": 10000,
+    "tier2_10k_100k": 20000,
+    "tier3_100k_1m": 20000
+  },
+  "crux_overlap_count": 23579,
+  "sources": {
+    "tranco": "tranco-list.eu/download/daily/top-1m.csv.zip (downloaded 2026-09-03)",
+    "crux": "github.com/zakird/crux-top-lists data/global/current.csv.gz (downloaded 2026-09-03)"
+  },
+  "sha256": {
+    "tranco-top-1m.csv.zip": "5d1d073ec8e4b3dad56be769f51f7ca7ce1e48f2c84344e059660f04b590950c",
+    "crux-current.csv.gz": "5a51e5dc66048ee589c6414f509fba3a347c562f6d326cc6afc5190d73be0f43"
+  }
+}
