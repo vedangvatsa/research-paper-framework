@@ -35,7 +35,7 @@ plt.close(fig)
 
 # Figure 2: tier comparison (mean score + both-bot refusal)
 order = ["tier1_top10k", "tier2_10k_100k", "tier3_100k_1m"]
-labels = ["Top 10k", "10k to 100k", "100k to 1M"]
+labels = ["Ranks 1-10k", "Ranks 10k-100k", "Ranks 100k-1M"]
 means, refused = [], []
 for t in order:
     s = [r for r in sc if tiers.get(r["domain"]) == t]
@@ -88,7 +88,7 @@ print("wrote", sorted(p.name for p in FIG.glob("fig*.png")))
 
 # Figure 4: layer means by tier (grouped bars)
 tier_ids = ["tier1_top10k", "tier2_10k_100k", "tier3_100k_1m"]
-tier_labels = ["Ranks 1-10k", "Ranks 10-100k", "Ranks 100k-1M"]
+tier_labels = ["Ranks 1-10k", "Ranks 10k-100k", "Ranks 100k-1M"]
 layer_ids = ["discovery", "access", "usability", "security", "seo", "payments"]
 layer_labels = ["Discovery", "Access", "Usability", "Security", "SEO", "Payments"]
 by_tier = {t: [r for r in sc if tiers.get(r["domain"]) == t] for t in tier_ids}

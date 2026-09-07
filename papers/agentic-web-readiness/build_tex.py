@@ -30,6 +30,7 @@ def escape_latex_text(text):
     text = re.sub(r'(?<!\\)&', r'\\&', text)
     text = text.replace('#', '\\#')
     text = text.replace('_', '\\_')
+    text = text.replace('±', '$\\pm$')
     return text
 
 
@@ -41,6 +42,7 @@ def escape_latex_cell(text):
     text = text.replace('&', '\\&')  # Escape & in cell content
     text = text.replace('_', '\\_')
     text = text.replace('~', '\\textasciitilde{}')
+    text = text.replace('±', '$\\pm$')
     return text
 
 
@@ -91,8 +93,7 @@ def convert_quotes(text):
 
 def process_paragraph(text):
     """Full processing pipeline for a paragraph of running text."""
-    text, codes = extract_code_spans(text)
-    # Markdown links [text](url) -> \href (before escaping touches braces)
+    text, codes = extract_code_spans(text)    # Markdown links [text](url) -> \href (before escaping touches braces)
     links = []
 
     def stash_link(m):
@@ -304,8 +305,8 @@ def md_to_latex(text):
             # Strip leading "Figure N. " from caption (LaTeX numbers it)
             cap = re.sub(r'^Figure \d+\.\s*', '', cap)
             output_blocks.append(
-                '\\begin{figure}[H]\n\\centering\n'
-                '\\includegraphics[width=0.9\\columnwidth]{' + asset + '}\n'
+                '\\begin{figure}[htbp]\n\\centering\n'
+                '\\includegraphics[width=0.85\\columnwidth]{' + asset + '}\n'
                 '\\caption{' + cap + '}\n\\end{figure}'
             )
             i += 1
@@ -438,7 +439,6 @@ template = r"""\documentclass{article}
 
 """ + body_tex + r"""
 
-\clearpage
 """ + bib_tex + r"""
 
 \end{document}
