@@ -1,0 +1,20 @@
+{
+  "review_date": "2026-10-13",
+  "review_type": "targeted narrative review",
+  "existing_research_references": [17, 18, 19],
+  "added_research": [
+    {"reference": 29, "source": "dietvorst-aversion", "type": "human experiments", "authorship": "university", "year": 2015},
+    {"reference": 30, "source": "logg-appreciation", "type": "human experiments", "authorship": "university", "year": 2019},
+    {"reference": 31, "source": "dietvorst-control", "type": "human experiments", "authorship": "university", "year": 2018, "version_note": "pre-final author manuscript consulted"},
+    {"reference": 32, "source": "debellis-autonomous", "type": "review with reused qualitative evidence", "authorship": "university", "year": 2020},
+    {"reference": 33, "source": "webshop", "type": "shopping benchmark", "authorship": "university", "year": 2022, "version_note": "corrected arXiv v4, 2023"},
+    {"reference": 34, "source": "webarena", "type": "web-agent benchmark", "authorship": "university with disclosed government and industry support", "year": 2024},
+    {"reference": 35, "source": "bakos-search", "type": "economic theory", "authorship": "university", "year": 1997},
+    {"reference": 36, "source": "ursu-rankings", "type": "field-data analysis and structural model", "authorship": "university", "year": 2016, "version_note": "dissertation consulted"},
+    {"reference": 37, "source": "agentdojo", "type": "agent-security benchmark", "authorship": "mixed university and company", "year": 2024},
+    {"reference": 38, "source": "whispers-ap2", "type": "small prototype security experiment", "authorship": "university", "year": 2026},
+    {"reference": 39, "source": "literature-review", "type": "systematic evidence map", "authorship": "university", "year": 2026},
+    {"reference": 40, "source": "busch-consumer-law", "type": "legal scholarship", "authorship": "university", "year": 2026, "version_note": "online 2026; issue dated 2025"}
+  ],
+  "counting_note": "Fifteen research works are not fifteen independent experiments. Reviews and prior versions are not pooled with their underlying studies. Funding information and limits are in review-matrix.md."
+}

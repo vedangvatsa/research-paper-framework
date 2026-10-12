@@ -1,0 +1,319 @@
+[
+  {
+    "id": "ref-01",
+    "url": "https://openai.com/index/buy-it-in-chatgpt/",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:01.077071+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-02",
+    "url": "https://help.openai.com/en/articles/11128490-shopping-with-chatgpt-search",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:01.078676+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-03",
+    "url": "https://help.openai.com/en/articles/20001241-shopping-from-shopify-merchants-in-chatgpt",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:01.081190+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-04",
+    "url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:01.609114+00:00",
+    "final_url": "https://www.aboutamazon.com/news/retail/alexa-for-shopping-ai-assistant",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-04.html",
+    "bytes": 238351,
+    "sha256": "6c2b746ccea6182218f51e7545b818dea501bf10ea15f2b8ecd3dd34849e451f"
+  },
+  {
+    "id": "ref-05",
+    "url": "https://ucp.dev/documentation/announcements/",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:01.411205+00:00",
+    "final_url": "https://ucp.dev/documentation/announcements/",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-05.html",
+    "bytes": 50731,
+    "sha256": "9bad762f480bf53e26aae72f541f6437f6ec007d7b2f440b62b63fafa125ea4b"
+  },
+  {
+    "id": "ref-06",
+    "url": "https://ucp.dev/2026-08-25/specification/overview/",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:01.431277+00:00",
+    "final_url": "https://ucp.dev/2026-08-25/specification/overview/",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-06.html",
+    "bytes": 565554,
+    "sha256": "0898f8e754a4c123766153326f5d0fd5e73937f0e28346829acbde93671d8626"
+  },
+  {
+    "id": "ref-07",
+    "url": "https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.188278+00:00",
+    "final_url": "https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-07.html",
+    "bytes": 389272,
+    "sha256": "c6ba8769e39dc606589ac32d96eaf0ef370c50e90f0762503b80e7e8464a8ad7"
+  },
+  {
+    "id": "ref-08",
+    "url": "https://ap2-protocol.org/",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.984987+00:00",
+    "final_url": "https://ap2-protocol.org/",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-08.html",
+    "bytes": 52918,
+    "sha256": "bf0c3ecb62ca662e55a21c3ab6ce6901ebb8f257400d9c156cfa35ea22761f30"
+  },
+  {
+    "id": "ref-09",
+    "url": "https://www.mastercard.com/global/en/news-and-trends/stories/2026/verifiable-intent.html",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:01.635322+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-10",
+    "url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.397652+00:00",
+    "final_url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-10.html",
+    "bytes": 188501,
+    "sha256": "f77c72a2f6c7f267ef3e1713313ced17d45a7295e30551fe33dc493005ca3123"
+  },
+  {
+    "id": "ref-11",
+    "url": "https://www.riskified.com/press/agent-identity-risk-intelligence/",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:01.702333+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-12",
+    "url": "https://developers.openai.com/commerce/specs/checkout.md",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.173404+00:00",
+    "final_url": "https://developers.openai.com/commerce/specs/checkout.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-12.txt",
+    "bytes": 57157,
+    "sha256": "24a5493235d78249829021d496c730758fe4ead43efd67af61fa78d9749c9f9b"
+  },
+  {
+    "id": "ref-13",
+    "url": "https://ucp.dev/documentation/ucp-and-ap2/",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.467569+00:00",
+    "final_url": "https://ucp.dev/documentation/ucp-and-ap2/",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-13.html",
+    "bytes": 43149,
+    "sha256": "47981b234f700003efb6225a1b2c4fa9b46c908af9449609a1a8f1261b7a9a5d"
+  },
+  {
+    "id": "ref-14",
+    "url": "https://docs.cdp.coinbase.com/x402/welcome",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.822025+00:00",
+    "final_url": "https://docs.cdp.coinbase.com/x402/welcome",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-14.html",
+    "bytes": 925253,
+    "sha256": "ac4a3d779c990b8a03ed664b6aaec13e2ceb34a1873bb836f7cd9d315bbc411a"
+  },
+  {
+    "id": "ref-15",
+    "url": "https://www.riskified.com/press/global-study-73-of-shoppers-using-ai-in-shopping-journey-but-merchants-face-new-agentic-commerce-risks/",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:02.478283+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-16",
+    "url": "https://www.riskified.com/press/riskified-agentic-commerce-pulse/",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:02.629358+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-17",
+    "url": "https://arxiv.org/abs/2508.02630v3",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.743308+00:00",
+    "final_url": "https://arxiv.org/abs/2508.02630v3",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-17.html",
+    "bytes": 44039,
+    "sha256": "c9e9213a01fcfb4ab1df5a9947f6cdb524eb55fc4aa12da6f815328803a6b573"
+  },
+  {
+    "id": "ref-18",
+    "url": "https://arxiv.org/abs/2606.17698v3",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.698140+00:00",
+    "final_url": "https://arxiv.org/abs/2606.17698v3",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-18.html",
+    "bytes": 42361,
+    "sha256": "7c1eb47561ed00bafb4288be915af499548f3a9bca0131211c31dd6283a1b337"
+  },
+  {
+    "id": "ref-19",
+    "url": "https://arxiv.org/abs/2609.28372v1",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:02.774802+00:00",
+    "final_url": "https://arxiv.org/abs/2609.28372v1",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-19.html",
+    "bytes": 41087,
+    "sha256": "26112f6b4ef863038264ce842e313875feff85e8bee13f5c5fdd37c3f3f3a0d8"
+  },
+  {
+    "id": "ref-20",
+    "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement/",
+    "http_status": 403,
+    "retrieved_at": "2026-10-12T17:54:02.810528+00:00",
+    "access": "unavailable through curl; requires a separate content check",
+    "error": ""
+  },
+  {
+    "id": "ref-21",
+    "url": "https://ap2-protocol.org/ap2/security_and_privacy_considerations/",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:03.450028+00:00",
+    "final_url": "https://ap2-protocol.org/ap2/security_and_privacy_considerations/",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-21.html",
+    "bytes": 49820,
+    "sha256": "c2276e26090036ee174c310ce4454d6cc4f72c448761bb23bbb970027f4ccc15"
+  },
+  {
+    "id": "ref-22",
+    "url": "https://www.law.cornell.edu/uscode/text/15/7001",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:04.522259+00:00",
+    "final_url": "https://www.law.cornell.edu/uscode/text/15/7001",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-22.html",
+    "bytes": 85105,
+    "sha256": "0eb843b4d41c3a6b744e297f6a31e5f2da516450a40ab9c66843010b4eb5ef43"
+  },
+  {
+    "id": "ref-23",
+    "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=1.80.130",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:04.813574+00:00",
+    "final_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=1.80.130",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-23.html",
+    "bytes": 107913,
+    "sha256": "a1df698c0cbd7ab6c3fbb7d14d3bbac96a95b11e186450eafc426eef419bdc9d"
+  },
+  {
+    "id": "ref-24",
+    "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=1.80.090",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:05.106008+00:00",
+    "final_url": "https://app.leg.wa.gov/RCW/default.aspx?cite=1.80.090",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-24.html",
+    "bytes": 109030,
+    "sha256": "0579631a0315db58365feac36a5b094ff5d38178ee8884f2ce9875a60709322e"
+  },
+  {
+    "id": "ref-25",
+    "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:04.315009+00:00",
+    "final_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "sources/checked-2026-10-12/ref-25.html",
+    "bytes": 92000,
+    "sha256": "8ec3e9bdc43e6a69ce47fa67551aca9492df2a2f2ebba4a488f40978556d0621"
+  },
+  {
+    "id": "ref-26",
+    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:06.105188+00:00",
+    "final_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-26.html",
+    "bytes": 89453,
+    "sha256": "dd09700d18616b9ff9e6bb6a667d6fb0a2173755ab9e46be1039baf77474acaf"
+  },
+  {
+    "id": "ref-27",
+    "url": "https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_en.htm",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:06.473455+00:00",
+    "final_url": "https://europa.eu/youreurope/citizens/consumers/shopping/returns/index_en.htm",
+    "content_type": "text/html; charset=UTF-8",
+    "file": "sources/checked-2026-10-12/ref-27.html",
+    "bytes": 155260,
+    "sha256": "fae1a137cbd6a4d0cf4b2851012444a75f30d9d944fe49470366c3cf61d7eb85"
+  },
+  {
+    "id": "ref-28",
+    "url": "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:06.603035+00:00",
+    "final_url": "https://www.edpb.europa.eu/sme/be-compliant/respect-individuals-rights_en",
+    "content_type": "text/html; charset=utf-8",
+    "file": "sources/checked-2026-10-12/ref-28.html",
+    "bytes": 107223,
+    "sha256": "f3d23fefc7237440bcda264965082c518a8fdd23a92c00ae2e09b4709ddc2add"
+  },
+  {
+    "id": "paper-2508.02630v3",
+    "url": "https://arxiv.org/pdf/2508.02630v3?download=1",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T18:04:27.115334+00:00",
+    "final_url": "https://arxiv.org/pdf/2508.02630v3",
+    "content_type": "application/pdf",
+    "file": "sources/checked-2026-10-12/paper-2508.02630v3.pdf",
+    "bytes": 12981075,
+    "sha256": "b177e7e82a6fb653b80b0247e53eb496ae3b2ab5d1f87a67a0e115ee27bd227a"
+  },
+  {
+    "id": "paper-2606.17698v3",
+    "url": "https://arxiv.org/pdf/2606.17698v3",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:07.071438+00:00",
+    "final_url": "https://arxiv.org/pdf/2606.17698v3",
+    "content_type": "application/pdf",
+    "file": "sources/checked-2026-10-12/paper-2606.17698v3.pdf",
+    "bytes": 280620,
+    "sha256": "f63daa3dc85e36385e617c02f27b3741abfd1cdcc4f3e8f38f01d3f61c09cb1c"
+  },
+  {
+    "id": "paper-2609.28372v1",
+    "url": "https://arxiv.org/pdf/2609.28372v1",
+    "http_status": 200,
+    "retrieved_at": "2026-10-12T17:54:37.549847+00:00",
+    "final_url": "https://arxiv.org/pdf/2609.28372v1",
+    "content_type": "application/pdf",
+    "file": "sources/checked-2026-10-12/paper-2609.28372v1.pdf",
+    "bytes": 5032302,
+    "sha256": "7d557fc32f5ddd37ce9c591f2485a4ded1a1db90a4512860f4a6768d5dab4c50"
+  }
+]

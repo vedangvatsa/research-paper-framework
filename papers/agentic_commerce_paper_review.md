@@ -1,0 +1,136 @@
+# Final review: reviewer-led revision
+
+Date: October 13, 2026.
+
+Title: **A Review of Agentic Commerce**.
+
+Expanded the academic comparison while retaining the author's title, plain wording, and dark-blue reference links. The manuscript now uses fifteen research works among 40 references. These include experiments, benchmarks, field-data analysis, theory, reviews, and legal scholarship, not fifteen independent experiments.
+
+The subsequent reviewer pass addressed ten issues in the question/definition, search description, cross-study inference, benchmark scoring, hotel sampling, security comparisons, recommended checks, repetition, and evaluation proposal. The full assessment and response are in `agentic-commerce/reviewer-response.md`. This is review by the same AI assistant, not independent human peer review.
+
+Link presentation check: all 40 reference links in each HTML layout have computed color `rgb(6, 69, 173)` and an underline. Native and alternate PDF reference pages were rendered and visually checked for blue URLs; all reference-link annotations remain present. The first page retains the approved title. The alternate final page now balances its two columns instead of leaving one reference alone in the right column.
+
+## Completed work
+
+- Added twelve research works after inspecting the methods/results or arguments used. Saved full texts, metadata, searches, exclusions, and a study matrix under `agentic-commerce/literature-expansion/`.
+- Compared algorithm aversion, appreciation, and user control instead of treating different experiments as a single vote on trust.
+- Added WebShop and WebArena to a five-evaluation comparison. Distinguished partial-match reward, complete task success, product selection, and actual orders.
+- Added Bakos's search-cost theory and Ursu's hotel-ranking dissertation, separating theoretical and human-field findings from predictions about AI markets.
+- Compared AgentDojo with the small Whispers of Wealth prototype, including synthetic data, repeated-task dependence, six clear versus four ambiguous product-attack outcomes, and defense false positives.
+- Added consumer reviews and Busch's legal analysis while distinguishing their arguments from independently inspected primary studies and enacted duties.
+- Recorded affiliations/support, overlapping teams, old versus current protocol versions, and unusual publication dates. The paper does not describe all selected work as industry-independent.
+- Updated the source ledger, protocol, and hash-bound audit of all 96 substantive prose blocks/table rows and 40 references.
+- Retained the earlier corrections to E-SIGN, the AI Act provider duty, survey comparisons, ACES labels, illustrative examples, EU return scope, and EComAgentBench publication status.
+- Rebuilt both PDFs and standalone HTML files with the requested framework's formal LaTeX pipeline for the main paper.
+- Disclosed the four discovery queries' eight-result cap and non-independent AI-assisted appraisal, added Ursu's sample restrictions and EComAgentBench's scoring checks, and reported helpful AgentDojo defenses alongside false alarms.
+- Clarified the approval taxonomy, replaced the ambiguous retry instruction with stable request identifiers, and separated price-search theory from restricted hotel-field evidence in the abstract.
+- Removed the abstract completion announcement and repeated product/legal/limitation summaries. The revised conclusion fits on one page with the final discussion rather than leaving its last paragraph alone on another page.
+
+Earlier revisions remain in `agentic-commerce-archive/before-academic-expansion/`, `before-framework-audit/`, and `before-reviewer-pass/`. The latter preserves the working state after the date deletion but before the full reviewer pass; its PDFs predate that deletion, as explained in the reviewer response. The removal of unsupported forecasts, standard errors, risk probabilities, and country scores remains documented in the source log and original archive.
+
+## Format used
+
+Framework repository: `https://github.com/vedangvatsa/research-paper-framework`.
+
+Pinned commit: `4681f29ae80006ca659e9f706c7148e98f537122`.
+
+The formal build follows `PAPER_FRAMEWORK.md` and the `papers/agent-infrastructure-stack/` example. It uses `article`, `iclr2024_conference`, Times, numeric citations, `microtype`, `raggedbottom`, and a separate, left-aligned bibliography. At the user's request, the author block lists Vedang Ratan Vatsa, Author2, and Author3, with linked `veda.ng` under Vedang's name. Keywords follow the abstract. Tables use `booktabs`, wrapping columns, and one consistent footnote font size, rather than shrinking text to fit.
+
+- Main PDF: **11 pages**, ICLR-style LaTeX.
+- Alternate PDF: **nine pages**, IEEE-style HTML print layout.
+- Eight numbered sections, seven tables, 40 cited references.
+- Abstract: **164 words**. Pandoc plain-text output including tables/references: **6,143 words**.
+- The main PDF is not generated by the HTML/CSS approximation used in the previous revision.
+
+## Checks actually completed
+
+### Source and reference checks
+
+`./scripts/verify_references.sh papers/agentic_commerce_paper.md`
+
+All 40 links were checked. Twenty-eight returned HTTP 200 to curl; twelve returned HTTP 403. Eight are provider pages previously retrieved and read with web-fetch. Four are added DOI destinations whose article texts were obtained from Penn, NYU, and the publisher's PDF resource host. No reference returned 404, 410, or a server error. The script's 'bot-blocked' label is not treated as proof that content was checked or is accessible in every browser.
+
+The dates and numerical claims were checked against the cited material. Dietvorst's issue/early-copy dates, Ursu's dissertation instead of the unavailable journal version, the corrected WebShop version, the Whispers title mismatch, and Busch's 2025 issue/2026 online dates are explicit. Survey percentages remain vendor-reported answers, benchmark accuracy remains test-specific, and prototype repetitions are not independent shoppers. The review does not certify a provider's performance claims by citing its announcement.
+
+### Wording checks
+
+`./scripts/quality_check.sh papers/agentic_commerce_paper.md`
+
+The script flagged 31 lines. Thirty are allowed colons in bibliography titles or link labels. One is the negated phrase 'does not prove product quality' in Table 2, which does not claim proof. All flags were reviewed in context. The separate Python check reports **zero matches** for the framework's listed unwanted words in the manuscript body. It excludes the bibliography so that official cited titles remain accurate.
+
+A sentence-level edit removed repetition, vague summaries, and unnecessary technical wording. This is stronger than a word scan alone, but it is not a claim that a detector can prove the text has no AI style.
+
+Removed the abstract's sentence announcing the review completion date after the author identified it as filler. The deletion changes no research claim or reference; audit unit U01 retains the same supporting evidence.
+
+The later presentation edit also removed the redundant review-type/date opener from Section 1.1. The author block now lists the three supplied names, with `veda.ng` linked to `https://veda.ng` beneath Vedang Ratan Vatsa. Both PDF first pages were inspected; all three names and the website link are present, and the native PDF author metadata matches the list. Both layouts passed text, author/reference-link, and margin checks after rebuilding.
+
+Following the author's feedback, the conclusion was rewritten and then checked as part of the full reviewer pass. It names study findings, distinguishes permission from product suitability and safe tool use, and identifies full-order and correction outcomes. Audit units U95-U96 trace it to the body. The ten review perspectives were revisited across the manuscript. The final conclusion is together on native page 9; its inspected image is `../reports/agentic-commerce-conclusion.png`.
+
+### Build and artifact checks
+
+```sh
+CHROMIUM_EXECUTABLE="/Users/vedang/Library/Caches/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-mac-arm64/chrome-headless-shell" node scripts/build_agentic_commerce.mjs --local-only
+python3 scripts/verify_agentic_commerce.py --local-only
+python3 scripts/render_agentic_pages.py
+```
+
+The build command invokes `python3 papers/agentic-commerce/build_tex.py --compile`, which runs Tectonic. The alternate PDF retains balanced final columns. The reviewer-pass layout initially left one conclusion paragraph on a separate page; removing redundant legal/limitation sentences resolved that without changing font sizes or margins. Final verification passed after rebuilding.
+
+Passing checks:
+
+- Tectonic completed with no overfull boxes or undefined citations/references in the final log.
+- The active ICLR style file matches the pinned repository copy by hash.
+- Every reference has an in-text citation and a clickable PDF link.
+- Sections and tables have sequential numbering; all seven tables are discussed in the text.
+- The fact-check record covers all 96 units and matches the current manuscript hash.
+- Twelve added source snapshots match their retrieval hashes, and the fifteen research reference IDs are unique and present in the bibliography.
+- All prose/table/reference tokens survive PDF extraction after case, punctuation, ligature, and expected-word line-hyphenation normalization. The native extractor split 'university' as 'univer-'/'sity'; both fragments were present, and the verifier now records this specific restoration instead of reporting a lost word. It restores only missing expected words, retaining normal compound tokens. Native small-cap headings are checked separately.
+- Text fits inside the intended margins on every page. Native page numbers are checked separately from body text.
+- No equations or old unsupported charts appear in the source.
+- Main first, protocol, study-comparison, security and conclusion pages were rendered and visually inspected, together with final reference pages. Their final native page numbers are 1, 3, 5, 8, 9 and 11; the alternate reference page is 9. Tables and blue links are legible, the conclusion is intact, and neither last page has only one or two references. The renderer locates captions/headings instead of relying on stale page numbers. Automated text and margin checks cover every page.
+
+The current validation JSON records hashes/results in `../reports/agentic_commerce_validation_2026-10-13.json`. The October 12 report is retained as revision history. The publication update command is `node scripts/package_agentic_commerce.mjs --update`; it checks the previous delivered manifest for local edits, saves a snapshot named by the preceding PDF hash, updates the loose main PDF, reruns copy verification, and checks all packaged file bytes. The delivery manifest records the copied artifacts. `git diff --check -- papers/agentic_commerce_paper.md` and the package script syntax check also passed.
+
+### Unavailable optional research aids
+
+The repository's `review_paper.py`, `check_novelty.py`, and `find_citations.py` were attempted during the academic expansion. The review tool stopped because no supported API key was configured. The novelty and citation tools stopped because `backoff` was missing in the invoked Python environment. These prerequisites remain unresolved; the tools supplied no completed assessment for the reviewer-led revision. Direct source inspection, literature comparison, citation mapping, and the recorded reviewer pass supplied the review actually performed.
+
+## Method and reasoning checklist
+
+| Requirement | Outcome |
+|---|---|
+| Question and contribution | Section 1 asks what the evidence supports about agent-led buying and states the comparisons performed |
+| Study type | Narrative review, clearly separated from original experiments and systematic review |
+| Design choices | Protocol records scope, eligibility/stopping, source/version substitutions, academic independence, plain language, and format |
+| Evidence mapping | Each prose block/table row is classified and checked in the fact-check record |
+| Sampling and uncertainty | Country changes, forecasting transfer, constructed profiles, omitted no-click searches/oversampled hotel bookings, repeated security tasks, and headline uncertainty limits are explicit |
+| Prior exposure | Protocol labels the audit retrospective, with prior access to the manuscript and findings |
+| Controls and power | Not applicable to a new experiment because no experiment was run; cited study designs were inspected |
+| Accounting | Fifteen works separated from experiment count and reviews' underlying studies; no pooled score; failed attempts requested in future tests |
+| Causal scope | Forecasting experiments, randomized hotel ranking, theory, controlled agent tests, and legal arguments keep separate interpretations |
+| Source access | Failed searches/retrievals, abstract-only exclusions, DOI/full-text matching and dissertation substitution recorded |
+| Reproduction | Manuscript build and document checks can be rerun; published experiments were not replicated |
+| Alternative explanations | Feedback/comparator differences are not treated as an identified cross-paper cause; partial/full scoring, author judge checks, weak-agent attack scores and semantic overlap are considered |
+| Sensitivity | Qualitative removal of vendor surveys or the small AP2 study remains documented in protocol Section 12, without a fabricated quantitative sensitivity estimate |
+| Argument and conclusion | Abstract distinguishes theory/field evidence and outcome measures; the fifteen-work count matches selection.json; conclusion adds no new measured finding |
+
+## Ten review perspectives
+
+These are perspectives applied by the same AI assistant, not ten independent reviewers.
+
+| Perspective | Review result |
+|---|---|
+| A. Facts | Checked fifteen-work/seven-table counts, benchmark metric ordering and judge audit, 97/629 security units, $10/$50 simulated costs, hotel sampling and retained survey/legal evidence |
+| B. Regional framing | No country ranking; survey country coverage and selected US/EU scope are explicit |
+| C. Meaning | Distinguished advice weighting/forecaster choice/spending permission, partial/full success, clicks/conditional conversion, and authorization/security |
+| D. Legal and ethical claims | Separated Busch's reform argument from enacted text; no universal liability rule, guaranteed refund, real-account breach, or universal AP2 vulnerability |
+| E. Wording | Removed stock phrasing and repeated caveats; no listed unwanted body words; retained exact source titles |
+| F. Predictions | No adoption forecast or automatic lower-price/concentration claim; planned specifications and beta/testing dates remain plans |
+| G. Logic | Distinct study designs do not isolate the reason for disagreement; approval differs from search automation; helpful and harmful defenses both reported; conclusions trace to the body |
+| H. Copy editing | Plain language, consistent spelling, defined terms, numbered citations and tables checked |
+| I. Typesetting | ICLR build, consistent tables, all 40 blue links, clean log, full text/margin checks, and balanced alternate final columns |
+| J. Structure | Related reviews position the paper; Section 5 compares people and agents; discussion adds markets/security/law; limits test the strength of conclusions |
+
+## Remaining limits
+
+No independent human peer review, original experiment replication, live purchase, systematic double-screening, or full international legal review was performed. Some sources are company claims, some studies are preprints, and several academic works involve company authors, data, or support. Access limits affected selection. The records preserve these limits rather than treating a completed build or checklist as proof of scientific validity.

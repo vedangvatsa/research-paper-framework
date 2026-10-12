@@ -1,0 +1,35 @@
+{
+  "scope": "Structure, citation mapping, PDF text, links, margins, and copy consistency; not a validation of scientific claims.",
+  "source_sha256": "1a691e5115d9f6d6b1f55b7a24f4d4a5b9b999b176fe8b4e8495d9365dbadee7",
+  "references": 28,
+  "numbered_sections": 8,
+  "tables": 4,
+  "abstract_words": 173,
+  "plain_text_words": 4369,
+  "audited_units": 69,
+  "framework_commit": "4681f29ae80006ca659e9f706c7148e98f537122",
+  "main_format": "ICLR-style LaTeX and Tectonic",
+  "latex_overfull_boxes_or_undefined_references": false,
+  "banned_body_word_hits": 0,
+  "pdfs": [
+    {
+      "file": "papers/agentic_commerce_paper.pdf",
+      "pages": 9,
+      "sha256": "b4f6f592a33f8203ec806f82fcb723596ab0342fc6fd6be29d430b7b58ff8668",
+      "word_coverage": 1.0,
+      "missing_tokens": {},
+      "all_reference_links_present": true,
+      "text_outside_margins": 0
+    },
+    {
+      "file": "papers/agentic_commerce_paper_ieee.pdf",
+      "pages": 6,
+      "sha256": "0c6757936f5fb5531790357e70a306cdf4c32438d4dd6f61a3d4ff369966231c",
+      "word_coverage": 1.0,
+      "missing_tokens": {},
+      "all_reference_links_present": true,
+      "text_outside_margins": 0
+    }
+  ],
+  "publication_copy_matches": true
+}

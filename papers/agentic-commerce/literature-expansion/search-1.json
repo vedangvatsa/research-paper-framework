@@ -1,0 +1,343 @@
+{
+  "query": "agentic commerce consumer delegation trust",
+  "url": "https://api.openalex.org/works?search=agentic+commerce+consumer+delegation+trust&per-page=8&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Copen_access%2Cbest_oa_location",
+  "date": "2026-10-12T19:43:00.979720+00:00",
+  "response": {
+    "meta": {
+      "count": 8467,
+      "db_response_time_ms": 118,
+      "page": 1,
+      "per_page": 8,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works where full text has (agentic commerce consumer delegation trust)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "agentic commerce consumer delegation trust",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:agentic commerce consumer delegation trust&per_page=8"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7131674698",
+        "doi": "https://doi.org/10.3390/info17030222",
+        "title": "From Recommendations to Delegation: A Systematic Review Mapping Agentic AI in E-Commerce and Its Consumer Effects",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://www.mdpi.com/2078-2489/17/3/222/pdf?version=1772028907",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "doi:10.3390/info17030222",
+          "doi": "https://doi.org/10.3390/info17030222",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3390/info17030222",
+          "pdf_url": "https://www.mdpi.com/2078-2489/17/3/222/pdf?version=1772028907",
+          "source": {
+            "id": "https://openalex.org/S4210219776",
+            "display_name": "Information",
+            "issn_l": "2078-2489",
+            "issn": [
+              "2078-2489"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "norway-1"
+            ],
+            "host_organization": "https://openalex.org/P4310310987",
+            "host_organization_name": "Multidisciplinary Digital Publishing Institute",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310310987"
+            ],
+            "host_organization_lineage_names": [
+              "Multidisciplinary Digital Publishing Institute"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Information",
+          "raw_type": "journal-article"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7197001840",
+        "doi": "https://doi.org/10.2139/ssrn.7191261",
+        "title": "Architectural Trust: Why Consumer Trust in Agentic Commerce Migrates from AI Models to Verifiable Architecture",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://papers.ssrn.com/sol3/Delivery.cfm/7191261.pdf?abstractid=7191261&mirid=1",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "doi:10.2139/ssrn.7191261",
+          "doi": "https://doi.org/10.2139/ssrn.7191261",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2139/ssrn.7191261",
+          "pdf_url": "https://papers.ssrn.com/sol3/Delivery.cfm/7191261.pdf?abstractid=7191261&mirid=1",
+          "source": {
+            "id": "https://openalex.org/S4210172589",
+            "display_name": "SSRN Electronic Journal",
+            "issn_l": "1556-5068",
+            "issn": [
+              "1556-5068"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1318003438",
+            "host_organization_name": "RELX Group (Netherlands)",
+            "host_organization_lineage": [
+              "https://openalex.org/I1318003438"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "posted-content"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7140095168",
+        "doi": "https://doi.org/10.5958/0975-8089.2025.00006.x",
+        "title": "The Rise of Delegated Commerce: Consumer Trust in AI for Purchase and Payment Decisions",
+        "publication_year": 2025,
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "best_oa_location": null
+      },
+      {
+        "id": "https://openalex.org/W7166657551",
+        "doi": "https://doi.org/10.69554/azqz2883",
+        "title": "Assessing the impact of agentic commerce on issuer fraud detection and data integrity",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        },
+        "best_oa_location": null
+      },
+      {
+        "id": "https://openalex.org/W7220469559",
+        "doi": "https://doi.org/10.21203/rs.3.rs-11222729/v1",
+        "title": "When the customer is a machine: a systematic literature review and integrative framework of agentic commerce",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://www.researchsquare.com/article/rs-11222729/latest.pdf",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "doi:10.21203/rs.3.rs-11222729/v1",
+          "doi": "https://doi.org/10.21203/rs.3.rs-11222729/v1",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.21203/rs.3.rs-11222729/v1",
+          "pdf_url": "https://www.researchsquare.com/article/rs-11222729/latest.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306525896",
+            "display_name": "Research Square",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": "Research Square",
+          "raw_type": "posted-content"
+        }
+      },
+      {
+        "id": "https://openalex.org/W4386162441",
+        "doi": "https://doi.org/10.1002/cb.2234",
+        "title": "Exploring the effect of artificial intelligence intellect on consumer decision delegation: The role of trust, task objectivity, and anthropomorphism",
+        "publication_year": 2023,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cb.2234",
+          "any_repository_has_fulltext": false
+        },
+        "best_oa_location": {
+          "id": "doi:10.1002/cb.2234",
+          "doi": "https://doi.org/10.1002/cb.2234",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1002/cb.2234",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/cb.2234",
+          "source": {
+            "id": "https://openalex.org/S41958068",
+            "display_name": "Journal of Consumer Behaviour",
+            "issn_l": "1472-0817",
+            "issn": [
+              "1472-0817",
+              "1479-1838"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "abdc-a",
+              "anvur-scientific",
+              "cwts-core",
+              "fnege-3",
+              "jufo-1",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Consumer Behaviour",
+          "raw_type": "journal-article"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7204950591",
+        "doi": "https://doi.org/10.62222/krva3141",
+        "title": "Agentic Commerce and SME Competitiveness: An Integrative Review and Theory-Informed Research Framework",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://www.jobsjournal.eu/_files/ugd/a7cf91_df3f9250b1544c17b28297665d9182b0.pdf",
+          "any_repository_has_fulltext": false
+        },
+        "best_oa_location": {
+          "id": "doi:10.62222/krva3141",
+          "doi": "https://doi.org/10.62222/krva3141",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.62222/krva3141",
+          "pdf_url": "https://www.jobsjournal.eu/_files/ugd/a7cf91_df3f9250b1544c17b28297665d9182b0.pdf",
+          "source": {
+            "id": "https://openalex.org/S5407042091",
+            "display_name": "Journal of Business Sectors",
+            "issn_l": "2989-3445",
+            "issn": [
+              "2989-3445"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [
+              "erih-plus"
+            ],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Business Sectors",
+          "raw_type": "journal-article"
+        }
+      },
+      {
+        "id": "https://openalex.org/W4401526904",
+        "doi": "https://doi.org/10.5772/intechopen.1006301",
+        "title": "Digital Partnerships: Understanding Delegation and Interaction With Virtual Agents",
+        "publication_year": 2024,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://doi.org/10.5772/intechopen.1006301",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "doi:10.5772/intechopen.1006301",
+          "doi": "https://doi.org/10.5772/intechopen.1006301",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5772/intechopen.1006301",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306463448",
+            "display_name": "IntechOpen eBooks",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/P4310322558",
+            "host_organization_name": "IntechOpen",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310322558"
+            ],
+            "host_organization_lineage_names": [
+              "IntechOpen"
+            ],
+            "type": "ebook platform"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Navigating the Metaverse - A Comprehensive Guide to the Future of Digital Interaction [Working Title]",
+          "raw_type": "book-chapter"
+        }
+      }
+    ],
+    "group_by": []
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "query": "shopping agent prompt injection",
+  "url": "https://api.openalex.org/works?search=shopping+agent+prompt+injection&per-page=8&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Copen_access%2Cbest_oa_location",
+  "date": "2026-10-12T19:43:04.128247+00:00",
+  "response": {
+    "meta": {
+      "count": 8874,
+      "db_response_time_ms": 116,
+      "page": 1,
+      "per_page": 8,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works where full text has (shopping agent prompt injection)",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "fulltext.search",
+              "value": "shopping agent prompt injection",
+              "operator": "has"
+            }
+          ]
+        },
+        "url": "/works?filter=fulltext.search:shopping agent prompt injection&per_page=8"
+      },
+      "cost_usd": 0.001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W7127203111",
+        "doi": "https://doi.org/10.1109/imns67862.2026.11655291",
+        "title": "Whispers of Wealth: Red-Teaming Google's Agent Payments Protocol via Prompt Injection",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2601.22569",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2601.22569",
+          "doi": "https://doi.org/10.1109/imns67862.2026.11655291",
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2601.22569",
+          "pdf_url": "https://arxiv.org/pdf/2601.22569",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7127085198",
+        "doi": "https://doi.org/10.48550/arxiv.2601.22569",
+        "title": "Whispers of Wealth: Red-Teaming Google's Agent Payments Protocol via Prompt Injection",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.48550/arxiv.2601.22569",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "doi:10.48550/arxiv.2601.22569",
+          "doi": "https://doi.org/10.48550/arxiv.2601.22569",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.48550/arxiv.2601.22569",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Preprint"
+        }
+      },
+      {
+        "id": "https://openalex.org/W4414971230",
+        "doi": "https://doi.org/10.48550/arxiv.2510.04257",
+        "title": "AgentTypo: Adaptive Typographic Prompt Injection Attacks against Black-box Multimodal Agents",
+        "publication_year": 2025,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2510.04257",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2510.04257",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2510.04257",
+          "pdf_url": "https://arxiv.org/pdf/2510.04257",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7164525138",
+        "doi": "https://doi.org/10.48550/arxiv.2606.13385",
+        "title": "Who Pays the Price? Stakeholder-Centric Prompt Injection Benchmarking for Real-world Web Agents",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2606.13385",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2606.13385",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2606.13385",
+          "pdf_url": "https://arxiv.org/pdf/2606.13385",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7196939704",
+        "doi": "https://doi.org/10.48550/arxiv.2608.05108",
+        "title": "Agent Against Agent: An Agentic System for Automatic Prompt Injection Red Teaming",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2608.05108",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2608.05108",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2608.05108",
+          "pdf_url": "https://arxiv.org/pdf/2608.05108",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      },
+      {
+        "id": "https://openalex.org/W4414815989",
+        "doi": "https://doi.org/10.48550/arxiv.2510.01354",
+        "title": "WAInjectBench: Benchmarking Prompt Injection Detections for Web Agents",
+        "publication_year": 2025,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2510.01354",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2510.01354",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2510.01354",
+          "pdf_url": "https://arxiv.org/pdf/2510.01354",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7167917360",
+        "doi": "https://doi.org/10.48550/arxiv.2607.08147",
+        "title": "Prismata: Confining Cross-Site Prompt Injection in Web Agents",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2607.08147",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2607.08147",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2607.08147",
+          "pdf_url": "https://arxiv.org/pdf/2607.08147",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      },
+      {
+        "id": "https://openalex.org/W7164881174",
+        "doi": "https://doi.org/10.48550/arxiv.2606.15057",
+        "title": "AutoDojo: A Generative Benchmark for Evaluating Prompt Injection Defenses in LLM Agents",
+        "publication_year": 2026,
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2606.15057",
+          "any_repository_has_fulltext": true
+        },
+        "best_oa_location": {
+          "id": "pmh:oai:arXiv.org:2606.15057",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2606.15057",
+          "pdf_url": "https://arxiv.org/pdf/2606.15057",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        }
+      }
+    ],
+    "group_by": []
+  }
+}
