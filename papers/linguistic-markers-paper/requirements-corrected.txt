@@ -1,0 +1,12 @@
+# Environment actually used for the October 2026 retrospective correction.
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.6.1
+lexicalrichness==0.4.1
+nltk==3.10.3
+matplotlib==3.11.2
+pytest==9.1.1
+pymupdf==1.28.2
+datasketch==1.6.5
+langid==1.1.6

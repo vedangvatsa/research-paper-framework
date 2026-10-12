@@ -1,228 +1,294 @@
-# Language Patterns in AI vs Human Scientific Abstracts
+# High Accuracy, Poor Transfer: A Case Study of AI-Generated Abstract Detection
 
-**Author** Vedang Ratan Vatsa  
-**Contact** [veda.ng](https://veda.ng) · [vedangvats@gmail.com](mailto:vedangvats@gmail.com)  
+**Vedang Ratan Vatsa**
+
+vedangvats@gmail.com
 
 ## Abstract
 
-The growth of Large Language Models (LLMs) in academia has created a need for clear methods to tell human-authored scientific text from machine-generated writing. While complex neural classifiers achieve high accuracy, the tools do not explain decisions and can be bypassed by minor edits. This study examines whether a small set of easy-to-understand features from language study and style analysis can identify the writing style of machine-generated scientific abstracts. A balanced dataset of 200,000 academic abstracts was analyzed, created by collecting 100,000 human-written abstracts from the OpenAlex academic database (all pre-2022 to ensure a clean human baseline), then generating a matching AI abstract for each human abstract using GPT-4o-mini, yielding 200,000 total abstracts after cleaning. Eight features were measured, including vocabulary variety, sentence length variation, and the use of connecting or signaling words. The analysis indicates that AI-generated text has less variety in sentence length, uses more first-person pronouns like "we", and shows higher lexical diversity than human writing. A classifier using these features achieved an accuracy of 95.69% with an AUC-ROC of 0.991, with lexical diversity as the most important feature. These findings suggest that AI-generated scientific text has a distinct writing style that can be detected using interpretable language features.
+This study tests whether a detector that performs well on one abstract corpus retains its accuracy on another. An audit of 100,000 recorded published/generated pairs retains 74,513 pairs, or 149,026 texts, for analysis. Five-fold validation keeps detected related records together. A random forest using eight word and sentence features reaches 95.99% internal accuracy, an area under the receiver operating characteristic curve (ROC AUC) of 0.9916, and a 3.60% false-positive rate. Word and sentence counts alone reach 90.38% accuracy. At the unchanged 0.5 threshold, the forest reaches 53.89% accuracy and 11.73% generated-text recall on 8,319 eligible pairs from a separately assembled corpus. Logistic regression reaches 68.91% external accuracy. Post hoc threshold, seed, source-quality and length checks leave a large performance gap. The same fitted fold models also perform well locally and poorly externally. The results document poor transfer for this fixed procedure under the recorded labels. Incomplete source and generation records limit authorship claims, and the comparison does not identify a single cause of the gap.
 
-_**Keywords**_ LLM detection, corpus linguistics, metadiscourse, stylometrics, lexical diversity, scientific register.
+_**Keywords**_: scientific abstracts, generated text, external validation, lexical diversity, sentence length, text classification
 
 ## 1. Introduction
 
-The release of consumer-accessible Large Language Models has changed academic publishing. While these tools offer helpful support for language editing and brainstorming, the ability to generate clear and well-structured scientific text has raised concerns about academic honesty, fake paper generation, and the overall quality of research papers [4, 5]. In the past, writing a scientific paper required deep knowledge of the subject and years of practice in academic writing. Now, anyone with access to an advanced computer program can produce text that looks like a professional scientific document. This change forces the academic community to rethink how peer review works and how originality is checked. The ease of generating text means that conferences and journals receive more submissions than ever before, but reviewers struggle to tell which papers are authentic.
+Text detectors can learn patterns specific to their training corpus. For scientific abstracts, those patterns may reflect writing style, text length, source formatting or generation instructions. Testing on a separately assembled corpus helps determine whether a high internal score carries over to a different setting [13].
 
-Current detection tools fall into two main groups, which are deep learning classifiers and probability indicators. Although these tools perform well on standard test sets, the tools have two main drawbacks.
+This case study examines an existing collection of published abstracts paired with title-based generated text. It audits the source records, measures eight word and sentence features, and compares a random forest with simpler baselines. It then tests the same procedure on Sivesind's independently assembled abstract corpus [12].
 
-1. **Lack of Interpretability.** These tools do not explain decisions. This makes the tools difficult to use when an institution needs to make a formal decision about a student or researcher [6]. A tool that cannot explain why a text looks generated has limited value in hearings. When a student is accused of academic dishonesty, a simple % score from a machine learning model is not enough evidence. Committees need clear examples of how the writing differs from normal human patterns. Without explainable evidence, universities hesitate to enforce rules because of fears about false accusations and legal challenges. This creates a gap between the availability of detection tools and actual usefulness in real-world settings.
-2. **Adversarial Vulnerability.** Simple edits, paraphrasing, or clever prompts can easily bypass these probability detectors [7]. As language models improve, detection tools that depend on statistical patterns face constant challenges. A student can simply ask the model to rewrite the text to avoid detection, and the software may fail to flag it. Different language models also leave different statistical traces. A detector trained on text from one specific model might completely fail to recognize text from a newer system. This creates a constant race where detection software is always one step behind the latest generation tools. The academic community needs a more stable method of identifying generated text that does not rely on hidden mathematical patterns.
+The central question is whether high internal accuracy survives this transfer. Length-only baselines measure discrimination from word and sentence counts. Further checks ask whether shared length ranges, decision thresholds or training choices recover the forest's accuracy. Paired comparisons show whether the models retain their relative performance across corpora.
 
-This study uses an alternative approach based on style analysis and language study. Instead of using complex neural classifiers, this work examines interpretable features such as vocabulary variety, sentence rhythm, and the use of signaling words to map the style of machine-written scientific text. Drawing on Hyland's framework [2] and style analysis methods [1], this study examines a balanced dataset of 200,000 abstracts to find the differences between human and machine writing, offering a clear and explainable model for verifying scientific texts.
+## 2. Related Work
 
-Human writing is shaped by cognitive constraints. When people write, ideas are held in working memory and translated into words one sentence at a time. This mental effort creates a natural variation in sentence length and structure. Some sentences are short and direct to convey key points, while others stretch out to connect complex ideas. Machines, however, produce text by calculating the most likely next word based on patterns learned from large text corpora [15]. Machines do not experience cognitive load or fatigue. As a result, machine writing often takes on a uniform rhythm that human readers can sense but struggle to define. By measuring these specific style choices, this research provides a concrete way to describe that artificial rhythm.
+Gao et al. compared title- and journal-prompted ChatGPT abstracts with original medical abstracts, finding errors in both automated detection and blinded human review [1]. Desaire et al. used 20 features, including sentence-length variation, to classify paragraphs from *Science* Perspectives articles and corresponding ChatGPT essays [2]. These studies motivate compact feature-based comparisons, although their tasks and scores are not directly comparable with this abstract corpus.
 
-The goal of this paper is not to build a perfect detection system that catches every generated sentence. Instead, the focus is on understanding the basic differences in how humans and machines approach the task of scientific writing. Identifying these specific linguistic markers provides educators and reviewers with practical tools to evaluate suspicious texts. When a reviewer understands what makes a text look artificial, the reviewer can rely on personal judgment rather than trusting complex software programs. This study provides the data needed to build that understanding, based on a large sample of modern academic abstracts.
+Corpus composition also matters. Guo et al. compared human and ChatGPT answers in the HC3 question-answer corpus [3], while Liang et al. found higher detection error rates on non-native English writing [4]. Krishna et al. showed that paraphrasing can evade several detectors [10]. Other approaches, such as Binoculars, score text with two pretrained language models rather than word and sentence features [11].
 
-## 2. Literature Review
+RAID tests detectors across generators, domains, decoding choices and attacks [13]. A later shared task reports strong detection when the tested domains and generators appear in training, with per-domain thresholds targeting a 5% false-positive rate [14]. MELD uses broader generator training and content-matched scientific rewrites, and calibrates benchmark thresholds on each evaluation pool's human scores [15]. Those calibration procedures differ from transferring a fixed threshold, as tested here.
 
-**AI-Generated Text Detection in Science.** The challenge of identifying machine-generated text in academic settings is not entirely new. Early research on machine-generated scientific writing focused on basic tools like SCIgen, which produced grammatically correct but meaningless text by randomly selecting words from a predefined list [8]. These early generators were easy for human readers to spot because the sentences lacked logical flow and the ideas did not make sense together. Modern language models, however, write text that is clear, coherent, and fits the academic style perfectly. Research shows that human peer reviewers struggle to identify AI-generated abstracts, getting results close to random chance when trying to tell them apart from human writing [4]. This difficulty has led to the rapid development of automatic detection systems designed to help reviewers and publishers maintain the quality of scientific literature.
+## 3. Data and Methods
 
-The most common approach to solving this problem uses pre-trained language models as classifiers. Guo et al. (2023) showed that these deep learning classifiers can achieve over 95% accuracy on similar data but perform much worse when tested on text from new models or different academic topics [5]. Another approach relies on probability. Mitchell et al. (2023) introduced a zero-shot method, meaning the detector works without being trained on labeled examples first. Instead, the method analyzes probability patterns in the text directly, but the method requires access to the model's internal settings, which are often kept secret by the companies that build the models [9]. More recently, Hans et al. (2024) introduced a reference-free method that compares patterns from two different language models to detect AI writing [10]. While these systems are technically impressive, the systems share a common flaw. As text generation improves, the statistical signals the systems rely on become harder to find. This makes it useful to build detection methods based on established language theory, where the measured features represent basic choices in writing rather than temporary model settings.
+### 3.1 Local corpus and source audit
 
-**Stylometrics and Lexical Diversity.** Style analysis, or stylometrics, is the statistical study of linguistic style. This field assumes that every writer has a unique, subconscious writing pattern that remains somewhat consistent across different texts [1, 14]. Historically, researchers used stylometrics to figure out who wrote anonymous historical documents or to settle disputes over literary authorship. Key features include sentence length patterns, the frequency of common function words, and overall vocabulary wealth. Biber (1988) showed that different writing styles are best captured by groups of features working together rather than by looking at single words in isolation [1]. This multi-feature approach has become the standard for analyzing complex texts.
+The analysis uses existing local files containing 100,000 published/generated text pairs. Source records include an OpenAlex work ID, title, publication year, DOI where available, and an abstract field. OpenAlex is a scholarly metadata index [5]. The source and paired files agree on all IDs, years and published-text strings.
 
-In human writing, vocabulary variety is naturally limited by the writer's personal vocabulary and the specific needs of the topic being discussed [3]. Measuring this variety, however, is a well-known mathematical challenge. Common metrics for vocabulary richness are often negatively affected by text length, giving unfairly lower scores to longer texts simply because words inevitably repeat as the document grows. The Measure of Textual Lexical Diversity (MTLD) solves this exact issue by computing scores over sequential text segments rather than the whole document at once. This provides a reliable measure of vocabulary variety for short texts like abstracts [11, 18]. Recent studies have started to look at vocabulary variety in machine text. For example, Guo et al. (2023) found that AI-generated abstracts sometimes use a more uniform set of words than human writing, depending heavily on the specific prompt and the model settings used during generation [5].
+The *published class* consists of texts supplied as published abstracts. Some fields contain extra material, so the label does not guarantee a conventional journal abstract. Stored publication years range from 1670 to 2021. Pre-2022 dates support a presumed-human comparison, but do not establish human-only authorship. The collection history includes paginated retrieval, random-sample requests, filtering and replacements; its sampling probabilities are unknown.
 
-**Metadiscourse Frameworks.** Metadiscourse refers to the specific language choices writers make to organize text, connect with readers, and show personal attitude toward the content. Under Hyland's established model, these linguistic choices are divided into two main categories [2].
+The source audit queried all 100,000 IDs against OpenAlex on 5 October 2026 (UTC). DOI lookups for 85 unresolved IDs recovered 10 more records. The audit compared titles, years, DOIs and abstract text, and recorded language, work type, source type and retraction status. Abstract agreement uses Unicode, HTML-entity, whitespace and case normalization while retaining numbers and punctuation. References to current metadata mean this dated index snapshot, not independent publisher verification.
 
-* **Interactive Resources.** These help guide the reader smoothly through the text. Interactive resources include transition words like "however," "therefore," and "furthermore," as well as examples like "for instance" and "namely." These words act as signposts that help the reader understand the logical structure of the argument.
-* **Interactional Resources.** These show the writer's perspective and personal involvement. Interactional resources include hedging words like "may," "suggests," and "possibly," which authors use to show caution. The resources also include boosters like "clearly," "demonstrates," and "proves," which authors use when feeling very confident. Finally, interactional resources include self-mentions like "we," "our," and "my."
+### 3.2 Generation records
 
-In academic writing, these choices play a central role because they define the scientific tone. Hedging words let authors express appropriate scientific caution when discussing uncertainty or early results. Boosters show confidence when the experimental evidence is strong. Self-mentions help the author establish a role in the research process and take credit for the work [2]. Comparing how machines and humans use these specific groups of words shows whether the model captures the nuances of scientific style or simply reproduces the factual content and structure.
+Archived OpenAI scripts specify `gpt-4o-mini`, temperature 0.7 and a 400-token output limit. Two prompt variants request academic abstracts of 150-250 or about 200-300 words using only the paper title. The exact templates appear in the Supplementary Methods. Title-based generation does not give the model the original study's verified methods or findings.
 
-**Syntactic Rhythm and Sentence-Level Variation.** The rhythm of writing, measured through sentence length variation, is another useful feature for style analysis. Skilled human writers naturally vary sentence lengths to manage information density and keep the reader engaged. Short, punchy sentences draw attention to key points and longer, more complex sentences provide detailed explanations or background context [12]. This creates a natural, breathing variety in sentence length throughout a paragraph. If language models, driven by mathematical predictions, produce sentences of very similar lengths, this lack of variety creates a monotonous rhythm that might help identify machine-written text even when the vocabulary is perfect.
+The paired files lack per-output prompt assignments, provider response IDs, model snapshots, dates and finish reasons. The script settings therefore cannot be verified for each text, and the rate of token-limit truncation is unknown. All evaluations use the recorded labels.
 
-## 3. Methodology
+### 3.3 Text processing and eligibility
 
-**Corpus Construction.** The foundation of this study is a balanced dataset of 200,000 scientific abstracts built to represent both authentic human writing and modern machine generation. Building a high-quality corpus is a foundational step in stylometric analysis, because any bias in the data collection process may skew the final results.
+Text preparation decodes HTML entities, applies Unicode compatibility normalization (NFKC), and collapses whitespace. A fixed Unicode token rule retains internal apostrophes, separates hyphenated terms and excludes decimal digits. Sentence boundaries use NLTK's English Punkt tables [9]. The exact token rule and resource version appear in the Supplementary Methods.
 
-First, 100,000 human abstracts were sourced from the OpenAlex academic database [13], a free and open catalog of scholarly works. Abstracts were retrieved using the OpenAlex API with random sampling, filtering for English-language journal articles with available abstracts and publication dates before 2022. This ensures a clean human baseline unaffected by post-ChatGPT AI assistance. This collection represents authentic, peer-reviewed scientific writing drawn from real academic journals across all scientific disciplines. To ensure data quality, the dataset went through a standard filtering process. All duplicate entries were removed to prevent the classification model from learning specific repeating phrases. In addition, very short records under one hundred words were excluded, because stylometric tools need a minimum amount of text to accurately measure features like vocabulary variety and sentence length rhythm [18].
+Each text needs at least 100 counted words and two sentences containing word tokens. The word cutoff limits the analysis to longer texts, and two sentences permit a measure of length variation. Records are joined by source ID, with cleaned-title agreement, exact stored published-text agreement and matching numeric years. Duplicate checks compare case-folded word-token sequences, retaining internal apostrophes but omitting decimal digits and punctuation outside tokens. This can treat texts with different numerical findings as duplicates. Duplicates are removed in source-ID order, and cross-class copies are checked before evaluation.
 
-Next, a custom generation pipeline was built to create matching AI abstracts for each of the 100,000 human paper titles using GPT-4o-mini, a widely used modern language model from OpenAI. This paired approach ensures that both the human and AI groups cover the exact same scientific topics, which prevents the classifier from simply learning topic-specific vocabulary instead of actual writing style. The generation process used parallel workers with automatic retry logic to handle rate limits and network timeouts. Each request sent a simple, neutral prompt asking the model to write an academic abstract for the provided paper title. The model was accessed via the OpenAI API in October 2024, at a temperature of 0.7 with a maximum token limit of 400. No special instructions about tone or style were given, to capture the default writing behavior of the model. The pipeline successfully generated abstracts for all 100,000 titles. After cleaning and deduplication, 100,000 paired abstracts remained. All 100,000 human and 100,000 AI abstracts were used for analysis, yielding a final dataset of 200,000 abstracts.
+**Table 1. Sequential corpus accounting**
 
-**Feature Extraction.** Once the corpus was built, the text needed to be converted into numbers that a machine learning model could understand. The linguistic features were extracted using a custom Python pipeline built around the `lexicalrichness` package (version 0.4.1) for vocabulary mathematics and regex-based tokenization for sentence and word segmentation. Eight specific features were calculated for every abstract in the dataset. The hedging, boosting, and connector word lists used in the feature extraction pipeline were compiled from established linguistic resources, primarily Hyland's published word lists [2], and applied via case-insensitive string matching. The full lists are available in the project repository.
+| Stage | Pairs removed | Pairs remaining |
+| --- | ---: | ---: |
+| Original paired records | 0 | 100,000 |
+| Missing source title | 19 | 99,981 |
+| Documented title-content conflict | 1 | 99,980 |
+| Normalized duplicate text | 113 | 99,867 |
+| Fewer than 100 words in either text | 23,501 | 76,366 |
+| Fewer than two sentences in either text | 1,853 | 74,513 |
 
-**Syntactic Features.** These features measure the basic physical structure of the text.
+Table 1 gives the sequential exclusions, including one inspected title-content conflict. No additional pair failed source-file agreement, source-ID syntax, cross-class copy or feature-calculation checks. The final sample contains 74,513 texts per class.
 
-**1. Mean Sentence Length.** The average number of words per sentence. This measures how dense the information is packed.
+### 3.4 Eight features
 
-**2. Sentence Length Coefficient of Variation (CV).** This measures the mathematical variation in sentence lengths across the text. Higher values mean the writer uses a mix of very short and very long sentences, creating a varied and natural rhythm. Lower values mean all sentences are roughly the same length.
+**Sentence length.** Mean sentence length averages the word counts of recognized sentences. The sentence-length coefficient of variation (CV) divides the population standard deviation of sentence lengths by their mean.
 
-**Lexical Features.** These features measure vocabulary usage.
+**Lexical diversity.** The Measure of Textual Lexical Diversity (MTLD) measures the lengths of word sequences that maintain a chosen type-token ratio [6]. The analysis uses `lexicalrichness` 0.4.1, threshold 0.72 and case-folded word tokens. It averages forward and reverse passes, including partial factors. Failed, nonfinite or nonpositive values are excluded.
 
-**3. Lexical Diversity (MTLD).** A mathematical measure of vocabulary variety that is uniquely designed to not be affected by text length [11, 18]. While simpler metrics like Type-Token Ratio (TTR), which simply divides the number of unique words by the total word count, and Yule's K, which estimates vocabulary richness based on word frequency distributions, are heavily biased by the total length of the text, the Measure of Textual Lexical Diversity (MTLD) solves this issue by computing average segment lengths over varying diversity thresholds. This provides a reliable, unbiased measure of vocabulary variety for short texts like abstracts.
+**Word-list matches.** Four features count hedge, booster, self-mention and connector matches per 1,000 words. Full dictionaries appear in the methods supplement. Multiword connectors are matched within sentences, taking the longest phrase once. Uppercase abbreviations such as "US" are excluded from self-mentions; "I" remains eligible. These features count matches rather than validated rhetorical intentions.
 
-**Metadiscourse Features.** These features measure how the writer guides the reader, calculated as counts per 1,000 words to ensure fair comparison between texts of different lengths.
+**Sentence-opening connectors.** The eighth feature is the share of sentences whose first counted word tokens match a listed connector. Its denominator is sentence count.
 
-**4. Hedge Density.** The frequency of cautious words like *may, might, possibly, suggests*.
+### 3.5 Models and grouped evaluation
 
-**5. Booster Density.** The frequency of confident words like *clearly, demonstrates, establishes*.
+Pairs sharing a source ID, normalized title, normalized text, valid DOI or current canonical ID are connected into groups. A near-duplicate search uses word five-gram MinHash with 128 permutations, seed 42 and a candidate threshold of 0.8. Candidate texts are linked when their exact Jaccard similarity is at least 0.85. The search found 521 links, all of which stay within the final groups. The dataset contains 73,886 groups, assigned to five folds by the hash rule in the Supplementary Methods.
 
-**6. Self-Mention Density.** The frequency of first-person pronouns like *we, our, my*.
+The primary model is a random forest [7] with 100 trees, Gini splits, square-root feature sampling, unlimited depth, minimum leaf size one, bootstrap sampling and seed 42. Forest baselines use word and sentence counts only, MTLD only, sentence CV only, or seven features excluding MTLD. Logistic regression uses all eight features with training-fold standardization, L2 regularization, C equal to one, the L-BFGS solver and a 1,000-iteration limit. Computation uses scikit-learn 1.6.1 [8]. The feature concepts and forest settings come from the existing local analysis; this reanalysis corrected extraction, eligibility and grouping errors without searching for better model settings.
 
-**7. Connector Density.** The frequency of logical transition words like *however, moreover, therefore*.
+Each text receives one out-of-fold prediction from a model trained without its group. Scores above 0.5 receive the generated label; ties receive the published label. Scores are not calibrated authorship probabilities.
 
-**8. Sentence-Opener Connector Ratio.** The proportion of sentences that explicitly start with a transition word, which measures how heavily the writer relies on obvious structural signposts.
+Two subset analyses test length and source quality. The common-length analysis refits the forest where both texts have 150-250 words, retaining the group assignments. The source-consistent subset requires matching normalized titles, years and cleaned abstracts, a current English article label, and an explicit non-retracted status. Eight-feature and length-only forests are refitted on this subset.
 
-**Statistical Testing.** To find meaningful differences between the human and AI groups before building a classifier, this study used Mann-Whitney U tests. These tests are highly suitable for linguistic data because text features rarely follow a perfect normal bell curve, violating the core assumptions of parametric tests like Student's t-test. The Mann-Whitney U test checks whether one group tends to have higher values than the other without assuming any specific distribution shape. However, a statistically significant p-value only tells us that a difference exists, not how large or meaningful that difference is. With 200,000 texts, even tiny differences can appear statistically significant. To address this, Cohen's d was calculated. Cohen's d is a measure of effect size that expresses the difference between two groups in terms of standard deviations. A value of d = 0.2 means the groups overlap by about 85% and is considered a small effect. A value of d = 0.5 means the groups overlap by about 67% and is considered a medium effect. A value of d = 0.8 means the groups overlap by about 53% and is considered a large effect. Values above d = 1.0 mean the groups overlap by less than 45%, indicating a very clear and obvious difference. In this study, a large effect size means the feature can reliably separate human and AI texts in practice, not just in theory.
+### 3.6 External evaluation
 
-**Classification Model.** To test the combined predictive power of these eight features, a Random Forest classifier was trained using scikit-learn (version 1.6.1) [16]. Random Forest was chosen because it handles non-linear relationships well and is highly resistant to overfitting, which is when a model memorizes the training data instead of learning general patterns, unlike complex neural networks. The model used 100 decision trees (n_estimators=100) with all other parameters at their default values. The model was trained and tested using a strict 5-fold stratified cross-validation setup with a fixed random seed of 42 for reproducibility. This means the data was split into five equal parts, with each part containing the same proportion of human and AI texts, and the model was trained five separate times to ensure the results were stable and reliable. The performance was evaluated using multiple metrics. Accuracy measures the overall % of correct predictions. Precision measures what % of texts flagged as AI were actually AI. Recall measures what % of actual AI texts were successfully caught. F1 score is the balanced average of precision and recall. AUC-ROC (Area Under the Receiver Operating Characteristic curve) measures how well the model separates the two groups, where a value of 0.5 means random guessing and 1.0 means perfect separation. The model also measured feature importance, showing how much each feature contributed to the final classification decisions.
+The external dataset contains 10,000 pairs from Sivesind's ChatGPT-Research-Abstracts corpus [12], selected for its public paired texts and declared generation settings. The pinned revision appears in the Supplementary Methods. Its author reports GPT-3.5-turbo-0301 generation from titles, with requested lengths equal to the source abstracts. The analysis uses these author-supplied labels and settings.
+
+Overlap checks compare every external pair with all 100,000 original local pairs, using normalized titles, text and the same near-duplicate rule. Exclusions remove 18 title overlaps, two text overlaps, 1,658 pairs below the word minimum and three below the sentence minimum. No other duplicate, near-overlap or feature failure adds an exclusion. The remaining 8,319 pairs contain 16,638 texts.
+
+The eight-feature forest, length-only forest and logistic model are fitted to all 149,026 eligible local texts. External texts enter neither fitting nor scaling, model selection or primary threshold selection. The decision threshold stays at 0.5. Three within-external near-duplicate links join the pairs into 8,317 groups for uncertainty estimates. Sample sizes follow the available corpora and eligibility rules.
+
+### 3.7 Statistics and sensitivity analyses
+
+Metrics use the recorded labels and pooled held-out predictions. Recall is the fraction of generated texts detected; the false-positive rate (FPR) is the fraction of published texts flagged as generated. Precision is the fraction of flags that are correct, and F1 is the harmonic mean of precision and recall. ROC AUC measures ranking across thresholds; average precision summarizes precision across recall levels. Paired eligibility gives equal class counts, so accuracy equals the mean of recall and specificity.
+
+Feature differences subtract published from generated values within each pair. Pooled Cohen's d divides the class mean difference by the square root of the average class sample variance. All reported 95% intervals use 1,000 source-group bootstrap draws, retaining all pairs in each sampled group and taking the 2.5th and 97.5th percentiles. Feature intervals are marginal, not simultaneous across all eight features. Classification intervals keep predictions fixed; paired model comparisons use the same resampled groups. They exclude uncertainty from new training corpora, disputed labels and unknown sampling bias.
+
+The internal reanalysis is retrospective. Its feature extractor and primary external procedure were fixed before external scores were inspected. The additional sensitivity analyses below were chosen after the external result was known and are post hoc. None was preregistered.
+
+Source out-of-fold scores select thresholds for best balanced accuracy and empirical FPR caps of 1% and 5%. The caps use the higher 99th and 95th sample quantiles with a strict greater-than rule. A separate test-label oracle finds the best single threshold on the observed external scores. Because external labels select and evaluate that threshold, it is an optimistic diagnostic. External recall at FPR caps of 1% and 5% is also descriptive rather than independently calibrated.
+
+Further checks refit the forest with seeds 7, 42 and 2026, and refit forest and logistic models on the source-consistent subset. Fixed-score length checks restrict evaluation to pairs with both texts at 150-250 or 100-500 words. Finally, each fitted fold forest is evaluated on its local held-out fold and the external corpus. This compares identical fitted models across corpora; the five fits share training and external records.
 
 ## 4. Results
 
-**Distributional Analysis.** Table 1 compares human and AI abstracts across the eight extracted features. All eight features show statistically meaningful differences at the p < 0.001 level, indicating that the two groups of texts have distinct mathematical profiles.
+### 4.1 Corpus shape and feature differences
 
-**Table 1. Statistical Comparisons between Human and AI Abstracts (N = 200,000)**
+Local published-class texts have a median of 186 words, with an interquartile range of 141-245. Generated texts have a median of 199 words and a much narrower interquartile range of 193-205 (Figure 1). The longest retained published text contains 5,162 words. In the external corpus, published texts have a median of 234 words and an interquartile range of 168-291; generated texts have a median of 203 words and an interquartile range of 150-267.
 
-| Feature | Human Mean (SD) | AI Mean (SD) | p-value | Cohen's d |
-| --- | --- | --- | --- | --- |
-| Lexical Diversity (MTLD) | 75.1128 (31.8084) | 118.6241 (28.0710) | < 0.001 | 1.4505 |
-| Sentence Length CV | 0.4604 (0.2737) | 0.2324 (0.1156) | < 0.001 | -1.0852 |
-| Self-Mention Density | 6.8968 (11.2442) | 16.2204 (10.5869) | < 0.001 | 0.8538 |
-| Sentence-Opener Connector Ratio | 0.0280 (0.0670) | 0.0967 (0.0646) | < 0.001 | 1.0435 |
-| Connector Density | 3.5322 (5.3211) | 6.1125 (3.7631) | < 0.001 | 0.5599 |
-| Hedge Density | 3.3302 (6.0175) | 5.4220 (4.9898) | < 0.001 | 0.3784 |
-| Mean Sentence Length | 21.4772 (16.7702) | 23.8430 (3.4171) | < 0.001 | 0.1955 |
-| Booster Density | 3.1246 (5.4744) | 3.4405 (3.5770) | < 0.001 | 0.0683 |
+![Cumulative word and sentence counts in the local corpus. Axes show 100-600 words and 2-25 sentences; all observations remain in the analysis.](results/full_verification_20261005/revision4/figures/fig1_lengths.png)
 
-The largest difference appears in lexical diversity (MTLD), where AI abstracts show a much higher mean (118.62) than human abstracts (75.11), with a very large effect size (d = 1.45). This finding differs from earlier studies of older models like ChatGPT (GPT-3.5), which found AI text to be lexically more uniform [5]. The difference may reflect improvements in newer models like GPT-4o-mini, which appear to draw from a broader vocabulary pool. Sentence length variation (CV) shows the second largest difference. Human abstracts have a much higher mean variation (0.4604) than AI abstracts (0.2324), with a very large effect size (d = -1.09). The standard deviation for human abstracts (0.2737) is more than double that of AI abstracts (0.1156). This wider spread in human writing suggests that human authors have a diverse range of personal writing styles, whereas language models tend to cluster tightly around a single, default rhythm. The human distribution also shows outliers with very high self-mention density values, which likely reflect specific disciplinary conventions where first-person pronouns are standard, such as computer science and mathematics. These outliers do not appear in the AI distribution, suggesting that the models produce a more uniform pattern regardless of disciplinary context. Figure 1 illustrates these distributions using overlaid density plots, which show how frequently each value occurs for both groups. The width of each curve at any point indicates how many texts have that value, making it easy to see where the data clusters and where it spreads out. The AI density curve for sentence length CV is narrow and peaked, while the human curve is wide and spread out across the entire range.
+**Table 2. Feature summaries and paired differences**
 
-![Distribution of linguistic features across human and AI abstracts. Each row shows overlaid kernel density estimates for human (blue) and AI (orange) texts. The sentence length CV row shows the clearest separation, with human abstracts exhibiting broader distributional spread and higher central tendency.](results/figures/fig1_distributions.png)
+| Feature | Published mean (SD) | Generated mean (SD) | Difference, 95% interval |
+| --- | ---: | ---: | ---: |
+| Mean sentence length | 25.35 (14.69) | 24.46 (2.58) | -0.88 [-1.00, -0.79] |
+| Sentence-length CV | 0.396 (0.173) | 0.206 (0.063) | -0.189 [-0.191, -0.188] |
+| Hedge matches | 3.61 (5.43) | 5.60 (5.05) | 1.99 [1.94, 2.04] |
+| Booster matches | 3.15 (4.71) | 3.49 (3.55) | 0.34 [0.29, 0.38] |
+| Self-mention matches | 7.09 (10.19) | 16.09 (9.94) | 9.00 [8.92, 9.09] |
+| Connector matches | 4.30 (5.22) | 6.02 (3.76) | 1.72 [1.67, 1.77] |
+| Lexical diversity (MTLD) | 76.69 (28.24) | 118.90 (27.74) | 42.20 [41.94, 42.47] |
+| Connector opener ratio | 0.043 (0.080) | 0.100 (0.066) | 0.056 [0.055, 0.057] |
 
-Figure 2 visually breaks down the effect sizes for all eight linguistic features using Cohen's d metric. This chart is useful because a p-value only indicates if a difference exists, but Cohen's d indicates how practically important that difference actually is. As the chart shows, sentence length variation has a very large negative effect size, while lexical diversity and self-mention density show very large positive effect sizes, meaning AI text tends to use more diverse vocabulary and more first-person pronouns compared to humans in this dataset. The sentence-opener connector ratio also shows a very large effect (d = 1.04), indicating that AI text relies heavily on starting sentences with transition words. The remaining features, such as connector density and hedge density, show medium and small but reliable differences.
+SD denotes the sample standard deviation. The four match densities use counts per 1,000 words. CV and the opener ratio are dimensionless. Differences subtract the published value from the generated value within each pair before rounding.
 
-![Cohen's d effect sizes for all eight linguistic features. Blue bars indicate features with higher values in human text; orange bars indicate features with higher values in AI text. Dashed lines mark conventional thresholds for medium and large effects.](results/figures/fig2_effect_sizes.png)
+Generated texts have higher MTLD and lower sentence-length CV, with pooled standardized differences of 1.51 and -1.46 respectively (Table 2). Self-mention matches are also more frequent. The booster difference is small, with d equal to 0.08. These describe the recorded classes and do not establish differences in writing intent or confidence.
 
-**Classification Performance.** Building on these individual differences, the next step was to see if a machine learning model could combine these features to reliably separate human text from AI text. Table 2 presents the detailed performance metrics of the Random Forest model across the 5-fold cross-validation tests.
+### 4.2 Classification and length controls
 
-**Table 2. Classification Performance Metrics (5-Fold Stratified Cross-Validation)**
+**Table 3. Source-group out-of-fold classification**
 
-| Metric | Value |
-| --- | --- |
-| Accuracy | 0.9569 ± 0.0012 |
-| Precision | 0.9618 ± 0.0014 |
-| Recall | 0.9515 ± 0.0026 |
-| F1 Score | 0.9566 ± 0.0013 |
-| AUC-ROC | 0.9906 ± 0.0003 |
+| Model | Texts | Accuracy | ROC AUC | False-positive rate |
+| --- | ---: | ---: | ---: | ---: |
+| Forest, eight features | 149,026 | 95.99% | 0.9916 | 3.60% |
+| Logistic, eight features | 149,026 | 90.06% | 0.9594 | 11.36% |
+| Forest, length only | 149,026 | 90.38% | 0.9502 | 14.74% |
+| Forest, MTLD only | 149,026 | 77.93% | 0.8596 | 22.60% |
+| Forest, sentence CV only | 149,026 | 83.54% | 0.8948 | 19.99% |
+| Forest, seven without MTLD | 149,026 | 94.62% | 0.9860 | 5.15% |
+| Forest, common-length subset | 69,746 | 94.82% | 0.9870 | 4.81% |
 
-The classifier achieves a stable overall accuracy of 95.69% under the controlled conditions of this study. The precision and recall scores are well balanced at approximately 95 to 96% each. This balance suggests that the model is roughly equally effective at identifying AI text and recognizing human text, rather than favoring one category over the other. However, this balance was achieved on a dataset where AI texts were generated with a single, simple prompt and not subsequently edited. The extremely low standard deviations across all metrics (all below 0.003) further suggest that these results are reproducible, though generalization to other models, prompts, or edited texts remains untested.
+The eight-feature forest's conditional 95% accuracy interval is 95.89% to 96.09%. Its precision is 96.37%, recall is 95.59%, F1 is 0.9598, and average precision is 0.9906. The FPR interval is 3.47% to 3.73%.
 
-**Feature Importance.** Knowing that the model works, the most important question is how it makes its decisions. Table 3 breaks down the relative importance of each feature in the Random Forest classification model.
+Length alone classifies over nine in ten local texts correctly (Table 3). The narrow generated-length distribution provides useful class information, although the full feature set performs better. Figure 2 compares the internal model conditions.
 
-**Table 3. Random Forest Feature Importance**
+Restricting both texts to 150-250 words leaves 34,873 pairs. The refitted forest reaches 94.82% accuracy, with a conditional interval of 94.65% to 94.99%. This comparison changes both the training and evaluation samples, so it does not isolate length's contribution.
 
-| Feature | Gini Importance |
-| --- | --- |
-| Lexical Diversity (MTLD) | 0.2317 |
-| Sentence Length CV | 0.2002 |
-| Connector Density | 0.1424 |
-| Sentence-Opener Connector Ratio | 0.1323 |
-| Self-Mention Density | 0.0985 |
-| Hedge Density | 0.0786 |
-| Mean Sentence Length | 0.0688 |
-| Booster Density | 0.0475 |
+![Internal accuracy with conditional 95% group-bootstrap intervals. The common-length model uses a smaller sample.](results/full_verification_20261005/revision4/figures/fig2_comparisons.png)
 
-Lexical diversity is the most important feature, accounting for 23.17% of the model's decision-making power. This supports the earlier statistical tests showing the largest effect size (d = 1.45) for this feature. Sentence length variation follows at 20.02%, suggesting that the physical rhythm of the text may be a useful signal for identifying machine writing. Figure 3 visually ranks these features. Connector density (14.24%), sentence-opener connector ratio (13.23%), and self-mention density (9.85%) form the second tier of important features. The metadiscourse features like hedging and boosting, while statistically different in Table 1, only play a minor supporting role in the actual classification model, each contributing less than 8% to the final decisions.
+Removing MTLD lowers accuracy to 94.62%. Mean Gini importance is highest for sentence CV at 0.3118, followed by MTLD at 0.2206. These split statistics describe feature use during training; the feature-removal result more directly tests predictive contribution.
 
-![How much each writing feature contributes to the model's detection decisions. Darker bars are the two primary signals the detector relies on most; lighter bars are supporting signals. Each bar shows the percentage share of the model's total decisions.](results/figures/fig3_feature_importance.png)
+### 4.3 False alarms
 
-Figure 4 summarises the model's performance across five key measures. The overall accuracy of 95.7% means roughly 1 in 23 abstracts is misclassified. Precision and recall are closely matched, indicating the model makes roughly equal numbers of false alarms and missed detections rather than being biased toward one error type. Figure 5 shows the raw counts from a separate held-out test set.
+The forest correctly classifies 71,831 published texts and 71,225 generated texts. It flags 2,682 published texts as generated and misses 3,288 generated texts (Figure 3).
 
-![Model performance scorecard from 5-fold cross-validation on 200,000 abstracts. Each card shows one measure: overall accuracy, how often AI flags are correct (precision), how many AI texts are caught (recall), the combined balanced score, and the ranking score (AUC-ROC) out of 1.000.](results/figures/fig4_roc_curve.png)
+![Local forest confusion matrix for 149,026 out-of-fold predictions. Percentages use the recorded class in each row as the denominator.](results/full_verification_20261005/revision4/figures/fig4_confusion.png)
 
-![Classification results on 40,000 held-out abstracts (80/20 split). Dark cells on the diagonal show correct predictions; light cells show errors. The model correctly identified 96.1% of human abstracts and 95.3% of AI abstracts.](results/figures/fig5_confusion_matrix.png)
+Lower prevalence can greatly reduce the precision of generated-text flags. In a hypothetical set of 10,000 texts with 100 generated records, the internal recall and FPR imply about 96 generated texts and 356 published texts flagged. Only about 21% of flags are correct under that assumption. The example assumes 1% prevalence and unchanged error rates; neither is an estimate of real deployment conditions.
 
-**Feature Independence.** To ensure the model was not just measuring the exact same thing eight different times, Figure 6 maps the correlation among all features. A good classification model needs independent features that each bring unique information. As the heatmap shows, most features have very weak correlations (scores close to zero). This suggests that the features likely measure different aspects of writing style. The only strong correlation (0.65) is between overall connector density and the ratio of sentence-opening connectors, which makes logical sense since the two are mathematically related formulas. This independence suggests that the eight chosen features may capture a broad, well-rounded picture of an author's style, at least within the constraints of this dataset.
+### 4.4 Source consistency and text quality
 
-![How correlated the eight features are with each other (lower triangle). Most pairs score near 0, meaning they measure independent aspects of writing style. The one exception is connector density and sentence-opener connector ratio (score = 0.65), which overlap because they are mathematically related.](results/figures/fig6_correlation_heatmap.png)
+**Table 4. Comparison with current OpenAlex records**
 
-## 5. Discussion
+| Check | All 100,000 records | Retained 74,513 records |
+| --- | ---: | ---: |
+| Current record retrieved | 98,907 | 73,968 |
+| Title agrees after normalization | 94,469 | 70,535 |
+| Publication year agrees | 98,803 | 73,891 |
+| Abstract agrees after text cleaning | 88,877 | 66,605 |
+| Current language is English | 98,696 | 73,848 |
+| Current type is article | 86,980 | 65,412 |
+| Meets all source-consistency conditions | 74,896 | 56,355 |
+| Current record unresolved | 1,093 | 545 |
 
-**Sentence Length Variation as a Primary Marker.** One of the key findings of this study is the highly uniform sentence length found in AI-generated scientific abstracts. This structural uniformity may serve as a useful, mathematically measurable indicator of machine writing. Human writers, even in highly constrained academic formats, tend to vary sentence structures. Short, declarative sentences are often used for emphasis, summarizing key findings, or making bold claims. Longer, clause-heavy sentences are typically used to explain complex methodologies, introduce nuanced background context, or outline detailed limitations [12]. This natural variation creates a varied rhythm in human writing that may help keep the reader engaged and manage the flow of dense scientific information.
+OpenAlex returned 98,907 of the 100,000 original records (Table 4). The retained set includes 5,134 records now typed as conference papers and 654 typed as book reviews. Current records mark 31 retained works as retracted. These are index classifications, and differences from stored records may reflect later updates.
 
-AI generators, however, tend to produce sentences of unusually similar lengths, resulting in a flatter, more uniform pacing that may serve as an indicator of machine authorship. This difference likely stems from the basic architecture of how human and machine language production works. Human writing is an intentional, structured process shaped by working memory limits and deliberate planning [12]. A human author thinks about the overall paragraph structure and adjusts sentence length to fit the logical flow of ideas. Large language models, on the other hand, generate text autoregressively, meaning the model produces one word at a time by predicting the most likely next word based on all the words that came before it [15]. Each word is a token, which is the smallest unit of text the model processes. Because the models optimize for mathematical probability rather than intentional rhetorical structure, the output tends to regress to the mean, meaning sentence lengths may cluster around a safe, average length rather than varying widely. The models may not perform the kind of high-level structural planning needed to purposely insert a five-word sentence followed by a forty-word sentence for rhetorical effect, though this may change as models evolve.
+The source-consistent subset contains 56,355 pairs. Its eight-feature forest reaches 95.92% accuracy and a 3.71% FPR; the length-only forest reaches 90.26% accuracy. High internal separation persists after this restriction.
 
-**Self-Mention Rates and Academic Style.** An unexpected finding was that AI abstracts in this dataset contain more than double the rate of first-person pronouns (such as "we," "our," and "my") compared to genuine human abstracts. This suggests that modern language models may frequently use self-mentions to simulate an academic style, potentially overusing this feature compared to actual human researchers.
+An offline langid check flags 612 published texts and 309 generated texts as non-English at a normalized score of at least 0.9. These are diagnostic labels, not verified writer-language information. HTML-like tags occur in 1,371 published and 492 generated texts, and URLs in 3,713 published and 25 generated texts. Source formatting differs between the classes.
 
-In real academic journals, the use of first-person pronouns is strictly governed by the conventions of the specific scientific field [2]. Some disciplines, like computer science and mathematics, frequently use "we" to guide the reader through a proof or algorithm ("we assume," "we define"). However, many other fields, particularly in the hard physical sciences and medicine, traditionally discourage first-person pronouns in favor of the passive voice to maintain an objective, impersonal tone ("it was observed," "the samples were tested"). The notably high rate of these words in machine-generated text may occur because language models are trained on massive, mixed corpora that blend materials from all scientific disciplines. When prompted to write an "academic abstract," the model may pull stylistic features from this blended data without accounting for the subtle, field-specific rules governing when self-mention is actually appropriate.
+### 4.5 External transfer
 
-**Hedging, Boosting, and Scientific Stance.** The analysis of metadiscourse features revealed that AI abstracts use more booster words and more hedging words than authentic human writing. While AI text uses more hedges in absolute terms, the difference is smaller than expected, suggesting that GPT-4o-mini has learned to mimic some degree of scientific caution. However, the overall pattern suggests that AI text tends to be more assertive and confident, particularly in the use of boosters and connectors.
+**Table 5. Frozen-model evaluation on 16,638 external texts**
 
-This pattern may be tied to the commercial optimization of these models. Language models are typically fine-tuned by their creators to be helpful, confident, and fluent using reinforcement learning from human feedback [17], which may inadvertently lead to highly assertive statements. The model tends to provide a strong, clear answer. Professional human researchers, however, are trained to be rigorously cautious. Human researchers understand that a single study rarely "proves" anything absolutely, and therefore tend to rely heavily on hedges like "suggests," "indicates," or "may contribute to." This cautious nuance appears to be a hallmark of professional scientific work that current language models may struggle to accurately replicate without very specific prompting [5].
+| Model | Accuracy | Generated-text recall | False-positive rate | ROC AUC |
+| --- | ---: | ---: | ---: | ---: |
+| Forest, eight features | 53.89% | 11.73% | 3.94% | 0.7296 |
+| Forest, length only | 51.60% | 15.18% | 11.98% | 0.5444 |
+| Logistic, eight features | 68.91% | 49.79% | 11.97% | 0.8310 |
 
-**Lexical Diversity Findings.** In contrast to earlier findings with older models [5], this large-scale analysis found a very large and meaningful difference in lexical diversity (MTLD) between human and AI abstracts. AI-generated abstracts show substantially higher lexical diversity (mean = 118.62) compared to human abstracts (mean = 75.11), with a very large effect size (d = 1.45). This finding, based on 200,000 texts, suggests that modern language models like GPT-4o-mini may draw from a broader vocabulary pool than typical human writers when composing scientific abstracts.
+The forest correctly labels 7,991 of 8,319 external published texts, but only 976 of 8,319 generated texts. It misses 7,343 generated texts and wrongly flags 328 published texts. Its conditional 95% accuracy interval is 53.50% to 54.25%. The point estimate is 3.89 percentage points above the 50% constant-class baseline.
 
-This result likely reflects the training approach of modern language models. GPT-4o-mini has been trained on vast corpora spanning diverse scientific disciplines, which may give the model access to a wider active vocabulary than most individual human researchers, who tend to specialize in a narrow subfield. Human writers naturally fall into repetitive patterns within domain-specific terminology, while the model tends to vary word choices more broadly, producing text that sounds fluent and natural. The Random Forest model assigned the highest importance weight (23.17%) to this feature, suggesting that lexical diversity may be the most powerful diagnostic signal when measured at scale, at least for this model and prompt configuration.
+The external AUC of 0.7296 shows that the forest retains ranking information despite its low recall at 0.5. Logistic regression has higher external accuracy and AUC, with more false alarms at that threshold (Table 5). Figure 4 compares their score curves. Section 4.6 examines alternative thresholds.
 
-**Practical Application for Academic Integrity.** These results may offer practical value for publishers, universities, and academic integrity systems, though with important caveats. The potential value lies in the nature of the features themselves. Unlike current "black-box" neural network detectors [5, 6], which provide only a probability score, the eight features identified in this study are human-readable and individually interpretable. This distinction matters because academic misconduct hearings require evidence that can be examined, questioned, and defended [6]. When a tool flags a text as AI-generated but cannot explain why, the institution faces a difficult position. The tool may be correct, but the institution cannot demonstrate the basis for its decision to a student or review board. The stylometric features identified here, by contrast, could potentially allow an institution to point to specific, measurable writing characteristics, such as an unusually low sentence length variation or an abnormally high self-mention density, and explain why these patterns are inconsistent with typical human writing in that field.
+![ROC and precision-recall curves for the internal forest and the externally evaluated forest and logistic models. Both corpora have equal class counts. These are the primary models, fitted without external tuning.](results/full_verification_20261005/revision4/figures/fig3_curves.png)
 
-However, several limitations temper this practical application. The 95.69% accuracy achieved in this study, while promising, means that approximately 4 out of every 100 texts may be misclassified. In an academic integrity context, even a small false positive rate could have serious consequences for students or researchers who are wrongly accused. Furthermore, the features identified here are based on a single model (GPT-4o-mini) and a single prompt type, and it remains uncertain whether these same patterns would hold across different language models, different prompting strategies, or texts that have been edited by humans after generation. Therefore, these features should be viewed as potential supplementary evidence rather than standalone proof of AI authorship.
+### 4.6 Sensitivity analyses
 
-The near-perfect AUC-ROC of 0.991 suggests that interpretable linguistic features, when measured on a large and controlled corpus, can potentially match the discriminative power of black-box approaches [6]. However, this performance was achieved under controlled conditions where AI texts were generated with a single prompt and not subsequently edited. Real-world scenarios, where users may paraphrase, edit, or intentionally vary their writing style, would likely reduce this performance. The purpose of this work is therefore not to replace neural detectors, but rather to suggest that explainable, transparent linguistic features may serve as a useful complement to existing tools, particularly in contexts where understanding the basis for a detection decision is as important as the decision itself.
+**Table 6. Forest thresholds chosen from source scores only, except the unchanged default**
 
-**Limitations and Future Work.** While these findings are stable within the conditions tested, this study has several limitations that must be acknowledged. First, the AI abstracts were generated using a single, neutral prompt with no subsequent editing. This means the features identified here capture the default writing behavior of the model, not the full range of what AI can produce. When a language model is given different instructions, such as being told to write with varied sentence lengths, to use hedging language, or to avoid first-person pronouns, the resulting text may not show the same stylistic patterns. Similarly, when AI-generated text is revised by a human who changes the tone, style, or structure, the final output may shift away from the default AI pattern and look more like human writing. In such cases, the stylometric features identified in this study may fail to detect the text as AI-generated. This adversarial vulnerability means that stylometric detection tools must be continuously updated as language models evolve and as users learn to manipulate outputs [7].
+| Source rule | Threshold | Source FPR | External accuracy | External recall | External FPR |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Fixed default | 0.50 | 3.60% | 53.89% | 11.73% | 3.94% |
+| Best source balanced accuracy | 0.49 | 3.72% | 53.99% | 12.09% | 4.11% |
+| Source false positives at most 1% | 0.85 | 0.98% | 51.30% | 3.68% | 1.07% |
+| Source false positives at most 5% | 0.41 | 4.85% | 55.01% | 15.15% | 5.12% |
 
-Second, the dataset includes papers from dozens of different scientific fields but does not statistically control for differences between fields. Writing styles, particularly the use of metadiscourse and self-mention, vary radically by discipline [2]. A future study could analyze these features within specific fields (e.g., comparing only biology papers to biology papers) to create more precise baselines. Third, the human abstracts are restricted to pre-2022 publications to ensure a clean human baseline unaffected by post-ChatGPT AI assistance. Fourth, the model used here (GPT-4o-mini) represents a specific generation of AI technology. As language models continue to evolve, the models may eventually be trained specifically to mimic human sentence length variation or field-specific hedging. Continuous monitoring and updating of these stylistic baselines may be necessary.
+The source-selected thresholds yield external accuracies of 51.30%-55.01% (Table 6). External FPR point estimates of 1.07% and 5.12% are close to the nominal source caps, while generated-text recall remains low.
 
-Fifth, the human baseline corpus draws from OpenAlex without controlling for author language background. Non-native English writers may produce stylometric profiles that differ from native speakers within the same field, which could affect both the baseline measurements and the classifier's error rate for that subpopulation. Future work should examine whether these features behave differently across author language backgrounds.
+Choosing the forest threshold with external labels raises accuracy to 68.17% at 0.03, with 70.91% recall and a 34.57% false-positive rate. Even this optimistic test-label oracle falls well below internal accuracy. It gives the best observed result for single thresholds on these fixed scores, not a validated operating rule.
 
-Sixth, this study does not test the detection system on mixed-authorship texts where human writers have edited AI-generated drafts or vice versa. The stylistic signals identified here may be weaker in such hybrid scenarios, which are increasingly common in real-world academic writing. Future work should test whether these features remain reliable when AI text is generated with diverse prompts, multiple rounds of revision, or explicit instructions to mimic human writing patterns.
+**Table 7. Further forest checks at the unchanged 0.5 threshold**
+
+| Forest check | Training pairs | External pairs | Accuracy | Recall | ROC AUC |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Full source, seed 42 | 74,513 | 8,319 | 53.89% | 11.73% | 0.7296 |
+| Full source, seed 7 | 74,513 | 8,319 | 53.91% | 11.70% | 0.7302 |
+| Full source, seed 2026 | 74,513 | 8,319 | 53.88% | 11.78% | 0.7313 |
+| Source-consistent training | 56,355 | 8,319 | 53.85% | 11.54% | 0.7314 |
+| Fixed scores, 150-250 words | 74,513 | 2,571 | 57.35% | 25.05% | 0.7039 |
+| Fixed scores, 100-500 words | 74,513 | 8,298 | 53.89% | 11.73% | 0.7295 |
+
+The tested seeds and source-consistency restriction leave external forest accuracy near 54% (Table 7). Source-consistent logistic regression reaches 69.38% accuracy. The seed-42 refit reproduces the primary external scores within 1e-12.
+
+Using fixed full-procedure scores on the 150-250-word pairs gives 94.86% local accuracy and 57.35% external accuracy. The gap persists within this shared range. The 94.86% local result differs from Table 3's 94.82%, where the model was refitted within the range. Neither restriction exactly matches the length distributions.
+
+The five same-fitted-model comparisons give local accuracies of 95.79%-96.19% and external accuracies of 53.70%-53.98%. Each refitted local score vector matches its saved held-out scores within 1e-12. The larger full-source fit is therefore not necessary for the contrast. These comparisons share records and are not independent replications.
+
+**Table 8. Paired model differences at 0.5, with ranking comparison**
+
+| Logistic minus forest | Difference | Conditional 95% interval |
+| --- | ---: | ---: |
+| Internal accuracy (percentage points) | -5.94 | [-6.08, -5.80] |
+| External accuracy (percentage points) | 15.01 | [14.36, 15.63] |
+| External recall (percentage points) | 38.06 | [36.95, 39.11] |
+| External false-positive rate (percentage points) | 8.03 | [7.32, 8.68] |
+| External ROC AUC | 0.1013 | [0.0958, 0.1066] |
+
+The accuracy ranking reverses between corpora (Table 8). Logistic regression also has higher external AUC. Under an empirical external FPR cap of 5%, forest recall is 14.29% at 4.86% FPR, versus logistic recall of 24.45% at 4.98% FPR. At a 1% cap, recalls are 3.40% and 4.96% respectively. These points use external labels to choose thresholds and describe the observed score curves.
+
+## 5. Discussion and Limitations
+
+The forest separates the recorded local classes well, including after source-quality and length restrictions, but misses most external generated texts at its default threshold. The threshold oracle improves accuracy at the cost of many more false alarms. Logistic regression retains more external ranking information despite lower internal accuracy. Together, these results show why model choice, operating threshold and external evaluation matter even when internal scores are high [13, 14, 15].
+
+The corpora differ in reported generator, prompts, requested lengths, source composition and formatting. Local generated texts occupy a particularly narrow length range. These differences offer plausible explanations for the gap, but the comparison cannot isolate their effects. Title-based generation also allows content differences because the model lacks the source study's verified findings.
+
+The main limits concern provenance and coverage. Current-index agreement does not authenticate every publisher abstract, and generation records do not verify each output's origin or configuration. The external labels also come from the dataset's author. Paired eligibility excludes short texts, and unknown sampling probabilities limit population claims. English sentence segmentation and dictionary matches have not been validated across this corpus by an independent annotation study.
+
+Grouping controls the detected links, but the near-duplicate search can miss others. Author identities were not retrieved. Source names were available but not used to construct folds, so author- and journal-disjoint performance remains untested. Generator-training overlap and human-edited outputs are also unmeasured. The post hoc analyses reuse one external corpus and cannot replace fresh transfer tests.
+
+The observed errors and provenance limits do not support using this classifier to decide an individual's authorship or misconduct. Further work needs documented generation records, verified source texts and prospectively selected external corpora. Content-controlled generation and separate calibration data could help distinguish writing-process effects from corpus construction.
 
 ## 6. Conclusion
 
-This study analyzed a corpus of 200,000 scientific abstracts to identify the core stylometric writing features that distinguish AI-generated abstracts from human-written abstracts. The statistical results indicate that, within this dataset, text generated by modern language models tends to be characterized by highly uniform sentence lengths, higher rates of first-person pronouns, elevated lexical diversity, and a greater reliance on sentence-opening transition words compared to human abstracts.
+The eight-feature forest reached 95.99% internal accuracy but 53.89% external accuracy and 11.73% generated-text recall at the fixed threshold. The gap persisted across the tested thresholds, seeds, source restrictions, length ranges and identical fitted models. Logistic regression had higher external accuracy and AUC, with more false alarms at 0.5. This case shows that high internal accuracy can coexist with poor transfer. Its conclusions apply to the evaluated procedure and recorded labels.
 
-Among all the analyzed features, lexical diversity appeared as the single most powerful and reliable diagnostic marker, followed closely by sentence length variation. Human authors tend to construct texts with a more diverse rhythm, mixing short and long sentences to manage complex information. Language models, constrained by their autoregressive nature, tend to produce a flatter, more uniform rhythm that is statistically distinct in this dataset. By using these measurable style features, this study built a Random Forest classifier that achieves 95.69% accuracy and a 0.991 AUC-ROC under controlled conditions, balancing precision and recall without the need for black-box neural networks.
+## 7. Data and Code Availability
 
-This stylometric approach may offer an explainable and transparent complement to existing, opaque AI detection tools [5, 6]. Because the features are human-readable, they could potentially allow for more transparent discussions about authorship rather than relying solely on unexplainable % scores from proprietary software [6]. However, the findings of this study are limited to a specific context. The abstracts were generated by GPT-4o-mini using a single prompt, compared against pre-2022 human abstracts. Whether these same patterns hold across other language models, longer documents, or texts that have undergone human editing remains an open question that future research should address.
+The external corpus is available from its original provider [12]. Local raw texts are not publicly released, and original generation logs are unavailable. A local reproduction package contains features, group assignments, predictions, settings and code for recalculating metrics and refitting the main forest. The package has not been deposited in a public archive. The methods supplement lists the dictionaries, prompt templates, resource versions and artifact locations.
 
-As artificial intelligence becomes increasingly integrated into the academic research process, the ability to distinguish between human-written text and machine-generated text remains important to preserving the integrity of the scientific record. Future research could expand on this foundation. Next steps may include testing these stylometric features across specific academic disciplines, applying the models to longer documents like full peer-reviewed manuscripts, and evaluating newer language models to see if these writing patterns remain stable over time. Additional investigation into heavily edited or mixed-authorship texts may be needed to define the detection limits for AI-assisted academic writing [7].
+AI assistance was used for programming and manuscript revision.
 
-## 7. References
+## 8. References
 
-[1] Biber, D. (1988). *Variation across Speech and Writing*. Cambridge University Press.
+[1] Gao, C. A., Howard, F. M., Markov, N. S., Dyer, E. C., Ramesh, S., Luo, Y., and Pearson, A. T. (2023). Comparing scientific abstracts generated by ChatGPT to real abstracts with detectors and blinded human reviewers. *npj Digital Medicine*, 6, 75. [nature.com/articles/s41746-023-00819-6](https://www.nature.com/articles/s41746-023-00819-6).
 
-[2] Hyland, K. (2005). *Metadiscourse on Exploring Interaction in Writing*. London, Continuum.
+[2] Desaire, H., Chua, A. E., Isom, M., Jarosova, R., and Hua, D. (2023). Distinguishing academic science writing from humans or ChatGPT with over 99% accuracy using off-the-shelf machine learning tools. *Cell Reports Physical Science*, 4(6), 101426. [pmc.ncbi.nlm.nih.gov/articles/PMC10328544](https://pmc.ncbi.nlm.nih.gov/articles/PMC10328544/).
 
-[3] Swales, J. M. (1990). *Genre Analysis, English in Academic and Research Settings*. Cambridge University Press.
+[3] Guo, B., Zhang, X., Wang, Z., Jiang, M., Nie, J., Ding, Y., Yue, J., and Wu, Y. (2023). How Close is ChatGPT to Human Experts? Comparison Corpus, Evaluation, and Detection. *arXiv*, 2301.07597. [arxiv.org/abs/2301.07597](https://arxiv.org/abs/2301.07597).
 
-[4] Theocharopoulos, P. C., Anagnostou, P., Tsoukala, A., Georgakopoulos, S. V., Tasoulis, S. K., & Plagianakos, V. P. (2023). Detection of Fake Generated Scientific Abstracts. *2023 IEEE Ninth International Conference on Big Data Computing Service and Applications (BigDataService)*, 33-39.
+[4] Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., and Zou, J. (2023). GPT detectors are biased against non-native English writers. *Patterns*, 4(7), 100779. [arxiv.org/abs/2304.02819](https://arxiv.org/abs/2304.02819).
 
-[5] Guo, B., Zhang, X., Wang, Z., Jiang, M., Nie, J., Ding, Y., Yue, J., & Wu, Y. (2023). How Close is ChatGPT to Human Experts, and a Comparison of Corpus, Evaluation, and Detection. *arXiv preprint 2301.07597*.
+[5] Priem, J., Piwowar, H., and Orr, R. (2022). OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. *arXiv*, 2205.01833. [arxiv.org/abs/2205.01833](https://arxiv.org/abs/2205.01833).
 
-[6] Sadasivan, V. S., Kumar, A., Balasubramanian, S., Wang, W., & Feizi, S. (2023). Can AI-Generated Text be Reliably Detected? *arXiv preprint 2303.11156*.
+[6] McCarthy, P. M., and Jarvis, S. (2010). MTLD, vocd-D, and HD-D: A validation study of sophisticated approaches to lexical diversity assessment. *Behavior Research Methods*, 42(2), 381-392. [doi.org/10.3758/BRM.42.2.381](https://doi.org/10.3758/BRM.42.2.381).
 
-[7] Krishna, K., Song, Y., Karpinska, M., Wieting, J., & Iyyer, M. (2024). Paraphrasing Evades Detectors of AI-Generated Text, but Retrieval is an Effective Defense. *Advances in Neural Information Processing Systems*, 36.
+[7] Breiman, L. (2001). Random Forests. *Machine Learning*, 45(1), 5-32. [doi.org/10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324).
 
-[8] Stribling, J., Krohn, M., & Aguayo, D. (2005). SCIgen - An Automatic CS Paper Generator. *MIT CSAIL*.
+[8] Pedregosa, F., et al. (2011). Scikit-learn: Machine Learning in Python. *Journal of Machine Learning Research*, 12, 2825-2830. [jmlr.org/papers/v12/pedregosa11a.html](https://jmlr.org/papers/v12/pedregosa11a.html).
 
-[9] Mitchell, E., Lee, Y., Khazatsky, A., Manning, C. D., & Finn, C. (2023). DetectGPT for Zero-Shot Machine-Generated Text Detection using Probability Curvature. *Proceedings of the 40th International Conference on Machine Learning (ICML)*.
+[9] Kiss, T., and Strunk, J. (2006). Unsupervised Multilingual Sentence Boundary Detection. *Computational Linguistics*, 32(4), 485-525. [aclanthology.org/J06-4003](https://aclanthology.org/J06-4003/).
 
-[10] Hans, A., Schwarzschild, A., Cheber, V., Nishi, R., Somepalli, G., Goldblum, M., & Goldstein, T. (2024). Spotting LLMs With Binoculars for Zero-Shot Detection of Machine-Generated Text. *Proceedings of the 41st International Conference on Machine Learning (ICML)*.
+[10] Krishna, K., Song, Y., Karpinska, M., Wieting, J., and Iyyer, M. (2023). Paraphrasing evades detectors of AI-generated text, but retrieval is an effective defense. *Advances in Neural Information Processing Systems*, 36. [arxiv.org/abs/2303.13408](https://arxiv.org/abs/2303.13408).
 
-[11] McCarthy, P. M. (2005). An Assessment of the Range and Usefulness of Lexical Diversity Measures and the Potential of the Measure of Textual, Lexical Diversity (MTLD). *Doctoral dissertation, University of Memphis*.
+[11] Hans, A., Schwarzschild, A., Cherepanova, V., Kazemi, H., Saha, A., Goldblum, M., Geiping, J., and Goldstein, T. (2024). Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text. *Proceedings of the 41st International Conference on Machine Learning*, PMLR 235, 17519-17537. [proceedings.mlr.press/v235/hans24a.html](https://proceedings.mlr.press/v235/hans24a.html).
 
-[12] Chafe, W. (1994). *Discourse, Consciousness, and Time on the Flow and Displacement of Conscious Experience in Speaking and Writing*. Chicago, University of Chicago Press.
+[12] Sivesind, N. T. (2023). ChatGPT-Research-Abstracts. *Hugging Face dataset*, revision 07857e2a97571ab553421ed645ef470bef6fa05c. [huggingface.co/datasets/NicolaiSivesind/ChatGPT-Research-Abstracts](https://huggingface.co/datasets/NicolaiSivesind/ChatGPT-Research-Abstracts/tree/07857e2a97571ab553421ed645ef470bef6fa05c).
 
-[13] Priem, J., Piwowar, H., & Orr, R. (2022). OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. *arXiv preprint 2205.01833*.
+[13] Dugan, L., Hwang, A., Trhlik, F., Ludan, J. M., Zhu, A., Xu, H., Ippolito, D., and Callison-Burch, C. (2024). RAID: A Shared Benchmark for Robust Evaluation of Machine-Generated Text Detectors. *arXiv*, 2405.07940, version 2. [arxiv.org/abs/2405.07940v2](https://arxiv.org/abs/2405.07940v2).
 
-[14] Stamatatos, E. (2009). A Survey of Modern Authorship Attribution Methods. *Journal of the American Society for Information Science and Technology*, 60(3), 538-556.
+[14] Dugan, L., Zhu, A., Alam, F., Nakov, P., Apidianaki, M., and Callison-Burch, C. (2025). GenAI Content Detection Task 3: Cross-Domain Machine-Generated Text Detection Challenge. *arXiv*, 2501.08913. [arxiv.org/abs/2501.08913](https://arxiv.org/abs/2501.08913).
 
-[15] Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., & Amodei, D. (2020). Language Models are Few-Shot Learners. *Advances in Neural Information Processing Systems*, 33, 1877-1901.
-
-[16] Breiman, L. (2001). Random Forests. *Machine Learning*, 45(1), 5-32.
-
-[17] Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P., & Lowe, R. (2022). Training Language Models to Follow Instructions with Human Feedback. *Advances in Neural Information Processing Systems*, 35, 27730-27744.
-
-[18] McCarthy, P. M., & Jarvis, S. (2010). MTLD, vocd-D, and HD-D: A Validation Study of Sophisticated Approaches to Lexical Diversity Assessment. *Behavior Research Methods*, 42(2), 381-392.
+[15] Li, C., Wan, C., Chen, H., and Paetzold, J. C. (2026). MELD: Multi-Task Equilibrated Learning Detector for AI-Generated Text. *arXiv preprint*, 2605.06903, version 2. [arxiv.org/abs/2605.06903v2](https://arxiv.org/abs/2605.06903v2).
