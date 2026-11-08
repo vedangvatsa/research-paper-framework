@@ -30,7 +30,7 @@ echo ""
 
 # 1. AI Phrasing & Unicode Dashes
 echo "━━━ 1. AI PHRASING & UNICODE DASHES ━━━"
-HITS=$(grep -nE '—|–|notably|comprehensive|striking|fundamental|furthermore|moreover|landscape|paradigm|unprecedented|leverage|foster|facilitate|delve|tapestry|testament|multifaceted|robust|pivotal|seamless|synergy|democratize|empower|beacon' "$PAPER" 2>/dev/null || true)
+HITS=$(grep -niE '—|–|notably|comprehensive|striking|fundamental|furthermore|moreover|landscape|paradigm|unprecedented|leverage|foster|facilitate|delve|tapestry|testament|multifaceted|robust|pivotal|seamless|synergy|democratize|empower|beacon|intricately|vibrant|bespoke|paramount|streamline|bolster|revolutionize|cautious optimism' "$PAPER" 2>/dev/null || true)
 if [ -n "$HITS" ]; then echo "$HITS"; count_hits "$HITS"; else echo "  ✓ Clean"; fi
 echo ""
 
@@ -58,9 +58,9 @@ HITS=$(grep -niE 'deserves|surprising|impressive|remarkable' "$PAPER" 2>/dev/nul
 if [ -n "$HITS" ]; then echo "$HITS"; count_hits "$HITS"; else echo "  ✓ Clean"; fi
 echo ""
 
-# 6. AI Opener Patterns
-echo "━━━ 6. AI OPENER PATTERNS ━━━"
-HITS=$(grep -niE 'accelerating pace|rapidly evolving|comprehensive analysis|in recent years|it is worth noting|plays a crucial|increasingly important' "$PAPER" 2>/dev/null || true)
+# 6. AI Opener Patterns & Mechanical Roadmaps
+echo "━━━ 6. AI OPENER PATTERNS & ROADMAPS ━━━"
+HITS=$(grep -niE 'accelerating pace|rapidly evolving|comprehensive analysis|in recent years|it is worth noting|plays a crucial|increasingly important|the remainder of this paper is organized|section [0-9] covers|section [0-9] describes' "$PAPER" 2>/dev/null || true)
 if [ -n "$HITS" ]; then echo "$HITS"; count_hits "$HITS"; else echo "  ✓ Clean"; fi
 echo ""
 
@@ -96,7 +96,7 @@ echo ""
 
 # 12. Unicode Characters (invisible in LaTeX Times font)
 echo "━━━ 12. UNICODE CHARS (won't render in LaTeX) ━━━"
-HITS=$(grep -nP '[\x{2013}\x{2014}\x{2018}\x{2019}\x{201C}\x{201D}]' "$PAPER" 2>/dev/null || true)
+HITS=$(perl -ne 'print "$.: $_" if /[\x{2013}\x{2014}\x{2018}\x{2019}\x{201C}\x{201D}]/' "$PAPER" 2>/dev/null || true)
 if [ -n "$HITS" ]; then echo "$HITS"; count_hits "$HITS"; else echo "  ✓ Clean"; fi
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

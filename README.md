@@ -1,16 +1,18 @@
 # Academic Research Paper Framework
 
-A reusable framework for generating high-quality, human-authored academic papers suitable for SSRN, IEEE, and other academic repositories. Includes AI-powered pre-submission tools adapted from [SakanaAI/AI-Scientist](https://github.com/SakanaAI/AI-Scientist).
+A reusable framework for planning, evaluating, and writing academic papers for preprint repositories and research venues. Includes AI-powered pre-submission tools adapted from [SakanaAI/AI-Scientist](https://github.com/SakanaAI/AI-Scientist).
 
 ## Features
 
-*   **Strict Stylistic Enforcement:** Prevents AI jargon ("slop words"), em-dashes, and emojis, ensuring the output reads as a professionally written human document.
+*   **Strict Stylistic & Language Enforcement:** Enforces plain everyday English over Latinate jargon, bans AI slop words and cliché openers, prohibits em-dashes and descriptive colons, eliminates mechanical roadmap paragraphs, and ensures a human-authored, respectful academic tone.
+*   **Whitespace & Typesetting Layout Optimization:** Comprehensive LaTeX rules preventing float-page whitespace traps, ensuring proportional figure sizing, flexible table positioning, and seamless multi-page table breaks via `longtable`.
 *   **3 Paper Templates:** Review paper, empirical study, and computational research (AI-Scientist style with method/experiments/ablations).
+*   **Research Design Protocol:** Require reasons for methodological choices, map claims to evidence, distinguish proof from empirical support, and record unresolved questions before writing findings.
 *   **AI Peer Review:** Get a structured NeurIPS-style review of your paper before submission, with scores, strengths/weaknesses, and accept/reject decision.
-*   **Literature Novelty Check:** Verify your research angle is not already covered by searching Semantic Scholar or OpenAlex.
+*   **Literature Novelty Search:** Find potentially overlapping work in Semantic Scholar or OpenAlex for a source-level comparison.
 *   **Auto-Citation Finder:** Identify missing citations in your draft and get suggestions for relevant papers.
 *   **Per-Section Writing Guide:** Detailed guidance for each section of your paper (Abstract, Introduction, Method, Results, etc.).
-*   **Automated PDF Generation:** Convert Markdown to publication-ready PDF using Pandoc and Headless Chrome.
+*   **Automated PDF Generation:** Convert Markdown to publication-ready PDF using Pandoc, Tectonic, and Headless Chrome.
 
 ## Setup
 
@@ -63,27 +65,39 @@ For ICLR-style papers, each paper lives in its own folder under `papers/` with a
 
 ## Usage Workflow
 
-### 1. Start a New Paper
+### 1. Define the Question and Research Protocol
+
+Read [RESEARCH_METHODOLOGY.md](RESEARCH_METHODOLOGY.md), [AI_INSTRUCTIONS.md](AI_INSTRUCTIONS.md), and [SECTION_GUIDE.md](SECTION_GUIDE.md). Choose a study type that can answer the question. Create the protocol alongside the intended manuscript.
 
 ```bash
-# Copy a template to the papers directory
+cp templates/research_protocol.md papers/my_paper_protocol.md
 cp templates/computational_research.md papers/my_paper.md
 ```
 
-Then ask the AI: *"I want to write a new paper. Read the `AI_INSTRUCTIONS.md` and `SECTION_GUIDE.md` files first."*
+Update the copied protocol's guide link to `../RESEARCH_METHODOLOGY.md` (or `../../RESEARCH_METHODOLOGY.md` inside a paper subfolder). Replace the manuscript template with the appropriate review or empirical template when needed.
 
-### 2. Check Novelty (Before Writing)
+The protocol records the research gap, definitions, claim-to-evidence map, decision rationale, study design, measurements, analysis plan, deviations, and open questions. Existing studies must disclose which results were already known when the protocol was written.
+
+Then ask the AI: *"Read the repository research instructions. Build the study's protocol, justify consequential choices, and identify which conclusions the planned evidence can and cannot support."*
+
+### 2. Establish the Gap and Refine the Design
 
 ```bash
-# Verify your angle is not already covered
+# Find potentially overlapping work for direct inspection
 python scripts/check_novelty.py --title "My Paper Title" --abstract "We propose..."
 ```
 
-### 3. Draft the Paper
+Read the closest sources and record how the question, assumptions, and methods differ. Search results cannot certify novelty. Specify credible baselines, primary outcomes, sampling, uncertainty, failures, and what evidence would count against the proposed claims.
 
-The AI will assist in drafting based strictly on the rules in `AI_INSTRUCTIONS.md` with per-section guidance from `SECTION_GUIDE.md`.
+### 3. Conduct and Audit the Research
 
-### 4. Find Missing Citations
+Run an appropriate pilot, then freeze the main-study plan before inspecting confirmatory results. Preserve inputs, configurations, raw records, and analysis commands. Separate exploratory findings from planned tests. Reviews and theoretical papers use the corresponding source-analysis or proof procedure in the protocol.
+
+Complete the claim-to-evidence audit from actual results. Report mixed, negative, and inconclusive outcomes, and narrow claims when the design cannot identify the intended effect.
+
+### 4. Draft the Paper and Check Citations
+
+Write in the logical order of problem, gap, question, method, results, interpretation, and conclusion. Follow `AI_INSTRUCTIONS.md` and `SECTION_GUIDE.md`; derive the abstract from completed evidence.
 
 ```bash
 python scripts/find_citations.py papers/my_paper.md
@@ -95,9 +109,11 @@ python scripts/find_citations.py papers/my_paper.md
 # Quick single-reviewer review
 python scripts/review_paper.py papers/my_paper.md
 
-# Higher quality: 3 independent reviewers aggregated
+# Aggregate 3 AI review passes; not independent human peer review
 python scripts/review_paper.py papers/my_paper.md --ensemble 3
 ```
+
+Complete [QUALITY_CHECKLIST.md](QUALITY_CHECKLIST.md), starting with its methodological audit. Automated tools and AI reviews assist judgment; they do not certify scientific validity.
 
 ### 6. Verify References & Generate PDF
 
@@ -108,6 +124,10 @@ python scripts/review_paper.py papers/my_paper.md --ensemble 3
 # Generate the PDF
 ./scripts/generate_pdf.sh papers/my_paper.md papers/my_paper.pdf
 ```
+
+## Reproducible Research Example
+
+[The Economics of Agent Micropayments](papers/agent-micropayments/README.md) applies the methodology protocol to an exact finite-state economic study. Its folder includes the manuscript, PDF, pre-analysis protocol, complete result tables, analytical checks, figure scripts, and an evidence audit. The results concern specified computational models rather than live LLM behavior or measured market transactions.
 
 ## Script Reference
 
@@ -122,11 +142,14 @@ python scripts/review_paper.py papers/my_paper.md --ensemble 3
 ## Directory Structure
 
 ```
-├── AI_INSTRUCTIONS.md          # Stylistic rules the AI must follow
+├── AGENTS.md                   # Entry point for coding/research agents
+├── AI_INSTRUCTIONS.md          # Research, data integrity, and writing requirements
+├── RESEARCH_METHODOLOGY.md     # Design rationale, evidence, proof, and inference
 ├── PAPER_FRAMEWORK.md          # Production pipeline, quality checklists, lessons learned
 ├── SECTION_GUIDE.md            # Per-section writing guidance
 ├── README.md                   # This file
 ├── templates/                  # Paper templates
+│   ├── research_protocol.md    # Per-paper planning and evidence-audit record
 │   ├── review_paper.md
 │   ├── empirical_study.md
 │   └── computational_research.md

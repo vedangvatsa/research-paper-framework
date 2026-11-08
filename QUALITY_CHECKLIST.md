@@ -2,21 +2,50 @@
 
 > Run through every section before finalizing any manuscript.
 
+## 0. Research Design and Evidence Audit
+
+Use [RESEARCH_METHODOLOGY.md](RESEARCH_METHODOLOGY.md) and the paper-specific [research protocol](templates/research_protocol.md). Start this review before the main study and finish it after analysis. Mark inapplicable items with reasons. A passed style check is not a passed methodology review.
+
+- [ ] **Question and gap.** The primary question, target setting, closest prior work, and intended contribution are explicit and supported.
+- [ ] **Choice rationale.** Consequential choices have reasons, alternatives, supporting evidence or constraints, assumptions, and sensitivity checks.
+- [ ] **Claim-to-evidence map.** Each central claim has an exact target quantity or proposition, required evidence, rival explanation, and possible contradictory or inconclusive outcome.
+- [ ] **Study fit.** The review, measurement, causal, computational, or theoretical method matches the question. No method is included solely to look rigorous.
+- [ ] **Identification and controls.** Comparators, interventions, resource matching, assignment, and confounding assumptions support the intended interpretation.
+- [ ] **Measurement validity.** Outcomes have definitions, units, denominators, aggregation rules, and validated evaluators or source-appraisal procedures.
+- [ ] **Sampling and independence.** Population, coverage, sample-size rationale, clustering, repeated runs, carryover, and generalization limits are accounted for.
+- [ ] **Planning and leakage.** Prior data exposure, development/test separation, stopping rules, and deviations are documented. Exploratory work and retrospective plans are labeled accurately.
+- [ ] **Complete accounting.** Failures, missing values, exclusions, retries, and applicable costs are included according to declared rules.
+- [ ] **Inference.** Effect sizes, uncertainty, multiple comparisons, practical importance, and equivalence margins where relevant support the wording used.
+- [ ] **Proof and scope.** Formal claims have valid derivations and explicit assumptions. Empirical or simulated findings are not presented as universal proof or automatic deployment evidence.
+- [ ] **Reproduction and validity.** Claims trace to data, code/configuration, analysis, and artifacts. Reproducibility is assessed separately from whether the design answers the question.
+- [ ] **Alternative explanations.** The strongest objections and sensitivity analyses are addressed, including evidence against the preferred account.
+- [ ] **Unknowns.** Unresolved issues have explicit consequences. Unsupported claims are narrowed or withdrawn; inconclusive results remain reportable.
+- [ ] **Source support.** Central citations were checked for content and context, not merely URL reachability. Automated novelty/review outputs are treated as aids.
+- [ ] **Argument closure.** Abstract and conclusion answer the stated question using only findings supported in the body, at the tested scope.
+
 ---
 
-## 1. AI Phrasing Detection
+## 1. AI Phrasing & Structural Tone Detection
 
-LLM-drafted prose carries telltale patterns that undermine credibility with reviewers. Scrub them.
+LLM-drafted prose carries telltale patterns and structural filler that undermine credibility with reviewers. Scrub them.
 
-- [ ] **No Unicode dashes in source.** Search for em-dashes (`—`) and en-dashes (`–`). LaTeX Times font (`ptmr8t`) cannot render Unicode dashes. Use ASCII `---` (em-dash) and `--` (en-dash) instead.
-- [ ] **No filler words.** Remove or replace: *notably, comprehensive, significant, striking, fundamental, furthermore, moreover.*
+- [ ] **No Unicode dashes in source.** Search for em-dashes (`—`) and en-dashes (`–`). LaTeX Times font (`ptmr8t`) cannot render Unicode dashes. In running text, avoid em-dashes entirely; use commas, parentheses, or separate sentences.
+- [ ] **No filler words.** Remove or replace: *notably, comprehensive, significant, striking, fundamental, furthermore, moreover, intricately, vibrant, bespoke, pivotal, paramount, multifaceted, tapestry, testament, beacon, double-edged sword, not merely X but Y, delve, foster, facilitate, streamline, bolster, revolutionize, unprecedented, realm, seamless, leverage, empower, unlock, synergy, democratize, embark, cautious optimism, paradigm shift*.
+- [ ] **No mechanical roadmap paragraphs.** Flag and delete boilerplate section roadmaps (*"The remainder of this paper is organized as follows: Section 2 describes..."*). Jump directly into content.
+- [ ] **No redundant thesis or caveat repetition.** Ensure foundational caveats (e.g. *"feature presence does not predict task success"*) are stated clearly in the introduction and framework, not repeated as defensive boilerplate across 4 or 5 different results subsections.
+- [ ] **No consecutive redundant conclusion paragraphs.** Combine multi-paragraph conclusions that rephrase the same human-vs-agent contrast into a single, punchy, memorable conclusion.
+- [ ] **Context before technical exclusions.** Never state that a feature or attack was not simulated without providing narrative rationale and placing it properly in Scope or Limitations.
+- [ ] **Respectful technical attribution.** Do not attack commercial checklists, tools, or vendors (e.g. claiming they "hallucinated criteria"). Ground all comparisons neutrally in published internet standards (IETF RFCs, W3C Recommendations, ISO).
+- [ ] **Immediate context for conditional metrics.** When reporting conditional metrics (e.g., $P/A = 100\%$ when cohort adoption is $<0.1\%$), explain the prerequisite filtering immediately.
+- [ ] **Heading alignment & subsection proportion.** Ensure every heading matches its contents. Club 5–6 consecutive micro-subsections under a unified parent heading with bold inline headings (`\paragraph{...}`).
+- [ ] **Dynamic cross-referencing only.** Never hardcode section numbers (e.g., "Section 3.8"). Use `\label{sec:...}` and `\ref{sec:...}`.
 - [ ] **No AI opener patterns.** Flag and rewrite phrases like: *"has grown at an accelerating pace"*, *"in the rapidly evolving landscape"*.
 - [ ] **No cliché phrases.** Remove: *"blurred boundary"*, *"double-edged sword"*, *"paradigm shift"*, *"unprecedented"*.
 - [ ] **No inflated verbs.** Replace *leverage, foster, facilitate* with concrete alternatives (*use, support, enable*).
 - [ ] **Run the grep.**
 
 ```bash
-grep -nE '—|–|notably|comprehensive|striking|fundamental|furthermore|moreover|landscape|paradigm|unprecedented|leverage|foster|facilitate' paper.md
+grep -nE '—|–|notably|comprehensive|striking|fundamental|furthermore|moreover|landscape|paradigm|unprecedented|leverage|foster|facilitate|intricately|vibrant|bespoke|pivotal|multifaceted|tapestry|testament|beacon|delve|seamless|synergy' paper.md
 ```
 
 ---
@@ -69,7 +98,7 @@ grep -nwE 'will|would|should' paper.md
 A single wrong number invalidates trust in every other number.
 
 - [ ] **Cross-reference counts between sections.** If §2 says *"14 keywords"* and Table 6 has 12 rows, that's a bug. Search for every number and verify its source.
-- [ ] **Verify all percentage calculations.** Formula: `(a - b) / b × 100`. Re-derive each one from raw data.
+- [ ] **Verify all percentage calculations.** A share is `part / total × 100`; relative change is `(new - old) / old × 100`; a percentage-point difference subtracts percentages. Use the formula the claim requires, state denominators, and handle zero denominators explicitly.
 - [ ] **Verify all ratio calculations.** Formula: `a / b`. Check numerator and denominator match the claim.
 - [ ] **Conclusion numbers appear in the body.** Every number in the conclusion must trace back to a specific section with supporting data.
 - [ ] **"Spanning X years" is correct.** Count carefully. 2013 to mid-2026 = 13.5 years, not 13. Inclusive vs. exclusive counting matters.
@@ -101,10 +130,25 @@ The paper must agree with itself everywhere.
 
 ---
 
-## 8. LaTeX-Specific
+## 8. LaTeX-Specific & Typesetting Layout Audit
 
-Formatting issues that are easy to miss on screen but obvious in PDF.
+Formatting and whitespace issues that are easy to miss on screen but immediately degrade PDF quality.
 
+- [ ] **Tune float fractions in preamble.** Prevent LaTeX from stranding figures on dedicated float-only pages:
+  ```latex
+  \renewcommand{\topfraction}{0.90}
+  \renewcommand{\bottomfraction}{0.90}
+  \renewcommand{\textfraction}{0.10}
+  \renewcommand{\floatpagefraction}{0.85}
+  ```
+- [ ] **Proportional figure sizing.** Keep figure height between `2.2in` and `3.4in` (width `0.75\textwidth` to `0.88\textwidth`). Avoid `4.5in`+ or `5.7in` figures that force LaTeX into creating empty pages.
+- [ ] **Flexible table placement.** Avoid rigid `\begin{table}[H]` on medium/large body tables where small vertical constraints push the table and leave multi-inch blank holes. Use `\begin{table}[!htbp]`.
+- [ ] **Whitespace audit (no empty pages).** Inspect the compiled PDF page by page. No body page should end with >1 inch of unexplained blank white space.
+- [ ] **Multi-page appendix tables (`longtable`).** For tables with >15 rows in appendices, use `longtable` rather than a single rigid tabular block to allow clean breaks across pages.
+- [ ] **Eliminate `longtable` double lines.** In `longtable`, if rows end with `\\ \midrule`, ensure `\endfoot` is completely empty (`\endfoot`), NOT `\midrule\endfoot`. Otherwise, every intermediate page break draws two horizontal rules 2.3 pt apart.
+- [ ] **Prevent orphan rows before References.** Adjust `\LTpre`, `\LTpost`, or `\arraystretch` so a multi-page table does not spill just 1 or 2 orphan rows onto an otherwise empty page before the bibliography.
+- [ ] **Literal tab check.** Ensure regex string replacements didn't leave literal tabs (`\t`) in LaTeX source (e.g. `domain\textquotesingle s` turning into `domain\textquotesingle s` with a tab).
+- [ ] **No double line breaks before rules.** Check that no table rows end with `\\ \\` before `\bottomrule`.
 - [ ] **Reduce hyphenation.** Add to preamble:
   ```latex
   \hyphenpenalty=5000
@@ -116,8 +160,8 @@ Formatting issues that are easy to miss on screen but obvious in PDF.
   ```
 - [ ] **ASCII dashes only.** Times font requires `---` (em-dash) and `--` (en-dash). Unicode `—` and `–` will render as missing glyphs or blank spaces.
 - [ ] **Tables don't overflow margins.** Use `\footnotesize` consistently for table text. Check PDF output at 100% zoom.
-- [ ] **Wide figures are sized correctly.** Hype cycle diagrams and similar wide figures should use `0.90\textwidth` or narrower. Check for margin overflow.
-- [ ] **No overfull hbox warnings.** Run `pdflatex` and review the log for `Overfull \hbox` warnings. Fix each one.
+- [ ] **Wide figures are sized correctly.** Check for margin overflow.
+- [ ] **No overfull hbox warnings.** Run compiler and review log for `Overfull \hbox` warnings. Fix each one.
 
 ---
 
@@ -167,7 +211,7 @@ Checks political, cultural, and regional framing for bias or implied judgment.
 
 Checks that every sentence says exactly what it means — no ambiguity, overstatement, or logical gap.
 
-- [ ] Data "indicates", never "confirms" or "proves"
+- [ ] Empirical wording matches the evidence and scope. Reserve "proves" for a valid formal proof with explicit assumptions.
 - [ ] Ongoing trends use hedged language ("has not yet shown signs of plateauing")
 - [ ] "Expanding toward" not "moving from" (don't imply the old thing stopped)
 - [ ] "Supplemented" not "replaced" (unless adoption actually dropped to near-zero)
@@ -207,12 +251,14 @@ Ensures all predictions, projections, and trend claims use appropriately open la
 - [ ] Use "on pace for approximately" not "on track for over"
 - [ ] Trend continuations say "has not yet shown signs of" not "has not" (definitive)
 - [ ] Comparisons between time periods don't imply the old category stopped ("expanding toward" not "moving from")
-- [ ] Causal language is absent unless causation is demonstrated ("aligns with" not "caused by")
+- [ ] Causal claims name the intervention, comparator, target population, and identifying assumptions; association alone is not enough.
 
 ### Reviewer G: Logic / Consistency Reviewer
 
 Checks that the paper does not contradict itself across sections.
 
+- [ ] Challenge the design using Section 0 and the protocol, including the strongest rival explanation and what each experiment cannot establish
+- [ ] Verify that uncertainty, negative results, and unresolved questions are reflected in the final claim wording
 - [ ] Every finding in the conclusion appears in a body section with supporting data
 - [ ] Every claim in the abstract is supported by a specific section
 - [ ] Terms used in the conclusion are actually discussed as trends in the body (don't mention SVM decline if undiscussed)
@@ -262,11 +308,12 @@ Evaluates whether the paper tells a coherent story from start to finish.
 
 ## How to Use This Checklist
 
-1. **Pass 1 (automated):** Run all commands from §9. Fix every flagged line.
-2. **Pass 2 (section-by-section):** Walk through §1–§8 manually, checking each box.
-3. **Pass 3 (multi-lens review):** Read the paper ten times, each time as a different reviewer persona from §10. Check each persona's boxes.
-4. **Pass 4 (fresh eyes):** Have a co-author or colleague read the paper with this checklist open.
-5. **Final gate:** All boxes checked → paper is ready for submission.
+1. **Pass 0 (methodology):** Complete Section 0 and the protocol's final evidence audit. Resolve invalid inferences by improving the design or narrowing the claim.
+2. **Pass 1 (automated):** Run applicable commands from §9. Review flags in context and record unavailable checks.
+3. **Pass 2 (section-by-section):** Walk through §1–§8 manually, checking applicable items with evidence.
+4. **Pass 3 (multi-lens review):** Review from each perspective in §10. AI passes are not independent human peer review.
+5. **Pass 4 (fresh eyes):** Seek a co-author or colleague's review; record whether it actually occurred.
+6. **Final report:** State which checks passed, what was corrected, what was unavailable, and which limits remain. Checklist completion alone does not guarantee correctness or acceptance.
 
 > [!TIP]
 > Copy this file into your paper's repository and check boxes directly in version control.
@@ -275,4 +322,3 @@ Evaluates whether the paper tells a coherent story from start to finish.
 > [!TIP]
 > For AI-assisted review, prompt the assistant: *"Act as Reviewer A (Fact Checker) and review this paper"*
 > then repeat for B through J. Each pass catches different issues.
-
