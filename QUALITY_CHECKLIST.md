@@ -34,12 +34,12 @@ LLM-drafted prose carries telltale patterns and structural filler that undermine
 - [ ] **No mechanical roadmap paragraphs.** Flag and delete boilerplate section roadmaps (*"The remainder of this paper is organized as follows: Section 2 describes..."*). Jump directly into content.
 - [ ] **No redundant thesis or caveat repetition.** Ensure foundational caveats (e.g. *"feature presence does not predict task success"*) are stated clearly in the introduction and framework, not repeated as defensive boilerplate across 4 or 5 different results subsections.
 - [ ] **No consecutive redundant conclusion paragraphs.** Combine multi-paragraph conclusions that rephrase the same human-vs-agent contrast into a single, punchy, memorable conclusion.
-- [ ] **Context before technical exclusions.** Never state that a feature, setting, or attack was not simulated without providing narrative rationale. Place exclusions in Scope or Limitations, explaining that passive evaluations measure machine-readable architectural readiness, whereas interactive tasks (such as logins, payments, and dynamic defense) require stateful sandbox environments.
-- [ ] **Methodological origin context.** Explicitly state how criteria, operational steps, or benchmark baselines were selected (e.g., standard specs, WebArena, RADAR). Do not leave readers guessing whether authors created ad-hoc tests or adapted established literature.
-- [ ] **Immediate context for conditional metrics.** When reporting conditional metrics (e.g., $P/A = 100\%$ when cohort adoption is $<0.1\%$), explain the prerequisite filtering immediately.
-- [ ] **Demystify internal dataset identifiers.** Ensure raw snapshot codes, commit IDs, or internal hashes have human context (e.g., *"using the permanent snapshot list Y83YG to ensure reproducibility [5]"*).
-- [ ] **Define operational concepts plainly.** Define technical concepts in plain everyday English upon first mention in the paper's specific operational context.
-- [ ] **Respectful technical attribution.** Do not attack commercial checklists, tools, or vendors (e.g. claiming they "hallucinated criteria"). Ground all comparisons neutrally in published internet standards (IETF RFCs, W3C Recommendations, ISO).
+- [ ] **Context before technical exclusions.** Never state that a feature, condition, or edge case was excluded without providing narrative rationale upfront. Place boundaries in Scope or Limitations, explaining what the experimental protocol is designed to isolate and why active or destructive tasks require separate evaluation environments.
+- [ ] **Methodological origin context.** Explicitly state how criteria, evaluation steps, taxonomy categories, or benchmark baselines were selected (e.g., recognized community benchmarks, published domain standards, or justified study design). Do not leave readers guessing whether authors created an ad hoc test or adapted established literature.
+- [ ] **Immediate context for conditional metrics.** When reporting conditional or sub-sample metrics (e.g., subset success rate when overall prevalence is low), explain the prerequisite filtering and sample size ($N$) immediately adjacent to the number.
+- [ ] **Demystify internal dataset identifiers.** Ensure raw snapshot codes, commit IDs, accession numbers, or internal hashes have human context (e.g., explaining that a frozen release was used to guarantee exact reproducibility).
+- [ ] **Define operational concepts plainly.** Define technical concepts and proxy metrics in plain everyday English upon first mention, distinguishing observable indicators from broader downstream capabilities.
+- [ ] **Respectful technical attribution.** Do not attack commercial tools, checklists, or previous research. Ground all technical comparisons neutrally in published domain standards, controlled replications, or formal proofs.
 - [ ] **Heading alignment & subsection proportion.** Ensure every heading matches its contents. Club 5–6 consecutive micro-subsections under a unified parent heading with bold inline headings (`\paragraph{...}`).
 - [ ] **Dynamic cross-referencing only.** Never hardcode section numbers (e.g., "Section 3.8"). Use `\label{sec:...}` and `\ref{sec:...}`.
 - [ ] **No AI opener patterns.** Flag and rewrite phrases like: *"has grown at an accelerating pace"*, *"in the rapidly evolving landscape"*.
@@ -85,11 +85,11 @@ Every verb and quantifier makes a claim. Make sure you can defend each one.
 Projections and operational claims must be properly hedged. Label them as such.
 
 - [ ] **Use "could / may / can" for projections.** Never use *will*, *would*, or *should* when describing future outcomes or predictions.
-- [ ] **Mandatory hedging for agent behaviors and execution.** When describing how AI agents browse, interact, or fail, use hedged language (*"appears to"*, *"often"*, *"tends to"*, *"in benchmark evaluations like WebArena and RADAR"*) unless backed by direct experimental task success data in the paper.
-- [ ] **Distinguish syntax from truth and execution.**
-  - A valid JSON-LD entity does not prove factual accuracy.
-  - A published pricing route does not prove a complete automated checkout.
-  - An available button label does not prove an agent selects the correct action.
+- [ ] **Mandatory hedging for operational and behavioral claims.** When describing system behaviors, human interactions, model outputs, or real-world execution, use hedged empirical phrasing (*"appears to"*, *"often"*, *"tends to"*, *"suggests"*) unless backed by direct experimental ground-truth evidence in the study.
+- [ ] **Distinguish syntax and structure from ground truth and execution.**
+  - Valid schema, code, or format syntax does not prove factual correctness.
+  - A published public policy or API declaration does not prove runtime compliance or execution.
+  - An isolated observable indicator or static proxy does not guarantee downstream end-to-end task completion.
 - [ ] **Run the grep and review each hit in context.**
 
 ```bash
@@ -105,9 +105,9 @@ grep -nwE 'will|would|should' paper.md
 
 A single wrong number invalidates trust in every other number.
 
-- [ ] **Cross-reference counts between sections.** If §2 says *"18 illustrative criteria"* and Table 2 has 18 rows, verify they match. If Discussion cites a rate, verify it matches the Results tables.
-- [ ] **Check conditional vs. full-cohort rates.** Ensure text does not confuse full-cohort adoption ($P/\text{cohort}$) with conditional match rates ($P/A$). If llms.txt is 7.16% cohort-wide and 14.74% conditional, state both clearly.
-- [ ] **Demystify internal dataset identifiers.** Ensure raw snapshot codes, commit IDs, or internal hashes have human context (e.g., *"using the permanent snapshot list Y83YG to ensure reproducibility [5]"*).
+- [ ] **Cross-reference counts between sections.** If the text specifies a set size (e.g., *"18 evaluation criteria"* or *"6 baseline models"*), the corresponding summary table must list exactly that count. If the Discussion cites an outcome rate, verify it matches the Results tables exactly.
+- [ ] **Check conditional vs. full-population rates.** Ensure text does not confuse full-population prevalence with conditional subset match rates. Explicitly state denominators and sample sizes for both.
+- [ ] **Demystify internal dataset identifiers.** Ensure raw snapshot codes, commit IDs, accession numbers, or internal hashes have human context (e.g., explaining that a frozen release was used to guarantee exact reproducibility).
 - [ ] **Verify all percentage calculations.** A share is `part / total × 100`; relative change is `(new - old) / old × 100`; a percentage-point difference subtracts percentages. Use the formula the claim requires, state denominators, and handle zero denominators explicitly.
 - [ ] **Verify all ratio calculations.** Formula: `a / b`. Check numerator and denominator match the claim.
 - [ ] **Conclusion numbers appear in the body.** Every number in the conclusion must trace back to a specific section with supporting data.

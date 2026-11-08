@@ -64,9 +64,9 @@ Finalize findings, conclusion, and abstract only after the relevant analysis and
   - Hyperparameters: key choices and how they were tuned
   - Implementation: framework, hardware, training time
 - **Do not fabricate hardware or infrastructure details.**
-- **Explain context for scope boundaries and exclusions.** If certain features, settings, or attacks are excluded from the test protocol (e.g., stateful user account creation, payments, adversarial prompt injection defenses), state the rationale right here in the experimental scope or limitations. Clarify that passive evaluations measure machine-readable readiness, whereas interactive tasks require live sandbox environments. Never drop orphan defensive statements into the results.
-- **Demystify dataset identifiers.** When using fixed snapshot lists or dataset releases (e.g., Tranco list release Y83YG), explicitly explain that fixed snapshots are chosen to guarantee exact experimental reproducibility.
-- **Ground criteria in literature and open standards.** State whether evaluation steps or criteria are derived from established benchmarks (such as WebArena or RADAR) or published internet standards (such as IETF RFCs or W3C Recommendations).
+- **Explain context for scope boundaries and exclusions.** If specific features, conditions, confounding variables, or extreme edge cases are excluded from the test protocol, state the rationale directly in the study scope or limitations section. Clarify what the experimental protocol is designed to isolate (such as static structural properties, baseline algorithmic throughput, or observational prevalence) and why active, interactive, or destructive conditions require separate specialized evaluation harnesses. Never drop orphan defensive disclaimers into the results.
+- **Demystify dataset identifiers.** When referencing version tags, commit hashes, frozen snapshot releases, or accession numbers, explicitly explain their purpose (for example, that frozen snapshots were chosen to guarantee exact experimental audit reproducibility).
+- **Ground criteria in literature and domain standards.** State whether evaluation steps, tasks, taxonomy categories, or metric thresholds are derived from established community benchmarks, recognized domain standards (such as ISO, IEEE, W3C, or IETF specifications), or justified theoretical models.
 - Define the target quantity, experimental unit, sampling and assignment, repeated-run dependence, resource matching, evaluator validation, failures, exclusions, and stopping rule.
 - Justify sample size or precision and identify which analyses were planned before outcomes were inspected.
 
@@ -78,8 +78,8 @@ Finalize findings, conclusion, and abstract only after the relevant analysis and
 - Use tables for quantitative comparisons across methods.
 - Use figures for trends, distributions, and visualizations. Size figures proportionally (height `2.2in` to `3.4in`, width `0.75\textwidth` to `0.88\textwidth`) to prevent LaTeX from generating accidental blank float-only pages.
 - Use flexible table floats (`[!htbp]`) rather than rigid `[H]` so narrative text flows naturally around tables.
-- **Provide immediate context for conditional metrics.** If an indicator shows a high match rate (e.g. $P/A = 100\%$) due to prerequisite filtering while overall cohort adoption is low ($<0.1\%$), explain the denominator filtering right where the number is presented.
-- **Do not repeat the primary caveat in every subsection.** If Section 1 or 3 defined that "readiness measures feature availability rather than task success," do not repeat that caveat after every table. Focus purely on interpreting the immediate results.
+- **Provide immediate context for conditional metrics.** If an indicator shows a high or extreme rate due to prerequisite filtering while overall population prevalence is low, explain the prerequisite filtering and sample size ($N$) right where the number is presented.
+- **Do not repeat the primary caveat in every subsection.** If the introduction or methodology established the scope boundary (such as distinguishing static availability from dynamic execution, or correlation from causation), do not repeat that boilerplate caveat after every table. Focus purely on interpreting the immediate results.
 - Compare to baselines with statistical measures (standard deviation, confidence intervals) when available.
 - Where applicable, use ablations to test whether components affect outcomes; account for changes in resources or information caused by removal.
 - Report effect sizes and uncertainty for the primary comparisons, including negative and inconclusive findings. State the source of variation and the unit used to calculate intervals.
