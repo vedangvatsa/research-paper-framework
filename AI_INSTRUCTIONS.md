@@ -43,7 +43,21 @@ Read [RESEARCH_METHODOLOGY.md](RESEARCH_METHODOLOGY.md) before choosing methods,
 *   **NO CLICHES:** In addition to the existing banned list, also ban: 'blurred boundary/boundaries', 'at an accelerating pace', 'deserves separate attention', 'attracted the most attention'.
 *   **THIRD PERSON FOR SINGLE-AUTHOR PAPERS:** Unless the paper has multiple authors, never use first-person plural pronouns ('we', 'our', 'us'). Use 'this study', 'the corpus', 'the analysis', 'the data' instead. For multi-author papers, 'we' is acceptable.
 
-## 2. Research and Data Integrity
+## 2. Research, Fact-Checking, and Data Integrity
+*   **FACT-CHECK EVERY CLAIM AND NUMBER (ZERO TOLERANCE FOR INCONSISTENCIES):** Every single number, percentage, count, date range, and technical identifier must be verified against the raw empirical tables or underlying data artifacts.
+    *   **Cross-Sectional Numeric Consistency:** Numbers mentioned in the Abstract, Introduction, Results, Discussion, and Conclusion must be 100% consistent with each other. If Table 2 reports `7.16%` adoption across the full cohort, do not write *"fewer than 2%"* in the Discussion. If Table 2 reports MCP initialization at `<0.1%`, do not write *"fewer than 8%"*.
+    *   **Distinguish Full-Cohort vs. Conditional Denominators:** Never confuse a conditional match rate (such as positive over assessed applicable $P/A$) with a full-cohort adoption rate ($P/\text{cohort}$). Explicitly state denominators for both.
+    *   **Table Row Count Match:** If the methodology or text states *"18 illustrative criteria"*, the corresponding table must have exactly 18 rows.
+*   **MANDATORY HEDGING FOR OPERATIONAL & BEHAVIORAL CLAIMS:** When describing agent workflows, browser interaction habits, or real-world execution, always use hedged, empirical phrasing (*"appears to"*, *"often"*, *"tends to"*, *"can represent"*, *"is likely to"*, *"suggests"*, *"in benchmarks such as WebArena [6] and RADAR [7]"*) unless backed by direct experimental task success data in the paper.
+    *   Never claim that passing a syntactic check *"guarantees"* task completion, or that having structured data *"proves"* factual correctness.
+    *   Explicitly separate public declarations (e.g. published pricing routes or terms links) from runtime enforcement (e.g. executing a live purchase transaction).
+    *   Never make definitive assertions about how agents "must" browse without citing published agent benchmark literature or experimental ground truth.
+*   **STRICT NON-404 LINK GUARANTEE & BATCH URL VERIFICATION:**
+    *   Before finalizing any paper, run `./scripts/verify_references.sh`. **Zero 404 links are permitted.**
+    *   If a link returns 404, find the permanent DOI, official standards repository (IETF RFC at `rfc-editor.org`, W3C at `w3.org`, WHATWG at `html.spec.whatwg.org`), or archived corporate press release.
+    *   Investigate 403 or 000 responses in a live browser to confirm the endpoint is authentic rather than a broken or hallucinated URL path.
+    *   **Never fabricate a URL path.**
+*   **DEMYSTIFY TECHNICAL JARGON & INTERNAL IDENTIFIERS:** Never drop unexplained internal snapshot codes, commit hashes, or dataset IDs into prose without clear human context. For example, never write *"fixed to list release Y83YG [5]"*; always explain it: *"using the permanent snapshot list Y83YG to ensure reproducibility [5]"*. Always state how operational steps, criteria, or tool configurations were gathered so the reader understands their methodological origin.
 *   **NO HALLUCINATIONS OR DATE BUMPING:** Never invent data, citations, or survey results. Never artificially bump publication years to make research seem "newer." All quantitative data, legal precedents, and source material must be fiercely fact-checked, factual, and verifiable. Avoid making over-broad, boastful, or unverifiable meta-claims (e.g., "Every number in this paper is verifiable through a single API call" or "unprecedented depth"). Every claim must be strictly objective, precise, and backed directly by verifiable sources or clear methodologies.
 *   **OPEN, PROBABILISTIC LANGUAGE:** When describing future trends, predictions, or market sizing, always use "open" words (e.g., *can, may, could, is likely to, is expected to, appears to*) instead of "closed" definitive words (e.g., *will, should, must, shall*). This ensures the analysis remains semantically accurate regardless of how the future unfolds.
 *   **USE SYMBOLS FOR DATA:** Always use the `%` symbol instead of writing out "percent" or "per cent."
@@ -54,7 +68,6 @@ Read [RESEARCH_METHODOLOGY.md](RESEARCH_METHODOLOGY.md) before choosing methods,
 *   **VERIFIABILITY:** Prioritize industry-standard data, university-led research, and verified sources over generalities.
 *   **CONTRIBUTION FRAMING:** Each listed contribution must describe an ACTION the paper takes, not a PROPERTY of the dataset. Bad: 'Scale. 5 million papers.' Good: 'Abstract-level analysis. Built by searching abstracts instead of titles.'
 *   **DOUBLE-COUNTING AWARENESS:** When summing counts across keywords that a single paper can match multiple times, say 'abstract mentions' not 'paper abstracts' or 'papers'.
-*   **CROSS-REFERENCE VERIFICATION:** Every number mentioned in the introduction, abstract, or conclusion must match the corresponding number in the body. If the methodology says '14 keywords' but the table has 12 rows, fix it.
 *   **PROJECTION MATH:** Always show the math behind annualized projections (e.g., 812,972 papers through 159 days × 365/159 = 1.87M). Round honestly. 'Approximately 1.9 million' is OK; 'over 1.9 million' when the math gives 1.87M is not.
 
 ## 3. Formatting, Output, and LaTeX Typesetting (IEEE / Conference Style)

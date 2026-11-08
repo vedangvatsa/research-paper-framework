@@ -77,11 +77,16 @@ Every verb and quantifier makes a claim. Make sure you can defend each one.
 
 ---
 
-## 4. Hedging & Projection Language
+## 4. Hedging, Projection & Operational Scope Language
 
-Projections are guesses. Label them as such.
+Projections and operational claims must be properly hedged. Label them as such.
 
 - [ ] **Use "could / may / can" for projections.** Never use *will*, *would*, or *should* when describing future outcomes or predictions.
+- [ ] **Mandatory hedging for agent behaviors and execution.** When describing how AI agents browse, interact, or fail, use hedged language (*"appears to"*, *"often"*, *"tends to"*, *"in benchmark evaluations like WebArena and RADAR"*) unless backed by direct experimental task success data in the paper.
+- [ ] **Distinguish syntax from truth and execution.**
+  - A valid JSON-LD entity does not prove factual accuracy.
+  - A published pricing route does not prove a complete automated checkout.
+  - An available button label does not prove an agent selects the correct action.
 - [ ] **Run the grep and review each hit in context.**
 
 ```bash
@@ -97,7 +102,9 @@ grep -nwE 'will|would|should' paper.md
 
 A single wrong number invalidates trust in every other number.
 
-- [ ] **Cross-reference counts between sections.** If §2 says *"14 keywords"* and Table 6 has 12 rows, that's a bug. Search for every number and verify its source.
+- [ ] **Cross-reference counts between sections.** If §2 says *"18 illustrative criteria"* and Table 2 has 18 rows, verify they match. If Discussion cites a rate, verify it matches the Results tables.
+- [ ] **Check conditional vs. full-cohort rates.** Ensure text does not confuse full-cohort adoption ($P/\text{cohort}$) with conditional match rates ($P/A$). If llms.txt is 7.16% cohort-wide and 14.74% conditional, state both clearly.
+- [ ] **Demystify internal dataset identifiers.** Ensure raw snapshot codes, commit IDs, or internal hashes have human context (e.g., *"using the permanent snapshot list Y83YG to ensure reproducibility [5]"*).
 - [ ] **Verify all percentage calculations.** A share is `part / total × 100`; relative change is `(new - old) / old × 100`; a percentage-point difference subtracts percentages. Use the formula the claim requires, state denominators, and handle zero denominators explicitly.
 - [ ] **Verify all ratio calculations.** Formula: `a / b`. Check numerator and denominator match the claim.
 - [ ] **Conclusion numbers appear in the body.** Every number in the conclusion must trace back to a specific section with supporting data.
@@ -118,11 +125,13 @@ Contributions describe what the paper *does*, not what the dataset *is*.
 
 ---
 
-## 7. Internal Consistency
+## 7. Internal Consistency & Zero-404 Reference Integrity
 
-The paper must agree with itself everywhere.
+The paper must agree with itself everywhere, and every cited link must be verified.
 
-- [ ] **Conclusion ↔ Body.** Every finding in the conclusion must appear in a body section. Don't mention a trend (e.g., SVM decline) in the conclusion if it's not discussed in the body.
+- [ ] **Zero 404 links permitted.** Run `./scripts/verify_references.sh`. Ensure 0 links return 404. Replace any broken link with a permanent DOI, official standards repository (IETF RFC, W3C, ISO), or archived source.
+- [ ] **Browser check for 403 / 000 responses.** If a URL returns 403 (anti-bot protection) or 000 (timeout), test it in a desktop browser to confirm the landing page is authentic.
+- [ ] **Conclusion ↔ Body.** Every finding in the conclusion must appear in a body section. Don't mention a trend in the conclusion if it's not discussed in the body.
 - [ ] **Abstract ↔ Body.** Every claim in the abstract must be supported by a specific section. The abstract is a summary, not a press release.
 - [ ] **Figure captions ↔ Figure data.** Read each caption and verify it describes what the figure actually shows — axes, time ranges, categories.
 - [ ] **Reference numbers ↔ Bibliography.** Every `[N]` in the text must point to the correct entry. Re-check after any reordering.
