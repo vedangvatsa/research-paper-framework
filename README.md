@@ -5,6 +5,7 @@ A reusable framework for planning, evaluating, and writing academic papers for p
 ## Features
 
 *   **Strict Stylistic & Language Enforcement:** Enforces plain everyday English over Latinate jargon, bans AI slop words and cliché openers, prohibits em-dashes and descriptive colons, eliminates mechanical roadmap paragraphs, and ensures a human-authored, respectful academic tone.
+*   **Contextual Grounding & Claim Hedging:** Mandates immediate narrative context for technical exclusions, scope boundaries, dataset snapshots, and conditional metrics; requires empirical hedging for behavioral claims and zero-404 reference verification.
 *   **Whitespace & Typesetting Layout Optimization:** Comprehensive LaTeX rules preventing float-page whitespace traps, ensuring proportional figure sizing, flexible table positioning, and seamless multi-page table breaks via `longtable`.
 *   **3 Paper Templates:** Review paper, empirical study, and computational research (AI-Scientist style with method/experiments/ablations).
 *   **Research Design Protocol:** Require reasons for methodological choices, map claims to evidence, distinguish proof from empirical support, and record unresolved questions before writing findings.

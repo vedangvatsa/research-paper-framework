@@ -64,6 +64,9 @@ Finalize findings, conclusion, and abstract only after the relevant analysis and
   - Hyperparameters: key choices and how they were tuned
   - Implementation: framework, hardware, training time
 - **Do not fabricate hardware or infrastructure details.**
+- **Explain context for scope boundaries and exclusions.** If certain features, settings, or attacks are excluded from the test protocol (e.g., stateful user account creation, payments, adversarial prompt injection defenses), state the rationale right here in the experimental scope or limitations. Clarify that passive evaluations measure machine-readable readiness, whereas interactive tasks require live sandbox environments. Never drop orphan defensive statements into the results.
+- **Demystify dataset identifiers.** When using fixed snapshot lists or dataset releases (e.g., Tranco list release Y83YG), explicitly explain that fixed snapshots are chosen to guarantee exact experimental reproducibility.
+- **Ground criteria in literature and open standards.** State whether evaluation steps or criteria are derived from established benchmarks (such as WebArena or RADAR) or published internet standards (such as IETF RFCs or W3C Recommendations).
 - Define the target quantity, experimental unit, sampling and assignment, repeated-run dependence, resource matching, evaluator validation, failures, exclusions, and stopping rule.
 - Justify sample size or precision and identify which analyses were planned before outcomes were inspected.
 
