@@ -2,8 +2,7 @@
 
 <div class="author-info">
 **Vedang Ratan Vatsa**<br>
-*Founder, Hashtag Web3*<br>
-*vedangvats@gmail.com*<br>
+*[veda.ng](https://veda.ng)*<br>
 </div>
 
 ## Abstract

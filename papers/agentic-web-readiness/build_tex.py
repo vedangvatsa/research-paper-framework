@@ -7,6 +7,10 @@ import re
 with open('agentic_web_readiness_50k.md', 'r') as f:
     md = f.read()
 
+title_match = re.search(r'^#\s+(.+)$', md, re.MULTILINE)
+if not title_match:
+    raise ValueError('The manuscript must have a top-level title')
+
 # ═══════════════════════════════════════════════
 # EXTRACT SECTIONS
 # ═══════════════════════════════════════════════
@@ -30,6 +34,7 @@ def escape_latex_text(text):
     text = re.sub(r'(?<!\\)&', r'\\&', text)
     text = text.replace('#', '\\#')
     text = text.replace('_', '\\_')
+    text = text.replace('{', '\\{').replace('}', '\\}')
     text = text.replace('±', '$\\pm$')
     return text
 
@@ -42,6 +47,7 @@ def escape_latex_cell(text):
     text = text.replace('&', '\\&')  # Escape & in cell content
     text = text.replace('_', '\\_')
     text = text.replace('~', '\\textasciitilde{}')
+    text = text.replace('{', '\\{').replace('}', '\\}')
     text = text.replace('±', '$\\pm$')
     return text
 
@@ -56,12 +62,11 @@ def extract_code_spans(text):
 
 
 def restore_code_spans(text, codes):
-    """Restore stashed code spans as \\texttt with escaped content."""
+    """Restore code spans in the body font for a visually consistent paper."""
     for i, raw in enumerate(codes):
-        safe = raw.replace('\\', '\\textbackslash{}')
-        safe = safe.replace('%', '\\%').replace('&', '\\&').replace('#', '\\#').replace('_', '\\_')
-        safe = safe.replace('~', '\\textasciitilde{}')
-        text = text.replace(f'\x00CODE{i}\x00', f'\\texttt{{{safe}}}')
+        safe = ('\\nolinkurl{' + raw + '}' if re.fullmatch(r'[a-f0-9]{64}', raw)
+                else escape_latex_text(raw))
+        text = text.replace(f'\x00CODE{i}\x00', safe)
     return text
 
 
@@ -95,6 +100,13 @@ def process_paragraph(text):
     """Full processing pipeline for a paragraph of running text."""
     text, codes = extract_code_spans(text)    # Markdown links [text](url) -> \href (before escaping touches braces)
     links = []
+    maths = []
+
+    def stash_math(m):
+        maths.append(m.group(1))
+        return f'\x00MATH{len(maths) - 1}\x00'
+
+    text = re.sub(r'(?<!\\)\$([^\n$]+)\$', stash_math, text)
 
     def stash_link(m):
         links.append((m.group(1), m.group(2)))
@@ -106,6 +118,8 @@ def process_paragraph(text):
     text = convert_citations(text)
     text = convert_quotes(text)
     text = restore_code_spans(text, codes)
+    for i, expression in enumerate(maths):
+        text = text.replace(f'\x00MATH{i}\x00', '$' + expression + '$')
     for i, (label, url) in enumerate(links):
         label = escape_latex_text(label)
         text = text.replace(f'\x00LINK{i}\x00', f'\\href{{{url}}}{{{label}}}')
@@ -113,7 +127,9 @@ def process_paragraph(text):
 
 
 def urlize_cell(text):
-    """Wrap /path tokens in \\url{} (allows line breaks), escape the rest."""
+    """Typeset endpoint paths with line breaks but without PDF hyperlinks."""
+    # Table cells use the body font for inline code, matching running text.
+    text = text.replace('`', '')
     paths = []
 
     def stash(m):
@@ -130,7 +146,7 @@ def urlize_cell(text):
     text = escape_latex_cell(text)
     text = convert_citations(text)
     for i, raw in enumerate(paths):
-        text = text.replace(f'\x00URL{i}\x00', '\\url{' + raw + '}')
+        text = text.replace(f'\x00URL{i}\x00', '\\nolinkurl{' + raw + '}')
     return text
 
 
@@ -142,16 +158,18 @@ def render_table(rows, caption=None):
     data_rows = []
     for row in rows[2:]:  # skip header + separator
         cells = [c.strip() for c in row.split('|')[1:-1]]
-        while len(cells) < ncols:
-            cells.append('')
-        data_rows.append(cells[:ncols])
+        if len(cells) != ncols:
+            raise ValueError(f'Table row has {len(cells)} cells, expected {ncols}: {row}')
+        data_rows.append(cells)
 
     # Column spec: use natural l columns; resizebox will scale to fit
     col_spec = 'l' * ncols
 
-    # Long tables (>30 rows) break across pages via longtable;
-    # short tables stay exactly placed with [H]
-    use_longtable = len(data_rows) > 30
+    # Catalog rows are long even when there are fewer than 30 of them.
+    # Permit page breaks and repeat their header instead of stranding a heading
+    # above a large blank area while an unbreakable table moves to the next page.
+    is_catalog = ncols in (3, 4) and header_cells[:2] == ['Check', 'Request']
+    use_longtable = is_catalog or len(data_rows) > 30
 
     # Long cells need a smaller font to fit the column
     max_cell = max((len(c) for row in data_rows for c in row), default=0)
@@ -159,38 +177,65 @@ def render_table(rows, caption=None):
 
     lines = []
     if use_longtable:
-        lines.append('\\begin{center}')
+        lines.append('\\begingroup')
         lines.append('\\footnotesize')
         lines.append('\\setlength{\\tabcolsep}{3pt}')
+        lines.append('\\setlength{\\LTleft}{0pt}')
+        lines.append('\\setlength{\\LTright}{0pt plus 1fill}')
         if caption:
             cap_escaped = escape_latex_text(caption)
             lines.append(f'\\captionof{{table}}{{{cap_escaped}}}')
-        lines.append('\\begin{longtable}{p{2.6cm}' + 'l' * (ncols - 1) + '}')
+        if is_catalog:
+            fractions = [0.19, 0.34, 0.47] if ncols == 3 else [0.16, 0.29, 0.35, 0.20]
+        elif ncols == 5 and header_cells[0] == 'Check':
+            fractions = [0.44, 0.14, 0.14, 0.14, 0.14]
+        else:
+            fractions = [1 / ncols] * ncols
+        col_spec = ''.join(
+            '>{\\raggedright\\arraybackslash}p{\\dimexpr'
+            + f'{fraction:.4f}\\columnwidth-2\\tabcolsep\\relax}}'
+            for fraction in fractions
+        )
+        lines.append('\\begin{longtable}{' + col_spec + '}')
     else:
         lines.append('\\begin{table}[H]')
         lines.append('\\centering')
         lines.append(table_size)
-        lines.append('\\setlength{\\tabcolsep}{4pt}')
+        lines.append('\\setlength{\\tabcolsep}{3pt}')
         lines.append('\\sloppy')
         if caption:
             cap_escaped = escape_latex_text(caption)
             lines.append(f'\\caption{{{cap_escaped}}}')
-    # Wrapping X columns for short tables with 3+ columns so long cells
-    # wrap instead of overflowing. First column stays left-aligned.
-    # Longtables manage their own width (no resizebox: it forbids breaks).
+    # Longtables manage their own width; other tables use wrapping columns.
     if not use_longtable:
         if ncols >= 3:
-            # First column wraps long check IDs at hyphens; rest flex.
-            # \columnwidth, not \textwidth: ICLR sets two columns.
-            lines.append('\\begin{tabularx}{\\columnwidth}{p{3.2cm}' + 'X' * (ncols - 1) + '}')
+            ragged_x = '>{\\raggedright\\arraybackslash}X'
+            if ncols == 3:
+                if header_cells[0] == 'Category':
+                    col_spec = ('>{\\raggedright\\arraybackslash}p{3.2cm}'
+                                '>{\\raggedright\\arraybackslash}p{8.0cm}'
+                                '>{\\raggedleft\\arraybackslash}X')
+                else:
+                    first_width = {'Check': '6.2cm', 'Rank range': '4.1cm',
+                                   'Checks passing together': '4.1cm', 'Readiness area': '3.0cm'}.get(header_cells[0], '2.0cm')
+                    col_spec = '>{\\raggedright\\arraybackslash}p{' + first_width + '}' + ragged_x * 2
+            elif ncols == 4:
+                first_width = {'Measure': '3.0cm', 'Check': '4.0cm', 'Rank group': '3.2cm'}.get(header_cells[0], '1.65cm')
+                col_spec = '>{\\raggedright\\arraybackslash}p{' + first_width + '}' + ragged_x * 3
+            else:
+                col_spec = ragged_x * ncols
+            lines.append('\\begin{tabularx}{\\columnwidth}{' + col_spec + '}')
         else:
-            lines.append(f'\\begin{{tabular}}{{{col_spec}}}')
+            ragged_x = '>{\\raggedright\\arraybackslash}X'
+            lines.append('\\begin{tabularx}{\\columnwidth}{' + ragged_x * ncols + '}')
     lines.append('\\toprule')
 
     # Header row
     h_cells = [f'\\textbf{{{urlize_cell(c)}}}' for c in header_cells]
     lines.append(' & '.join(h_cells) + ' \\\\')
     lines.append('\\midrule')
+    if use_longtable:
+        lines.append('\\endhead')
 
     # Data rows (paths break via \url, [N] stays a real cite)
     for cells in data_rows:
@@ -200,12 +245,9 @@ def render_table(rows, caption=None):
     lines.append('\\bottomrule')
     if use_longtable:
         lines.append('\\end{longtable}')
-        lines.append('\\end{center}')
+        lines.append('\\endgroup')
     else:
-        if ncols >= 3:
-            lines.append('\\end{tabularx}')
-        else:
-            lines.append('\\end{tabular}')
+        lines.append('\\end{tabularx}')
         lines.append('\\end{table}')
 
     return '\n'.join(lines)
@@ -219,6 +261,7 @@ def md_to_latex(text):
     in_table = False
     table_rows = []
     table_caption = None
+    in_appendix = False
 
     def flush_para():
         nonlocal current_para
@@ -253,6 +296,28 @@ def md_to_latex(text):
             continue
 
         # Fenced code block -> verbatim
+        if line.strip() == '$$':
+            flush_para()
+            if in_table:
+                in_table = False
+                output_blocks.append(render_table(table_rows, table_caption))
+                table_rows = []
+                table_caption = None
+            i += 1
+            math_lines = []
+            while i < len(lines) and lines[i].strip() != '$$':
+                math_lines.append(lines[i])
+                i += 1
+            if i == len(lines):
+                raise ValueError('Unclosed display-math block')
+            # Keep the display attached to its introducing paragraph so TeX's
+            # normal pre-display penalty prevents an orphan equation next page.
+            while output_blocks and not output_blocks[-1]:
+                output_blocks.pop()
+            output_blocks.append('\\[\n' + '\n'.join(math_lines) + '\n\\]')
+            i += 1
+            continue
+
         if line.strip() == '```':
             flush_para()
             if in_table:
@@ -273,9 +338,10 @@ def md_to_latex(text):
         if line.startswith('## '):
             flush_para()
             title = line[3:].strip()
-            title = re.sub(r'^\d+\.\s+', '', title)
+            title = re.sub(r'^\d+(?:\.\d+)*\.?\s+', '', title)
             title = escape_latex_text(title)
-            if title.lower().startswith('appendix'):
+            in_appendix = title.lower().startswith('appendix')
+            if in_appendix or title == 'Data and Code':
                 output_blocks.append(f'\\section*{{{title}}}')
             else:
                 output_blocks.append(f'\\section{{{title}}}')
@@ -285,9 +351,20 @@ def md_to_latex(text):
         if line.startswith('### '):
             flush_para()
             title = line[4:].strip()
-            title = re.sub(r'^\d+\.\d+\s+', '', title)
+            title = re.sub(r'^\d+(?:\.\d+)*\.?\s+', '', title)
             title = escape_latex_text(title)
-            output_blocks.append(f'\\subsection{{{title}}}')
+            command = '\\subsection*' if in_appendix else '\\subsection'
+            output_blocks.append(f'{command}{{{title}}}')
+            i += 1
+            continue
+
+        if line.startswith('#### '):
+            flush_para()
+            title = line[5:].strip()
+            title = re.sub(r'^\d+(?:\.\d+)*\.?\s+', '', title)
+            title = escape_latex_text(title)
+            command = '\\subsubsection*' if in_appendix else '\\subsubsection'
+            output_blocks.append(f'{command}{{{title}}}')
             i += 1
             continue
 
@@ -306,7 +383,7 @@ def md_to_latex(text):
             cap = re.sub(r'^Figure \d+\.\s*', '', cap)
             output_blocks.append(
                 '\\begin{figure}[htbp]\n\\centering\n'
-                '\\includegraphics[width=0.85\\columnwidth]{' + asset + '}\n'
+                '\\includegraphics[width=0.95\\columnwidth]{' + asset + '}\n'
                 '\\caption{' + cap + '}\n\\end{figure}'
             )
             i += 1
@@ -374,7 +451,7 @@ def build_bibliography(refs_text):
             def clean_md_link(m):
                 display, url = m.group(1), m.group(2)
                 show = re.sub(r'^https?://(www\.)?', '', display).rstrip('/')
-                return f'\\href{{{url}}}{{{show}}}'
+                return f'\\href{{{url}}}{{\\nolinkurl{{{show}}}}}'
             text = re.sub(r'\[([^\]]+)\]\((https?://[^)\s]+)\)', clean_md_link, text)
             # Convert any remaining bare URLs to \href{}.
             # Skip URLs already inside \href{...} from the pass above.
@@ -382,7 +459,7 @@ def build_bibliography(refs_text):
                 url = m.group(1)
                 raw_url = url.replace('\\_', '_')
                 display = re.sub(r'^https?://(www\.)?', '', url).rstrip('/')
-                return f'\\href{{{raw_url}}}{{{display}}}'
+                return f'\\href{{{raw_url}}}{{\\nolinkurl{{{display}}}}}'
             text = re.sub(r'(?<!\{)(https?://[^\s\}]+)', clean_url, text)
             bib_items.append(f'\\bibitem{{ref{num}}}\n{text}\n')
 
@@ -405,13 +482,16 @@ if keywords:
 template = r"""\documentclass{article}
 \usepackage{iclr2024_conference,times}
 
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{textcomp}
 \usepackage[hyphens]{url}
+\usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{url}
+\urlstyle{same}
 \usepackage{booktabs}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{float}
@@ -422,8 +502,26 @@ template = r"""\documentclass{article}
 
 \iclrfinalcopy
 \setcitestyle{numbers,square}
+\hyphenpenalty=5000
+\tolerance=1000
+\emergencystretch=2em
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\definecolor{ReferenceBlue}{HTML}{0645AD}
+\hypersetup{
+  pdftitle={MANUSCRIPT_TITLE},
+  pdfauthor={Vedang Ratan Vatsa},
+  pdfsubject={Public-web measurement and recorded readiness signals},
+  pdflang={en-US},
+  pdfdisplaydoctitle=true,
+  colorlinks=true,
+  urlcolor=ReferenceBlue,
+  citecolor=black,
+  linkcolor=black
+}
 
-\title{How Agent-Ready Is the Web}
+\title{MANUSCRIPT_TITLE}
 
 \author{Vedang Ratan Vatsa \\
 \href{https://veda.ng}{veda.ng}}
@@ -446,6 +544,7 @@ template = r"""\documentclass{article}
 
 # Remove any \lhead that my earlier fix might have left
 template = template.replace('\\lhead{Preprint. Under review.}\n', '')
+template = template.replace('MANUSCRIPT_TITLE', escape_latex_text(title_match.group(1)))
 
 with open('template.tex', 'w') as f:
     f.write(template)
@@ -490,4 +589,3 @@ if issues:
     print(f"  Table issues found: {issues}")
 else:
     print(f"  Table integrity: OK")
-

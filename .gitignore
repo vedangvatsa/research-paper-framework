@@ -19,3 +19,9 @@ __pycache__/
 papers/latex_build/
 papers/page_screenshots/
 *.log
+
+# Download functional-test suite (Playwright)
+node_modules/
+test-results/
+playwright-report/
+.playwright/

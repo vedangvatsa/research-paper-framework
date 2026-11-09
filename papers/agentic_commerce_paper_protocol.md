@@ -4,7 +4,7 @@
 
 - Responsible author: Vedang Ratan Vatsa. Research and editing assisted by an AI coding assistant.
 - Current author list supplied by the user: Vedang Ratan Vatsa, Author2, and Author3. Displayed contact: [veda.ng](https://veda.ng), under Vedang's name.
-- Protocol started October 12, 2026. Version 4 adds the requested full reviewer pass after the academic expansion; earlier planning and audit entries remain below as history.
+- Protocol started October 12, 2026. Version 5 adds the requested four-perspective review; earlier planning and audit entries remain below as history.
 - Manuscript: `agentic_commerce_paper.md`.
 - Study type: Focused narrative review of published evidence and official product and legal documents. This design fits a question about what current evidence supports. It does not estimate a market share or test an intervention.
 - Stage: First two revisions completed October 12; expanded research inspection and manuscript revision completed October 13. Production checks are recorded separately in the review report. The original planning sections below precede the first review; the second-pass plan is in Section 10 and the expansion plan/outcome in Sections 11-12.
@@ -195,3 +195,20 @@ The qualitative source-removal checks in Section 12 remain part of the protocol 
 ### Subsequent presentation edits
 
 The user requested deletion of the repeated review-type/date sentence at the start of Section 1.1, replacement of the email with a `veda.ng` link to `https://veda.ng`, and addition of the literal supplied author names `Author2` and `Author3`. The author block and PDF/HTML metadata now follow that list. The methods section starts directly with the search procedure. Source dates and language scope remain recorded here and in the evidence ledger; no research result or reference was changed.
+
+## 14. Four-perspective review and reconciliation
+
+The user requested several peer-review perspectives. The same AI assistant separately assessed methods, evidence/statistics, technical accuracy, and clarity. This did not constitute independent duplicate screening or human peer review. The baseline and previous artifacts were archived in `agentic-commerce-archive/before-multi-review/`. The detailed findings, reconciliation, and responses are in `agentic-commerce/multi-review-response.md`.
+
+The pass checked AgentDojo Section 3.4/4.3, Ursu Section 4.3/Chapter 5, Whispers Section V, AP2's checkout/payment security requirements, the checkout retry requirements, and the retained EComAgentBench results. It adds no sources, experiments, pooled estimates, or calculated confidence intervals.
+
+| Decision | Rationale and alternative | Scope of the resulting claim |
+|---|---|---|
+| Use the full under-attack outcome definition | Completion alone can coexist with an attack. The alternative shorthand omitted the no-adversarial-side-effects requirement. | Report the benchmark's actual criterion and reused task-goal cases; no new security rate. |
+| Describe conditional hotel conversion as an association | Clicking responds to position, so selecting clickers does not provide another randomized comparison. Repeating the source's stronger causal language would require further assumptions. | This is the review's methodological qualification, not a new empirical result or an assertion that the dissertation uses the same wording. |
+| Attribute the six prototype conflicts to the source authors | The review did not reclassify runs. Treating the labels as independent adjudication overstates the audit. | Retain the reported counts and ambiguity, without inferring a population harm rate. |
+| Specify service-side enforcement and repeated-order tests | A signed record or client retry key is not self-enforcing. A budget can refer to one order or several. | Protocol roles are sourced; cumulative limits, changed permissions and retry outcomes are proposed checks, not universally implemented features. |
+| Separate first-order success, stopping and recovery | A valid refusal or successful refund differs from a suitable first delivery. A delivery failure alone does not identify a model error. | Define conditions beforehand, record failure stages/return reasons, net charges and buyer time; no newly measured benefit. |
+| Retain both controlled and service-level access comparisons | Shared catalog access supports a controlled comparison but does not describe every deployed service's reach. | Hold access fixed in one comparison and record actual coverage separately, without claiming either comparison was performed. |
+
+The paper retains the supplied author names and website, seven tables, and 40 references. All changes are integrated into existing paragraphs and table rows. The factual audit remains 96 units, with the changed units rebound to the new manuscript hash. Existing search and access limits remain unresolved and explicit.

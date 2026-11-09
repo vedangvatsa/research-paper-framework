@@ -6,6 +6,11 @@
     "completed": 50000
   },
   "mean_score": 25.7,
+  "scan_timing": {
+    "earliest": "2026-09-03T15:53:07.404000+00:00",
+    "latest": "2026-09-04T10:39:29.683000+00:00",
+    "span_hours": 18.77
+  },
   "tier_means": {
     "tier1_top10k": 26.1,
     "tier2_10k_100k": 25.2,
@@ -16,61 +21,745 @@
     "tier2_10k_100k": 20000,
     "tier3_100k_1m": 20000
   },
-  "adoption_tracked_checks": {
+  "tracked_status_passes": {
     "robots-ai-policy": {
-      "pass": 21881,
+      "status_pass": 21881,
       "n": 50000,
       "share": 0.4376
     },
     "llms-txt": {
-      "pass": 3310,
+      "status_pass": 3310,
       "n": 50000,
       "share": 0.0662
     },
     "markdown-negotiation": {
-      "pass": 1474,
+      "status_pass": 1474,
       "n": 50000,
       "share": 0.0295
     },
     "bot-ua-access": {
-      "pass": 18912,
+      "status_pass": 18912,
       "n": 50000,
       "share": 0.3782
     },
     "mcp-server-live": {
-      "pass": 910,
+      "status_pass": 910,
       "n": 50000,
       "share": 0.0182
     },
     "openapi-spec": {
-      "pass": 78,
+      "status_pass": 78,
       "n": 50000,
       "share": 0.0016
     },
-    "https-tls": {
-      "pass": 50000,
-      "n": 50000,
-      "share": 1.0
-    },
     "security-txt": {
-      "pass": 2288,
+      "status_pass": 2288,
       "n": 50000,
       "share": 0.0458
     },
     "json-ld": {
-      "pass": 10687,
+      "status_pass": 10687,
       "n": 50000,
       "share": 0.2137
     },
-    "seo-author-eeat": {
-      "pass": 6910,
+    "sitemap-xml": {
+      "status_pass": 13686,
       "n": 50000,
-      "share": 0.1382
+      "share": 0.2737
+    },
+    "markdown-twins": {
+      "status_pass": 5337,
+      "n": 50000,
+      "share": 0.1067
     },
     "agent-payments": {
-      "pass": 163,
+      "status_pass": 163,
       "n": 50000,
       "share": 0.0033
     }
+  },
+  "full_status_counts": {
+    "access-boilerplate-ratio": {
+      "pass": 7737,
+      "warning": 42263,
+      "fail": 0,
+      "na": 0
+    },
+    "access-compression": {
+      "pass": 28210,
+      "warning": 21790,
+      "fail": 0,
+      "na": 0
+    },
+    "access-js-hydration": {
+      "pass": 22855,
+      "warning": 0,
+      "fail": 27145,
+      "na": 0
+    },
+    "agent-card": {
+      "pass": 3791,
+      "warning": 46209,
+      "fail": 0,
+      "na": 0
+    },
+    "agent-payments": {
+      "pass": 163,
+      "warning": 0,
+      "fail": 0,
+      "na": 49837
+    },
+    "agents-json": {
+      "pass": 3828,
+      "warning": 46172,
+      "fail": 0,
+      "na": 0
+    },
+    "agents-txt": {
+      "pass": 4136,
+      "warning": 45864,
+      "fail": 0,
+      "na": 0
+    },
+    "ai-catalog": {
+      "pass": 3890,
+      "warning": 46110,
+      "fail": 0,
+      "na": 0
+    },
+    "api-catalog-rfc9727": {
+      "pass": 3883,
+      "warning": 46117,
+      "fail": 0,
+      "na": 0
+    },
+    "api-cors-ai": {
+      "pass": 3215,
+      "warning": 46785,
+      "fail": 0,
+      "na": 0
+    },
+    "api-dry-run": {
+      "pass": 13,
+      "warning": 5559,
+      "fail": 0,
+      "na": 44428
+    },
+    "ard-catalog": {
+      "pass": 20,
+      "warning": 3566,
+      "fail": 46414,
+      "na": 0
+    },
+    "auth-guide": {
+      "pass": 4372,
+      "warning": 45628,
+      "fail": 0,
+      "na": 0
+    },
+    "bot-ua-access": {
+      "pass": 18912,
+      "warning": 3901,
+      "fail": 27187,
+      "na": 0
+    },
+    "canonical": {
+      "pass": 15771,
+      "warning": 0,
+      "fail": 34229,
+      "na": 0
+    },
+    "csp": {
+      "pass": 9661,
+      "warning": 40339,
+      "fail": 0,
+      "na": 0
+    },
+    "favicon-branding": {
+      "pass": 26086,
+      "warning": 23914,
+      "fail": 0,
+      "na": 0
+    },
+    "frame-protection": {
+      "pass": 16580,
+      "warning": 33420,
+      "fail": 0,
+      "na": 0
+    },
+    "hsts": {
+      "pass": 14243,
+      "warning": 35757,
+      "fail": 0,
+      "na": 0
+    },
+    "html-lang": {
+      "pass": 25119,
+      "warning": 24881,
+      "fail": 0,
+      "na": 0
+    },
+    "https-tls": {
+      "pass": 50000,
+      "warning": 0,
+      "fail": 0,
+      "na": 0
+    },
+    "json-ld": {
+      "pass": 10687,
+      "warning": 0,
+      "fail": 39313,
+      "na": 0
+    },
+    "link-headers": {
+      "pass": 2173,
+      "warning": 47827,
+      "fail": 0,
+      "na": 0
+    },
+    "llms-full": {
+      "pass": 5771,
+      "warning": 44229,
+      "fail": 0,
+      "na": 0
+    },
+    "llms-txt": {
+      "pass": 3310,
+      "warning": 5418,
+      "fail": 41272,
+      "na": 0
+    },
+    "markdown-negotiation": {
+      "pass": 1474,
+      "warning": 0,
+      "fail": 48526,
+      "na": 0
+    },
+    "markdown-twins": {
+      "pass": 5337,
+      "warning": 44663,
+      "fail": 0,
+      "na": 0
+    },
+    "mcp-schema-handshake": {
+      "pass": 3,
+      "warning": 907,
+      "fail": 0,
+      "na": 49090
+    },
+    "mcp-server-live": {
+      "pass": 910,
+      "warning": 49090,
+      "fail": 0,
+      "na": 0
+    },
+    "meta-description": {
+      "pass": 13634,
+      "warning": 5657,
+      "fail": 30709,
+      "na": 0
+    },
+    "oauth-agent-discovery": {
+      "pass": 5709,
+      "warning": 44291,
+      "fail": 0,
+      "na": 0
+    },
+    "og-tags": {
+      "pass": 14486,
+      "warning": 0,
+      "fail": 35514,
+      "na": 0
+    },
+    "openai-plugin": {
+      "pass": 4817,
+      "warning": 45183,
+      "fail": 0,
+      "na": 0
+    },
+    "openapi-examples": {
+      "pass": 50,
+      "warning": 5522,
+      "fail": 0,
+      "na": 44428
+    },
+    "openapi-spec": {
+      "pass": 78,
+      "warning": 49922,
+      "fail": 0,
+      "na": 0
+    },
+    "payments-terms": {
+      "pass": 4738,
+      "warning": 45262,
+      "fail": 0,
+      "na": 0
+    },
+    "payments-webln": {
+      "pass": 30,
+      "warning": 0,
+      "fail": 0,
+      "na": 49970
+    },
+    "permissions-policy": {
+      "pass": 4962,
+      "warning": 45038,
+      "fail": 0,
+      "na": 0
+    },
+    "rate-limit-headers": {
+      "pass": 361,
+      "warning": 49639,
+      "fail": 0,
+      "na": 0
+    },
+    "referrer-policy": {
+      "pass": 10313,
+      "warning": 39687,
+      "fail": 0,
+      "na": 0
+    },
+    "rfc-7807-errors": {
+      "pass": 6,
+      "warning": 0,
+      "fail": 0,
+      "na": 49994
+    },
+    "robots-ai-policy": {
+      "pass": 21881,
+      "warning": 3638,
+      "fail": 24481,
+      "na": 0
+    },
+    "robots-meta-ai": {
+      "pass": 46390,
+      "warning": 0,
+      "fail": 3610,
+      "na": 0
+    },
+    "robots-selective-ai-policy": {
+      "pass": 4420,
+      "warning": 21099,
+      "fail": 24481,
+      "na": 0
+    },
+    "rss-feed": {
+      "pass": 3365,
+      "warning": 46635,
+      "fail": 0,
+      "na": 0
+    },
+    "security-ai-disclosure": {
+      "pass": 23382,
+      "warning": 26618,
+      "fail": 0,
+      "na": 0
+    },
+    "security-c2pa": {
+      "pass": 1,
+      "warning": 49999,
+      "fail": 0,
+      "na": 0
+    },
+    "security-signatures": {
+      "pass": 4096,
+      "warning": 45904,
+      "fail": 0,
+      "na": 0
+    },
+    "security-txt": {
+      "pass": 2288,
+      "warning": 47712,
+      "fail": 0,
+      "na": 0
+    },
+    "seo-answer-first": {
+      "pass": 15310,
+      "warning": 34690,
+      "fail": 0,
+      "na": 0
+    },
+    "seo-author-eeat": {
+      "pass": 6910,
+      "warning": 43090,
+      "fail": 0,
+      "na": 0
+    },
+    "seo-freshness": {
+      "pass": 3632,
+      "warning": 46368,
+      "fail": 0,
+      "na": 0
+    },
+    "seo-multimodal": {
+      "pass": 47814,
+      "warning": 2186,
+      "fail": 0,
+      "na": 0
+    },
+    "seo-rich-schemas": {
+      "pass": 6230,
+      "warning": 43770,
+      "fail": 0,
+      "na": 0
+    },
+    "seo-schema-graph": {
+      "pass": 8474,
+      "warning": 41526,
+      "fail": 0,
+      "na": 0
+    },
+    "sitemap-json": {
+      "pass": 2903,
+      "warning": 47097,
+      "fail": 0,
+      "na": 0
+    },
+    "sitemap-xml": {
+      "pass": 13686,
+      "warning": 3581,
+      "fail": 32733,
+      "na": 0
+    },
+    "tdmrep": {
+      "pass": 3514,
+      "warning": 46486,
+      "fail": 0,
+      "na": 0
+    },
+    "title-tag": {
+      "pass": 25103,
+      "warning": 4192,
+      "fail": 20705,
+      "na": 0
+    },
+    "twitter-cards": {
+      "pass": 11871,
+      "warning": 38129,
+      "fail": 0,
+      "na": 0
+    },
+    "xcto": {
+      "pass": 14596,
+      "warning": 35404,
+      "fail": 0,
+      "na": 0
+    }
+  },
+  "crux_overlap": {
+    "normalization": "leading www. removed on both Tranco and CrUX hostnames",
+    "listed_n": 23592,
+    "unlisted_n": 26408,
+    "groups": {
+      "listed": {
+        "n": 23592,
+        "mean_score": 30.8,
+        "status_passes": {
+          "robots-ai-policy": {
+            "status_pass": 12875,
+            "n": 23592,
+            "share": 0.5457
+          },
+          "llms-txt": {
+            "status_pass": 2091,
+            "n": 23592,
+            "share": 0.0886
+          },
+          "markdown-negotiation": {
+            "status_pass": 948,
+            "n": 23592,
+            "share": 0.0402
+          },
+          "bot-ua-access": {
+            "status_pass": 10800,
+            "n": 23592,
+            "share": 0.4578
+          },
+          "mcp-server-live": {
+            "status_pass": 668,
+            "n": 23592,
+            "share": 0.0283
+          },
+          "openapi-spec": {
+            "status_pass": 41,
+            "n": 23592,
+            "share": 0.0017
+          },
+          "security-txt": {
+            "status_pass": 1611,
+            "n": 23592,
+            "share": 0.0683
+          },
+          "json-ld": {
+            "status_pass": 6874,
+            "n": 23592,
+            "share": 0.2914
+          },
+          "sitemap-xml": {
+            "status_pass": 8679,
+            "n": 23592,
+            "share": 0.3679
+          },
+          "markdown-twins": {
+            "status_pass": 2793,
+            "n": 23592,
+            "share": 0.1184
+          },
+          "agent-payments": {
+            "status_pass": 93,
+            "n": 23592,
+            "share": 0.0039
+          }
+        }
+      },
+      "unlisted": {
+        "n": 26408,
+        "mean_score": 21.2,
+        "status_passes": {
+          "robots-ai-policy": {
+            "status_pass": 9006,
+            "n": 26408,
+            "share": 0.341
+          },
+          "llms-txt": {
+            "status_pass": 1219,
+            "n": 26408,
+            "share": 0.0462
+          },
+          "markdown-negotiation": {
+            "status_pass": 526,
+            "n": 26408,
+            "share": 0.0199
+          },
+          "bot-ua-access": {
+            "status_pass": 8112,
+            "n": 26408,
+            "share": 0.3072
+          },
+          "mcp-server-live": {
+            "status_pass": 242,
+            "n": 26408,
+            "share": 0.0092
+          },
+          "openapi-spec": {
+            "status_pass": 37,
+            "n": 26408,
+            "share": 0.0014
+          },
+          "security-txt": {
+            "status_pass": 677,
+            "n": 26408,
+            "share": 0.0256
+          },
+          "json-ld": {
+            "status_pass": 3813,
+            "n": 26408,
+            "share": 0.1444
+          },
+          "sitemap-xml": {
+            "status_pass": 5007,
+            "n": 26408,
+            "share": 0.1896
+          },
+          "markdown-twins": {
+            "status_pass": 2544,
+            "n": 26408,
+            "share": 0.0963
+          },
+          "agent-payments": {
+            "status_pass": 70,
+            "n": 26408,
+            "share": 0.0027
+          }
+        }
+      }
+    }
+  },
+  "derived_results": {
+    "readable_root_screen": {
+      "definition": "access-js-hydration status pass: more than 300 regex-extracted characters",
+      "n": 22855,
+      "share": 0.4571,
+      "mean_score": 41.1,
+      "bot_ua_status_counts": {
+        "pass": 15080,
+        "fail": 5197,
+        "warning": 2578
+      },
+      "tracked_status_passes": {
+        "robots-ai-policy": {
+          "status_pass": 16201,
+          "n": 22855,
+          "share": 0.7089
+        },
+        "llms-txt": {
+          "status_pass": 2858,
+          "n": 22855,
+          "share": 0.125
+        },
+        "markdown-negotiation": {
+          "status_pass": 1452,
+          "n": 22855,
+          "share": 0.0635
+        },
+        "bot-ua-access": {
+          "status_pass": 15080,
+          "n": 22855,
+          "share": 0.6598
+        },
+        "mcp-server-live": {
+          "status_pass": 890,
+          "n": 22855,
+          "share": 0.0389
+        },
+        "openapi-spec": {
+          "status_pass": 66,
+          "n": 22855,
+          "share": 0.0029
+        },
+        "security-txt": {
+          "status_pass": 1681,
+          "n": 22855,
+          "share": 0.0736
+        },
+        "json-ld": {
+          "status_pass": 10446,
+          "n": 22855,
+          "share": 0.4571
+        },
+        "sitemap-xml": {
+          "status_pass": 11455,
+          "n": 22855,
+          "share": 0.5012
+        },
+        "markdown-twins": {
+          "status_pass": 3730,
+          "n": 22855,
+          "share": 0.1632
+        },
+        "agent-payments": {
+          "status_pass": 157,
+          "n": 22855,
+          "share": 0.0069
+        }
+      }
+    },
+    "bot_ua_status_counts": {
+      "pass": 18912,
+      "fail": 27187,
+      "warning": 3901
+    },
+    "grade_counts": {
+      "B": 496,
+      "F": 36144,
+      "C": 3616,
+      "D": 9740,
+      "A": 4
+    },
+    "tier_results": {
+      "tier1_top10k": {
+        "n": 10000,
+        "mean_score": 26.1,
+        "median_score": 23.0,
+        "no_bot_ua_http_200_success_share": 0.5625
+      },
+      "tier2_10k_100k": {
+        "n": 20000,
+        "mean_score": 25.2,
+        "median_score": 20.0,
+        "no_bot_ua_http_200_success_share": 0.5558
+      },
+      "tier3_100k_1m": {
+        "n": 20000,
+        "mean_score": 25.9,
+        "median_score": 22.0,
+        "no_bot_ua_http_200_success_share": 0.5222
+      }
+    },
+    "layer_means": {
+      "discovery": 20.7,
+      "access": 23.9,
+      "usability": 7.4,
+      "security": 41.0,
+      "seo": 28.9,
+      "payments": 9.8
+    },
+    "mcp_screen": {
+      "basic_status_pass_n": 910,
+      "capabilities_status_pass_n": 3
+    },
+    "fail_warning_concentration": {
+      "instances": 2145053,
+      "top15_instances": 718965,
+      "top15_share": 0.3352,
+      "top15": [
+        {
+          "check": "security-c2pa",
+          "n": 49999
+        },
+        {
+          "check": "ard-catalog",
+          "n": 49980
+        },
+        {
+          "check": "openapi-spec",
+          "n": 49922
+        },
+        {
+          "check": "rate-limit-headers",
+          "n": 49639
+        },
+        {
+          "check": "mcp-server-live",
+          "n": 49090
+        },
+        {
+          "check": "markdown-negotiation",
+          "n": 48526
+        },
+        {
+          "check": "link-headers",
+          "n": 47827
+        },
+        {
+          "check": "security-txt",
+          "n": 47712
+        },
+        {
+          "check": "sitemap-json",
+          "n": 47097
+        },
+        {
+          "check": "api-cors-ai",
+          "n": 46785
+        },
+        {
+          "check": "llms-txt",
+          "n": 46690
+        },
+        {
+          "check": "rss-feed",
+          "n": 46635
+        },
+        {
+          "check": "tdmrep",
+          "n": 46486
+        },
+        {
+          "check": "seo-freshness",
+          "n": 46368
+        },
+        {
+          "check": "agent-card",
+          "n": 46209
+        }
+      ]
+    }
+  },
+  "reverify_comparison": {
+    "n": 300,
+    "mean_score_change": 5.9,
+    "up_20_or_more_n": 41,
+    "down_20_or_more_n": 0
   }
 }

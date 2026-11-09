@@ -112,6 +112,7 @@ A single wrong number invalidates trust in every other number.
 - [ ] **Verify all ratio calculations.** Formula: `a / b`. Check numerator and denominator match the claim.
 - [ ] **Conclusion numbers appear in the body.** Every number in the conclusion must trace back to a specific section with supporting data.
 - [ ] **"Spanning X years" is correct.** Count carefully. 2013 to mid-2026 = 13.5 years, not 13. Inclusive vs. exclusive counting matters.
+- [ ] **Digits and technical notation over spelled-out words.** Use numeric digits for counts and quantities (e.g., `200 test points`, `3 criteria`, `6 stages`) rather than literary spelling (*two hundred*, *three criteria*). Use mathematical dimension notation (e.g., `1365 × 900 pixels`) rather than narrative text (*1,365 by 900 pixels*). Never write out *"percent"* or *"per cent"*; always use `%`.
 - [ ] **Temporal phrases match actual date ranges.** *"First five months"* should match the actual date range in the dataset (e.g., Jan–May, not Jan–June).
 
 ---

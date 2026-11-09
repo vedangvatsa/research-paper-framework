@@ -1,5 +1,7 @@
 # Reviewer assessment and response
 
+This record concerns the preceding reviewer pass and its later presentation edits. The subsequent four-perspective pass is documented in [multi-review-response.md](multi-review-response.md).
+
 Review date: October 13, 2026. This is a critical review by the same AI assistant that helped prepare the manuscript, not independent human peer review. The author requested a full reviewer pass after identifying vague wording and an unnecessary completion-date sentence.
 
 ## Assessment before revision
@@ -44,7 +46,7 @@ The changes improve the argument supported by the selected sources. They do not 
 
 ## Verification status
 
-All 96 prose blocks/table rows have been remapped in the fact-check record. The current manuscript SHA-256 is `1db83fc7e989fb13fdbe0a72625c8b22844f4c56377b386f17b3e033dfbdd213`, including the later author-list/contact changes and removal of the redundant methods opener. These presentation edits do not change the research findings; source dates remain in the protocol and ledger. The wording check returned 31 previously explained flags: thirty permitted bibliography colons and one negated proof claim. Initial PDF inspection found an isolated final conclusion paragraph; removing repeated legal/limitation summaries resolved it without changing margins or type size.
+The reviewed version covered 96 prose blocks/table rows and had manuscript SHA-256 `1db83fc7e989fb13fdbe0a72625c8b22844f4c56377b386f17b3e033dfbdd213`, including the later author-list/contact changes and removal of the redundant methods opener. These presentation edits did not change the research findings; source dates remain in the protocol and ledger. The wording check returned 31 previously explained flags: thirty permitted bibliography colons and one negated proof claim. Initial PDF inspection found an isolated final conclusion paragraph; removing repeated legal/limitation summaries resolved it without changing margins or type size.
 
 Completed checks:
 

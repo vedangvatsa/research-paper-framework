@@ -1,5 +1,7 @@
 # [Title of the Computational Research Paper]
 
+<!-- Before experiments, create the companion protocol from templates/research_protocol.md and follow RESEARCH_METHODOLOGY.md. This template does not require inventing a new algorithm; adapt it to the actual contribution. -->
+
 **[Author Name]**
 [author@email.com](mailto:author@email.com)
 
@@ -30,7 +32,7 @@ _**Keywords**_: keyword1, keyword2, keyword3, keyword4, keyword5
 
 ### 2.1 Problem Setting
 
-[Formally introduce the problem, including mathematical notation if applicable.]
+[Define the objective, target quantity, information available to the system, constraints, and assumptions. For theoretical claims, provide the proposition and proof under those assumptions.]
 
 ### 2.2 Prior Approaches
 
@@ -58,19 +60,19 @@ _**Keywords**_: keyword1, keyword2, keyword3, keyword4, keyword5
 
 ### 4.1 Datasets
 
-[Describe the data used.]
+[Describe sources, sampling, coverage, independent units, development/test splits, leakage controls, pilot separation, and sample-size rationale.]
 
 ### 4.2 Baselines
 
-[Describe the methods you compare against and why they were chosen.]
+[Justify credible simple and prior-method baselines, matched resource constraints, tuning opportunities, and omissions.]
 
 ### 4.3 Evaluation Metrics
 
-[Define the metrics and why they are appropriate.]
+[Define primary and secondary metrics, units, denominators, aggregation, failure handling, uncertainty methods, and practical value. Explain why each measures the claim.]
 
 ### 4.4 Implementation Details
 
-[Hardware, software, training details, hyperparameter choices.]
+[Verified software/model/environment versions, prompts, resource accounting, assignment and execution order, state resets, repetitions, stopping rules, and deviations from the dated analysis plan.]
 
 ---
 
@@ -80,17 +82,17 @@ _**Keywords**_: keyword1, keyword2, keyword3, keyword4, keyword5
 
 ### 5.1 Main Results
 
-[Primary experimental results and comparison to baselines.]
+[Report all planned primary comparisons with sample counts, effect sizes, and uncertainty, including negative or inconclusive results. Link findings to questions and artifacts.]
 
 | Method | Metric 1 | Metric 2 | Metric 3 |
 |--------|----------|----------|----------|
 | Baseline A | - | - | - |
 | Baseline B | - | - | - |
-| **Ours** | - | - | - |
+| Evaluated method | - | - | - |
 
 ### 5.2 Ablation Study
 
-[Show that specific parts of your method are necessary by removing them.]
+[Where applicable, test whether components change outcomes. Account for altered cost or information and permit a finding that a component does not help.]
 
 ### 5.3 Analysis
 
@@ -104,13 +106,15 @@ _**Keywords**_: keyword1, keyword2, keyword3, keyword4, keyword5
 
 ---
 
-## 7. Conclusion
+## 7. Discussion and Limitations
 
-[Brief recap of the problem, your approach, and your findings. Discuss limitations honestly. Suggest directions for future work.]
+[Interpret the findings, examine rival explanations and assumption sensitivity, and distinguish tested effects from proposed mechanisms and deployment claims.]
 
-### Limitations
+[State measurement, sampling, model, and reproduction limits. Explain what unresolved questions prevent the study from concluding.]
 
-[Clearly state the limitations of your work.]
+## 8. Conclusion
+
+[Answer the primary question using completed findings and their scope. Do not introduce new evidence or claim universal optimality from benchmark comparisons.]
 
 ---
 

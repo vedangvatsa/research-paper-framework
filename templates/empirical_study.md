@@ -1,5 +1,7 @@
 # [Title of the Empirical Study]
 
+<!-- Before data collection, create the companion protocol from templates/research_protocol.md and follow RESEARCH_METHODOLOGY.md. Label retrospective planning honestly. -->
+
 <div class="author-info">
 **[Your Name]**<br>
 *[Your Email]*<br>
@@ -21,11 +23,14 @@ _**Keywords**_: [keyword1, keyword2, keyword3]
 ## 3. Methodology
 [Describe how the study was conducted. Be precise so the study can be replicated.]
 
-### 3.1 Experimental Design
-[Detail the setup.]
+### 3.1 Study Design and Rationale
+[Define the target quantity, population, unit, assumptions, and why this observational or experimental design answers the question. For causal claims, specify the intervention, comparator, assignment, and identification assumptions.]
 
 ### 3.2 Data Collection
-[Explain how data was gathered.]
+[Explain sampling, coverage, measurement validation, data provenance, independent units, missingness, and exclusions. Justify sample size or precision.]
+
+### 3.3 Outcomes and Analysis Plan
+[Define primary outcomes, units, denominators, aggregation, statistical methods, uncertainty, dependence, and multiple comparisons. Record the plan's timing, pilot use, stopping rule, and deviations.]
 
 ## 4. Results
 [Present the findings. Rely heavily on tables to present numbers clearly.]
@@ -34,19 +39,18 @@ _**Keywords**_: [keyword1, keyword2, keyword3]
 
 | Variable | Control Group | Test Group |
 |---|---|---|
-| Outcome A | 10 | 15 |
-| Outcome B | 20 | 25 |
+| [Outcome A] | [Measured result and uncertainty] | [Measured result and uncertainty] |
+| [Outcome B] | [Measured result and uncertainty] | [Measured result and uncertainty] |
+
+[Adapt columns for the actual design. Report denominators, failures, and all primary findings, including negative or inconclusive results.]
 
 ## 5. Discussion
-[Interpret the results and discuss what they mean in plain English.]
+[Interpret the results in relation to the question. Examine rival explanations, practical importance, sensitivity, and limits to causal inference or generalization.]
 
 ## 6. Conclusion
-[Summarize the findings and outline limitations.]
+[Answer the primary question within the evidence's scope. State remaining uncertainties without introducing new findings.]
 
 ---
 
 ## References
 [Author(s). (Year). Title. Publisher/Journal. URL]
-
----
-*End of paper.*

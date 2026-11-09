@@ -13,8 +13,8 @@ print("Columns in dataset:", df.columns.tolist())
 human_df = df[df["label"] == 0].dropna(subset=["abstract"]).drop_duplicates(subset=["abstract"])
 print("Total human abstracts available:", len(human_df))
 
-# Just take 10,000
-human_df = human_df.head(10000)
+# Take all available human abstracts (max ~14k)
+human_df = human_df.head(len(human_df))
 
 # Create a mock title if title doesn't exist, or just use it if it does
 if "title" not in df.columns:
@@ -28,4 +28,4 @@ human_df["year"] = 2019
 # Save to the CSV our generation script expects
 os.makedirs("data/metadata", exist_ok=True)
 human_df.to_csv("data/metadata/openalex_human_abstracts.csv", index=False)
-print("Saved 10,000 human abstracts to data/metadata/openalex_human_abstracts.csv")
+print(f"Saved {len(human_df)} human abstracts to data/metadata/openalex_human_abstracts.csv")

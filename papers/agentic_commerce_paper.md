@@ -25,7 +25,7 @@
 
 ## Abstract
 
-Artificial intelligence (AI) shopping agents can choose products and submit orders, but permission to pay does not establish that a purchase meets the buyer's needs. This narrative review compares 15 research works with two consumer survey releases, product and payment documents, and selected US and EU legal sources. Human experiments test reliance on advice and choice after seeing errors; neither measures willingness to delegate spending. Agent evaluations find failures involving product position, missing requirements, and the cost of checking details. They also show that partial-match scores and complete-task success can favor different models. Economic theory distinguishes cheaper price comparison from better product matching, while hotel-search evidence links ranking to clicks and bookings in a restricted sample. Security tests find both useful defenses and false alarms that block legitimate tasks. A comparison with ordinary shopping needs to count failed attempts, full charges, buyer time, delivery, and returns. The selected evidence does not supply a rate of successful real purchases or a population estimate of adoption.
+Artificial intelligence (AI) shopping agents can choose products and submit orders, but permission to pay does not establish that a purchase meets the buyer's needs. This narrative review compares 15 research works with two consumer survey releases, product and payment documents, and selected US and EU legal sources. The forecasting experiments measure advice use and forecaster choice, not permission to spend. Agent evaluations find failures involving product position, missing requirements, and the cost of checking details. Their reported model rankings can differ between partial-match scores and complete-task success. Economic theory distinguishes cheaper price comparison from better product matching; hotel-search evidence links ranking to clicks and bookings in a restricted sample. Security tests find both useful defenses and false alarms that block legitimate tasks. Purchase evaluations need separate measures of suitable first orders, permission breaches, justified stops, and error recovery, with all charges, refunds, and buyer time recorded. The selected evidence does not supply a rate of successful real purchases or a population estimate of adoption.
 
 _**Keywords**_: agentic commerce, AI shopping agents, online shopping, buying permission, payment standards, consumer protection
 
@@ -43,7 +43,7 @@ The review asks what evidence supports an agent's ability to choose a suitable p
 
 The search used four OpenAlex queries, each limited to eight results, alongside known-study lookups, citations, arXiv, and author and institutional repositories. Queries included "agentic commerce consumer delegation trust" and "shopping agent prompt injection". The accompanying source log records all four queries, retrieved leads, versions, access failures, and passages used. This search does not support an exhaustive account of the field.
 
-Selection sought distinct comparisons concerning consumer control, agent performance, search and ranking, or security and responsibility. A work needed enough accessible full text to inspect the claim used. Earlier studies were included when they tested a relevant mechanism; abstract-only leads and duplicate versions were excluded. Access affected selection, including the use of Ursu's dissertation rather than the unavailable final journal article [36]. The retained set contains 15 works, including experiments, benchmarks, field-data analysis, theory, two reviews, and legal scholarship.
+Selection sought distinct comparisons concerning consumer control, agent performance, search and ranking, or security and responsibility. A work needed enough accessible full text to inspect the claim used. Earlier studies were included when they tested a relevant mechanism; abstract-only leads and duplicate versions were excluded. Access affected selection, including the use of Ursu's dissertation rather than the unavailable final journal article [36]. The 15 works include experiments, benchmarks, field-data analysis, theory, two reviews, and legal scholarship. Their count describes coverage, not repeated independent tests of one claim.
 
 Appraisal checked the task, comparison, outcome measure, source of variation, commercial ties, and limits of each claim. The records distinguish human behavior, simulated agent actions, field observations, model predictions, and legal arguments. Source selection and appraisal were AI-assisted and were not independently repeated. No common risk-of-bias score or pooled effect was calculated. The two reviews supply context; their underlying studies are not all independently inspected additions.
 
@@ -53,7 +53,7 @@ Company documents establish reported features or plans, not independently measur
 
 ## 2. Related Work
 
-De Bellis and Johar's review of autonomous shopping systems argues that saving time may not settle acceptance. Control, identity, meaningful activity, and social contact can matter; its evidence includes reanalyzed qualitative material [32]. Balaskas's later map reports 47 consumer-focused studies, with more coverage of advice, chatbots, and intentions than observed delegated checkout. It relies on single-researcher screening and a consumer-focused search [39]. The former explains reasons people may retain parts of shopping; the latter identifies how little its corpus directly observes payment delegation.
+De Bellis and Johar's review argues that saving time may not settle acceptance of autonomous shopping. Control, identity, meaningful activity, and social contact can matter; its evidence includes reanalyzed qualitative material [32]. Balaskas's map reports 47 consumer-focused studies, mostly concerning advice, chatbots, and intentions rather than observed delegated checkout. Its single-researcher screening and consumer-focused search limit the coverage [39]. Together, these reviews motivate separating reasons for accepting assistance from evidence about completed purchases.
 
 Technical evaluations answer a different question from studies of willingness to use advice. WebShop tests search and option selection in a simulated store; WebArena checks outcomes on controlled websites, including tasks beyond shopping [33, 34]. The Agentic e-Commerce Simulator, known as ACES, isolates product presentation. EComAgentBench tests needs spread across requests, profiles, and follow-up replies. Tool-Lab tests whether agents inspect product details when information has a stated cost [17, 18, 19]. Their different tasks can reveal different failures even when each paper calls its outcome success or accuracy.
 
@@ -75,7 +75,7 @@ OpenAI's September 2025 Instant Checkout launch allowed US users to make single-
 
 Amazon's May 2026 US rollout announcement for Alexa for Shopping describes both Auto Buy at a chosen price and actions that only send a notice or add items to a cart. It also describes Buy for Me purchases from other stores for eligible products [4]. These flows assign different decisions to the customer. A scheduled cart update is not a completed purchase.
 
-Advance permission leaves decisions that a spending limit alone cannot settle. In an illustrative request to buy a laptop under $800, the person has not said whether a used model is acceptable. Size, condition, delivery date, seller, and return terms may all matter. Asking about a missing need is part of the buying task, even when the software already has permission to pay.
+Advance permission needs more than a spending cap. An illustrative request to buy a laptop under $800 leaves open whether a used model is acceptable. Limits also need a time period and a rule for whether the budget covers one order or a series of orders. Tests can check how a service handles changed or withdrawn permission before the next purchase.
 
 ## 4. Commerce and Payment Standards
 
@@ -96,7 +96,7 @@ ACP's checkout specification describes how to create, update, complete, and canc
 
 UCP describes how a business and a platform find the functions and versions they both support [6]. Compatibility depends on that match, not just the use of the UCP name. Its release history also includes a hotel-booking extension marked as a draft [5], so that entry does not establish hotel deployment.
 
-AP2 calls its signed permission records *mandates*. Its current documentation distinguishes checkout records from payment records. An open mandate sets limits before the final order is known. A closed mandate records permission for a particular checkout or payment [8]. The UCP integration guide describes linking the payment to the agreed cart [13]. This link helps prevent permission for one order from being used for another.
+AP2's signed permission records, called *mandates*, distinguish checkout from payment. Open mandates set limits before the final order; closed mandates record permission for a specific checkout or payment [8]. The UCP integration links payment to the agreed cart [13]. AP2's security rules require the merchant to verify the checkout binding, and credential and payment services to verify the user's signature and payment limits [21]. Those service-side checks give the signed records their effect.
 
 AP2's version 0.2 announcement includes payments without the person present [7]. Mastercard's Verifiable Intent design links identity, permission, and action while limiting the transaction details shared [9]. These records can help reconstruct who approved an order and which limits applied, even when the person was absent at checkout.
 
@@ -108,7 +108,7 @@ The Personal Agent Protocol proposal covers customer-approved access across webs
 
 ### 5.1 Acceptance and control
 
-The human experiments in Table 3 do not support a simple claim that people either trust or reject algorithms. Dietvorst and colleagues let participants observe forecasting performance before choosing a forecaster. Seeing errors reduced algorithm choice even when the model performed better than the human comparison [29]. Logg and colleagues held advice constant in key tests and changed whether it was described as human or algorithmic. Participants often gave algorithm-labeled advice more weight, although this preference weakened against their own judgment and among forecasting experts [30].
+Table 3 compares experiments that measure different decisions. Dietvorst and colleagues let participants observe forecasting performance before choosing a forecaster. Seeing errors reduced algorithm choice even when the model performed better than the human comparison [29]. Logg and colleagues held advice constant in key tests and changed whether it was described as human or algorithmic. Participants often gave algorithm-labeled advice more weight, although this preference weakened against their own judgment and among forecasting experts [30].
 
 **Table 3. Human reliance studies and their different comparisons**
 
@@ -118,7 +118,7 @@ The human experiments in Table 3 do not support a simple claim that people eithe
 | Logg et al., appreciation [30] | Weight identical advice labeled human or algorithmic | Algorithm label can increase reliance; own judgment and expertise matter |
 | Dietvorst et al., control [31] | Use a model with no, limited, or freer adjustment | Even limited adjustment can increase use; changes need not improve every decision |
 
-The studies are not a like-for-like test of trust. Choosing a forecaster after observing mistakes differs from weighting identical advice attributed to another person or an algorithm. This comparison does not isolate which design difference explains the findings. It does show why neither result supplies a measure of willingness to delegate spending. Advice use, approval of one order, and permission for later purchases need separate outcomes [29, 30].
+Choosing a forecaster after observing mistakes differs from weighting identical advice. The studies do not form a common trust measure or isolate why their findings differ. Testing transfer to shopping requires separate measures of advice use, per-order approval, and permission for later purchases [29, 30].
 
 Follow-up experiments by Dietvorst and colleagues find greater model use when participants can change its forecast, even within a narrow range [31]. This is work by the same team, not an independent replication. More reliance on the model improved performance in the tested tasks, but that does not mean each manual adjustment was useful. For shopping, the result motivates testing editable limits and meaningful approval alongside purchase quality. It does not establish that adding a confirmation button produces better orders.
 
@@ -169,7 +169,7 @@ ACES records intended choices in a test store, not sales. Its generic requests a
 
 ### 5.5 Missing needs and information costs
 
-EComAgentBench contains 662 valid tasks with needs spread across a request, a buyer profile, and scripted answers to questions. Each run permits up to 100 tool calls and 10 question-and-answer turns. Of seven models, Claude Opus 4.6 had the highest reported accuracy at 57.1%, where a correct answer matched the target product or met all requirements. A separate score for satisfaction of individual requirements ranked GPT-5.4 first [18]. The headline table gives point estimates without uncertainty intervals.
+EComAgentBench contains 662 valid tasks with needs spread across a request, a buyer profile, and scripted answers to questions. Each run permits up to 100 tool calls and 10 question-and-answer turns. Of seven models, Claude Opus 4.6 had the highest reported accuracy at 57.1%, where a correct answer matched the target product or met all requirements. A separate score for satisfaction of individual requirements ranked GPT-5.4 first [18]. These are reported point-estimate rankings; the headline table gives no uncertainty intervals or repeat-run variation.
 
 The study finds agents reading profile information without using it, or choosing before obtaining enough review evidence. It uses constructed buyer profiles, fixed replies, and an English-language catalog concentrated in electronics-related goods. Each task ends in one recommendation rather than a paid order [18]. These choices make it a test of finding and using requirements, not a measure of customer purchase reliability.
 
@@ -189,7 +189,7 @@ ACES shows that product position and labels can affect choice [17]. If many buye
 
 Bakos's economic model explains why cheaper search need not always lower prices. Reducing the cost of finding prices and reducing the cost of learning product features can affect competition differently. Better information about features can help buyers find a closer match without creating the same pressure on prices [35]. These are results under a model's assumptions about buyers, information, and sellers. They do not predict the net effect of today's assistants. Tool-Lab also changes the agent's stated information cost rather than observing prices set by competing sellers [19].
 
-Ursu's dissertation uses hotel-search data with random variation in result order. Higher placement increased a hotel's chances of being clicked or booked within the sampled searches. Conditional on a click, the analysis did not detect a further position effect on conversion [36]. The released data exclude searches with no click and oversample bookings, so their rates do not describe all Expedia visitors. Random order helps separate position from relevance within this setting; it does not remove those sampling limits. Alongside ACES, the result supports checking both exposure and choice, without assuming that AI buyers respond like hotel shoppers [17, 36].
+Ursu's dissertation analyzes hotel searches with randomized result order. Higher positions received more clicks and bookings in the released sample. Among clicked hotels, the analysis found no detectable association between position and booking conversion [36]. Because ranking affects clicking, that selected comparison is not a separate randomized test of post-click choice. The data also omit searches with no click and oversample bookings, limiting population rates. The review therefore treats this as evidence about search and selection in that setting, without inferring that ranking has no later influence or that AI buyers respond like hotel shoppers.
 
 OpenAI's shopping and advertising documents state that product results and answers are separate from ads [2, 20]. Those policies do not establish how fees, endorsement labels, paid placement, or access rules affect what buyers see. Each can be tested separately while holding product details and position fixed where the comparison requires it.
 
@@ -199,9 +199,9 @@ Open standards may reduce the work needed to connect sellers to assistants. They
 
 A signed permission record helps check whether a payment matches an approved order or limit. It does not establish that the product suits the buyer. AP2's security document includes agents in its threat model and considers prompt injection, where outside content tries to redirect an agent's actions [21]. Riskified's October announcement makes a related distinction between an authorized agent and the trustworthiness of the account behind it [11].
 
-AgentDojo reports completion without attack, completion under attack, and attacker success across 97 user tasks and 629 security cases. A security case pairs a user task with an attacker goal [37]. A low attacker-success rate can reflect an agent that cannot carry out either goal, so it is not enough to judge a defense by that rate alone.
+AgentDojo measures user-task completion without attack, successful completion without adversarial side effects under attack, and completion of the attacker's goal. Its 629 security cases pair attacker goals with 97 user tasks, so cases reuse tasks [37]. A low attacker-success rate can reflect an agent unable to carry out either goal. Completing the user's task while also carrying out an attack does not meet the benchmark's success-under-attack definition.
 
-In AgentDojo's GPT-4o defense tests, some defenses reduced attacker success while improving ordinary task completion. The attack detector was a counterexample, with false alarms that blocked valid tasks. Restricting available tools also helped in tested cases, but could fail when an allowed tool was enough to perform the attack [37]. These results call for testing useful completion and prevented harm together, under stated attacks and tool permissions.
+In AgentDojo's GPT-4o tests, some defenses reduced attacker success while improving completion without attack. Success rates under attack remained lower than rates without attack for every tested defense. The detector's false alarms also blocked valid tasks. Restricting tools helped when an attack needed a forbidden action, but could fail when an allowed tool was sufficient [37]. Reporting both permitted task completion and attacker effects avoids treating either low attack success or high ordinary completion as proof of safety.
 
 Table 6 compares that broader benchmark with Whispers of Wealth, an AP2-style prototype using four Gemini-2.5-Flash agents and synthetic data. The prototype repeats one basketball-shoe request ten times under each of three conditions, including a baseline with no attack. Product attacks enter through merchant descriptions; credential attacks enter through a malicious user's request [38]. The study therefore tests different attacker capabilities as well as different outcomes.
 
@@ -209,11 +209,11 @@ Table 6 compares that broader benchmark with Whispers of Wealth, an AP2-style pr
 
 | Evaluation | Setting | Result and limit |
 |---|---|---|
-| AgentDojo [37] | 97 user tasks and 629 task/attack cases | Some defenses reduce attacks and improve ordinary completion; false alarms can block valid tasks |
-| Whispers, product attack [38] | One shoe request, 10 repeated attack runs | Attacker's product first in 10; six clear conflicts with user constraints |
+| AgentDojo [37] | 97 user tasks reused across 629 task/attack cases | Success under attack requires completing the user task without adversarial side effects |
+| Whispers, product attack [38] | One shoe request, 10 repeated attack runs | Attacker's product first in 10; authors judged six to conflict clearly with the request |
 | Whispers, credential attack [38] | Same request, 10 repeated attack runs | Synthetic cross-account exposure in two; not a customer fraud rate |
 
-The 30 runs are repetitions of one task, not 30 independent shoppers. In some product-attack runs, overlap between the product and the request made harmful influence less clear, even though the product ranked first. The study did not break signatures or compromise real customer accounts. Its older mandate terms also differ from the current AP2 documents [8, 38]. The results show failure paths in that prototype. They do not establish that every AP2 implementation has the same flaws. The broader AgentDojo tasks and this small shopping test support separate checks of tool access and payment permission, without supplying a real-world fraud rate [37, 38].
+The 30 prototype runs repeat one task. The authors judged six product-attack runs to violate user constraints clearly and reported ambiguity in the others; this review did not reclassify the runs. First place for an attacker-selected product is not itself a measure of the harm of a purchase. The study used synthetic data without breaking signatures, and its older mandate terms differ from current AP2 documents [8, 38]. These findings identify prototype failure paths, not a flaw established in every AP2 implementation or a real-world fraud rate.
 
 Table 7 proposes checks based on these risks and the reviewed checkout specifications. These checks cover product choice, payment, and support after purchase. This review has not tested their effectiveness [12, 21, 37, 38].
 
@@ -221,14 +221,14 @@ Table 7 proposes checks based on these risks and the reviewed checkout specifica
 
 | Possible error | Check to test | Record to keep |
 |---|---|---|
-| Wrong item, size, or quantity | Compare the final order with the buyer's needs | Requested and selected details |
-| Price or terms change | Refresh the order before payment | Approved total and terms, with a time |
-| Permission is too broad | Limit amount, seller, time, and actions | Permission and later changes |
-| A retry creates two orders | Reuse the same unique request identifier for retries | Request identifier and resulting order count |
-| Outside text redirects the agent | Check product choice as well as limits enforced outside the model | Choice changes, rejected actions, and limit breaches |
-| An agent requests another user's data | Check identity and access at the tool or service | Requesting account and access decision |
-| A defense blocks a valid order | Test ordinary tasks as well as attacks | Legitimate completion and false rejections |
-| A delivery or return fails | Provide status and a clear support route | Receipt, refund, and resolution records |
+| Wrong item, size, or quantity | Match the order to agreed needs | Requested, ordered, received details |
+| Price or terms change | Refresh the order before payment | Approved total, terms, and time |
+| Overbroad or stale permission | Test order/total caps and changes | Permission, limits, spending to date |
+| A retry creates two orders | Retry the same operation/key; verify one order | Operation, key, orders, and charges |
+| Outside text redirects the agent | Check choice and service-enforced limits | Choices, denied actions, breaches |
+| Cross-account data request | Check identity and tool permissions | Account and access decision |
+| A defense blocks a valid order | Test ordinary tasks and attacks | Task success and false rejections |
+| A delivery or return fails | Track delivery, returns, and support | Receipt, refund, resolution |
 
 The buyer also needs a readable account of what happened. A useful receipt names the seller, item, total, and delivery and return terms. When the agent acts on advance permission, the record can link the order to the limits the buyer set. A long chat history alone may leave the buyer unable to tell which terms were approved.
 
@@ -236,11 +236,11 @@ The buyer also needs a readable account of what happened. A useful receipt names
 
 The US Electronic Signatures in Global and National Commerce Act, known as E-SIGN, protects certain contracts from being denied effect solely because electronic agents were involved. Section 7001(h) applies that protection only if the law treats the agent's action as an act of the person being bound. It does not itself make every agent action the user's action. Section 7001(b) preserves other rights and duties [22].
 
-Washington's version of the Uniform Electronic Transactions Act gives a state-law example. It recognizes contracts formed through electronic agents, with terms governed by other applicable law [23]. Another section offers relief for some errors made by a person dealing with another party's electronic agent. Conditions include lack of an opportunity to prevent or correct the error, prompt notice, and rules about returning and not using what was received [24]. That is narrower than a right to reverse any unwanted AI purchase.
+Washington's Uniform Electronic Transactions Act recognizes contracts formed through electronic agents, with terms governed by other applicable law [23]. Its error provision offers conditional relief for a person's error when dealing with another party's agent. Conditions include no opportunity to prevent or correct the error, prompt notice, and compliance with return and non-use rules [24]. This is not a general right to reverse an unwanted AI purchase.
 
-In the EU, the AI Act's transparency rules apply from August 2, 2026. Article 50 generally requires providers to tell people when they are interacting directly with AI, unless this is obvious in context, with stated exceptions. Some rules for specified high-risk uses have later dates [25, 26]. Disclosure that a service uses AI does not settle who pays for a mistaken order.
+EU AI Act Article 50 generally requires providers to tell users they are interacting directly with AI, unless this is obvious in context or an exception applies. These rules apply from August 2, 2026; specified high-risk provisions have later dates [25, 26]. Disclosure does not settle responsibility for a mistaken order.
 
-For covered online purchases of goods from a trader, EU consumers generally have 14 days after delivery to withdraw. Exceptions include perishable or customized goods, and separate rules apply to dated travel bookings and some digital content. Purchases from private individuals are not covered by this general withdrawal right [27].
+EU consumers generally have 14 days after delivery to withdraw from covered online goods purchases from traders. Exceptions include perishable or customized goods; dated travel and some digital content have separate rules. This general right excludes private-seller purchases [27].
 
 The General Data Protection Regulation, or GDPR, gives rights to information, access, correction, and deletion of personal data, subject to conditions [28]. Records kept to resolve an order dispute still need limits on access and retention.
 
@@ -248,17 +248,17 @@ Busch argues for protection when a person sets an agent's goals and permissions.
 
 ## 7. Open Questions and Limits
 
-The missing comparison is a complete purchase under different forms of assistance. A study could assign comparable buying tasks to ordinary shopping, AI advice, per-order approval, and advance permission, while keeping needs, spending limits, and seller access comparable. It needs to record whether the item meets the request, whether every action stays within permission, what the buyer pays, how much time the buyer spends, and what happens through delivery and any return.
+A purchase study can compare ordinary shopping, AI advice, per-order approval, and advance permission on matched tasks and spending limits. Predefine required conditions and acceptable substitutes, and record preferences separately. First-delivery success requires receiving an item that meets those rules. Report permission breaches, justified stops, and recovery separately. Shared catalog access holds reach fixed; service comparisons also need each service's actual product coverage.
 
-The accounting needs all attempts, including abandoned searches, duplicate orders, failed payments, and unresolved returns. Buyer-paid tool, verification, delivery, and return charges belong alongside the item price; time spent checking and correcting orders is a separate outcome. Tasks also need cases where asking a question or declining to buy is correct, as the information-gathering and unachievable-task designs in EComAgentBench and WebArena suggest [18, 34]. Repeated runs, changed model versions, and attacks can then test how stable those outcomes are.
+The accounting needs all attempts, including abandoned searches, failed payments, and unresolved returns. Record buyer-paid charges net of refunds, and checking and correction time separately. Refusal counts as correct only when it follows the task's stated conditions; a refund can resolve an error without making the first order correct. Record the failure stage and reason for a return rather than treating every refund or delivery problem as an agent error. EComAgentBench and WebArena motivate tests of information gathering and justified stopping [18, 34]. Distinguish variation across tasks from reruns of the same task, including under attacks or changed model versions.
 
-The limited search covers accessible English-language sources. The human experiments concern forecasts, the field evidence concerns hotel search, and agent studies often use constructed tasks. Both shopping surveys come from one vendor; product and legal coverage favors large platforms and selected US and EU provisions. No studies were replicated, orders placed, or independent second appraisal performed. Real purchase reliability, repeat use, and market-wide price or seller effects remain unresolved.
+The limited English-language search covers forecasting experiments, hotel-search data, and mostly constructed agent tasks. Both shopping surveys come from one vendor. Large platforms and selected US/EU rules dominate product and legal coverage. No study replication, live purchase test, or independent second appraisal was performed.
 
 ## 8. Conclusion
 
-An agent can stay within a spending limit and still choose the wrong product. ACES finds effects of product position and labels; EComAgentBench finds missed buyer requirements; Tool-Lab finds less checking under costly access and vague requests. Security tests add the need to measure both blocked attacks and completed user tasks. Payment records address permission, but do not establish that the item is suitable or that every tool action is safe.
+An agent can stay within a spending limit and still choose an unsuitable product. ACES finds presentation effects; EComAgentBench finds missed requirements; Tool-Lab finds less checking under costly access and vague goals. AgentDojo also shows why user-task completion and attacker effects need joint checking. Payment records address permission, but cannot by themselves establish that the item suits the buyer or that all tool actions are safe.
 
-The reviewed evidence does not yet show how reliably agents complete real purchases or how much time and money they save buyers. Advice experiments and shopping surveys also do not establish demand for delegated spending across the population. A comparison with ordinary shopping needs the full order record, including wrong items, duplicate orders, charges, refunds, and time spent correcting mistakes. An agent that places an order quickly may still leave the buyer with more work.
+The reviewed studies do not establish the rate of successful real purchases or buyers' net savings. Comparisons need to report first-order suitability, permission breaches, justified stops, and error recovery separately. A refunded mistake is still a failed first order. Include its charges, refund, and the buyer's correction time when comparing the cost of shopping with and without an agent.
 
 ---
 

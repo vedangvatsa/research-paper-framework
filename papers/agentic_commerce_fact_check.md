@@ -1,8 +1,8 @@
 # Full fact and wording check
 
-Audit date: October 13, 2026. This record covers the reviewer-led revision of **A Review of Agentic Commerce**. Earlier audits are preserved in `agentic-commerce-archive/before-academic-expansion/` and `before-reviewer-pass/`.
+Audit date: October 13, 2026. This record covers the four-perspective revision of **A Review of Agentic Commerce**. Earlier audits are preserved under `agentic-commerce-archive/`, including `before-multi-review/`.
 
-Reviewed manuscript SHA-256: `1db83fc7e989fb13fdbe0a72625c8b22844f4c56377b386f17b3e033dfbdd213`.
+Reviewed manuscript SHA-256: `08eccf041b4a47c8de9b53633390686e6fef6b79882139a034e4e09383e75176`.
 
 This revision adds twelve research works, for fifteen research works among 40 references, and compares their methods and conditional findings. It retains the approved title, blue reference links, plain language, and native ICLR-style format.
 
@@ -38,22 +38,24 @@ The current URL check returned 28 HTTP 200 and twelve HTTP 403 responses. Eight 
 
 The full findings and response are in `agentic-commerce/reviewer-response.md`. The pass clarified the approval taxonomy and limited search, separated theory from hotel-field evidence in the abstract, narrowed the explanation of conflicting human findings, added EComAgentBench's metric ordering and judge checks, added Ursu's two sampling restrictions, balanced AgentDojo's helpful and harmful defense results, and made retry and product-choice checks more precise. Product chronology and repeated caveats were shortened. The sources and reference count remain the same.
 
+The subsequent four-perspective pass is in `agentic-commerce/multi-review-response.md`. It restores the full AgentDojo success-under-attack definition, treats the hotel post-click comparison as selected rather than separately randomized, attributes prototype run classifications to their authors, identifies service-side permission enforcement, and separates suitable first orders from justified stops and later recovery. The proposed evaluation now includes net spending, failure stages, actual catalog access, and task-versus-rerun variation. These are appraisal and design clarifications, not newly measured effects.
+
 ## Paragraph and table-row audit
 
 U numbers follow the order of non-heading prose blocks and table data rows, from the abstract to the conclusion. Table headings and captions are checked against their contents. Source numbers match the paper. A single row may contain both a sourced fact and a stated interpretation; the notes distinguish them.
 
 | Unit | Kind | Evidence and disposition |
 |---|---|---|
-| U01 | Abstract summary | Fifteen works from selection.json; two surveys 15-16; human task limits 29-31; choice findings 17-19; metric-dependent comparisons 18/33; Bakos theory 35 separated from restricted hotel sample 36; both helpful defenses and false alarms 37. Proposed full-purchase outcomes from Section 7. No completion-date filler, pooled score, live-order rate, or population adoption estimate. |
+| U01 | Abstract summary | Fifteen works from selection.json; two surveys 15-16; forecasting task limits 29-31; choice findings 17-19; reported metric-dependent rankings 18/33; theory 35 separated from restricted hotel data 36; helpful defenses and false alarms 37. Separate first-order, permission, stopping and recovery outcomes are proposals from Section 7, not measured results. |
 | U02 | Illustration | Hypothetical washing-machine purchase introduced with 'Suppose', not an observed incident. |
 | U03 | Definition and examples | Working definition now specifies tool use; advice, per-order and advance permission remain distinct. Product examples supported by 1/4. |
 | U04 | Question and contribution | Suitable product, permitted action and correction are addressed in Sections 3-7. Recommendation/task/payment measures do not assess the same outcome. |
 | U05 | Method record | Four saved OpenAlex discovery queries use per-page=8; known-study/citation/repository routes also recorded. Removed the redundant review-type/date opener at the author's request. Source dates remain in the evidence records. No census or saturation claim. |
-| U06 | Eligibility, count and access | Protocol/matrix selection; three earlier plus twelve additions, including two reviews. Dissertation 36 inspected rather than unavailable final article. No count inflation from versions or underlying review corpora. |
+| U06 | Eligibility, count and access | Protocol/matrix selection; three earlier plus twelve additions, including two reviews. Dissertation 36 inspected rather than unavailable final article. The count describes coverage, not independent repetitions of one claim; no version or review-corpus inflation. |
 | U07 | Appraisal procedure | Source matrix records tasks, comparisons, outcomes, commercial ties and scope; AI-assisted and not independently repeated. No common bias score or pooled effect calculated. |
 | U08 | Independence appraisal | ACES author block includes MyCustomAI/Columbia/Yale; 18 Shopee; 37 ETH/Invariant; 34 AWS gift/government support. Recorded ties are not grounds for automatic acceptance or rejection. |
 | U09 | Evidence rule | Provider claims, selected legal text and proposed checks remain distinct from independently measured outcomes. |
-| U10 | Review comparison | Reference 32 review/reused qualitative barriers versus 39 evidence map, reported 47 studies, single-researcher coding and consumer focus. Reasons to retain shopping tasks are arguments from the review, not a new effect estimate. |
+| U10 | Review comparison | Reference 32 review/reused qualitative barriers versus 39 reported 47-study map, single-researcher coding and consumer focus. Their scope motivates separating acceptance reasons from observed checkout, not a new measured delegation effect. |
 | U11 | Evaluation comparison | WebShop Sections 3-5, WebArena Sections 2-4, ACES Section 2, EComAgentBench Sections 3-4, Tool-Lab methods. Tasks and scoring differ. |
 | U12 | Scope and positioning | Security 37/38 and Busch C-D extend product suitability to who can direct actions and how errors can be challenged. Removed the unnecessary first-review disclaimer. |
 | U13 | Definition | Table 1 classifies purchase approval, not search autonomy. Advice is a comparison case. Unsupervised search with per-order approval is a definition/example, not a measured product claim. |
@@ -62,7 +64,7 @@ U numbers follow the order of non-heading prose blocks and table data rows, from
 | U16 | Definition | Advance permission consistent with 4/8; no promise every service supports every limit. |
 | U17 | Product facts | Reference 1 September 2025 US-user/US-Etsy/one-item confirmation and seller duties; 2-3 mixed checkout routes. Shortened launch description preserves geographic and approval limits. |
 | U18 | Product facts | Reference 4 May 2026 US rollout, target-price Auto Buy, eligible Buy for Me, and notice/cart-only actions. Cart updates not counted as completed purchases. |
-| U19 | Illustration and reasoning | Explicitly illustrative $800 request. Missing condition/preferences motivate questions, not an incident count. |
+| U19 | Illustration and proposed permission tests | Illustrative $800 laptop request; per-order versus series limits and changed/withdrawn permission are proposed test cases. No claim that every product or protocol implements cumulative budgets or revocation. |
 | U20 | Definitions and scope | Protocol/API definitions and roles in 6, 8-10, 12, 14. No tested interoperability claim. |
 | U21 | Protocol role | ACP 12 overview/checkout session; suitability outside checkout function. |
 | U22 | Protocol role | UCP 6 discovery/negotiation/capability list; matching functions and versions. |
@@ -72,7 +74,7 @@ U numbers follow the order of non-heading prose blocks and table data rows, from
 | U26 | Announced plan | Sierra 10 'What comes next'; first specification planned later in October. |
 | U27 | Requirements and scenario | ACP 12 states, headers, retries and idempotency. Lost-response scenario is illustrative, not a measured failure. |
 | U28 | Compatibility and status | UCP 6 discovery/negotiation depends on matching functions/versions; 5 labels hotel extension draft. Removed release chronology without changing status. |
-| U29 | Technical definitions | AP2 8 open/closed checkout/payment records; UCP 13 binding checkout to payment. |
+| U29 | Technical definitions and enforcement | AP2 8 open/closed checkout/payment records, UCP 13 cart-payment binding, AP2 21 Manipulated Checkout/Payment. Merchant verifies checkout binding; credential/payment services verify signature and payment constraints. These are specification roles, not measured compliance. |
 | U30 | Protocol designs | Google 7 v0.2 human-not-present flow; Mastercard 9 identity-permission-action/selective disclosure. Records can support reconstruction, not measured dispute resolution or agent compliance. |
 | U31 | Technical role and cost accounting | Coinbase 14 API/digital-resource payment. Including a buyer-borne information fee even after a failed attempt is an explicit accounting recommendation, not an observed charge or market estimate. |
 | U32 | Announced plans | Sierra 10 October announcement with later-month specification; Riskified 11 December beta. Both remain planned, not generally available services established by these sources. |
@@ -80,7 +82,7 @@ U numbers follow the order of non-heading prose blocks and table data rows, from
 | U34 | Human comparison | Reference 29 forecasting choice after varied performance exposure. Not a spending task. |
 | U35 | Human comparison | Reference 30 identical advice in key tests, own judgment/expertise qualifications. |
 | U36 | Human comparison | Reference 31 studies 1-3; limited modifications can improve uptake. Does not assert each manual correction improves accuracy. |
-| U37 | Comparison and inference limit | References 29/30 differ in feedback, comparator and decision. The review does not isolate a causal explanation across papers. Neither measures spending permission; separate outcomes are proposed for shopping. |
+| U37 | Comparison and inference limit | References 29/30 compare different decisions and feedback. No common trust measure or identified cross-paper cause is inferred; shopping outcomes are proposed separately. |
 | U38 | Control finding and proposal | Reference 31 abstract, methods/results/discussion; author overlap with 29. Performance benefit from model use separated from per-adjustment quality. Editable limits require a shopping test. |
 | U39 | Survey methods | 'About the Survey' in 15/16, age 18-64, recent online buyers, nine-market versus US/UK coverage. |
 | U40 | Survey data | Reference 15: September-October 2025, 5,400, nine markets, 73%, 13%, 70%. Referral purchases not delegated agent orders. |
@@ -100,7 +102,7 @@ U numbers follow the order of non-heading prose blocks and table data rows, from
 | U54 | Research finding | ACES Sections 5.2/7.2, default buying prompts, fixed position for label effects; model/prompt/interface dependence. |
 | U55 | Research finding | ACES v3 Sections 3.2/5.3, improved simple tasks plus changed selection patterns. No all-model/current-deployment claim. |
 | U56 | Research limits | ACES generic preferences and fixed-position ad-label comparison. Label penalty not total paid-placement effect. |
-| U57 | Research numbers and metric ordering | EComAgentBench Sections 3/5, Table 3: 662 tasks, 100 calls, 10 questions, seven models, Opus 4.6 57.1% accuracy; GPT-5.4 leads the separate rubric-satisfaction score. Main table has no uncertainty intervals. No invented intervals or live-order rate. |
+| U57 | Research numbers and metric ordering | EComAgentBench Sections 3/5, Table 3: 662 tasks, 100 calls, 10 questions, seven models, Opus 4.6 57.1% accuracy; GPT-5.4 leads rubric satisfaction. Main table supplies point estimates, not uncertainty intervals or repeat-run variation. No new intervals or stability claim. |
 | U58 | Research findings/limits | EComAgentBench Sections 5-7/Limitations: unused profile facts, missing review evidence, constructed needs, English electronics-heavy catalog, scripted replies and single recommendation per task. |
 | U59 | Evaluator appraisal | EComAgentBench Sections 5-6: exact-match correctness independent of judge; non-exact path judged against all rubrics; exact-match cross-check and GPT-5.4 manual non-exact audit. Source does not establish perfect judging for every model. Metric comparison linked to WebShop 33. |
 | U60 | Research design/finding | Tool-Lab methods/Studies 1-2, eight models, vague versus unit-price goals under stated inspection cost; model variation retained. |
@@ -108,22 +110,22 @@ U numbers follow the order of non-heading prose blocks and table data rows, from
 | U62 | Product documentation | OpenAI 2 selection/pricing guidance; incomplete coverage and possible delayed prices attributed to provider. |
 | U63 | Conditional market argument | ACES 17 presentation effects motivate competing concentration/small-seller possibilities; no aggregate sales or exposure effect measured here. Proposed controls include stock, prices and accessible catalog. |
 | U64 | Theory comparison | Bakos Sections 1-3/5.1-5.3 distinguish price and feature information costs under assumptions. Unlike Tool-Lab's assigned inspection costs, this is an economic model of buyers and sellers, not observed AI-market prices. |
-| U65 | Restricted field-data finding | Ursu Section 4.3/Chapter 5: no-click searches omitted, bookings oversampled. Random-order position findings scoped to sampled searches; conditional conversion not detected as a further effect. No all-visitor rate or automatic transfer to AI. |
+| U65 | Field result and methodological qualification | Ursu Section 4.3/Chapter 5: randomized order, more clicks/bookings at higher positions, no detected conditional association; no-click searches omitted and bookings oversampled. The review notes that selecting clickers does not create a second randomized comparison. It does not attribute this qualification to the source or infer no post-click causal effect. |
 | U66 | Stated policy and proposed test | OpenAI 2/20 describe ad/result separation. No independently verified neutrality. Proposed isolation of fees/labels/access/placement retains ACES fixed-position versus total-placement distinction. |
 | U67 | Design argument | Integration in 6/12 does not determine ranking in 2/17. Possible reduced integration effort is not measured savings or guaranteed seller access. |
 | U68 | Technical threat scope | AP2 21 includes agents/prompt injection in the threat model; Riskified 11 separates authorization/account trust. No security guarantee. |
-| U69 | Security task units and metrics | AgentDojo Sections 3.4/4: 97 user tasks, 629 task/attacker-goal cases; no-attack completion, completion under attack, attacker success. Low success can reflect weak execution, not safe behavior. |
-| U70 | Balanced defense findings | AgentDojo Section 4.3/Figure 9 and tool-isolation limits: GPT-4o tests include defenses improving ordinary completion while reducing attacks; detector false positives reduce utility; allowed tools can still enable harm. Not generalized to every defense/model. |
+| U69 | Security task units and metric correction | AgentDojo Sections 3.4/4: 97 tasks reused across 629 task/attacker-goal cases. Under-attack utility requires user-task correctness without adversarial side effects, not completion alone. Attacker-goal success and clean-task completion are separate metrics. |
+| U70 | Balanced defense findings | AgentDojo Section 4.3/Figure 9: GPT-4o defenses can improve clean utility and reduce targeted attacks, but reported under-attack success remains lower for each tested defense; detector false positives and allowed-tool attack limits retained. No extrapolation to every defense or model. |
 | U71 | Prototype design/comparison | Whispers Sections III-V: four Gemini-2.5-Flash agents, synthetic data, one shoe query, ten runs in each of baseline/product/credential conditions. Merchant-content versus malicious-user attack capabilities distinguished. |
-| U72 | Security comparison row | AgentDojo 97 tasks/629 security cases and both helpful defenses/false alarms from Sections 3.4/4.3. Test cases are not independent shoppers or a deployed fraud denominator. |
-| U73 | Prototype product attack | Whispers V-A/Table I: first rank 10/10, clear conflict 6/10. Four ambiguous cases not counted as equally clear harm. |
+| U72 | Security comparison row | AgentDojo Sections 3.4/4: 97 reused tasks/629 cases, success under attack requires no adversarial side effects. Cases are not independent shoppers or 629 distinct tasks. |
+| U73 | Source-reported prototype classification | Whispers V-A/Table I: first rank 10/10; the source authors judged six to conflict clearly with the request. The review did not independently classify those runs. |
 | U74 | Prototype credential attack | Whispers V-B/Table I: synthetic cross-account exposure 2/10; partial access attempts excluded from exposure count. |
-| U75 | Security scope | Thirty runs repeat one query; synthetic data, intact signatures and ambiguous product cases. Old mandate terminology checked against AP2 8. Broader 37 plus prototype 38 support failure paths, not universal AP2 flaws or real fraud incidence. |
+| U75 | Security scope and attribution | Whispers V: 30 one-query repetitions, six/four author classification, synthetic data and intact signatures. Ranking success does not measure purchase harm. Old mandate terminology checked against AP2 8; no universal AP2 flaw or real fraud rate inferred. |
 | U76 | Proposed checks | Table 7 motivated by 12/21/37/38 and choice evidence; no effectiveness validation performed. |
-| U77 | Proposed check | Compare order and requested details; no estimated benefit/frequency. |
+| U77 | Proposed check | Compare the order with agreed needs and retain requested, ordered and received details to distinguish selection from fulfillment. No estimated benefit or frequency. |
 | U78 | Proposed check | Refresh order total/terms; ACP 12 authoritative checkout state. |
-| U79 | Proposed check | Record and bound permission; AP2 8/21. |
-| U80 | Retry check | ACP 12 overview and Idempotency-Key request header. Reusing the stable identifier for retries is more precise than a check-then-repeat instruction; inspect resulting order count. |
+| U79 | Proposed permission check | Test per-order/total limits and permission changes; record current authority and spending. Motivated by 8/21 and the buying-permission analysis, not a claim of universal protocol support. |
+| U80 | Proposed retry check | ACP 12 idempotency/header requirement. Retry the same operation with the same key and verify one order; inspect charges as well as request/order identity. No assumption that sending a key alone ensures enforcement. |
 | U81 | Proposed choice/limit checks | AP2 21 and shopping attacks 38. External limits alone do not establish product suitability, so record changed choices as well as denied/out-of-limit actions. Not a proven defense. |
 | U82 | Proposed access check | Tool/service identity enforcement motivated by Whispers credential failures; not a certified fix. |
 | U83 | Proposed usefulness check | Ordinary completion and false rejection motivated by AgentDojo defense trade-off. |
@@ -135,11 +137,11 @@ U numbers follow the order of non-heading prose blocks and table data rows, from
 | U89 | Consumer guidance | Your Europe 27, covered trader/online goods, 14 days from delivery, exceptions/private-seller exclusion. |
 | U90 | Data rights and scope | EDPB 28 qualified rights; retention/access recommendation not automatic erasure. Selected US/EU scope. |
 | U91 | Legal scholarship | Busch C-D/conclusion on goal setting and manipulation of/by agents. Reform argument separated from enacted law or tested comprehension effects. |
-| U92 | Proposed complete-purchase comparison | Four assistance modes with comparable needs, limits and access; suitability, permitted actions, money, time and post-order outcomes. Proposal only, no experiment performed. |
-| U93 | Proposed accounting and stability checks | All attempts and buyer-paid costs, with time separate; stop/ask tasks motivated by 18/34. Repeated runs/model versions/attacks suggested, not pooled or newly measured. |
+| U92 | Proposed outcome definitions | Four modes on matched tasks/limits; predefine required conditions/substitutes and record preferences separately. First-delivery success requires receiving an item meeting those rules. Breaches, stops and recovery are separate. Common catalog holds access fixed; actual service coverage needs separate observation. No field-wide absence claim or performed experiment. |
+| U93 | Proposed accounting and attribution | All attempts, spending net of refunds, separate checking/correction time, reasons for refusal/return, and failure stage. A refund does not identify an agent error or convert a wrong first order into a right one. Distinguish task variation from reruns; 18/34 motivate stop/ask cases. No calculated net benefit or uncertainty interval. |
 | U94 | Review limits | Limited accessible-English search, forecasting/hotel transfer, constructed tasks, one survey vendor, provider/legal coverage, no replication/live orders/independent second appraisal. |
-| U95 | Conclusion findings | Choice evidence 17-19, permission 8/12/13, and separate security/usefulness measures 37-38. No new result, market claim or live-order success rate. |
-| U96 | Conclusion and proposed comparison | Section 5 human/survey scope does not estimate population delegation. Sections 6-7 support full-order and correction accounting; extra work after a fast order remains a possibility, not measured aggregate harm. |
+| U95 | Conclusion findings | Choice findings 17-19 and AgentDojo's joint usefulness/security definition 37; permission 8/12/13 is not alone a product or tool-safety certificate. No new measured result. |
+| U96 | Conclusion and proposed comparison | Section 7 separates first-order success, breaches, stops and recovery, with net spending/correction time. Lack of a real-purchase reliability or net-saving estimate is scoped to reviewed studies; the refunded-error example is an accounting distinction, not an observed aggregate effect. |
 
 ## Bibliography audit
 

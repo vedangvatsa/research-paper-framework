@@ -6,7 +6,7 @@
     "tier2_10k_100k": 20000,
     "tier3_100k_1m": 20000
   },
-  "crux_overlap_count": 23579,
+  "crux_overlap_count": 23592,
   "sources": {
     "tranco": "tranco-list.eu/download/daily/top-1m.csv.zip (downloaded 2026-09-03)",
     "crux": "github.com/zakird/crux-top-lists data/global/current.csv.gz (downloaded 2026-09-03)"

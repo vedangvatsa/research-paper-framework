@@ -63,6 +63,11 @@ def load_crux_hosts() -> set[str]:
                 hosts.add(host.lower())
     return hosts
 
+
+def has_crux_overlap(domain: str, crux_hosts: set[str]) -> bool:
+    """Compare hostnames after applying the same www normalization on both sides."""
+    return domain.removeprefix("www.") in crux_hosts
+
 def main() -> None:
     rng = random.Random(SEED)
     tranco = load_tranco()
@@ -90,14 +95,14 @@ def main() -> None:
         w = csv.writer(f)
         w.writerow(["domain", "tranco_rank", "tier", "crux_overlap"])
         for d in sample:
-            w.writerow([d, by_rank[d], tier_of(d), 1 if d in crux or ("www." + d) in crux else 0])
+            w.writerow([d, by_rank[d], tier_of(d), 1 if has_crux_overlap(d, crux) else 0])
 
     with open(DATA / "domains.txt", "w") as f:
         for d in sample:
             f.write(d + "\n")
 
     # overlap stats for the paper (computed, not claimed)
-    overlap = sum(1 for d in sample if d in crux)
+    overlap = sum(1 for d in sample if has_crux_overlap(d, crux))
     manifest = {
         "seed": SEED,
         "total": len(sample),

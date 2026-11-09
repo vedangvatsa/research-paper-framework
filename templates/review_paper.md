@@ -1,5 +1,7 @@
 # [Title of the Review Paper]
 
+<!-- Before source selection, create the companion protocol from templates/research_protocol.md and follow RESEARCH_METHODOLOGY.md. A review requires justified selection and appraisal, not invented experiments. -->
+
 <div class="author-info">
 **[Your Name]**<br>
 *[Your Email]*<br>
@@ -18,34 +20,34 @@ _**Keywords**_: [keyword1, keyword2, keyword3]
 ## 2. Background and Context
 [Provide necessary background information.]
 
-## 3. Analysis of Current Literature
+## 3. Review Method
+[State whether this is a narrative, scoping, or systematic review and why. Report databases, queries, dates, eligibility, screening, deduplication, quality appraisal, extraction, and synthesis procedures appropriate to that choice. Explain coverage limits and handling of conflicting evidence.]
+
+## 4. Analysis of Current Literature
 [Synthesize existing research. Use simple language. Avoid colons in prose.]
 
-### 3.1 Sub-topic A
+### 4.1 Sub-topic A
 [Detail...]
 
-### 3.2 Sub-topic B
+### 4.2 Sub-topic B
 [Detail...]
 
-## 4. Key Trends and Market Data
-[Present quantitative data. Use Markdown tables rather than dense text.]
+## 5. Evidence Summary
+[Present relevant findings with sources, populations, dates, methods, and uncertainty. Include contradictory and null findings. Justify comparability before pooling results.]
 
 **Table 1. Example Data Table**
 
 | Metric | Value A | Value B |
 |---|---|---|
-| Item 1 | 50% | 60% |
+| [Item] | [Verified value and source] | [Verified value and source] |
 
-## 5. Discussion
-[Discuss the implications of the findings without using the word "implications" or other AI slop words.]
+## 6. Discussion and Limitations
+[Explain what the evidence supports, where it disagrees, and how source quality, selection, publication bias, and heterogeneity limit the answer. Do not promote observational associations into causal conclusions.]
 
-## 6. Conclusion
-[Summarize the main points and suggest areas for future research.]
+## 7. Conclusion
+[Answer the review question within the evidence's scope. State unresolved questions and the evidence needed to resolve them.]
 
 ---
 
 ## References
 [Author(s). (Year). Title. Publisher/Journal. URL]
-
----
-*End of paper.*

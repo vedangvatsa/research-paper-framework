@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from tqdm import tqdm
 import time
 import random
 
@@ -75,7 +74,12 @@ def fetch_abstracts(limit=10000, per_page=50, max_workers=3):
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_page = {executor.submit(fetch_page, p, per_page): p for p in range(1, total_pages + 1)}
         
-        for future in tqdm(as_completed(future_to_page), total=total_pages, desc="Pages"):
+        completed = 0
+        for future in as_completed(future_to_page):
+            completed += 1
+            if completed % 10 == 0:
+                print(f"Progress: {completed}/{total_pages} pages ({total_fetched} abstracts fetched)")
+            
             page_data = future.result()
             
             if page_data:
@@ -90,4 +94,4 @@ def fetch_abstracts(limit=10000, per_page=50, max_workers=3):
     print(f"Successfully fetched and saved abstracts to {out_file}.")
 
 if __name__ == "__main__":
-    fetch_abstracts(limit=10000, max_workers=5)
+    fetch_abstracts(limit=100000, max_workers=5)

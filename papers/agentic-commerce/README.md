@@ -6,6 +6,7 @@
 - [Source and evidence ledger](../agentic_commerce_paper_sources.md)
 - [Claim audit](../agentic_commerce_fact_check.md)
 - [Reviewer findings and responses](reviewer-response.md)
+- [Four-perspective review and responses](multi-review-response.md)
 - [Research comparison matrix](literature-expansion/review-matrix.md)
 
 Authors: Vedang Ratan Vatsa, Author2, and Author3. Website: [veda.ng](https://veda.ng).

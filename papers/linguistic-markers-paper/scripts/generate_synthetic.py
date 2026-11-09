@@ -74,7 +74,7 @@ def generate_abstract(row, out_file):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", type=int, default=10000)
+    parser.add_argument("--limit", type=int, default=100000)
     parser.add_argument("--workers", type=int, default=100)
     args = parser.parse_args()
 

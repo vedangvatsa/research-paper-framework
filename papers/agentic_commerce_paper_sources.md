@@ -8,6 +8,8 @@ Academic expansion: references 29-40 add twelve research works. The complete res
 
 Reviewer-pass update: the evidence set remains unchanged. The draft now discloses that the four saved OpenAlex discovery queries each requested at most eight results, with further leads from known-study lookups and references. Source appraisal was AI-assisted, not independently repeated, and did not produce a common risk-of-bias score. The detailed review and responses are in [reviewer-response.md](agentic-commerce/reviewer-response.md).
 
+Four-perspective update: [multi-review-response.md](agentic-commerce/multi-review-response.md) records the later methods, statistics, systems, and clarity passes. AgentDojo's under-attack criterion now explicitly requires no adversarial side effects. The hotel conditional-conversion result is described as an association in a selected subset, and Whispers' six conflict labels are attributed to its authors. AP2's service-side signature/binding/limit checks are distinguished from proposed repeated-order and permission-change tests. No source or numerical estimate was added.
+
 ## Search record
 
 | Source | Actual query or discovery path | Outcome |
@@ -89,6 +91,13 @@ Additional passage checks in the full reviewer pass:
 | 35-36 | Bakos Section 5; Ursu Section 4.3 and Chapter 5 | Economic model and field result are separated in the abstract. Ursu's sample omits no-click searches and oversamples bookings; its observed rates do not describe all visitors. |
 | 37 | Sections 3.4, 4 and 4.3/Figure 9 | Added 97 user tasks/629 task-goal cases, the GPT-4o defense-test scope, defenses improving ordinary completion while reducing attacks, and tool-filter limits as well as false alarms. |
 | 38 | Section V | Kept one-query repetitions, different attacker capabilities, six clear versus four ambiguous product outcomes, and synthetic data. Table 6 now places these beside the broader AgentDojo evaluation. |
+
+Follow-up checks for the four-perspective pass:
+
+- **21:** 'Manipulated Checkout' assigns checkout-binding verification to the merchant. 'Manipulated Payment' assigns user-signature verification to the payment processor and credential provider and requires amount/payee constraints. The manuscript states these enforcement roles rather than implying a signed record enforces itself.
+- **36:** The conditional conversion result is among clicked hotels. Since the same source finds ranking affects clicking, the review does not treat that subset as a separate randomized test of post-click behavior. This qualification is the review's methodological reasoning; the observed source result is retained.
+- **37:** Section 3.4 defines under-attack utility as successful user-task completion without adversarial side effects. The 629 cases reuse 97 tasks. Section 4.3/Figure 9 reports under-attack performance below no-attack performance for the tested defenses, alongside the helpful-defense and false-positive results already recorded.
+- **38:** Section V-A supplies the six clear-conflict/four-ambiguous classification. It was not independently recoded here. Ranking an attacker's item first is not itself a measure of purchase harm.
 
 - Adoption curves: `papers/generate_charts.py`, lines 139-154, supplies chosen curve parameters and labels the band '95% CI'; no fitted data or sampling procedure appears there. Withdraw the 8%-18% forecast and confidence claim.
 - ACES: lines 105-108 of that script hard-code six effects and standard errors. They do not reproduce the inspected paper's model-specific regression or reported comparisons. Withdraw the table and chart.
